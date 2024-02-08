@@ -1,0 +1,71 @@
+{
+    "name": "actionMap",
+    "maps": [
+        {
+            "name": "CamMoove",
+            "id": "b31e6ba4-960b-4ff9-8b76-1e86e70bd7ba",
+            "actions": [
+                {
+                    "name": "ZoomP",
+                    "type": "Value",
+                    "id": "6386de60-8db8-4b25-90fc-c934eeec2490",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "ZoomM",
+                    "type": "Value",
+                    "id": "e7adf797-f63b-4a29-89db-b96644a075ea",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "01ac5418-903f-4efe-ae05-208de7102893",
+                    "path": "<Mouse>/scroll/up",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "KeyboardAndMouse",
+                    "action": "ZoomP",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "1354b2b7-7ff3-4b24-a865-bfeb1bac9d3b",
+                    "path": "<Mouse>/scroll/down",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "KeyboardAndMouse",
+                    "action": "ZoomM",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": [
+        {
+            "name": "KeyboardAndMouse",
+            "bindingGroup": "KeyboardAndMouse",
+            "devices": [
+                {
+                    "devicePath": "<Keyboard>",
+                    "isOptional": false,
+                    "isOR": false
+                },
+                {
+                    "devicePath": "<Mouse>",
+                    "isOptional": false,
+                    "isOR": false
+                }
+            ]
+        }
+    ]
+}
