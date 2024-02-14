@@ -22,6 +22,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
+                },
+                {
+                    "name": "cliquePourMove",
+                    "type": "Button",
+                    "id": "3baf6c42-051c-4c74-b9d5-d621ac19ed02",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -44,6 +53,17 @@
                     "processors": "",
                     "groups": "KeyboardAndMouse",
                     "action": "ZoomM",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "2bcb654a-e112-4f05-9698-a9a85d5a4528",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "KeyboardAndMouse",
+                    "action": "cliquePourMove",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
