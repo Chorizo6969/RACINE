@@ -5,7 +5,6 @@ public class MovePlayer : MonoBehaviour
 {
     public List<GameObject> waypoints;
     public float speed = 2;
-    public bool isLoop = true;
     int index = 0;
 
     private void Update()
@@ -23,10 +22,7 @@ public class MovePlayer : MonoBehaviour
             }
             else
             {
-                if (isLoop)
-                {
-                    index = 0;
-                }
+                return;
             }
         }
     }
