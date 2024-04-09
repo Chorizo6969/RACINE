@@ -10,7 +10,7 @@ public class giveBuildingToBuild : MonoBehaviour
     public void OnClick()
     {
         GameObject _objectToGiveBuilding = FindAnyObjectByType<dragAndDropBuilding>().gameObject;
-        _objectToGiveBuilding.GetComponent<dragAndDropBuilding>().BOUGE = building;
-        Instantiate(building);
+        GameObject newBuilding = Instantiate(building);
+        _objectToGiveBuilding.GetComponent<dragAndDropBuilding>().BOUGE = newBuilding;
     }
 }

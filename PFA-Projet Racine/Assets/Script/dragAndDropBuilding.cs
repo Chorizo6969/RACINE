@@ -22,11 +22,14 @@ public class dragAndDropBuilding : MonoBehaviour
         Physics.Raycast(ray, out hitInfo);
         if (BOUGE != null)
         {
-            if (hitInfo.collider.tag == "tile")
+            if (hitInfo.collider != null)
             {
-                BOUGE.transform.position = new Vector3(hitInfo.point.x, hitInfo.point.y, hitInfo.point.z);
+                if (hitInfo.collider.tag == "tile")
+                {
+                    BOUGE.transform.position = new Vector3(hitInfo.point.x, hitInfo.point.y, hitInfo.point.z);
+                }
             }
         }
-        //Debug.DrawRay(ray.origin, ray.direction*50, Color.red);
+        Debug.DrawRay(ray.origin, ray.direction*50, Color.red);
     }
 }
