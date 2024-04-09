@@ -64,7 +64,7 @@ public class ControlCamera : MonoBehaviour
 
     private void Update()
     {
-        if (isLeftMouseButtonPress && Camera.GetComponent<Camera>().orthographicSize != 5f)
+        if (isLeftMouseButtonPress)
         {
 
             if (GOParentTransform.position.x < minX)
@@ -86,7 +86,6 @@ public class ControlCamera : MonoBehaviour
 
             if (GOParentTransform.position.x >= minX && GOParentTransform.position.x <= maxX && GOParentTransform.position.z >= minZ && GOParentTransform.position.z <= maxZ)
             {
-
                 // Récupérer les mouvements de la souris
                 Vector2 mouseMovement = Mouse.current.delta.ReadValue();
 

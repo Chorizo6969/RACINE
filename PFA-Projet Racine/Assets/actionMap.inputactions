@@ -59,7 +59,7 @@
                 {
                     "name": "",
                     "id": "2bcb654a-e112-4f05-9698-a9a85d5a4528",
-                    "path": "<Mouse>/leftButton",
+                    "path": "<Mouse>/rightButton",
                     "interactions": "",
                     "processors": "",
                     "groups": "KeyboardAndMouse",
