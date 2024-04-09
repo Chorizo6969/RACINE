@@ -2607,13 +2607,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 486703593}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.47, y: 0, z: 0.53}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.47, y: -0.7, z: 0.5300001}
   m_LocalScale: {x: 10, y: 1, z: 10}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1295605956}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1509054994}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &532923009
 PrefabInstance:
@@ -4309,7 +4309,7 @@ Transform:
   m_GameObject: {fileID: 885931354}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0.92387956, z: 0, w: 0.38268343}
-  m_LocalPosition: {x: -3.4, y: 11.4, z: -2.96}
+  m_LocalPosition: {x: -7, y: 5.7, z: -6.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -4368,7 +4368,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c419349e67ab464aaea34bda88d7c2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  building: {fileID: 2673577714733791471, guid: 5d14d16b33e3faa41a89007180a7c6fd, type: 3}
+  building: {fileID: 1553339804758017398, guid: abc961d8ca4bcd44fa9fc12c249b97b1, type: 3}
 --- !u!114 &895393586
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4391,8 +4391,8 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_HighlightedColor: {r: 1, g: 0, b: 0, a: 1}
+    m_PressedColor: {r: 0, g: 0, b: 0, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
@@ -4861,8 +4861,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0.9659258, z: -0.2588191, w: 0}
-  m_LocalPosition: {x: 0.00000047683716, y: -5.6799955, z: 4.9801397}
+  m_LocalRotation: {x: -0, y: 0.9659259, z: -0.25881913, w: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4902,6 +4902,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BOUGE: {fileID: 0}
+  tonDaron: 0
+  hasClickOnBuildingButtonInstance: 0
 --- !u!1001 &969615292
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6902,7 +6904,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 895393585}
+      - m_Target: {fileID: 1351470407}
         m_TargetAssemblyTypeName: giveBuildingToBuild, Assembly-CSharp
         m_MethodName: OnClick
         m_Mode: 1
@@ -7271,7 +7273,7 @@ Transform:
   m_GameObject: {fileID: 1424997943}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -12.53, y: 0, z: 0}
+  m_LocalPosition: {x: -13.23, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -7404,7 +7406,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
     m_ActionId: 6386de60-8db8-4b25-90fc-c934eeec2490
-    m_ActionName: CamMoove/Zoom +[/Mouse/scroll/up]
+    m_ActionName: CamMoove/ZoomP[/Mouse/scroll/up]
   - m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 963194229}
@@ -7420,7 +7422,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
     m_ActionId: e7adf797-f63b-4a29-89db-b96644a075ea
-    m_ActionName: CamMoove/Zoom -[/Mouse/scroll/down]
+    m_ActionName: CamMoove/ZoomM[/Mouse/scroll/down]
   - m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 963194229}
@@ -7436,13 +7438,65 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
     m_ActionId: 3baf6c42-051c-4c74-b9d5-d621ac19ed02
-    m_ActionName: CamMoove/cliquePourMove[/Mouse/leftButton]
+    m_ActionName: CamMoove/cliquePourMove[/Mouse/rightButton]
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 963194230}
+        m_TargetAssemblyTypeName: dragAndDropBuilding, Assembly-CSharp
+        m_MethodName: OnLeftClick
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 985d11b3-eda3-4520-b258-ab53cd41a6a4
     m_ActionName: CamMoove/Accept[/Mouse/leftButton]
-  m_NeverAutoSwitchControlSchemes: 0
-  m_DefaultControlScheme: KeyboardAndMouse
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 4d23e46d-1d6d-4f0e-8814-b3578ed55b45
+    m_ActionName: CamMoove/Navigate[/Keyboard/w,/Keyboard/upArrow,/Keyboard/s,/Keyboard/downArrow,/Keyboard/a,/Keyboard/leftArrow,/Keyboard/d,/Keyboard/rightArrow]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 64806175-9ade-48a7-8a82-e82ab39ba6ee
+    m_ActionName: CamMoove/Submit[/Keyboard/enter]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: b73240e5-4dca-467b-8342-8a85610d6cc4
+    m_ActionName: CamMoove/Cancel[/Keyboard/escape]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: d8798fa6-e152-4baa-a69c-efbade0aa083
+    m_ActionName: CamMoove/Point[/Mouse/position]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 8e80af4d-89e1-4fcb-8e60-697030c8fc7e
+    m_ActionName: CamMoove/Click[/Mouse/leftButton]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 12a28276-238f-4a4a-a9b0-fd4be1d17295
+    m_ActionName: CamMoove/ScrollWheel[/Mouse/scroll]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 06522c3d-7db2-4172-8904-d1419d7ae202
+    m_ActionName: CamMoove/MiddleClick[/Mouse/middleButton]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: dc68d8d5-acda-4f25-ad35-c7506bc23879
+    m_ActionName: CamMoove/RightClick[/Mouse/rightButton]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: b1b1d38c-8660-4450-a56a-c841c8f24e11
+    m_ActionName: CamMoove/TrackedDevicePosition
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: b4af47ca-bb4c-4dc7-a5d8-ab07246e8e51
+    m_ActionName: CamMoove/TrackedDeviceOrientation
+  m_NeverAutoSwitchControlSchemes: 1
+  m_DefaultControlScheme: 
   m_DefaultActionMap: CamMoove
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 963194227}
@@ -7741,6 +7795,51 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 75fdc0cfac9163241bf7082942ab12bd, type: 3}
   m_PrefabInstance: {fileID: 1504723122}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1509054992
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1509054994}
+  - component: {fileID: 1509054993}
+  m_Layer: 0
+  m_Name: Grid
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!156049354 &1509054993
+Grid:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1509054992}
+  m_Enabled: 1
+  m_CellSize: {x: 1, y: 1, z: 0}
+  m_CellGap: {x: 0, y: 0, z: 0}
+  m_CellLayout: 0
+  m_CellSwizzle: 1
+--- !u!4 &1509054994
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1509054992}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.7, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 486703597}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1515232901
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8665,8 +8764,8 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_HighlightedColor: {r: 1, g: 0, b: 0, a: 1}
+    m_PressedColor: {r: 0, g: 0, b: 0, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
@@ -8687,7 +8786,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 895393585}
+      - m_Target: {fileID: 1640542980}
         m_TargetAssemblyTypeName: giveBuildingToBuild, Assembly-CSharp
         m_MethodName: OnClick
         m_Mode: 1
@@ -9650,7 +9749,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_FirstSelected: {fileID: 1351470402}
+  m_FirstSelected: {fileID: 0}
   m_sendNavigationEvents: 1
   m_DragThreshold: 10
 --- !u!4 &1886685258
@@ -9685,16 +9784,16 @@ MonoBehaviour:
   m_MoveRepeatRate: 0.1
   m_XRTrackingOrigin: {fileID: 0}
   m_ActionsAsset: {fileID: -944628639613478452, guid: b3386156cfe2c1d44912b04c612e8759, type: 3}
-  m_PointAction: {fileID: 0}
-  m_MoveAction: {fileID: 0}
-  m_SubmitAction: {fileID: -7396404389017963755, guid: b3386156cfe2c1d44912b04c612e8759, type: 3}
-  m_CancelAction: {fileID: 0}
-  m_LeftClickAction: {fileID: -7396404389017963755, guid: b3386156cfe2c1d44912b04c612e8759, type: 3}
-  m_MiddleClickAction: {fileID: 0}
-  m_RightClickAction: {fileID: 0}
-  m_ScrollWheelAction: {fileID: 0}
-  m_TrackedDevicePositionAction: {fileID: 0}
-  m_TrackedDeviceOrientationAction: {fileID: 0}
+  m_PointAction: {fileID: 2379122635724580385, guid: b3386156cfe2c1d44912b04c612e8759, type: 3}
+  m_MoveAction: {fileID: -5190308689950066577, guid: b3386156cfe2c1d44912b04c612e8759, type: 3}
+  m_SubmitAction: {fileID: 5385773425794223187, guid: b3386156cfe2c1d44912b04c612e8759, type: 3}
+  m_CancelAction: {fileID: 7161830752942162920, guid: b3386156cfe2c1d44912b04c612e8759, type: 3}
+  m_LeftClickAction: {fileID: -3380789443037517983, guid: b3386156cfe2c1d44912b04c612e8759, type: 3}
+  m_MiddleClickAction: {fileID: 5437893774318885707, guid: b3386156cfe2c1d44912b04c612e8759, type: 3}
+  m_RightClickAction: {fileID: 7258614233335238890, guid: b3386156cfe2c1d44912b04c612e8759, type: 3}
+  m_ScrollWheelAction: {fileID: -1781409385428283613, guid: b3386156cfe2c1d44912b04c612e8759, type: 3}
+  m_TrackedDevicePositionAction: {fileID: -2409317237178227869, guid: b3386156cfe2c1d44912b04c612e8759, type: 3}
+  m_TrackedDeviceOrientationAction: {fileID: 7324410025664471647, guid: b3386156cfe2c1d44912b04c612e8759, type: 3}
   m_DeselectOnBackgroundClick: 1
   m_PointerBehavior: 0
   m_CursorLockBehavior: 0
@@ -10807,10 +10906,10 @@ SceneRoots:
   m_Roots:
   - {fileID: 885931355}
   - {fileID: 705507995}
-  - {fileID: 486703597}
   - {fileID: 1899123564}
   - {fileID: 1604657470}
   - {fileID: 1886685258}
   - {fileID: 1443373851}
   - {fileID: 213312432}
   - {fileID: 1424997947}
+  - {fileID: 1509054994}
