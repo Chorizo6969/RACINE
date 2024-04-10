@@ -9411,7 +9411,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 263487558}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 263487560}
+        m_TargetAssemblyTypeName: GivePlant, Assembly-CSharp
+        m_MethodName: OnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &263487558
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -30164,7 +30176,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 829140642}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 829140644}
+        m_TargetAssemblyTypeName: GivePlant, Assembly-CSharp
+        m_MethodName: OnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &829140642
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -43342,7 +43366,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1193584688}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1193584690}
+        m_TargetAssemblyTypeName: GivePlant, Assembly-CSharp
+        m_MethodName: OnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1193584688
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -44052,7 +44088,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1204021739}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1204021741}
+        m_TargetAssemblyTypeName: GivePlant, Assembly-CSharp
+        m_MethodName: OnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1204021739
 MonoBehaviour:
   m_ObjectHideFlags: 0
