@@ -12,5 +12,6 @@ public class giveBuildingToBuild : MonoBehaviour
         GameObject _objectToGiveBuilding = FindAnyObjectByType<dragAndDropBuilding>().gameObject;
         GameObject newBuilding = Instantiate(building);
         _objectToGiveBuilding.GetComponent<dragAndDropBuilding>().BOUGE = newBuilding;
+        _objectToGiveBuilding.GetComponent<dragAndDropBuilding>().ClickOnButtonInstancier();
     }
 }

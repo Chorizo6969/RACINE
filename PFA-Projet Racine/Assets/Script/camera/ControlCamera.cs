@@ -50,14 +50,12 @@ public class ControlCamera : MonoBehaviour
         {
             isLeftMouseButtonPress = true;
             Cursor.lockState = CursorLockMode.Locked;
-            Cursor.visible = false;
         }
 
         if (_context.canceled)
         {
             isLeftMouseButtonPress = false;
             Cursor.lockState = CursorLockMode.None;
-            Cursor.visible = true;
         }
     }
 
