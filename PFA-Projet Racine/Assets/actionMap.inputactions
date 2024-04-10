@@ -33,6 +33,15 @@
                     "initialStateCheck": false
                 },
                 {
+                    "name": "PlantField",
+                    "type": "Button",
+                    "id": "1bbc9881-91e8-467a-bb81-47bf1aaf3294",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
                     "name": "Accept",
                     "type": "Button",
                     "id": "985d11b3-eda3-4520-b258-ab53cd41a6a4",
@@ -592,6 +601,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "Submit",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "4c98b414-819a-4def-9a16-1fafa80f46af",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "PlantField",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
