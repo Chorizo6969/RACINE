@@ -5,10 +5,10 @@ using UnityEngine;
 /// </summary>
 public class Harvest : MonoBehaviour
 {
-    private void OnTriggerEnter(Collider other)
+    public void OnHarvest()
     {
         //harvest the field
-        if (other.CompareTag("tonk") && transform.position.y == 0.738f)
+        if (CompareTag("tonk") && transform.position.y == 0.738f)
         {
             //other.GetComponent<PlayerMoney>().EditMoneyAmount(GetComponent<PlantShellValue>().Value);
             gameObject.transform.position -= new Vector3(0, 10, 0);

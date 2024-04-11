@@ -15,15 +15,25 @@ public class ClickFieldManager : MonoBehaviour
             RaycastHit hitInfo;
             Physics.Raycast(ray, out hitInfo);
             
-            if (hitInfo.collider != null && HumanSeed != null)
+            if (hitInfo.collider != null)
             {
                 GameObject _touchedField = hitInfo.collider.gameObject;
-                Plant _fieldPlantScript = _touchedField.GetComponent<Plant>();
-                if (hitInfo.collider.CompareTag("field") && !_fieldPlantScript.IsPlanted && !GetComponent<dragAndDropBuilding>().hasClickOnBuildingButtonInstance)
+                Field _fieldPlantScript = _touchedField.GetComponent<Field>();
+                if (hitInfo.collider.CompareTag("field") && !_fieldPlantScript.IsWatered && !_fieldPlantScript.IsPlanted && !GetComponent<dragAndDropBuilding>().hasClickOnBuildingButtonInstance && HumanSeed != null)
                 {
                     _fieldPlantScript.ThePlant = HumanSeed;
                     _fieldPlantScript.PlantField();
                     HumanSeed = null;
+                    Debug.Log("Ton pere");
+                }
+                else if (hitInfo.collider.CompareTag("field") && !_fieldPlantScript.IsWatered && _fieldPlantScript.IsPlanted && !GetComponent<dragAndDropBuilding>().hasClickOnBuildingButtonInstance)
+                {
+                    _fieldPlantScript.WateringField();
+                    Debug.Log("Ta mere");
+                }
+                else if (hitInfo.collider.CompareTag("field") && _fieldPlantScript.IsPlanted && !GetComponent<dragAndDropBuilding>().hasClickOnBuildingButtonInstance)
+                {
+                    Debug.Log("Ta soeur");
                 }
             }
         }
