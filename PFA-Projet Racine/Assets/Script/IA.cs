@@ -62,6 +62,7 @@ public class IA : MonoBehaviour
         if (_goHdv )
         {
             _agent.SetDestination(new Vector3(3, 0.8277f, 3));
+            //lien pour stonks les ressources
         }
         else
         {
