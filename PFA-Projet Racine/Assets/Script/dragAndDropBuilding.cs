@@ -13,6 +13,7 @@ public class dragAndDropBuilding : MonoBehaviour
     public bool hasClickOnBuildingButtonInstance;
     private Vector3 _startPos;
 
+
     private void Start()
     {
         _startPos = transform.position;
@@ -25,7 +26,6 @@ public class dragAndDropBuilding : MonoBehaviour
             tonDaron = true;
             if (BOUGE != null)
             {
-                
                 
             }
         }

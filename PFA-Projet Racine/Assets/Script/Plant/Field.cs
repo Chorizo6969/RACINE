@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 /// <summary>
 /// plant a seed in a field
@@ -17,7 +18,16 @@ public class Field : MonoBehaviour
 
     [field : SerializeField] public bool IsWatered { get; private set; }
 
-    private GameObject _currentPlant;
+    [SerializeField] private GameObject _currentPlant;
+
+    [field : SerializeField] public GameObject _progressCircle { get; private set; }
+
+    [SerializeField] private GameObject _humanPlant;
+
+    private void Start()
+    {
+        _progressCircle.SetActive(false);
+    }
 
     public void PlantField()
     {
@@ -36,11 +46,17 @@ public class Field : MonoBehaviour
     {
         IsPlanted = false;
         IsWatered = false;
-        _currentPlant = null;
+        Destroy(_currentPlant);
+        _progressCircle.GetComponentInChildren<Image>().fillAmount = 0;
+        _progressCircle.SetActive(false);
+        /*GameObject newBhonome = Instantiate(_humanPlant);
+        newBhonome.transform.position = _currentPlant.transform.position;*/
     }
 
     public void WateringField()
     {
+        _progressCircle.GetComponentInChildren<Fill>().FillSpeed = _currentPlant.GetComponent<Grow>()._growSpeed;
+        _progressCircle?.SetActive(true);
         IsWatered = true;
         _currentPlant?.SetActive(true);
     }

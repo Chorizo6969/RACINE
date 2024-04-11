@@ -31632,7 +31632,7 @@ GameObject:
   m_Component:
   - component: {fileID: 885931355}
   m_Layer: 0
-  m_Name: CamParent
+  m_Name: Cam Parent
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -52064,7 +52064,7 @@ GameObject:
   - component: {fileID: 1443373851}
   - component: {fileID: 1443373850}
   m_Layer: 0
-  m_Name: InputManager
+  m_Name: Input Manager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -68460,7 +68460,7 @@ GameObject:
   - component: {fileID: 1886685257}
   - component: {fileID: 1886685259}
   m_Layer: 0
-  m_Name: EventSystem
+  m_Name: Event System
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -68756,7 +68756,7 @@ GameObject:
   - component: {fileID: 1899123560}
   - component: {fileID: 1899123565}
   m_Layer: 0
-  m_Name: playerProto
+  m_Name: Player Proto
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -8,8 +8,8 @@ public class Grow : MonoBehaviour
     /// <summary>
     /// speed at which the plant will grow
     /// </summary>
-    [SerializeField] private float _growSpeed;
-
+    [field : SerializeField] public float _growSpeed {  get; private set; }
+            
     /// <summary>
     /// height of the plant at which it will stop growing
     /// </summary>
