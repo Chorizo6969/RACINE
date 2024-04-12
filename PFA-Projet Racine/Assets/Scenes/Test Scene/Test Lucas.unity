@@ -7151,7 +7151,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb0ab375372c82945bba9858bc160c98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wayPoints:
+  <WayPoints>k__BackingField:
   - {fileID: 336948154}
   - {fileID: 937727626}
   - {fileID: 2123574108}
@@ -34752,7 +34752,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BOUGE: {fileID: 0}
-  tonDaron: 0
   hasClickOnBuildingButtonInstance: 0
 --- !u!114 &963194231
 MonoBehaviour:

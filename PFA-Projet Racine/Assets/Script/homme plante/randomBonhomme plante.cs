@@ -1,15 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
-public class moveToRandomPosition : MonoBehaviour
+public class MoveToRandomPosition : MonoBehaviour
 {
-    public int speed;
-    public GameObject listOwner;
+    [SerializeField] private int speed;
+    [SerializeField] private GameObject listOwner;
     private bool _canMove;
     private Vector3 _positionToGo;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -28,7 +27,7 @@ public class moveToRandomPosition : MonoBehaviour
 
     IEnumerator FindRandomPositionToGo()
     {
-        List<GameObject> list = listOwner.GetComponent<wayPointPosManager>().wayPoints;
+        List<GameObject> list = listOwner.GetComponent<wayPointPosManager>().WayPoints;
         _positionToGo = FindDirection(gameObject, list[Random.Range(0, list.Count)]);
 
         //_positionToGo.Normalize();

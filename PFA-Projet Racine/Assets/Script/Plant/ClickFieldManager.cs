@@ -1,8 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.UI;
 
 public class ClickFieldManager : MonoBehaviour
 {
@@ -21,19 +18,19 @@ public class ClickFieldManager : MonoBehaviour
                 GameObject _touchedField = hitInfo.collider.gameObject;
                 Field _fieldPlantScript = _touchedField.GetComponent<Field>();
                 
-                if (hitInfo.collider.CompareTag("field") && !_fieldPlantScript.IsWatered && !_fieldPlantScript.IsPlanted && !GetComponent<dragAndDropBuilding>().hasClickOnBuildingButtonInstance && HumanSeed != null)
+                if (hitInfo.collider.CompareTag("field") && !_fieldPlantScript.IsWatered && !_fieldPlantScript.IsPlanted && !GetComponent<dragAndDropBuilding>().HasClickOnBuildingButtonInstance && HumanSeed != null)
                 {
                     _fieldPlantScript.ThePlant = HumanSeed;
                     _fieldPlantScript.PlantField();
                     HumanSeed = null;
                     Debug.Log("Ton pere");
                 }
-                else if (hitInfo.collider.CompareTag("field") && !_fieldPlantScript.IsWatered && _fieldPlantScript.IsPlanted && !GetComponent<dragAndDropBuilding>().hasClickOnBuildingButtonInstance)
+                else if (hitInfo.collider.CompareTag("field") && !_fieldPlantScript.IsWatered && _fieldPlantScript.IsPlanted && !GetComponent<dragAndDropBuilding>().HasClickOnBuildingButtonInstance)
                 {
                     _fieldPlantScript.WateringField();
                     Debug.Log("Ta mere");
                 }
-                else if (hitInfo.collider.CompareTag("field") && _fieldPlantScript.IsPlanted && !GetComponent<dragAndDropBuilding>().hasClickOnBuildingButtonInstance && _fieldPlantScript._progressCircle.GetComponentInChildren<Fill>().IsFillAmountFull)
+                else if (hitInfo.collider.CompareTag("field") && _fieldPlantScript.IsPlanted && !GetComponent<dragAndDropBuilding>().HasClickOnBuildingButtonInstance && _fieldPlantScript._progressCircle.GetComponentInChildren<Fill>().IsFillAmountFull)
                 {
                     _fieldPlantScript.HarvestField();
                     Debug.Log("Ta soeur");

@@ -4,24 +4,25 @@ using UnityEngine;
 
 public class wayPointPosManager : MonoBehaviour
 {
-    public List<GameObject> wayPoints;
-    public float minX;
-    public float maxX;
-    public float minZ;
-    public float maxZ;
+    [field : SerializeField] public List<GameObject> WayPoints {  get; private set; }
+    [SerializeField] private float minX;
+    [SerializeField] private float maxX;
+    [SerializeField] private float minZ;
+    [SerializeField] private float maxZ;
+
+
     // Start is called before the first frame update
     void Start()
     {
-        StartCoroutine(randomizeWaypointPos());
+        StartCoroutine(RandomizeWaypointPos());
     }
 
-    IEnumerator randomizeWaypointPos()
+    IEnumerator RandomizeWaypointPos()
     {
-        foreach (GameObject wayPoint in wayPoints)
+        foreach (GameObject wayPoint in WayPoints)
         {
             wayPoint.transform.position = new Vector3(Random.Range(minX, maxX), wayPoint.transform.position.y, Random.Range(minZ, maxZ));
         }
-
-        yield return new WaitForSeconds(10); StartCoroutine(randomizeWaypointPos());
+        yield return new WaitForSeconds(10); StartCoroutine(RandomizeWaypointPos());
     }
 }

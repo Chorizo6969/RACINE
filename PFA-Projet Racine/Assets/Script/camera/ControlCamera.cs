@@ -3,16 +3,16 @@ using UnityEngine.InputSystem;
 
 public class ControlCamera : MonoBehaviour
 {
-    public Camera Camera;
-    public Transform GOParentTransform;
+    [SerializeField] private Camera Camera;
+    [SerializeField] private Transform GOParentTransform;
     private Vector2 mouseDelta;
-    public float moveSpeed;
-    public GameObject GameObjectParent;
-    public bool isLeftMouseButtonPress;
-    public float maxX;
-    public float minX;
-    public float maxZ;
-    public float minZ;
+    [SerializeField] private float moveSpeed;
+    [SerializeField] private GameObject GameObjectParent;
+    private bool isLeftMouseButtonPress;
+    [SerializeField] private float maxX;
+    [SerializeField] private float minX;
+    [SerializeField] private float maxZ;
+    [SerializeField] private float minZ;
 
     private void Start()
     {
