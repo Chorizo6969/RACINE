@@ -1,17 +1,17 @@
 using UnityEngine;
 
 /// <summary>
-/// Make the plant grow
+/// fait pousser la plante
 /// </summary>
 public class Grow : MonoBehaviour
 {
     /// <summary>
-    /// speed at which the plant will grow
+    /// vitesse de croissance de la plante
     /// </summary>
     [field : SerializeField] public float _growSpeed {  get; private set; }
             
     /// <summary>
-    /// height of the plant at which it will stop growing
+    /// hauteur max à laquelle
     /// </summary>
     [SerializeField] private float _maxHighGrow;
 
