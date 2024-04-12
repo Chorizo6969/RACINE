@@ -1,7 +1,13 @@
 using UnityEngine;
 
-public class giveBuildingToBuild : MonoBehaviour
+/// <summary>
+/// Attribut un batiment quand on clique sur un bouton
+/// </summary>
+public class GiveBuildingToBuild : MonoBehaviour
 {
+    /// <summary>
+    /// Batiment qui va être posé
+    /// </summary>
     public GameObject building;
 
     public void OnClick()

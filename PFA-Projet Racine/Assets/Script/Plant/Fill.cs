@@ -1,10 +1,24 @@
 using UnityEngine;
 using UnityEngine.UI;
 
+/// <summary>
+/// Script qui fait évoluer le cercle du timer
+/// </summary>
 public class Fill : MonoBehaviour
 {
+    /// <summary>
+    /// Référence vers l'image à faire évoluer
+    /// </summary>
     [SerializeField] private Image _imageSprite;
+
+    /// <summary>
+    /// vitesse de remplissage de l'image
+    /// </summary>
     [field : SerializeField] public float FillSpeed { get; set; }
+
+    /// <summary>
+    /// Booléen qui renvoie l'état de remplissage de l'image
+    /// </summary>
     [field : SerializeField] public bool IsFillAmountFull { get; private set; }
 
     private void OnEnable()

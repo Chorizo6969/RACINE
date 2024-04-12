@@ -1,8 +1,14 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
+/// <summary>
+/// Script qui gère les cliques en rapport avec les champs
+/// </summary>
 public class ClickFieldManager : MonoBehaviour
 {
+    /// <summary>
+    /// Référence de la graine de l'humain plante qui va être planter
+    /// </summary>
     [field : SerializeField] public GameObject HumanSeed {  get; set; }
 
     public void OnLeftClick(InputAction.CallbackContext callbackContext)

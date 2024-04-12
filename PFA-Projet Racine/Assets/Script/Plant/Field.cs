@@ -2,26 +2,38 @@ using UnityEngine;
 using UnityEngine.UI;
 
 /// <summary>
-/// plant a seed in a field
+/// Script qui gère les champs
 /// </summary>
 public class Field : MonoBehaviour
 {
     /// <summary>
-    /// Plant that will grow in the field
+    /// Référence de la graine qui va pousser
     /// </summary>
     [field : SerializeField] public GameObject ThePlant { get; set; }
 
     /// <summary>
-    /// used to know if the field is planted
+    /// Booléen qui renvoit si la graine a finit de pousser ou pas
     /// </summary>
     [field : SerializeField] public bool IsPlanted { get; private set; }
 
+    /// <summary>
+    /// Booléen qui renvoit si le champ a été arrosé
+    /// </summary>
     [field : SerializeField] public bool IsWatered { get; private set; }
 
+    /// <summary>
+    /// référence à la plante qui pousse actuellement dans le champ
+    /// </summary>
     [SerializeField] private GameObject _currentPlant;
 
+    /// <summary>
+    /// référence le cercle d'avancement du champ
+    /// </summary>
     [field : SerializeField] public GameObject _progressCircle { get; private set; }
 
+    /// <summary>
+    /// Référence vers le gameObject de l'humain plante
+    /// </summary>
     [SerializeField] private GameObject _humanPlant;
 
     private void Start()

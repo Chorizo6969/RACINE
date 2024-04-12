@@ -1,7 +1,7 @@
 using UnityEngine;
 
 /// <summary>
-/// fait pousser la plante
+/// Script qui fait pousser la plante
 /// </summary>
 public class Grow : MonoBehaviour
 {
@@ -17,7 +17,7 @@ public class Grow : MonoBehaviour
 
     void Update()
     {
-        //make the plant grow and stop if it rech the max high
+        //fait monter la plante et l'arrete lorsqu'elle est à sa hauteur max
         transform.position += new Vector3(0, _growSpeed, 0) * Time.deltaTime;
         if (transform.position.y >= _maxHighGrow)
         {

@@ -2,10 +2,24 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
+/// <summary>
+/// script qui s'occupe du drag n drop des bâtiments
+/// </summary>
 public class dragAndDropBuilding : MonoBehaviour
 {
+    /// <summary>
+    /// Référence du batiment en train d'être placé
+    /// </summary>
     [field : SerializeField] public GameObject BOUGE { get; set; }
+
+    /// <summary>
+    /// booléen qui renvoit si l'on a cliqué sur un bouton pour mettre un batiment
+    /// </summary>
     [field : SerializeField] public bool HasClickOnBuildingButtonInstance {  get; private set; }
+
+    /// <summary>
+    /// position de base de la caméra
+    /// </summary>
     private Vector3 _startPos;
 
 

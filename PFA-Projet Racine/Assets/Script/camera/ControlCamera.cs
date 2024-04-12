@@ -1,17 +1,59 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
+/// <summary>
+/// Script qui gère le contrôle de la caméra.
+/// </summary>
 public class ControlCamera : MonoBehaviour
 {
+    /// <summary>
+    /// Référence vers le component caméra.
+    /// </summary>
     [SerializeField] private Camera Camera;
+
+    /// <summary>
+    /// Référence à la position du parent de la caméra
+    /// </summary>
     [SerializeField] private Transform GOParentTransform;
+
+    /// <summary>
+    /// Stock les mouvements de la souris
+    /// </summary>
     private Vector2 mouseDelta;
+
+    /// <summary>
+    /// Vitesse de déplacement de la caméra
+    /// </summary>
     [SerializeField] private float moveSpeed;
+
+    /// <summary>
+    /// GameObject parent de la caméra
+    /// </summary>
     [SerializeField] private GameObject GameObjectParent;
+
+    /// <summary>
+    /// Booléen disant si on appuit sur le bouton gauche de la souris
+    /// </summary>
     private bool isLeftMouseButtonPress;
+
+    /// <summary>
+    /// valeur max de déplacement sur l'axe X
+    /// </summary>
     [SerializeField] private float maxX;
+
+    /// <summary>
+    /// valeur min de déplacement sur l'axe X
+    /// </summary>
     [SerializeField] private float minX;
+
+    /// <summary>
+    /// valeur max de déplacement sur l'axe Z
+    /// </summary>
     [SerializeField] private float maxZ;
+
+    /// <summary>
+    /// valeur min de déplacement sur l'axe Z
+    /// </summary>
     [SerializeField] private float minZ;
 
     private void Start()
@@ -20,6 +62,10 @@ public class ControlCamera : MonoBehaviour
         isLeftMouseButtonPress = false;
     }
 
+    /// <summary>
+    /// Fonction permettant de zoomer avec la caméra
+    /// </summary>
+    /// <param name="_context"></param>
     public void OnZoomP(InputAction.CallbackContext _context)
     {
         if (Camera.GetComponent<Camera>().orthographicSize >= 1.5f)
@@ -32,6 +78,10 @@ public class ControlCamera : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Fonction permettant de dézoomer
+    /// </summary>
+    /// <param name="_context"></param>
     public void OnZoomM(InputAction.CallbackContext _context)
     {
         if (Camera.GetComponent<Camera>().orthographicSize <= 5f)
@@ -44,6 +94,10 @@ public class ControlCamera : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Fonction qui permet de déplacer la caméra
+    /// </summary>
+    /// <param name="_context"></param>
     public void OnMove(InputAction.CallbackContext _context)
     {
         if (_context.started)
