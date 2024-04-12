@@ -1,9 +1,20 @@
 using UnityEngine;
 
+/// <summary>
+/// Scrit qui permet de snap les bâtiments à la grille
+/// </summary>
 public class GridSnap : MonoBehaviour
 {
+    /// <summary>
+    /// lien vers le component Grid de la scène
+    /// </summary>
     private Grid m_Grid;
-    [SerializeField] private float height = 0.7f;
+
+    /// <summary>
+    /// float qui gère la hauteur à laquelle l'objet devra spawn.
+    /// </summary>
+    [SerializeField] 
+    private float height = 0.7f;
 
     void Start()
     {
