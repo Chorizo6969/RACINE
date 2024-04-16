@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 4633603005798920010}
   - component: {fileID: 7223929643097783217}
   - component: {fileID: 3263280653432247146}
+  - component: {fileID: -8158229954921943655}
   m_Layer: 0
   m_Name: TktField
   m_TagString: field
@@ -139,6 +140,19 @@ MonoBehaviour:
   _currentPlant: {fileID: 0}
   <_progressCircle>k__BackingField: {fileID: 852653124907554685}
   _humanPlant: {fileID: 0}
+--- !u!114 &-8158229954921943655
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1717048504819187851}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a02b9dfc88aa96d4cb0b378a1bbb2ed2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CanvasOptionPanel: {fileID: 0}
 --- !u!1 &4908711219762673393
 GameObject:
   m_ObjectHideFlags: 0
