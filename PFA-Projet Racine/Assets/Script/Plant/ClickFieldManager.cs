@@ -29,17 +29,14 @@ public class ClickFieldManager : MonoBehaviour
                     _fieldPlantScript.ThePlant = HumanSeed;
                     _fieldPlantScript.PlantField();
                     HumanSeed = null;
-                    Debug.Log("Ton pere");
                 }
                 else if (hitInfo.collider.CompareTag("field") && !_fieldPlantScript.IsWatered && _fieldPlantScript.IsPlanted && !GetComponent<dragAndDropBuilding>().HasClickOnBuildingButtonInstance)
                 {
                     _fieldPlantScript.WateringField();
-                    Debug.Log("Ta mere");
                 }
                 else if (hitInfo.collider.CompareTag("field") && _fieldPlantScript.IsPlanted && !GetComponent<dragAndDropBuilding>().HasClickOnBuildingButtonInstance && _fieldPlantScript._progressCircle.GetComponentInChildren<Fill>().IsFillAmountFull)
                 {
                     _fieldPlantScript.HarvestField();
-                    Debug.Log("Ta soeur");
                 }
             }
         }

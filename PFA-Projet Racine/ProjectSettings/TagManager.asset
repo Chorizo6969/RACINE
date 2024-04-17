@@ -7,6 +7,7 @@ TagManager:
   - "\u130D\u1205\u1235\u12F5\u1205\u1235"
   - tile
   - field
+  - building
   layers:
   - Default
   - TransparentFX
