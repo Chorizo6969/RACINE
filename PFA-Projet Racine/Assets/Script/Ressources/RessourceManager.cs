@@ -9,15 +9,54 @@ using UnityEngine.SocialPlatforms.Impl;
 /// </summary>
 public class RessourceManager : MonoBehaviour
 {
+    /// <summary>
+    /// Quantité actuelle de bois
+    /// </summary>
     [SerializeField] private int _wood;
+
+    /// <summary>
+    /// Quantité maximum de bois
+    /// </summary>
     [SerializeField] private int _maxWood;
+
+    /// <summary>
+    /// Texte qui affiche la quantité de bois
+    /// </summary>
     [SerializeField] private TextMeshProUGUI _woodText;
+
+    /// <summary>
+    /// Quantité actuelle d'eau
+    /// </summary>
     [SerializeField] private int _water;
+
+    /// <summary>
+    /// Quantité maximum d'eau
+    /// </summary>
     [SerializeField] private int _maxWater;
+
+    /// <summary>
+    /// Texte qui affiche la quantité d'eau
+    /// </summary>
     [SerializeField] private TextMeshProUGUI _waterText;
+
+    /// <summary>
+    /// Quantité actuelle de pierre
+    /// </summary>
     [SerializeField] private int _stone;
+
+    /// <summary>
+    /// Quantité maximum de pierre
+    /// </summary>
     [SerializeField] private int _maxStone;
+
+    /// <summary>
+    /// texte qui affiche la quantité de pierre
+    /// </summary>
     [SerializeField] private TextMeshProUGUI _stoneText;
+
+    /// <summary>
+    /// Texte d'erreur affiché quand on a pas assez de ressources pour poser un batiment
+    /// </summary>
     [SerializeField] private GameObject _errorText;
 
     private void Start()
@@ -68,6 +107,10 @@ public class RessourceManager : MonoBehaviour
 
     }
 
+    /// <summary>
+    /// Fonction qui permet de modifier la quantité de bois
+    /// </summary>
+    /// <param name="amount">Quantité de bois à ajouter (un nombre négatif diminu la quantité)</param>
     public void EditWoodAmount(int amount)
     {
         if (_wood <= _maxWood)
@@ -88,7 +131,11 @@ public class RessourceManager : MonoBehaviour
             Debug.Log("Stockage full");
         }
     }
-    
+
+    /// <summary>
+    /// Fonction qui permet de modifier la quantité d'eau
+    /// </summary>
+    /// <param name="amount">Quantité de d'eau à ajouter (un nombre négatif diminu la quantité)</param>
     public void EditWaterAmount(int amount)
     {
         if (_water <= _maxWater)
@@ -109,7 +156,11 @@ public class RessourceManager : MonoBehaviour
             Debug.Log("Stockage full");
         }
     }
-    
+
+    /// <summary>
+    /// Fonction qui permet de modifier la quantité de pierre
+    /// </summary>
+    /// <param name="amount">Quantité de de pierre à ajouter (un nombre négatif diminu la quantité)</param>
     public void EditStoneAmount(int amount)
     {
         if (_stone <= _maxStone)
@@ -131,6 +182,12 @@ public class RessourceManager : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Fonction qui vérifie si on a assez de ressource pour poser un batiment
+    /// </summary>
+    /// <param name="_woodCost">le cout en boit du batiment pour lequel on vérifie</param>
+    /// <param name="_stoneCost">le cout en pierre du batiment pour lequel on vérifie</param>
+    /// <returns>retourne vrai ou faux</returns>
     public bool CheckIfCanBuild(int _woodCost, int _stoneCost)
     {
         if (_wood - _woodCost >= 0 && _stone - _stoneCost >= 0)
@@ -145,6 +202,10 @@ public class RessourceManager : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// SetActive false le texte d'erreur après
+    /// </summary>
+    /// <returns></returns>
     IEnumerator SetActiveFalseErrorText()
     {
         yield return new WaitForSeconds(2.5f);
