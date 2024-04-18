@@ -1,19 +1,42 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
     [SerializeField]
     private Animator _uiAnimator;
+    [SerializeField]
+    private GameObject _panel;
+    [SerializeField]
+    private Button _button;
+
+    private int index = 1;
 
     public void ActivationUi()
     {
-        _uiAnimator.SetBool("Click", true);
+        if (index == 1)
+        {
+            _button.interactable = false;
+            _uiAnimator.SetInteger("Click", 1);
+            StartCoroutine(Delay());
+            index += 1;
+        }
+        else if (index == 2)
+        {
+            _button.interactable = false;
+            _uiAnimator.SetInteger("Click", 2);
+            StartCoroutine(Delay());
+            index = 1;
+        }
+
     }
 
-    public void DesactivationUi()
+    IEnumerator Delay()
     {
-        _uiAnimator.SetBool("Click", false);
+        yield return new WaitForSeconds(0.7f);
+        _button.interactable = true;
+
     }
 }
