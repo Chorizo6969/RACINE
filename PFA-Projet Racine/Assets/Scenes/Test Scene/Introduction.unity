@@ -287,7 +287,6 @@ GameObject:
   - component: {fileID: 228234180}
   - component: {fileID: 228234179}
   - component: {fileID: 228234178}
-  - component: {fileID: 228234181}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -369,40 +368,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &228234181
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 228234177}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 72ece51f2901e7445ab60da3685d6b5f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_ShowDebugText: 0
-  m_ShowCameraFrustum: 1
-  m_IgnoreTimeScale: 0
-  m_WorldUpOverride: {fileID: 0}
-  m_UpdateMethod: 2
-  m_BlendUpdateMethod: 1
-  m_DefaultBlend:
-    m_Style: 1
-    m_Time: 2
-    m_CustomCurve:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-  m_CustomBlends: {fileID: 0}
-  m_CameraCutEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_CameraActivatedEvent:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!1 &409097332
 GameObject:
   m_ObjectHideFlags: 0
@@ -431,15 +396,15 @@ RectTransform:
   m_GameObject: {fileID: 409097332}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 933972362}
-  m_Father: {fileID: 775525338}
+  m_Father: {fileID: 597996095}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -362.26746, y: -372.71387}
+  m_AnchoredPosition: {x: 13.465088, y: -372.71387}
   m_SizeDelta: {x: -1166.7102, y: -826.33734}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &409097334
@@ -494,37 +459,139 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   text: {fileID: 933972363}
   lines:
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - "La folie des hommes les a men\xE9s \xE0 leur perte. Ils avaient pr\xE9dit cette
+    catastrophe et n'ont rien fait pour l'\xE9viter, maintenant l'air est irrespirable,
+    trop pollu\xE9 pour retourner en arri\xE8re."
+  - "Les survivants d\xE9j\xE0 bien mis\xE9rables n'ont rien trouv\xE9 de mieux que
+    de faire la guerre, loins d'\xE9galer les glorieuses batailles de leurs anc\xEAtres
+    ils se battaient et s'adonnaient aux crimes comme des animaux."
+  - "Puis vint ce jour... Ce jour o\xF9 les hommes ont encore r\xE9ussi \xE0 r\xE9duire
+    leur esp\xE9rance de vie."
+  - "\xC0 bouts de forces, certains se cachent sous terre, via le m\xE9tro, les \xE9gouts
+    ou encore des galeries creus\xE9es \xE0 la h\xE2te pour \xE9chapper aux flammes
+    qui pleuvaient sur eux, et ceux qui n'ont pas voulu les suivre sont tous morts."
+  - "Ce l\xE0 jour l'humanit\xE9 fut priv\xE9e de sa libert\xE9."
+  - "Sous terre il reste de l'espoir et un peu de solidarit\xE9 dans le coeur des
+    humains pour donner vie \xE0 leurs r\xEAves, le d\xE9sir d'un monde meilleur
+    ne s'est pas \xE9teint chez tout le monde, et c'est avec les derni\xE8res plantes
+    et les derniers humains assez fous pour encore y croire qu'ils mirent au monde
+    un miracle."
+  - 'Un hybride pour changer les choses : L''humain-plante.'
+  - "Mais les humains n'ont pas chang\xE9, et ils se battent encore avec leur nouveau
+    jouet, risquant de d\xE9truire le tout dernier espoir encore fragile de l'humanit\xE9.
+    Vous avez assist\xE9 \xE0 tout cela, vous avez vu la race humaine vous d\xE9cevoir
+    encore, et encore, cette fois-ci vous en avez vu assez"
+  - "Vous avez fuit, emportant avec vous quelques graines d'humain-plantes et vous
+    \xEAtes sorti."
+  - "Dehors, la nature avait repris ses droits et c'est l\xE0 que vous l'avez vu.
+    Immense, \xE9tendant son ombre et ses racines partout... L'arbre de vie."
+  - "Pendant que tout le monde \xE9tait parti il avait soign\xE9 la terre, purg\xE9
+    l'air et rendu au monde sa vitalit\xE9 au centuple. Vous contemplez un instant
+    les graines dans votre main, c'est votre tour, c'est \xE0 vous de reconstruire
+    un monde meilleur.  "
   TextSpeed: 0.02
+--- !u!1 &597996091
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 597996095}
+  - component: {fileID: 597996094}
+  - component: {fileID: 597996093}
+  - component: {fileID: 597996092}
+  m_Layer: 5
+  m_Name: Canvas
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &597996092
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 597996091}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IgnoreReversedGraphics: 1
+  m_BlockingObjects: 0
+  m_BlockingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+--- !u!114 &597996093
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 597996091}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_UiScaleMode: 0
+  m_ReferencePixelsPerUnit: 100
+  m_ScaleFactor: 1
+  m_ReferenceResolution: {x: 1920, y: 1080}
+  m_ScreenMatchMode: 0
+  m_MatchWidthOrHeight: 0
+  m_PhysicalUnit: 3
+  m_FallbackScreenDPI: 96
+  m_DefaultSpriteDPI: 96
+  m_DynamicPixelsPerUnit: 1
+  m_PresetInfoIsWorld: 0
+--- !u!223 &597996094
+Canvas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 597996091}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_RenderMode: 0
+  m_Camera: {fileID: 228234179}
+  m_PlaneDistance: 100
+  m_PixelPerfect: 0
+  m_ReceivesEvents: 1
+  m_OverrideSorting: 0
+  m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
+  m_VertexColorAlwaysGammaSpace: 0
+  m_AdditionalShaderChannelsFlag: 0
+  m_UpdateRectTransformForStandalone: 0
+  m_SortingLayerID: 0
+  m_SortingOrder: 1
+  m_TargetDisplay: 0
+--- !u!224 &597996095
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 597996091}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0, y: 0, z: 0}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 409097333}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0, y: 0}
 --- !u!1 &683129044
 GameObject:
   m_ObjectHideFlags: 0
@@ -637,7 +704,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _animator: {fileID: 683129048}
   _conditionName: Transition4
-  delay: 52
+  delay: 87
 --- !u!1 &752878081
 GameObject:
   m_ObjectHideFlags: 0
@@ -785,7 +852,6 @@ RectTransform:
   m_Children:
   - {fileID: 1492447475}
   - {fileID: 56984172}
-  - {fileID: 409097333}
   m_Father: {fileID: 870029176}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -866,7 +932,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _animator: {fileID: 775525341}
   _conditionName: Transition3
-  delay: 22
+  delay: 47
 --- !u!1 &870029172
 GameObject:
   m_ObjectHideFlags: 0
@@ -935,8 +1001,8 @@ Canvas:
   m_GameObject: {fileID: 870029172}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
-  m_Camera: {fileID: 0}
+  m_RenderMode: 1
+  m_Camera: {fileID: 228234179}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
@@ -1237,8 +1303,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -158, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -4.5, y: 0}
+  m_SizeDelta: {x: -9, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1218561682
 MonoBehaviour:
@@ -1292,7 +1358,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _animator: {fileID: 1218561685}
   _conditionName: Transition2
-  delay: 12
+  delay: 18
 --- !u!95 &1218561685
 Animator:
   serializedVersion: 5
@@ -1471,4 +1537,5 @@ SceneRoots:
   - {fileID: 228234180}
   - {fileID: 1031975432}
   - {fileID: 870029176}
+  - {fileID: 597996095}
   - {fileID: 135078744}
