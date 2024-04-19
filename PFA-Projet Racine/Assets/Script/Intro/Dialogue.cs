@@ -44,7 +44,7 @@ public class Dialogue : MonoBehaviour
 
     IEnumerator Accept()
     {
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(10);
         //StopAllCoroutines();
         //text.text = lines[index];
         NextLines();

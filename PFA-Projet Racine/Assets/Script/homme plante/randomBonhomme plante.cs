@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MoveToRandomPosition : MonoBehaviour
 {
-    [SerializeField] private int speed;
+    [SerializeField] private float speed;
     [SerializeField] private GameObject listOwner;
     private bool _canMove;
     private Vector3 _positionToGo;
@@ -12,8 +12,7 @@ public class MoveToRandomPosition : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        StartCoroutine(FindRandomPositionToGo());
-        StartCoroutine(AutorizeMove());
+        StartCoroutine(ATTEND());
     }
 
     public void Update()
@@ -33,15 +32,14 @@ public class MoveToRandomPosition : MonoBehaviour
         //_positionToGo.Normalize();
         
 
-        yield return new WaitForSeconds(Random.Range(2, 7)); StartCoroutine(FindRandomPositionToGo());
+        yield return new WaitForSeconds(Random.Range(2, 7));
+        StartCoroutine(FindRandomPositionToGo());
     }
 
     private Vector3 FindDirection(GameObject thisGO, GameObject targetDestination)
     {
         Vector3 direction = targetDestination.transform.position - thisGO.transform.position;
         direction.y = 1;
-
-
         return direction;
     }
 
@@ -50,6 +48,14 @@ public class MoveToRandomPosition : MonoBehaviour
         _canMove = true;
         int timeToWait = Random.Range(2, 5);
         yield return new WaitForSeconds(timeToWait);
-        _canMove = false; yield return new WaitForSeconds(timeToWait); StartCoroutine(AutorizeMove());
+        _canMove = false; yield return new WaitForSeconds(timeToWait);
+        StartCoroutine(AutorizeMove());
+    }
+
+    IEnumerator ATTEND()
+    {
+        yield return new WaitForSeconds(3);
+        StartCoroutine(FindRandomPositionToGo());
+        StartCoroutine(AutorizeMove());
     }
 }
