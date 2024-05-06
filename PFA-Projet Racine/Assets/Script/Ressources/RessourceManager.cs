@@ -130,8 +130,8 @@ public class RessourceManager : MonoBehaviour
             {
                 _wood = 0;
             }
-            AddingWoodText.gameObject.SetActive(true);
-            AddingWoodText.GetComponent<AddScoreJuice>().ChangeValues(amount);
+/*            AddingWoodText.gameObject.SetActive(true);
+            AddingWoodText.GetComponent<AddScoreJuice>().ChangeValues(amount);*/
             StartCoroutine(WoodAttend());
         }
         else
@@ -157,8 +157,8 @@ public class RessourceManager : MonoBehaviour
             {
                 _water = 0;
             }
-            AddingWaterText.gameObject.SetActive(true);
-            AddingWaterText.GetComponent<AddScoreJuice>().ChangeValues(amount);
+/*            AddingWaterText.gameObject.SetActive(true);
+            AddingWaterText.GetComponent<AddScoreJuice>().ChangeValues(amount);*/
             StartCoroutine(WaterAttend());
         }
         else
@@ -184,8 +184,8 @@ public class RessourceManager : MonoBehaviour
             {
                 _stone = 0;
             }
-            AddingStoneText.gameObject.SetActive(true);
-            AddingStoneText.GetComponent<AddScoreJuice>().ChangeValues(amount);
+/*            AddingStoneText.gameObject.SetActive(true);
+            AddingStoneText.GetComponent<AddScoreJuice>().ChangeValues(amount);*/
             StartCoroutine(StoneAttend());
         }
         else
