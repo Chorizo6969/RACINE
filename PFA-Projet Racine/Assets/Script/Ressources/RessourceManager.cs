@@ -54,6 +54,12 @@ public class RessourceManager : MonoBehaviour
     /// </summary>
     [SerializeField] private TextMeshProUGUI _stoneText;
 
+    [SerializeField] private TextMeshProUGUI AddingWaterText;
+
+    [SerializeField] private TextMeshProUGUI AddingWoodText;
+
+    [SerializeField] private TextMeshProUGUI AddingStoneText;
+
     /// <summary>
     /// Texte d'erreur affiché quand on a pas assez de ressources pour poser un batiment
     /// </summary>
@@ -124,7 +130,9 @@ public class RessourceManager : MonoBehaviour
             {
                 _wood = 0;
             }
-            _woodText.text = _wood.ToString() + "/" + _maxWood.ToString();
+            AddingWoodText.gameObject.SetActive(true);
+            AddingWoodText.GetComponent<AddScoreJuice>().ChangeValues(amount);
+            StartCoroutine(WoodAttend());
         }
         else
         {
@@ -149,7 +157,9 @@ public class RessourceManager : MonoBehaviour
             {
                 _water = 0;
             }
-            _waterText.text = _water.ToString() + "/" + _maxWater.ToString();
+            AddingWaterText.gameObject.SetActive(true);
+            AddingWaterText.GetComponent<AddScoreJuice>().ChangeValues(amount);
+            StartCoroutine(WaterAttend());
         }
         else
         {
@@ -174,7 +184,9 @@ public class RessourceManager : MonoBehaviour
             {
                 _stone = 0;
             }
-            _stoneText.text = _stone.ToString() + "/" + _maxStone.ToString();
+            AddingStoneText.gameObject.SetActive(true);
+            AddingStoneText.GetComponent<AddScoreJuice>().ChangeValues(amount);
+            StartCoroutine(StoneAttend());
         }
         else
         {
@@ -211,4 +223,23 @@ public class RessourceManager : MonoBehaviour
         yield return new WaitForSeconds(2.5f);
         _errorText.SetActive(false);
     }
+
+    IEnumerator WoodAttend()
+    {
+        yield return new WaitForSeconds(1);
+        _woodText.text = _wood.ToString() + "/" + _maxWood.ToString();
+    }
+
+    IEnumerator WaterAttend()
+    {
+        yield return new WaitForSeconds(1);
+        _waterText.text = _water.ToString() + "/" + _maxWater.ToString();
+    }
+
+    IEnumerator StoneAttend()
+    {
+        yield return new WaitForSeconds(1);
+        _stoneText.text = _stone.ToString() + "/" + _maxStone.ToString();
+    }
+
 }

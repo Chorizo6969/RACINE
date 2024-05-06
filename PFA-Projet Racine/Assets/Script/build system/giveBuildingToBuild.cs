@@ -10,6 +10,8 @@ public class GiveBuildingToBuild : MonoBehaviour
     /// </summary>
     public GameObject building;
 
+    [SerializeField] private GameObject HidePointListOwner;
+
     public void OnClick()
     {
         if (GetComponent<BuildingCost>().PlayerRessourceManager.CheckIfCanBuild(GetComponent<BuildingCost>().WoodCost, GetComponent<BuildingCost>().StoneCost))
@@ -19,6 +21,10 @@ public class GiveBuildingToBuild : MonoBehaviour
             GameObject newBuilding = Instantiate(building);
             _objectToGiveBuilding.GetComponent<dragAndDropBuilding>().BOUGE = newBuilding;
             _objectToGiveBuilding.GetComponent<dragAndDropBuilding>().ClickOnButtonInstancier();
+            if (newBuilding.GetComponent<BuildingCanvas>().HidePoint != null)
+            {
+                HidePointListOwner.GetComponent<HidePointList>().AddObjectInList(newBuilding.GetComponent<BuildingCanvas>().HidePoint);
+            }
         }
     }
 }
