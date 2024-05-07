@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class MoveToRandomPosition : MonoBehaviour
 {
@@ -12,12 +13,13 @@ public class MoveToRandomPosition : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
         StartCoroutine(ATTEND());
     }
 
     public void Update()
     {
-        if (_canMove)
+        if (_canMove && !GetComponent<HideNSeek>().IsHiding)
         {
             Vector3 _directionToGo = Vector3.MoveTowards(transform.position, _positionToGo, speed * Time.deltaTime);
             transform.position = _directionToGo;
@@ -27,10 +29,8 @@ public class MoveToRandomPosition : MonoBehaviour
     IEnumerator FindRandomPositionToGo()
     {
         List<GameObject> list = listOwner.GetComponent<wayPointPosManager>().WayPoints;
-        _positionToGo = FindDirection(gameObject, list[Random.Range(0, list.Count)]);
 
-        //_positionToGo.Normalize();
-        
+        _positionToGo = FindDirection(gameObject, list[Random.Range(0, list.Count)]);
 
         yield return new WaitForSeconds(Random.Range(2, 7));
         StartCoroutine(FindRandomPositionToGo());
@@ -48,7 +48,8 @@ public class MoveToRandomPosition : MonoBehaviour
         _canMove = true;
         int timeToWait = Random.Range(2, 5);
         yield return new WaitForSeconds(timeToWait);
-        _canMove = false; yield return new WaitForSeconds(timeToWait);
+        _canMove = false; 
+        yield return new WaitForSeconds(timeToWait);
         StartCoroutine(AutorizeMove());
     }
 

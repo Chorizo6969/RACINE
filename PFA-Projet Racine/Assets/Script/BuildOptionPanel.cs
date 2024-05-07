@@ -21,7 +21,7 @@ public class BuildOptionPanel : MonoBehaviour
                     _lastClickBuilding = collider;
                     collider.GetComponent<BuildingCanvas>().PanelSetActive(true);
                 }
-                else
+                else if (_lastClickBuilding != null) 
                 {
                     _lastClickBuilding.GetComponent<BuildingCanvas>().PanelSetActive(false);
                     _lastClickBuilding = null;
