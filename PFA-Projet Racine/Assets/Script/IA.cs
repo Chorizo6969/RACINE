@@ -14,23 +14,11 @@ public class IA : MonoBehaviour
     [SerializeField]
     private Human _scriptableHuman;
 
-    /// <summary>
-    /// Job possible 1
-    /// </summary>
-    [SerializeField]
-    private GameObject _jobTarget1;
+    public string Nom;
 
-    /// <summary>
-    /// Job possible 2
-    /// </summary>
-    [SerializeField]
-    private GameObject _jobTarget2;
+    public string Adjectif;
 
-    /// <summary>
-    /// Job possible 3
-    /// </summary>
-    [SerializeField]
-    private GameObject _jobTarget3;
+    public List<GameObject> work;
 
     /// <summary>
     /// lien vers le gameObject
@@ -64,15 +52,15 @@ public class IA : MonoBehaviour
 
         if (_scriptableHuman.Work == ("Bucheron"))
         {
-            _currentTarget = _jobTarget1;
+            _currentTarget = work[0];
         }
         else if (_scriptableHuman.Work == ("Mineur"))
         {
-            _currentTarget = _jobTarget2;
+            _currentTarget = work[1];
         }
         else 
-        { 
-            _currentTarget = _jobTarget3;
+        {
+            _currentTarget = work[2];
         }
 
     }
@@ -92,7 +80,7 @@ public class IA : MonoBehaviour
     public void GiveTarget()
     {
         _agent.SetDestination(_currentTarget.transform.position); //Ne met pas à jours le chemin de l'IA
-        StartCoroutine(Task());
+        //StartCoroutine(Task());
     }
 
     /// <summary>

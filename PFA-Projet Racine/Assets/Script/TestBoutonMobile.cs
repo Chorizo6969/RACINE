@@ -6,6 +6,6 @@ public class TestBoutonMobile : MonoBehaviour
 {
     public void OnClick()
     {
-        Debug.Log("TA MERE LA PUTE");
+        Debug.Log("Test");
     }
 }
