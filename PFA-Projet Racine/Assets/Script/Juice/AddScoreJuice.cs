@@ -15,6 +15,7 @@ public class AddScoreJuice : MonoBehaviour
 
     void Awake()
     {
+        Destroy(gameObject, 1);
         _objectTransform = GetComponent<RectTransform>();
     }
 
@@ -37,7 +38,6 @@ public class AddScoreJuice : MonoBehaviour
             if (count >= 1)
             {
                 _letsGo = false;
-                gameObject.SetActive(false);
             }
         }
     }
