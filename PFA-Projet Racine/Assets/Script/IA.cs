@@ -92,7 +92,7 @@ public class IA : MonoBehaviour
     /// <returns> retourne un new WaitForSeconds de 5s </returns>
     IEnumerator Task()
     {
-        yield return new WaitForSeconds(10);
+        yield return new WaitForSeconds(60);
         GetComponent<HideNSeek>()._startHiding = true;
         if (_goHdv )
         {
