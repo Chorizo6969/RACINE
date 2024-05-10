@@ -8,6 +8,7 @@ TagManager:
   - tile
   - field
   - building
+  - humanPlant
   layers:
   - Default
   - TransparentFX
