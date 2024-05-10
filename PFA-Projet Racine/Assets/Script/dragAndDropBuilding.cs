@@ -39,6 +39,14 @@ public class dragAndDropBuilding : MonoBehaviour
         }
     }
 
+    public void BuildRotation(InputAction.CallbackContext callBackContext)
+    {
+        if (callBackContext.started)
+        {
+            BOUGE.transform.Rotate(new Vector3(0, 90, 0));
+        }
+    }
+
     // Update is called once per frame
     void FixedUpdate()
     {
