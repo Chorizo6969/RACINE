@@ -10,6 +10,11 @@ public class MoveToRandomPosition : MonoBehaviour
     private bool _canMove;
     private Vector3 _positionToGo;
 
+    private void Awake()
+    {
+        listOwner = wayPointPosManager.Instance.gameObject;
+    }
+
     // Start is called before the first frame update
     void Start()
     {

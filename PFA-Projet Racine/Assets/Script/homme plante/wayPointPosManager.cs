@@ -10,6 +10,12 @@ public class wayPointPosManager : MonoBehaviour
     [SerializeField] private float minZ;
     [SerializeField] private float maxZ;
 
+    public static wayPointPosManager Instance;
+
+    private void Awake()
+    {
+        Instance = this;
+    }
 
     // Start is called before the first frame update
     void Start()

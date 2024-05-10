@@ -62,7 +62,6 @@ public class IA : MonoBehaviour
         {
             _currentTarget = work[2];
         }
-
     }
 
     private void Update()
@@ -79,8 +78,9 @@ public class IA : MonoBehaviour
     /// </summary>
     public void GiveTarget()
     {
+        _agent.speed = 3;
         _agent.SetDestination(_currentTarget.transform.position); //Ne met pas à jours le chemin de l'IA
-        //StartCoroutine(Task());
+        StartCoroutine(Task());
     }
 
     /// <summary>
@@ -89,15 +89,16 @@ public class IA : MonoBehaviour
     /// <returns> retourne un new WaitForSeconds de 5s </returns>
     IEnumerator Task()
     {
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(10);
+        GetComponent<HideNSeek>()._startHiding = true;
         if (_goHdv )
         {
-            _agent.SetDestination(new Vector3(3, 0.8277f, 3));
-            //lien pour stonks les ressources
+            /*_agent.SetDestination(new Vector3(3, 0.8277f, 3));*/
+            
         }
         else
         {
-            _agent.SetDestination(new Vector3(1, 0, 0));
+            /*_agent.SetDestination(new Vector3(1, 0, 0));*/
         }
     }
 }

@@ -1,3 +1,6 @@
+using System;
+using System.Collections.Generic;
+using UnityEditor.Rendering;
 using UnityEngine;
 
 /// <summary>
@@ -15,11 +18,19 @@ public class GivePlant : MonoBehaviour
     /// </summary>
     [SerializeField] private GameObject _camera;
 
+    [SerializeField] private GameObject _humanPlantPrefab;
+
+    [SerializeField] private GameObject _buttonExpeditionPrefab;
+
+    [SerializeField] private GameObject _content;
+
     /// <summary>
     /// attribue la graine définie à l'emplacement de graine de al caméra
     /// </summary>
     public void OnClick()
     {
-        _camera.GetComponent<ClickFieldManager>().HumanSeed = _seed;
+        ClickFieldManager _clickFieldManager = _camera.GetComponent<ClickFieldManager>();
+        _clickFieldManager.HumanSeed = _seed;
+        GiveRefToField.instance.GiveRefPasTuple(_clickFieldManager.gameObject ,_humanPlantPrefab, _buttonExpeditionPrefab, _content);
     }
 }
