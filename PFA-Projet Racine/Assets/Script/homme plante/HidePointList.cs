@@ -5,6 +5,12 @@ using UnityEngine;
 public class HidePointList : MonoBehaviour
 {
     [field : SerializeField] public List<GameObject> HidePointsList { get; private set; }
+    public static HidePointList instance;
+
+    private void Awake()
+    {
+        instance = this;
+    }
 
     public void AddObjectInList(GameObject obj) 
     {

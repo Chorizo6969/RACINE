@@ -30,8 +30,15 @@ public class NamesGenerator : MonoBehaviour
     [field: SerializeField]
     public List<string> _arrayAdjectifFem { get; set; } = new List<string>();
 
+    public static NamesGenerator Instance;
+
     public string Nom;
     public string Adjectif;
+
+    private void Awake()
+    {
+        Instance = this;
+    }
 
     /// <summary>
     /// Fonction qui choisi le genre de l'humain plante ainsi que son nom
