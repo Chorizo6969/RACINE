@@ -54,11 +54,10 @@ public class RessourceManager : MonoBehaviour
     /// </summary>
     [SerializeField] private TextMeshProUGUI _stoneText;
 
-    [SerializeField] private TextMeshProUGUI AddingWaterText;
 
-    [SerializeField] private TextMeshProUGUI AddingWoodText;
+    [SerializeField] private GameObject AddingScoreText;
 
-    [SerializeField] private TextMeshProUGUI AddingStoneText;
+    [SerializeField] private GameObject _panelParent;
 
     /// <summary>
     /// Texte d'erreur affiché quand on a pas assez de ressources pour poser un batiment
@@ -119,7 +118,7 @@ public class RessourceManager : MonoBehaviour
     /// <param name="amount">Quantité de bois à ajouter (un nombre négatif diminu la quantité)</param>
     public void EditWoodAmount(int amount)
     {
-        if (_wood <= _maxWood)
+        if (_wood < _maxWood)
         {
             _wood += amount;
             if (_wood >= _maxWood)
@@ -130,11 +129,16 @@ public class RessourceManager : MonoBehaviour
             {
                 _wood = 0;
             }
-            AddingWoodText.gameObject.SetActive(true);
-            AddingWoodText.GetComponent<AddScoreJuice>().ChangeValues(amount);
+
+            GameObject newWoodText = Instantiate(AddingScoreText);
+            newWoodText.name = "wood";
+            newWoodText.transform.SetParent(_panelParent.transform, true);
+            newWoodText.transform.localPosition = new Vector3(-20, -40, 0);
+            newWoodText.GetComponent<AddScoreJuice>().ChangeValues(amount);
+
             StartCoroutine(WoodAttend());
         }
-        else
+        else if (_wood == _maxWood)
         {
             Debug.Log("Stockage full");
         }
@@ -157,8 +161,13 @@ public class RessourceManager : MonoBehaviour
             {
                 _water = 0;
             }
-            AddingWaterText.gameObject.SetActive(true);
-            AddingWaterText.GetComponent<AddScoreJuice>().ChangeValues(amount);
+
+            GameObject newWaterText = Instantiate(AddingScoreText);
+            newWaterText.name = "water";
+            newWaterText.transform.SetParent(_panelParent.transform, true);
+            newWaterText.transform.localPosition = new Vector3(-260, -40, 0);
+            newWaterText.GetComponent<AddScoreJuice>().ChangeValues(amount);
+
             StartCoroutine(WaterAttend());
         }
         else
@@ -184,8 +193,13 @@ public class RessourceManager : MonoBehaviour
             {
                 _stone = 0;
             }
-            AddingStoneText.gameObject.SetActive(true);
-            AddingStoneText.GetComponent<AddScoreJuice>().ChangeValues(amount);
+
+            GameObject newStoneText = Instantiate(AddingScoreText);
+            newStoneText.name = "stone";
+            newStoneText.transform.SetParent(_panelParent.transform, true);
+            newStoneText.transform.localPosition = new Vector3(280, -40, 0);
+            newStoneText.GetComponent<AddScoreJuice>().ChangeValues(amount);
+
             StartCoroutine(StoneAttend());
         }
         else

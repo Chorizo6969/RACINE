@@ -13,6 +13,18 @@ public class Human : ScriptableObject
     public string Work { get;  set; }
 
     /// <summary>
+    /// Variable string qui permet d'attribuer un nom à un humain plante
+    /// </summary>
+    [field: SerializeField]
+    public string Name { get; set; }
+
+    /// <summary>
+    /// Variable string qui permet d'attribuer un adjectif à un humain plante
+    /// </summary>
+    [field: SerializeField]
+    public string Adjectif { get; set; }
+
+    /// <summary>
     /// Permet de changer le Mesh d'un humain plante.
     /// </summary>
     [field: SerializeField]

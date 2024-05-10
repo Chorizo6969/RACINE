@@ -12,5 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fea9b17704bb4694e949eab158f53802, type: 3}
   m_Name: Human_ 2
   m_EditorClassIdentifier: 
-  <Work>k__BackingField: Bucheron
+  <Work>k__BackingField: Mineur
+  <Name>k__BackingField: 
+  <Adjectif>k__BackingField: 
   <Sprite>k__BackingField: {fileID: 0}
