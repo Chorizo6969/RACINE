@@ -24,7 +24,7 @@ public class Field : MonoBehaviour
     /// <summary>
     /// référence à la plante qui pousse actuellement dans le champ
     /// </summary>
-    [Field : SerializeField] public GameObject _currentPlant {  get; private set; }
+    [field : SerializeField] public GameObject _currentPlant {  get; private set; }
 
     /// <summary>
     /// référence le cercle d'avancement du champ
