@@ -9,26 +9,27 @@ public class MoveToRandomPosition : MonoBehaviour
     [SerializeField] private GameObject listOwner;
     private bool _canMove;
     private Vector3 _positionToGo;
+    private NavMeshAgent _navMeshAgent;
 
     private void Awake()
     {
         listOwner = wayPointPosManager.Instance.gameObject;
+        _navMeshAgent = GetComponent<NavMeshAgent>();
     }
 
     // Start is called before the first frame update
     void Start()
     {
-
         StartCoroutine(ATTEND());
     }
 
     public void Update()
     {
-        if (_canMove && !GetComponent<HideNSeek>().IsHiding)
+        /*if (_canMove && !GetComponent<HideNSeek>().IsHiding)
         {
             Vector3 _directionToGo = Vector3.MoveTowards(transform.position, _positionToGo, speed * Time.deltaTime);
             transform.position = _directionToGo;
-        }
+        }*/
     }
 
     IEnumerator FindRandomPositionToGo()
@@ -36,6 +37,10 @@ public class MoveToRandomPosition : MonoBehaviour
         List<GameObject> list = listOwner.GetComponent<wayPointPosManager>().WayPoints;
 
         _positionToGo = FindDirection(gameObject, list[Random.Range(0, list.Count)]);
+        if (!GetComponent<HideNSeek>().IsHiding && !GetComponent<IA>().ÎsËnÉxpédìtïôn)
+        {
+            _navMeshAgent.SetDestination(_positionToGo);
+        }
 
         yield return new WaitForSeconds(Random.Range(2, 7));
         StartCoroutine(FindRandomPositionToGo());
@@ -50,12 +55,22 @@ public class MoveToRandomPosition : MonoBehaviour
 
     IEnumerator AutorizeMove()
     {
-        _canMove = true;
-        int timeToWait = Random.Range(2, 5);
-        yield return new WaitForSeconds(timeToWait);
-        _canMove = false; 
-        yield return new WaitForSeconds(timeToWait);
-        StartCoroutine(AutorizeMove());
+        if (!GetComponent<HideNSeek>().IsHiding && !GetComponent<IA>().ÎsËnÉxpédìtïôn)
+        {
+            _canMove = true;
+            _navMeshAgent.speed = 1;
+            int timeToWait = Random.Range(2, 5);
+            yield return new WaitForSeconds(timeToWait);
+            _canMove = false;
+            _navMeshAgent.speed = 0;
+            yield return new WaitForSeconds(timeToWait);
+            StartCoroutine(AutorizeMove());
+        }
+        else
+        {
+            yield return new WaitForSeconds(1);
+            StartCoroutine(AutorizeMove());
+        }
     }
 
     IEnumerator ATTEND()

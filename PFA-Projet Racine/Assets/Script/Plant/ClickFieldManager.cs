@@ -10,13 +10,7 @@ public class ClickFieldManager : MonoBehaviour
     /// <summary>
     /// Référence de la graine de l'humain plante qui va être planter
     /// </summary>
-    [field : SerializeField] public GameObject HumanSeed {  get; set; }/*
-
-    [SerializeField] private GameObject _humanPlantPrefab;
-
-    [SerializeField] private GameObject _buttonExpeditionPrefab;
-
-    [SerializeField] private GameObject _content;*/
+    [field : SerializeField] public GameObject HumanSeed {  get; set; }
 
     public void OnLeftClick(InputAction.CallbackContext callbackContext)
     {
