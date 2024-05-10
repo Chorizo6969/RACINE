@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -9,7 +10,13 @@ public class ClickFieldManager : MonoBehaviour
     /// <summary>
     /// Référence de la graine de l'humain plante qui va être planter
     /// </summary>
-    [field : SerializeField] public GameObject HumanSeed {  get; set; }
+    [field : SerializeField] public GameObject HumanSeed {  get; set; }/*
+
+    [SerializeField] private GameObject _humanPlantPrefab;
+
+    [SerializeField] private GameObject _buttonExpeditionPrefab;
+
+    [SerializeField] private GameObject _content;*/
 
     public void OnLeftClick(InputAction.CallbackContext callbackContext)
     {
@@ -28,6 +35,8 @@ public class ClickFieldManager : MonoBehaviour
                 {
                     _fieldPlantScript.ThePlant = HumanSeed;
                     _fieldPlantScript.PlantField();
+                    GiveRefToField.instance.GiveRefPasTuple(_touchedField, GetComponent<Spawn>().HumanPrefab, GetComponent<Spawn>().PrefabButton, GetComponent<Spawn>().Parent);
+                    
                     HumanSeed = null;
                 }
                 else if (hitInfo.collider.CompareTag("field") && !_fieldPlantScript.IsWatered && _fieldPlantScript.IsPlanted && !GetComponent<dragAndDropBuilding>().HasClickOnBuildingButtonInstance)
