@@ -47,7 +47,7 @@ public class IA : MonoBehaviour
     /// </summary>
     private NavMeshAgent _agent;
 
-    public bool ÎsËxpédìtïón;
+    public bool IsEnExpedition;
 
     private void Start()
     {
@@ -93,10 +93,10 @@ public class IA : MonoBehaviour
     /// <returns> retourne un new WaitForSeconds de 5s </returns>
     IEnumerator Task()
     {
-        ÎsËxpédìtïón = true;
-        yield return new WaitForSeconds(10);
+        IsEnExpedition = true;
+        yield return new WaitForSeconds(60);
         GetComponent<HideNSeek>()._startHiding = true;
-        ÎsËxpédìtïón = false;
+        IsEnExpedition = false;
         if (_goHdv )
         {
             /*_agent.SetDestination(new Vector3(3, 0.8277f, 3));*/
