@@ -13082,6 +13082,22 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 5bbdd229-19ec-4171-a9f4-2b402c3136cc
     m_ActionName: CamMoove/OnRightClick[/Mouse/rightButton]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1968578577}
+        m_TargetAssemblyTypeName: FindHUmanPlant, Assembly-CSharp
+        m_MethodName: OnLeftClickOnHumanPlant
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 07dffb48-224b-4d36-8c0b-fc9615bdf543
+    m_ActionName: CamMoove/OnLeftClick[/Mouse/leftButton]
   m_NeverAutoSwitchControlSchemes: 1
   m_DefaultControlScheme: 
   m_DefaultActionMap: CamMoove
@@ -15135,7 +15151,7 @@ GameObject:
   - component: {fileID: 1161833896}
   m_Layer: 0
   m_Name: IA Eau
-  m_TagString: Untagged
+  m_TagString: humanPlant
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -19882,7 +19898,7 @@ GameObject:
   - component: {fileID: 1478490927}
   m_Layer: 0
   m_Name: IA pierre
-  m_TagString: Untagged
+  m_TagString: humanPlant
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -28255,6 +28271,7 @@ GameObject:
   - component: {fileID: 1968578574}
   - component: {fileID: 1968578575}
   - component: {fileID: 1968578576}
+  - component: {fileID: 1968578577}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -28483,6 +28500,18 @@ MonoBehaviour:
   - {fileID: 1755894872}
   - {fileID: 320729574}
   NamesGenerator: {fileID: 910598301}
+--- !u!114 &1968578577
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1968578566}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09d6e8762626fd04aa4d92468b7a269b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1988582287
 GameObject:
   m_ObjectHideFlags: 0
@@ -28691,7 +28720,7 @@ GameObject:
   - component: {fileID: 2009223091}
   m_Layer: 0
   m_Name: IA bois
-  m_TagString: Untagged
+  m_TagString: humanPlant
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
