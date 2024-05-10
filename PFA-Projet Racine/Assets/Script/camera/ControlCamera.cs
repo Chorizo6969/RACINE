@@ -56,6 +56,9 @@ public class ControlCamera : MonoBehaviour
     /// </summary>
     [SerializeField] private float minZ;
 
+    public float ZoomMax;
+    public float ZoomMin;
+
     private void Start()
     {
         GOParentTransform = GameObjectParent.transform;
@@ -68,12 +71,12 @@ public class ControlCamera : MonoBehaviour
     /// <param name="_context"></param>
     public void OnZoomP(InputAction.CallbackContext _context)
     {
-        if (Camera.GetComponent<Camera>().orthographicSize >= 1.5f)
+        if (Camera.GetComponent<Camera>().orthographicSize >= ZoomMin)
         {
             Camera.GetComponent<Camera>().orthographicSize -= 0.06f;
-            if (Camera.GetComponent<Camera>().orthographicSize <= 1.5f)
+            if (Camera.GetComponent<Camera>().orthographicSize <= ZoomMin)
             {
-                Camera.GetComponent<Camera>().orthographicSize = 1.5f;
+                Camera.GetComponent<Camera>().orthographicSize = ZoomMin;
             }
         }
     }
@@ -84,12 +87,12 @@ public class ControlCamera : MonoBehaviour
     /// <param name="_context"></param>
     public void OnZoomM(InputAction.CallbackContext _context)
     {
-        if (Camera.GetComponent<Camera>().orthographicSize <= 5f)
+        if (Camera.GetComponent<Camera>().orthographicSize <= ZoomMax)
         {
             Camera.GetComponent<Camera>().orthographicSize += 0.06f;
-            if (Camera.GetComponent<Camera>().orthographicSize >= 5f)
+            if (Camera.GetComponent<Camera>().orthographicSize >= ZoomMax)
             {
-                Camera.GetComponent<Camera>().orthographicSize = 5f;
+                Camera.GetComponent<Camera>().orthographicSize = ZoomMax;
             }
         }
     }

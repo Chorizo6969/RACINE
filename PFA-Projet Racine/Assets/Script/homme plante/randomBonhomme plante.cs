@@ -37,7 +37,7 @@ public class MoveToRandomPosition : MonoBehaviour
         List<GameObject> list = listOwner.GetComponent<wayPointPosManager>().WayPoints;
 
         _positionToGo = FindDirection(gameObject, list[Random.Range(0, list.Count)]);
-        if (!GetComponent<HideNSeek>().IsHiding && !GetComponent<IA>().ÎsËxpédìtïón)
+        if (!GetComponent<HideNSeek>().IsHiding && !GetComponent<IA>().IsEnExpedition)
         {
             _navMeshAgent.SetDestination(_positionToGo);
         }
@@ -55,7 +55,7 @@ public class MoveToRandomPosition : MonoBehaviour
 
     IEnumerator AutorizeMove()
     {
-        if (!GetComponent<HideNSeek>().IsHiding && !GetComponent<IA>().ÎsËxpédìtïón)
+        if (!GetComponent<HideNSeek>().IsHiding && !GetComponent<IA>().IsEnExpedition)
         {
             _canMove = true;
             _navMeshAgent.speed = 1;

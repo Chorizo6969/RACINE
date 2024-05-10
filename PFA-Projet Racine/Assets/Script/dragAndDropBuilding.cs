@@ -41,7 +41,7 @@ public class dragAndDropBuilding : MonoBehaviour
 
     public void BuildRotation(InputAction.CallbackContext callBackContext)
     {
-        if (callBackContext.started)
+        if (callBackContext.started && BOUGE != null)
         {
             BOUGE.transform.Rotate(new Vector3(0, 90, 0));
         }
