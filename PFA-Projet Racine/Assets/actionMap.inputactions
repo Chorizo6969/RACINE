@@ -157,6 +157,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "ROTATE",
+                    "type": "Button",
+                    "id": "a2853fa3-4fa2-4d91-af24-07210693c4f2",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -652,6 +661,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "OnLeftClick",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "26b21c79-7ac9-4041-bb34-2859aefd6e0b",
+                    "path": "<Keyboard>/r",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ROTATE",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

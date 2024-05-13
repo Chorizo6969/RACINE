@@ -22,6 +22,8 @@ public class dragAndDropBuilding : MonoBehaviour
     /// </summary>
     private Vector3 _startPos;
 
+    public float HauteurSpawn = -1;
+
 
     private void Start()
     {
@@ -34,6 +36,14 @@ public class dragAndDropBuilding : MonoBehaviour
         {
             HasClickOnBuildingButtonInstance = false;
             BOUGE = null;
+        }
+    }
+
+    public void BuildRotation(InputAction.CallbackContext callBackContext)
+    {
+        if (callBackContext.started && BOUGE != null)
+        {
+            BOUGE.transform.Rotate(new Vector3(0, 90, 0));
         }
     }
 
@@ -72,6 +82,6 @@ public class dragAndDropBuilding : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         StartCoroutine(Wait());
         BOUGE.transform.position = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        BOUGE.transform.position += new Vector3(0, 0.7f, 0);
+        BOUGE.transform.position += new Vector3(0, HauteurSpawn,0);
     }
 }

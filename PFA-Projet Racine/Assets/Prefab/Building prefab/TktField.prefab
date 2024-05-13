@@ -378,7 +378,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c532825e25c1c8418b69caa9893e0e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  height: 0.7
+  height: 0
 --- !u!114 &3263280653432247146
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -394,10 +394,8 @@ MonoBehaviour:
   <ThePlant>k__BackingField: {fileID: 0}
   <IsPlanted>k__BackingField: 0
   <IsWatered>k__BackingField: 0
+  <_currentPlant>k__BackingField: {fileID: 0}
   <_progressCircle>k__BackingField: {fileID: 852653124907554685}
-  _humanPlantPrefab: {fileID: 0}
-  _buttonExpeditionPrefab: {fileID: 0}
-  _content: {fileID: 0}
 --- !u!114 &-8158229954921943655
 MonoBehaviour:
   m_ObjectHideFlags: 0
