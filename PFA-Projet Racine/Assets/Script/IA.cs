@@ -12,8 +12,7 @@ public class IA : MonoBehaviour
     /// <summary>
     /// Lien vers le script des Humains
     /// </summary>
-    [SerializeField]
-    private Human _scriptableHuman;
+    public Human _scriptableHuman;
 
     public string Nom;
 
