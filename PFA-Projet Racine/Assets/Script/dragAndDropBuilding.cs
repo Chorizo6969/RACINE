@@ -78,8 +78,6 @@ public class dragAndDropBuilding : MonoBehaviour
     public void ClickOnButtonInstancier()
     {
         HasClickOnBuildingButtonInstance = true;
-        transform.position = _startPos;
-        Cursor.lockState = CursorLockMode.Locked;
         StartCoroutine(Wait());
         BOUGE.transform.position = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         BOUGE.transform.position += new Vector3(0, HauteurSpawn,0);
