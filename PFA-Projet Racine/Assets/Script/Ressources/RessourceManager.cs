@@ -54,7 +54,6 @@ public class RessourceManager : MonoBehaviour
     /// </summary>
     [SerializeField] private TextMeshProUGUI _stoneText;
 
-
     [SerializeField] private GameObject AddingScoreText;
 
     [SerializeField] private GameObject _panelParent;
@@ -109,7 +108,6 @@ public class RessourceManager : MonoBehaviour
         {
             EditStoneAmount(-100);
         }
-
     }
 
     /// <summary>
@@ -138,9 +136,29 @@ public class RessourceManager : MonoBehaviour
 
             StartCoroutine(WoodAttend());
         }
+        else if (amount < 0)
+        {
+            _wood += amount;
+            if (_wood >= _maxWood)
+            {
+                _wood = _maxWood;
+            }
+            else if (_wood <= 0)
+            {
+                _wood = 0;
+            }
+
+            GameObject newWoodText = Instantiate(AddingScoreText);
+            newWoodText.name = "wood";
+            newWoodText.transform.SetParent(_panelParent.transform, true);
+            newWoodText.transform.localPosition = new Vector3(-20, -40, 0);
+            newWoodText.GetComponent<AddScoreJuice>().ChangeValues(amount);
+
+            StartCoroutine(WoodAttend());
+        }
         else if (_wood == _maxWood)
         {
-            Debug.Log("Stockage full");
+            Debug.Log("Stockage WOOD full");
         }
     }
 
@@ -150,7 +168,7 @@ public class RessourceManager : MonoBehaviour
     /// <param name="amount">Quantité de d'eau à ajouter (un nombre négatif diminu la quantité)</param>
     public void EditWaterAmount(int amount)
     {
-        if (_water <= _maxWater)
+        if (_water < _maxWater)
         {
             _water += amount;
             if (_water >= _maxWater)
@@ -170,9 +188,29 @@ public class RessourceManager : MonoBehaviour
 
             StartCoroutine(WaterAttend());
         }
-        else
+        else if (amount < 0)
         {
-            Debug.Log("Stockage full");
+            _water += amount;
+            if (_water >= _maxWater)
+            {
+                _water = _maxWater;
+            }
+            else if (_water <= 0)
+            {
+                _water = 0;
+            }
+
+            GameObject newWaterText = Instantiate(AddingScoreText);
+            newWaterText.name = "water";
+            newWaterText.transform.SetParent(_panelParent.transform, true);
+            newWaterText.transform.localPosition = new Vector3(-260, -40, 0);
+            newWaterText.GetComponent<AddScoreJuice>().ChangeValues(amount);
+
+            StartCoroutine(WaterAttend());
+        }
+        else if ( _water == _maxWater)
+        {
+            Debug.Log("Stockage WATER full");
         }
     }
 
@@ -182,7 +220,7 @@ public class RessourceManager : MonoBehaviour
     /// <param name="amount">Quantité de de pierre à ajouter (un nombre négatif diminu la quantité)</param>
     public void EditStoneAmount(int amount)
     {
-        if (_stone <= _maxStone)
+        if (_stone < _maxStone)
         {
             _stone += amount;
             if (_stone >= _maxStone)
@@ -202,9 +240,29 @@ public class RessourceManager : MonoBehaviour
 
             StartCoroutine(StoneAttend());
         }
-        else
+        else if (amount < 0)
         {
-            Debug.Log("Stockage full");
+            _stone += amount;
+            if (_stone >= _maxStone)
+            {
+                _stone = _maxStone;
+            }
+            else if (_stone <= 0)
+            {
+                _stone = 0;
+            }
+
+            GameObject newStoneText = Instantiate(AddingScoreText);
+            newStoneText.name = "stone";
+            newStoneText.transform.SetParent(_panelParent.transform, true);
+            newStoneText.transform.localPosition = new Vector3(280, -40, 0);
+            newStoneText.GetComponent<AddScoreJuice>().ChangeValues(amount);
+
+            StartCoroutine(StoneAttend());
+        }
+        else if (_stone == _maxStone)
+        {
+            Debug.Log("Stockage STONE full");
         }
     }
 
@@ -255,5 +313,4 @@ public class RessourceManager : MonoBehaviour
         yield return new WaitForSeconds(1);
         _stoneText.text = _stone.ToString() + "/" + _maxStone.ToString();
     }
-
 }

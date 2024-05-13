@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.Timeline;
 
 /// <summary>
 /// Script qui gère le comportement de l'IA
@@ -46,9 +47,12 @@ public class IA : MonoBehaviour
     /// </summary>
     private NavMeshAgent _agent;
 
+    public bool IsEnExpedition;
+
     private void Start()
     {
         _agent = GetComponent<NavMeshAgent>();
+        StartCoroutine(Activation());
 
         if (_scriptableHuman.Work == ("Bucheron"))
         {
@@ -89,8 +93,10 @@ public class IA : MonoBehaviour
     /// <returns> retourne un new WaitForSeconds de 5s </returns>
     IEnumerator Task()
     {
-        yield return new WaitForSeconds(10);
+        IsEnExpedition = true;
+        yield return new WaitForSeconds(60);
         GetComponent<HideNSeek>()._startHiding = true;
+        IsEnExpedition = false;
         if (_goHdv )
         {
             /*_agent.SetDestination(new Vector3(3, 0.8277f, 3));*/
@@ -100,5 +106,11 @@ public class IA : MonoBehaviour
         {
             /*_agent.SetDestination(new Vector3(1, 0, 0));*/
         }
+    }
+
+    IEnumerator Activation()
+    {
+        yield return new WaitForSeconds(0.2f);
+        _agent.enabled = true;
     }
 }

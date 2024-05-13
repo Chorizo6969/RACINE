@@ -60,14 +60,14 @@ Material:
     - _CastShadows: 1
     - _Cull: 2
     - _DstBlend: 0
-    - _Height: 1
-    - _Noise_scale: 5
+    - _Height: 0.5
+    - _Noise_scale: 0.1
     - _QueueControl: 0
     - _QueueOffset: 0
     - _ReceiveShadows: 1
     - _SrcBlend: 1
     - _Surface: 0
-    - _Watter_Scroll_speed: 0.001
+    - _Watter_Scroll_speed: 2
     - _WorkflowMode: 1
     - _ZTest: 4
     - _ZWrite: 1
