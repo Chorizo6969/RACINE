@@ -28,14 +28,11 @@ public class ChangeColor : MonoBehaviour
     public void Work()
     {
         Image button_image = GetComponent<Image>();
-        Debug.Log("Grosse pute");
         foreach (GameObject obj in List.list)
         {
-            Debug.Log("petite pute");
             if (obj.GetComponent<ChangeColor>().index == 1)
             {
                 obj.GetComponent<Expédition>().Ia.GetComponent<IA>().GiveTarget();
-                Debug.Log("ohoh cheh");
             }
         }
     }
