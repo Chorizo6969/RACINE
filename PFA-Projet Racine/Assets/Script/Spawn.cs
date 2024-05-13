@@ -23,6 +23,7 @@ public class Spawn : MonoBehaviour
         new_button.transform.parent = Parent.transform;
         Parent.GetComponent<Listexpedition>().AddObject(new_button);
         GameObject new_human = Instantiate(HumanPrefab);
+        Parent.GetComponent<Listexpedition>().AddObjectAI(new_human);
         new_human.GetComponent<IA>().work = worktarget;
         NamesGenerator.RandomName();
         new_human.GetComponent<IA>().Nom = NamesGenerator.Nom;
@@ -30,5 +31,6 @@ public class Spawn : MonoBehaviour
         new_button.GetComponent<Expédition>().Ia = new_human;
         new_button.GetComponent<ChangeColor>().expédition = new_button.GetComponent<Expédition>();
         new_human.transform.position = GetComponent<Field>()._currentPlant.transform.position;
+        ExpeditionLoot.instance.SortHuman();
     }
 }
