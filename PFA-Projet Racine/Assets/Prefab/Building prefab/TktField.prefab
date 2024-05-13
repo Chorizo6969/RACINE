@@ -270,6 +270,7 @@ GameObject:
   - component: {fileID: 7223929643097783217}
   - component: {fileID: 3263280653432247146}
   - component: {fileID: -8158229954921943655}
+  - component: {fileID: 4184211009867161145}
   m_Layer: 0
   m_Name: TktField
   m_TagString: field
@@ -377,7 +378,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c532825e25c1c8418b69caa9893e0e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  height: 0.7
+  height: 0
 --- !u!114 &3263280653432247146
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -393,9 +394,8 @@ MonoBehaviour:
   <ThePlant>k__BackingField: {fileID: 0}
   <IsPlanted>k__BackingField: 0
   <IsWatered>k__BackingField: 0
-  _currentPlant: {fileID: 0}
+  <_currentPlant>k__BackingField: {fileID: 0}
   <_progressCircle>k__BackingField: {fileID: 852653124907554685}
-  _humanPlant: {fileID: 0}
 --- !u!114 &-8158229954921943655
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -410,6 +410,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CanvasOptionPanel: {fileID: 8586559573671862382}
   <HidePoint>k__BackingField: {fileID: 7870974829077648510}
+--- !u!114 &4184211009867161145
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1717048504819187851}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 073043b9b294b2f41b30bdfa0aa24833, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HumanPrefab: {fileID: 0}
+  PrefabButton: {fileID: 0}
+  Parent: {fileID: 0}
+  worktarget: []
+  NamesGenerator: {fileID: 0}
 --- !u!1 &1825045188721745375
 GameObject:
   m_ObjectHideFlags: 0

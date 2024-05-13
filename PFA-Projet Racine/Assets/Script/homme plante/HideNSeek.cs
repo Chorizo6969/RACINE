@@ -12,8 +12,13 @@ public class HideNSeek : MonoBehaviour
     //private MoveToRandomPosition _moveToRandomPosition;
 
     [SerializeField] bool _isWorking;
-    [SerializeField] bool _startHiding; //var tempo
+    public bool _startHiding; //(var tempo) ou pas
     [field : SerializeField] public bool IsHiding { get; private set; }
+
+    private void Awake()
+    {
+        HidePointListOwner = HidePointList.instance.gameObject;
+    }
 
     private void Start()
     {

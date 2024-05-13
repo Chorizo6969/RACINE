@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -28,6 +29,8 @@ public class ClickFieldManager : MonoBehaviour
                 {
                     _fieldPlantScript.ThePlant = HumanSeed;
                     _fieldPlantScript.PlantField();
+                    GiveRefToField.instance.GiveRefPasTuple(_touchedField, GetComponent<Spawn>().HumanPrefab, GetComponent<Spawn>().PrefabButton, GetComponent<Spawn>().Parent);
+                    
                     HumanSeed = null;
                 }
                 else if (hitInfo.collider.CompareTag("field") && !_fieldPlantScript.IsWatered && _fieldPlantScript.IsPlanted && !GetComponent<dragAndDropBuilding>().HasClickOnBuildingButtonInstance)

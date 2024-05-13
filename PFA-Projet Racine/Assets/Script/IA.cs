@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.Timeline;
 
 /// <summary>
 /// Script qui gère le comportement de l'IA
@@ -46,9 +47,12 @@ public class IA : MonoBehaviour
     /// </summary>
     private NavMeshAgent _agent;
 
+    public bool IsEnExpedition;
+
     private void Start()
     {
         _agent = GetComponent<NavMeshAgent>();
+        StartCoroutine(Activation());
 
         if (_scriptableHuman.Work == ("Bucheron"))
         {
@@ -62,7 +66,6 @@ public class IA : MonoBehaviour
         {
             _currentTarget = work[2];
         }
-
     }
 
     private void Update()
@@ -79,8 +82,9 @@ public class IA : MonoBehaviour
     /// </summary>
     public void GiveTarget()
     {
+        _agent.speed = 3;
         _agent.SetDestination(_currentTarget.transform.position); //Ne met pas à jours le chemin de l'IA
-        //StartCoroutine(Task());
+        StartCoroutine(Task());
     }
 
     /// <summary>
@@ -89,15 +93,24 @@ public class IA : MonoBehaviour
     /// <returns> retourne un new WaitForSeconds de 5s </returns>
     IEnumerator Task()
     {
-        yield return new WaitForSeconds(5);
+        IsEnExpedition = true;
+        yield return new WaitForSeconds(60);
+        GetComponent<HideNSeek>()._startHiding = true;
+        IsEnExpedition = false;
         if (_goHdv )
         {
-            _agent.SetDestination(new Vector3(3, 0.8277f, 3));
-            //lien pour stonks les ressources
+            /*_agent.SetDestination(new Vector3(3, 0.8277f, 3));*/
+            
         }
         else
         {
-            _agent.SetDestination(new Vector3(1, 0, 0));
+            /*_agent.SetDestination(new Vector3(1, 0, 0));*/
         }
+    }
+
+    IEnumerator Activation()
+    {
+        yield return new WaitForSeconds(0.2f);
+        _agent.enabled = true;
     }
 }

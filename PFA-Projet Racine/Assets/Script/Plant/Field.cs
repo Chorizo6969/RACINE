@@ -24,17 +24,12 @@ public class Field : MonoBehaviour
     /// <summary>
     /// référence à la plante qui pousse actuellement dans le champ
     /// </summary>
-    [SerializeField] private GameObject _currentPlant;
+    [field : SerializeField] public GameObject _currentPlant {  get; private set; }
 
     /// <summary>
     /// référence le cercle d'avancement du champ
     /// </summary>
     [field : SerializeField] public GameObject _progressCircle { get; private set; }
-
-    /// <summary>
-    /// Référence vers le gameObject de l'humain plante
-    /// </summary>
-    [SerializeField] private GameObject _humanPlant;
 
     private void Start()
     {
@@ -58,11 +53,11 @@ public class Field : MonoBehaviour
     {
         IsPlanted = false;
         IsWatered = false;
-        Destroy(_currentPlant);
         _progressCircle.GetComponentInChildren<Image>().fillAmount = 0;
         _progressCircle.SetActive(false);
-        /*GameObject newBhonome = Instantiate(_humanPlant);
-        newBhonome.transform.position = _currentPlant.transform.position;*/
+        GetComponent<Spawn>().Spawner();
+        
+        Destroy(_currentPlant);
     }
 
     public void WateringField()
