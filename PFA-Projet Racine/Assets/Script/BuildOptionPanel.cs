@@ -19,7 +19,10 @@ public class BuildOptionPanel : MonoBehaviour
                 if (hitInfo.collider.CompareTag("building") || hitInfo.collider.CompareTag("field"))
                 {
                     _lastClickBuilding = collider;
-                    collider.GetComponent<BuildingCanvas>().PanelSetActive(true);
+                    /*if (collider.GetComponent<BuildingCanvas>().CanvasOptionPanel != null)
+                    {
+                        collider.GetComponent<BuildingCanvas>().PanelSetActive(true);
+                    }*/
                 }
                 else if (_lastClickBuilding != null) 
                 {

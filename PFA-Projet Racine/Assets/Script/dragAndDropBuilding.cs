@@ -21,10 +21,15 @@ public class dragAndDropBuilding : MonoBehaviour
 
     public void OnLeftClick(InputAction.CallbackContext callBackContext)
     {
-        if (callBackContext.canceled)
+        if (callBackContext.canceled && BOUGE != null)
         {
-            HasClickOnBuildingButtonInstance = false;
-            BOUGE = null;
+            if (BOUGE.GetComponent<BuildingCanvas>().Building.GetComponent<PlaceOuPasPlace>().isPlacable)
+            {
+                HasClickOnBuildingButtonInstance = false;
+                Destroy(BOUGE.GetComponent<BuildingCanvas>().Building.GetComponent<PlaceOuPasPlace>());
+                BOUGE.GetComponent<BuildingCanvas>().NormalMat();
+                BOUGE = null;
+            }
         }
     }
 
@@ -32,7 +37,7 @@ public class dragAndDropBuilding : MonoBehaviour
     {
         if (callBackContext.started && BOUGE != null)
         {
-            BOUGE.transform.Rotate(new Vector3(0, 90, 0));
+            BOUGE.GetComponent<BuildingCanvas>().Building.transform.Rotate(new Vector3(0, 90, 0));
         }
     }
 

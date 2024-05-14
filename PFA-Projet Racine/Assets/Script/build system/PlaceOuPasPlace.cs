@@ -4,13 +4,30 @@ using UnityEngine;
 
 public class PlaceOuPasPlace : MonoBehaviour
 {
+    public bool isPlacable = true;
 
-
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider collision)
     {
-        if (collision.gameObject.CompareTag("water") && gameObject.layer != 10)
+        if (collision.gameObject.CompareTag("Water") || collision.gameObject.CompareTag("building") && gameObject.layer != 10)
         {
+            isPlacable = false;
+        }
+    }
 
+    private void OnTriggerExit(Collider other)
+    {
+        isPlacable = true;
+    }
+
+    private void Update()
+    {
+        if (isPlacable) 
+        {
+            GetComponentInParent<BuildingCanvas>().TrueMat();
+        }
+        else if (!isPlacable)
+        {
+            GetComponentInParent<BuildingCanvas>().FalseMat();
         }
     }
 }

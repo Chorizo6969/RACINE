@@ -70,7 +70,7 @@ public class Field : MonoBehaviour
 
     private void Update()
     {
-        if (IsPlanted && IsWatered)
+        /*if (IsPlanted && IsWatered)
         {
             gameObject.GetComponent<MeshRenderer>().material.color = Color.blue;
         }
@@ -81,6 +81,6 @@ public class Field : MonoBehaviour
         else
         {
             gameObject.GetComponent<MeshRenderer>().material.color = Color.yellow;
-        }
+        }*/
     }
 }

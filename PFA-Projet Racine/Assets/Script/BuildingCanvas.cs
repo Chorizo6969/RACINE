@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BuildingCanvas : MonoBehaviour
 {
-    [SerializeField] private GameObject CanvasOptionPanel;
+    public GameObject CanvasOptionPanel;
 
     [field : SerializeField] public GameObject HidePoint { get; private set; }
 
@@ -16,9 +16,7 @@ public class BuildingCanvas : MonoBehaviour
 
     public Material BuildingPlacableFalse;
 
-    private PlaceOuPasPlace _placeOuPasPlace;
-
-    private void Start()
+    private void Awake()
     {
         normal = Building.GetComponent<MeshRenderer>().material;
     }
@@ -27,4 +25,20 @@ public class BuildingCanvas : MonoBehaviour
     {
         CanvasOptionPanel.SetActive(enabled);
     }
+
+    public void FalseMat()
+    {
+        Building.GetComponent<MeshRenderer>().material = BuildingPlacableFalse;
+    }
+
+    public void TrueMat()
+    {
+        Building.GetComponent<MeshRenderer>().material = BuildingPlacableTrue;
+    }
+
+    public void NormalMat()
+    {
+        Building.GetComponent<MeshRenderer>().material = normal;
+    }
+
 }
