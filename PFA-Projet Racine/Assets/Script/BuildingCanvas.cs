@@ -8,13 +8,18 @@ public class BuildingCanvas : MonoBehaviour
 
     [field : SerializeField] public GameObject HidePoint {  get; private set; }
 
-    public GameObject BuildingGroup;
-
     public GameObject Building;
 
-    public GameObject BuildingPlacableTrue;
+    public Material normal;
 
-    public GameObject BuildingPlacableFalse;
+    public Material BuildingPlacableTrue;
+
+    public Material BuildingPlacableFalse;
+
+    private void Start()
+    {
+        normal = Building.GetComponent<MeshRenderer>().material;
+    }
 
     public void PanelSetActive(bool enabled)
     {
