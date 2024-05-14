@@ -17,18 +17,7 @@ public class dragAndDropBuilding : MonoBehaviour
     /// </summary>
     [field : SerializeField] public bool HasClickOnBuildingButtonInstance {  get; private set; }
 
-    /// <summary>
-    /// position de base de la caméra
-    /// </summary>
-    private Vector3 _startPos;
-
     public float HauteurSpawn = -1;
-
-
-    private void Start()
-    {
-        _startPos = transform.position;
-    }
 
     public void OnLeftClick(InputAction.CallbackContext callBackContext)
     {
