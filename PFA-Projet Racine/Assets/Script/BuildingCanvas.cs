@@ -6,7 +6,7 @@ public class BuildingCanvas : MonoBehaviour
 {
     [SerializeField] private GameObject CanvasOptionPanel;
 
-    [field : SerializeField] public GameObject HidePoint {  get; private set; }
+    [field : SerializeField] public GameObject HidePoint { get; private set; }
 
     public GameObject Building;
 
@@ -15,6 +15,8 @@ public class BuildingCanvas : MonoBehaviour
     public Material BuildingPlacableTrue;
 
     public Material BuildingPlacableFalse;
+
+    private PlaceOuPasPlace _placeOuPasPlace;
 
     private void Start()
     {

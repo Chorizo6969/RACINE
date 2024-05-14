@@ -146,7 +146,7 @@ GameObject:
   - component: {fileID: -1768593801104769138}
   - component: {fileID: 3685419080705175954}
   m_Layer: 0
-  m_Name: PrefabReserv 1
+  m_Name: 9Stock eau
   m_TagString: building
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

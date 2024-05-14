@@ -462,7 +462,7 @@ GameObject:
   - component: {fileID: -1768593801104769138}
   - component: {fileID: 241582593320376871}
   m_Layer: 0
-  m_Name: PrefabReserv
+  m_Name: 8Stock Wood
   m_TagString: building
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
