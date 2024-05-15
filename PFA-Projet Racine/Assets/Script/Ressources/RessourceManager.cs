@@ -272,9 +272,9 @@ public class RessourceManager : MonoBehaviour
     /// <param name="_woodCost">le cout en boit du batiment pour lequel on vérifie</param>
     /// <param name="_stoneCost">le cout en pierre du batiment pour lequel on vérifie</param>
     /// <returns>retourne vrai ou faux</returns>
-    public bool CheckIfCanBuild(int _woodCost, int _stoneCost)
+    public bool CheckIfCanBuild(int _woodCost, int _stoneCost, int _waterCost)
     {
-        if (_wood - _woodCost >= 0 && _stone - _stoneCost >= 0)
+        if (_wood - _woodCost >= 0 && _stone - _stoneCost >= 0 && _water - _waterCost >= 0)
         {
             return true;
         }
