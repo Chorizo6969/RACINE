@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 661806330653536008}
   - component: {fileID: 2273926913654001889}
   - component: {fileID: 5939256798891156267}
+  - component: {fileID: -546400024210660308}
   m_Layer: 0
   m_Name: IA
   m_TagString: humanPlant
@@ -101,6 +102,7 @@ MonoBehaviour:
   work: []
   _hdv: {fileID: 0}
   _reservoir: []
+  IsEnExpedition: 0
 --- !u!54 &661806330653536008
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -158,6 +160,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 1
   listOwner: {fileID: 0}
+--- !u!95 &-546400024210660308
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5123115511750519978}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: cd8eb43c3dd42174c98bd30dacacf9b0, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &2015629338353148108
 PrefabInstance:
   m_ObjectHideFlags: 0
