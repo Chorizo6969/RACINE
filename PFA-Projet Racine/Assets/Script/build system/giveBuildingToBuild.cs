@@ -14,7 +14,7 @@ public class GiveBuildingToBuild : MonoBehaviour
 
     public void OnClick()
     {
-        if (GetComponent<BuildingCost>().PlayerRessourceManager.CheckIfCanBuild(GetComponent<BuildingCost>().WoodCost, GetComponent<BuildingCost>().StoneCost))
+        if (GetComponent<BuildingCost>().PlayerRessourceManager.CheckIfCanBuild(GetComponent<BuildingCost>().WoodCost, GetComponent<BuildingCost>().StoneCost, 0))
         {
             GetComponent<BuildingCost>().BuyBuilding();
             GameObject _objectToGiveBuilding = FindAnyObjectByType<dragAndDropBuilding>().gameObject;
