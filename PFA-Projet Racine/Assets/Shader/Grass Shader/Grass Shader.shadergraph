@@ -2112,10 +2112,10 @@
     "hlslDeclarationOverride": 0,
     "m_Hidden": false,
     "m_Value": {
-        "r": 0.07471521198749542,
-        "g": 0.6886792182922363,
-        "b": 0.27321702241897585,
-        "a": 0.0
+        "r": 0.4784314036369324,
+        "g": 0.5568627715110779,
+        "b": 0.03529411926865578,
+        "a": 1.0
     },
     "isMainColor": false,
     "m_ColorMode": 0
@@ -3561,7 +3561,7 @@
         "eye vector"
     ],
     "m_Precision": 0,
-    "m_PreviewExpanded": true,
+    "m_PreviewExpanded": false,
     "m_DismissedVersion": 0,
     "m_PreviewMode": 0,
     "m_CustomColors": {
@@ -3853,10 +3853,10 @@
     "hlslDeclarationOverride": 0,
     "m_Hidden": false,
     "m_Value": {
-        "r": 0.5643652081489563,
-        "g": 0.8773584961891174,
-        "b": 0.08690815418958664,
-        "a": 0.0
+        "r": 0.6352941393852234,
+        "g": 0.729411780834198,
+        "b": 0.23137256503105164,
+        "a": 1.0
     },
     "isMainColor": false,
     "m_ColorMode": 0
@@ -3905,9 +3905,9 @@
         "m_Position": {
             "serializedVersion": "2",
             "x": -827.0000610351563,
-            "y": 154.00006103515626,
+            "y": 154.99998474121095,
             "width": 122.0,
-            "height": 33.99989318847656
+            "height": 34.00004577636719
         }
     },
     "m_Slots": [
@@ -5528,10 +5528,10 @@
     "hlslDeclarationOverride": 0,
     "m_Hidden": false,
     "m_Value": {
-        "r": 0.07783019542694092,
-        "g": 0.5,
-        "b": 0.14420086145401,
-        "a": 0.0
+        "r": 0.4784314036369324,
+        "g": 0.5568627715110779,
+        "b": 0.03529411926865578,
+        "a": 1.0
     },
     "isMainColor": false,
     "m_ColorMode": 0
@@ -5991,10 +5991,10 @@
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": -831.0001220703125,
-            "y": 182.99990844726563,
-            "width": 130.00006103515626,
-            "height": 34.00007629394531
+            "x": -831.0,
+            "y": 184.00001525878907,
+            "width": 129.99993896484376,
+            "height": 33.99995422363281
         }
     },
     "m_Slots": [
@@ -6492,9 +6492,9 @@
     "m_ShaderOutputName": "BaseColor",
     "m_StageCapability": 2,
     "m_Value": {
-        "x": 0.5,
-        "y": 0.5,
-        "z": 0.5
+        "x": 0.4784314036369324,
+        "y": 0.5568627715110779,
+        "z": 0.03529411926865578
     },
     "m_DefaultValue": {
         "x": 0.0,
