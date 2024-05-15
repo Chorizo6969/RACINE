@@ -1,52 +1,116 @@
-using System.Collections;
-using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class AchatSeed : MonoBehaviour
 {
-    public RessourceManager RessourceManager;
+    [SerializeField]
+    private RessourceManager RessourceManager;
+    [SerializeField]
+    private TextMeshProUGUI textWood;
+    [SerializeField]
+    private TextMeshProUGUI textWood2;
+    [SerializeField]
+    private TextMeshProUGUI textStone;
+    [SerializeField]
+    private TextMeshProUGUI textO;
+    [SerializeField]
+    private TextMeshProUGUI textO2;
+    [SerializeField]
+    private GameObject prix1;
+    [SerializeField]
+    private GameObject prix2;
+    [SerializeField]
+    private GameObject prix3;
+    [SerializeField]
+    private GivePlant builder;
+    [SerializeField]
+    private GivePlant bucheron;
+    [SerializeField]
+    private GivePlant mineur;
+    [SerializeField]
+    private GivePlant aquaman;
+
     private int index = 1;
 
+    public void Start()
+    {
+        prix1.SetActive(true);
+        prix2.SetActive(false);
+        string wood = "20";
+        string water = "20";
+        textWood.text = wood.ToString();
+        textO.text = water.ToString();
+    }
     public void UpgradeRoot()
     {
         if (index == 1)
         {
-            RessourceManager.EditWoodAmount(-20);
-            RessourceManager.EditWaterAmount(-30);
-            index = 2;
+            string wood = "35";
+            string stone = "15";
+            string water = "50";
+            textWood2.text = wood.ToString();
+            textStone.text = stone.ToString();
+            textO2.text = water.ToString();
+            if (RessourceManager.CheckIfCanBuild(20,0,20))
+            {
+                RessourceManager.EditWoodAmount(-20);
+                RessourceManager.EditWaterAmount(-30);
+                index = 2;
+                prix1.SetActive(false);
+                prix2.SetActive(true);
+            }
         }
         else if (index == 2)
         {
-            RessourceManager.EditWoodAmount(-35);
-            RessourceManager.EditStoneAmount(-15);
-            RessourceManager.EditWaterAmount(-50);
+            if (RessourceManager.CheckIfCanBuild(35, 15, 50))
+            {
+                RessourceManager.EditWoodAmount(-35);
+                RessourceManager.EditStoneAmount(-15);
+                RessourceManager.EditWaterAmount(-50);
+                prix1.SetActive(false);
+                prix2.SetActive(false);
+                prix3.SetActive(true);
+            }
         }
     }
 
     public void SetBuilder()
     {
-        RessourceManager.EditWoodAmount(-2);
-        RessourceManager.EditStoneAmount(-2);
-        //Donner 1 graine
+        if (RessourceManager.CheckIfCanBuild(2,2,0))
+        {
+            RessourceManager.EditWoodAmount(-2);
+            RessourceManager.EditStoneAmount(-2);
+            builder._nombreGraines++;
+        }
     }
 
     public void SetWoodcutter()
     {
-        RessourceManager.EditWoodAmount(-4);
-        //Donner 1 graine
+        if (RessourceManager.CheckIfCanBuild(4, 0, 0))
+        {
+            RessourceManager.EditWoodAmount(-4);
+            bucheron._nombreGraines++;
+        }
     }
 
     public void SetMineur()
     {
-        RessourceManager.EditWoodAmount(-1);
-        RessourceManager.EditStoneAmount(-3);
-        //Donner 1 graine
+        if (RessourceManager.CheckIfCanBuild(1, 3, 0))
+        {
+            RessourceManager.EditWoodAmount(-1);
+            RessourceManager.EditStoneAmount(-3);
+            mineur._nombreGraines++;
+        }
     }
 
     public void SetWater()
     {
-        RessourceManager.EditWoodAmount(-1);
-        RessourceManager.EditWaterAmount(-3);
-        //Donner 1 graine
+        if (RessourceManager.CheckIfCanBuild(1, 0, 3))
+        {
+            RessourceManager.EditWoodAmount(-1);
+            RessourceManager.EditWaterAmount(-3);
+            aquaman._nombreGraines++;
+        }
+
     }
 }
