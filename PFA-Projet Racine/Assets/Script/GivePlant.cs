@@ -24,13 +24,24 @@ public class GivePlant : MonoBehaviour
 
     [SerializeField] private GameObject _content;
 
+    public int _nombreGraines;
+
     /// <summary>
     /// attribue la graine définie à l'emplacement de graine de al caméra
     /// </summary>
     public void OnClick()
     {
-        ClickFieldManager _clickFieldManager = _camera.GetComponent<ClickFieldManager>();
-        _clickFieldManager.HumanSeed = _seed;
-        GiveRefToField.instance.GiveRefPasTuple(_clickFieldManager.gameObject ,_humanPlantPrefab, _buttonExpeditionPrefab, _content);
+        if (_nombreGraines > 0)
+        {
+            ClickFieldManager _clickFieldManager = _camera.GetComponent<ClickFieldManager>();
+            _clickFieldManager.HumanSeed = _seed;
+            GiveRefToField.instance.GiveRefPasTuple(_clickFieldManager.gameObject, _humanPlantPrefab, _buttonExpeditionPrefab, _content);
+            _nombreGraines --;
+        }
+        else
+        {
+            Debug.Log("Pas de graines...");
+        }
+
     }
 }
