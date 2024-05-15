@@ -9,6 +9,7 @@ TagManager:
   - field
   - building
   - humanPlant
+  - Water
   layers:
   - Default
   - TransparentFX
@@ -20,7 +21,7 @@ TagManager:
   - 
   - 
   - 
-  - 
+  - O
   - 
   - 
   - 

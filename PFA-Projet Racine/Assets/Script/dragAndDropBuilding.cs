@@ -17,25 +17,20 @@ public class dragAndDropBuilding : MonoBehaviour
     /// </summary>
     [field : SerializeField] public bool HasClickOnBuildingButtonInstance {  get; private set; }
 
-    /// <summary>
-    /// position de base de la caméra
-    /// </summary>
-    private Vector3 _startPos;
-
     public float HauteurSpawn = -1;
-
-
-    private void Start()
-    {
-        _startPos = transform.position;
-    }
 
     public void OnLeftClick(InputAction.CallbackContext callBackContext)
     {
-        if (callBackContext.canceled)
+        if (callBackContext.canceled && BOUGE != null)
         {
-            HasClickOnBuildingButtonInstance = false;
-            BOUGE = null;
+            if (BOUGE.GetComponent<BuildingCanvas>().Building.GetComponent<PlaceOuPasPlace>().isPlacable)
+            {
+                HasClickOnBuildingButtonInstance = false;
+                BOUGE.GetComponent<BuildingCanvas>().Building.GetComponent<PlaceOuPasPlace>().SetBox();
+                Destroy(BOUGE.GetComponent<BuildingCanvas>().Building.GetComponent<PlaceOuPasPlace>());
+                BOUGE.GetComponent<BuildingCanvas>().NormalMat();
+                BOUGE = null;
+            }
         }
     }
 
@@ -43,7 +38,7 @@ public class dragAndDropBuilding : MonoBehaviour
     {
         if (callBackContext.started && BOUGE != null)
         {
-            BOUGE.transform.Rotate(new Vector3(0, 90, 0));
+            BOUGE.GetComponent<BuildingCanvas>().Building.transform.Rotate(new Vector3(0, 90, 0));
         }
     }
 
@@ -78,8 +73,6 @@ public class dragAndDropBuilding : MonoBehaviour
     public void ClickOnButtonInstancier()
     {
         HasClickOnBuildingButtonInstance = true;
-        transform.position = _startPos;
-        Cursor.lockState = CursorLockMode.Locked;
         StartCoroutine(Wait());
         BOUGE.transform.position = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         BOUGE.transform.position += new Vector3(0, HauteurSpawn,0);

@@ -4,20 +4,41 @@ using UnityEngine;
 
 public class BuildingCanvas : MonoBehaviour
 {
-    [SerializeField] private GameObject CanvasOptionPanel;
+    public GameObject CanvasOptionPanel;
 
-    [field : SerializeField] public GameObject HidePoint {  get; private set; }
-
-    public GameObject BuildingGroup;
+    [field : SerializeField] public GameObject HidePoint { get; private set; }
 
     public GameObject Building;
 
-    public GameObject BuildingPlacableTrue;
+    public Material normal;
 
-    public GameObject BuildingPlacableFalse;
+    public Material BuildingPlacableTrue;
+
+    public Material BuildingPlacableFalse;
+
+    private void Awake()
+    {
+        normal = Building.GetComponent<MeshRenderer>().material;
+    }
 
     public void PanelSetActive(bool enabled)
     {
         CanvasOptionPanel.SetActive(enabled);
     }
+
+    public void FalseMat()
+    {
+        Building.GetComponent<MeshRenderer>().material = BuildingPlacableFalse;
+    }
+
+    public void TrueMat()
+    {
+        Building.GetComponent<MeshRenderer>().material = BuildingPlacableTrue;
+    }
+
+    public void NormalMat()
+    {
+        Building.GetComponent<MeshRenderer>().material = normal;
+    }
+
 }

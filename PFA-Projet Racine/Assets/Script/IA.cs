@@ -12,8 +12,7 @@ public class IA : MonoBehaviour
     /// <summary>
     /// Lien vers le script des Humains
     /// </summary>
-    [SerializeField]
-    private Human _scriptableHuman;
+    public Human _scriptableHuman;
 
     public string Nom;
 
@@ -42,10 +41,11 @@ public class IA : MonoBehaviour
     /// </summary>
     private GameObject _currentTarget;
 
+    [field :SerializeField]
     /// <summary>
     /// Lien vers le component NavMesh
     /// </summary>
-    private NavMeshAgent _agent;
+    public NavMeshAgent _agent { get; set; }
 
     public bool IsEnExpedition;
 
