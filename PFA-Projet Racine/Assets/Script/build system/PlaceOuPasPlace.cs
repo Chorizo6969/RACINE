@@ -30,4 +30,13 @@ public class PlaceOuPasPlace : MonoBehaviour
             GetComponentInParent<BuildingCanvas>().FalseMat();
         }
     }
+
+    public void SetBox()
+    {
+        if (gameObject.name == "champ")
+        {
+            GetComponentInParent<BuildingCanvas>().gameObject.AddComponent<BoxCollider>();
+            Debug.Log("PUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUTE");
+        }
+    }
 }
