@@ -43,7 +43,7 @@ Material:
     m_Floats:
     - _Color_variation_Scale: 0
     - _Color_variation_strength: 0
-    - _Intensity: 0.02
+    - _Intensity: 0.007
     - _NoiseScale: 0.04
     - _QueueControl: 0
     - _QueueOffset: 0
