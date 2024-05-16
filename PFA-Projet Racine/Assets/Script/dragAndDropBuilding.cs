@@ -50,6 +50,7 @@ public class dragAndDropBuilding : MonoBehaviour
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit hitInfo;
             Physics.Raycast(ray, out hitInfo);
+            Debug.Log(hitInfo.collider.gameObject.name);
             if (BOUGE != null)
             {
                 if (hitInfo.collider != null)
