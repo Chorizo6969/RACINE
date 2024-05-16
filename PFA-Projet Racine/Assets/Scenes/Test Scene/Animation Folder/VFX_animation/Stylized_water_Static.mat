@@ -50,14 +50,14 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _Alpha: 0.3
+    - _Alpha: 0.437
     - _FoamScale: 5000
     - _MaskScale: 0.1
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _RefractionOpacity: 0
+    - _RefractionOpacity: 0.999
     - _RefractionStrength: 0.05
-    - _Speed: 0.001
+    - _Speed: 0.003
     m_Colors:
-    - _Color: {r: 0, g: 0.754717, b: 0.6543557, a: 1}
+    - _Color: {r: 0, g: 1, b: 0.7452464, a: 1}
   m_BuildTextureStacks: []

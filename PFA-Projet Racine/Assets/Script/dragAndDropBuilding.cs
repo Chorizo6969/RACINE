@@ -26,6 +26,7 @@ public class dragAndDropBuilding : MonoBehaviour
             if (BOUGE.GetComponent<BuildingCanvas>().Building.GetComponent<PlaceOuPasPlace>().isPlacable)
             {
                 HasClickOnBuildingButtonInstance = false;
+                BOUGE.GetComponent<BuildingCanvas>().Building.GetComponent<PlaceOuPasPlace>().SetBox();
                 Destroy(BOUGE.GetComponent<BuildingCanvas>().Building.GetComponent<PlaceOuPasPlace>());
                 BOUGE.GetComponent<BuildingCanvas>().NormalMat();
                 BOUGE = null;
@@ -49,6 +50,7 @@ public class dragAndDropBuilding : MonoBehaviour
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit hitInfo;
             Physics.Raycast(ray, out hitInfo);
+            Debug.Log(hitInfo.collider.gameObject.name);
             if (BOUGE != null)
             {
                 if (hitInfo.collider != null)

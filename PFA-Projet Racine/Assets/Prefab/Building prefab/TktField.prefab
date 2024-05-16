@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 7912815107105801176}
   - component: {fileID: 3959927818557254227}
-  - component: {fileID: 4633603005798920010}
   - component: {fileID: 7223929643097783217}
   - component: {fileID: 3263280653432247146}
   - component: {fileID: -8158229954921943655}
@@ -48,27 +47,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1717048504819187851}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!65 &4633603005798920010
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1717048504819187851}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 0
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &7223929643097783217
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -330,6 +308,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 1e14eed8c8170d74d8b8bc4b5cb34bfe, type: 3}
       propertyPath: m_Name
       value: champ
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 1e14eed8c8170d74d8b8bc4b5cb34bfe, type: 3}
+      propertyPath: m_TagString
+      value: building
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

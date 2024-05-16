@@ -41,10 +41,11 @@ public class IA : MonoBehaviour
     /// </summary>
     private GameObject _currentTarget;
 
+    [field :SerializeField]
     /// <summary>
     /// Lien vers le component NavMesh
     /// </summary>
-    private NavMeshAgent _agent;
+    public NavMeshAgent _agent { get; set; }
 
     public bool IsEnExpedition;
 
