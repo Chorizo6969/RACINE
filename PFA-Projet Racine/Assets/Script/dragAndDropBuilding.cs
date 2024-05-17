@@ -19,6 +19,8 @@ public class dragAndDropBuilding : MonoBehaviour
 
     public float HauteurSpawn = -1;
 
+    public LayerMask LayerMask;
+
     public void OnLeftClick(InputAction.CallbackContext callBackContext)
     {
         if (callBackContext.canceled && BOUGE != null)
@@ -43,25 +45,25 @@ public class dragAndDropBuilding : MonoBehaviour
     }
 
     // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
         if (HasClickOnBuildingButtonInstance)
         {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit hitInfo;
-            Physics.Raycast(ray, out hitInfo);
-            //Debug.Log(hitInfo.collider.gameObject.name);
+            Physics.Raycast(ray, out hitInfo, Mathf.Infinity, 1 << 6);
+            Debug.Log(hitInfo.collider.gameObject.layer);
             if (BOUGE != null)
             {
                 if (hitInfo.collider != null)
                 {
-                    if (hitInfo.collider.tag == "tile")
-                    {
+                    //if (hitInfo.collider.gameObject.layer == 6)
+                    //{
                         BOUGE.transform.position = new Vector3(hitInfo.point.x, hitInfo.point.y, hitInfo.point.z);
-                    }
+                    //}
                 }
             }
-            Debug.DrawRay(ray.origin, ray.direction*50, Color.red);
+            Debug.DrawRay(ray.origin, ray.direction*100, Color.red);
         }
     }
 
