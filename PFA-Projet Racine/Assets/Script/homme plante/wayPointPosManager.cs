@@ -27,7 +27,7 @@ public class wayPointPosManager : MonoBehaviour
     {
         foreach (GameObject wayPoint in WayPoints)
         {
-            wayPoint.transform.position = new Vector3(Random.Range(minX, maxX), wayPoint.transform.position.y, Random.Range(minZ, maxZ));
+            wayPoint.transform.position = new Vector3(transform.position.x + Random.Range(minX, maxX), wayPoint.transform.position.y, transform.position.z + Random.Range(minZ, maxZ));
         }
         yield return new WaitForSeconds(10); StartCoroutine(RandomizeWaypointPos());
     }

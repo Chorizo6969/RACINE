@@ -13,14 +13,14 @@ public class MoveToRandomPosition : MonoBehaviour
 
     private void Awake()
     {
-        listOwner = wayPointPosManager.Instance.gameObject;
-        _navMeshAgent = GetComponent<NavMeshAgent>();
+        
     }
 
     // Start is called before the first frame update
     void Start()
     {
         StartCoroutine(ATTEND());
+        Debug.Log("Start");
     }
 
     public void Update()
@@ -34,12 +34,17 @@ public class MoveToRandomPosition : MonoBehaviour
 
     IEnumerator FindRandomPositionToGo()
     {
+        Debug.Log("Find New Point");
+
         List<GameObject> list = listOwner.GetComponent<wayPointPosManager>().WayPoints;
 
         _positionToGo = FindDirection(gameObject, list[Random.Range(0, list.Count)]);
+        Debug.Log(_positionToGo);
+        Debug.Log(!GetComponent<HideNSeek>().IsHiding && !GetComponent<IA>().IsEnExpedition);
         if (!GetComponent<HideNSeek>().IsHiding && !GetComponent<IA>().IsEnExpedition)
         {
             _navMeshAgent.SetDestination(_positionToGo);
+            Debug.Log("GO");
         }
 
         yield return new WaitForSeconds(Random.Range(2, 7));
@@ -49,7 +54,7 @@ public class MoveToRandomPosition : MonoBehaviour
     private Vector3 FindDirection(GameObject thisGO, GameObject targetDestination)
     {
         Vector3 direction = targetDestination.transform.position - thisGO.transform.position;
-        direction.y = 1;
+        //direction.y = 1;
         return direction;
     }
 
@@ -75,6 +80,9 @@ public class MoveToRandomPosition : MonoBehaviour
 
     IEnumerator ATTEND()
     {
+        yield return new WaitForSeconds(0.1f);
+        listOwner = wayPointPosManager.Instance.gameObject;
+        _navMeshAgent = GetComponent<NavMeshAgent>();
         yield return new WaitForSeconds(3);
         StartCoroutine(FindRandomPositionToGo());
         StartCoroutine(AutorizeMove());
