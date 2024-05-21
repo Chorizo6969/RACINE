@@ -22,6 +22,7 @@ public class Spawn : MonoBehaviour
         GameObject new_button = Instantiate(PrefabButton);
         new_button.transform.parent = Parent.transform;
         Parent.GetComponent<Listexpedition>().AddObject(new_button);
+
         GameObject new_human = Instantiate(HumanPrefab);
         Parent.GetComponent<Listexpedition>().AddObjectAI(new_human);
         new_human.GetComponent<IA>().work = worktarget;
