@@ -11,16 +11,24 @@ public class DayCycle : MonoBehaviour
     /// variable int qui gère la vitesse du soleil
     /// </summary>
     [SerializeField]
-    private float _sunSpeed = 0.1f;
+    private float _sunSpeed = 0.5f;
     [SerializeField]
     private float _time = 0f;
     [SerializeField]
     private int _cycleCount = 1;
     [SerializeField]
     private TextMeshProUGUI _actualDay;
+    [SerializeField]
+    private GameObject _horloge;
+
+    private void Start()
+    {
+        //Time.timeScale = 8;
+    }
 
     private void Update()
     {
+        _horloge.transform.Rotate(Time.deltaTime * new Vector3(0, 0, _sunSpeed));
         gameObject.transform.Rotate(Time.deltaTime *  new Vector3(_sunSpeed, 0, 0));
         _time += Time.deltaTime * _sunSpeed;
         if (_time >= 360)
