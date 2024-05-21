@@ -13,8 +13,7 @@ public class MoveToRandomPosition : MonoBehaviour
 
     private void Awake()
     {
-        listOwner = wayPointPosManager.Instance.gameObject;
-        _navMeshAgent = GetComponent<NavMeshAgent>();
+        
     }
 
     // Start is called before the first frame update
@@ -81,6 +80,9 @@ public class MoveToRandomPosition : MonoBehaviour
 
     IEnumerator ATTEND()
     {
+        yield return new WaitForSeconds(0.1f);
+        listOwner = wayPointPosManager.Instance.gameObject;
+        _navMeshAgent = GetComponent<NavMeshAgent>();
         yield return new WaitForSeconds(3);
         StartCoroutine(FindRandomPositionToGo());
         StartCoroutine(AutorizeMove());
