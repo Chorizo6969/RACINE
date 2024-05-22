@@ -63,6 +63,7 @@ public class ExpeditionLoot : MonoBehaviour
         {
             int indexmort = Random.Range(0, listBucheron.Count);
             GameObject _humanToDestroy = listBucheron[indexmort];
+            IncrementHuman.instance.Death(indexmort);
             listBucheron.Remove(_humanToDestroy);
             Destroy(_humanToDestroy);
         }
