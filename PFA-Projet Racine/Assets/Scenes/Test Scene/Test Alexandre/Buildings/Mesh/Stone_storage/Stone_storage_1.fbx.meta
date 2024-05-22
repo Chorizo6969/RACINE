@@ -3,7 +3,12 @@ guid: 2bfa48dc1bda9f64f96b3374d32fd739
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Meterial Batiments
+    second: {fileID: 2618497695476011705, guid: b1f07fa1ef49f754188e4f140ddaa475, type: 3}
   materials:
     materialImportMode: 2
     materialName: 0
