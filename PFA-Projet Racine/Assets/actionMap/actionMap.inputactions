@@ -166,6 +166,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "ClosePanel",
+                    "type": "Button",
+                    "id": "e5ccb370-b53c-4d2d-919a-33f25790da95",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -672,6 +681,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "ROTATE",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "50f1b76c-5985-4e4a-ad05-e4079bf83431",
+                    "path": "<Keyboard>/escape",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ClosePanel",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
