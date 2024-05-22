@@ -65,8 +65,8 @@ MonoBehaviour:
   <HidePoint>k__BackingField: {fileID: 6889939645566023625}
   Building: {fileID: 724298216619848602}
   normal: {fileID: 0}
-  BuildingPlacableTrue: {fileID: 0}
-  BuildingPlacableFalse: {fileID: 0}
+  BuildingPlacableTrue: {fileID: 284798809823294670, guid: e5ac9053118caec44b4efbc0f7a10d50, type: 3}
+  BuildingPlacableFalse: {fileID: 2291975707558987528, guid: 13a0f5ccdc61ec44b983937f86b8dd54, type: 3}
 --- !u!114 &7939777621538764245
 MonoBehaviour:
   m_ObjectHideFlags: 0
