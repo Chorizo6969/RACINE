@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 3745107551415990572}
   - component: {fileID: 2273926913654001889}
   - component: {fileID: 5939256798891156267}
-  - component: {fileID: 5347364401869945921}
   m_Layer: 0
   m_Name: IA
   m_TagString: humanPlant
@@ -109,18 +108,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 1
   listOwner: {fileID: 0}
---- !u!114 &5347364401869945921
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5123115511750519978}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6b319874b9d97124ab9b62b24cf54478, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &3375847290660139817
 PrefabInstance:
   m_ObjectHideFlags: 0

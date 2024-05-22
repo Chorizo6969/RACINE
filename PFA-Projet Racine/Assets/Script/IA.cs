@@ -57,14 +57,17 @@ public class IA : MonoBehaviour
         if (_scriptableHuman.Work == ("Bucheron"))
         {
             _currentTarget = work[0];
+            IncrementHuman.instance.EditBucheron(1);
         }
         else if (_scriptableHuman.Work == ("Mineur"))
         {
             _currentTarget = work[1];
+            IncrementHuman.instance.EditStoneMan(1);
         }
         else 
         {
             _currentTarget = work[2];
+            IncrementHuman.instance.EditAquaman(1);
         }
     }
 

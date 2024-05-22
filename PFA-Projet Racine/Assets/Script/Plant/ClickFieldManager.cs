@@ -39,7 +39,18 @@ public class ClickFieldManager : MonoBehaviour
                 }
                 else if (hitInfo.collider.CompareTag("field") && _fieldPlantScript.IsPlanted && !GetComponent<dragAndDropBuilding>().HasClickOnBuildingButtonInstance && _fieldPlantScript._progressCircle.GetComponentInChildren<Fill>().IsFillAmountFull)
                 {
-                    _fieldPlantScript.HarvestField();
+                    if (_fieldPlantScript.ThePlant.GetComponent<PrePlantJob>().Work == "Bucheron" && IncrementHuman.instance._countBucheron < IncrementHuman.instance._maxBucheron)
+                    {
+                        _fieldPlantScript.HarvestField();
+                    }
+                    else if (_fieldPlantScript.ThePlant.GetComponent<PrePlantJob>().Work == "Mineur" && IncrementHuman.instance._countStoneMan < IncrementHuman.instance._maxStoneMan)
+                    {
+                        _fieldPlantScript.HarvestField();
+                    }
+                    else if (_fieldPlantScript.ThePlant.GetComponent<PrePlantJob>().Work == "Eau" && IncrementHuman.instance._countAquaman < IncrementHuman.instance._maxAquaman)
+                    {
+                        _fieldPlantScript.HarvestField();
+                    }
                 }
             }
         }

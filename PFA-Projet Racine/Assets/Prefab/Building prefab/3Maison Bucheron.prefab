@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 697954174110399331}
   - component: {fileID: -5293121928937657418}
   - component: {fileID: 2807229176912376564}
+  - component: {fileID: 8848479631780987939}
   m_Layer: 0
   m_Name: 3Maison Bucheron
   m_TagString: building
@@ -66,6 +67,20 @@ MonoBehaviour:
   normal: {fileID: 0}
   BuildingPlacableTrue: {fileID: 284798809823294670, guid: f133b5d59e5bc3f468f25da29072ba94, type: 3}
   BuildingPlacableFalse: {fileID: 2291975707558987528, guid: 1017c73f41769a344becfcc96f294a41, type: 3}
+--- !u!114 &8848479631780987939
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1293946590759701267}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77aa68e7f1723e34190bdfd249f0e2b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 0
+  stock: 3
 --- !u!1 &3747112920948013910
 GameObject:
   m_ObjectHideFlags: 0
