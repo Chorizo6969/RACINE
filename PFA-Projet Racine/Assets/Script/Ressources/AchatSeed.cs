@@ -1,10 +1,13 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class AchatSeed : MonoBehaviour
 {
     [SerializeField]
     private RessourceManager RessourceManager;
+    [SerializeField]
+    private TextMeshProUGUI _textRacine;
     [SerializeField]
     private TextMeshProUGUI textWood;
     [SerializeField]
@@ -34,6 +37,7 @@ public class AchatSeed : MonoBehaviour
 
     public void Start()
     {
+        _textRacine.text = "1".ToString();
         prix1.SetActive(true);
         prix2.SetActive(false);
         string wood = "20";
@@ -53,6 +57,7 @@ public class AchatSeed : MonoBehaviour
             textO2.text = water.ToString();
             if (RessourceManager.CheckIfCanBuild(20,0,20))
             {
+                _textRacine.text = "2".ToString();
                 RessourceManager.EditWoodAmount(-20);
                 RessourceManager.EditWaterAmount(-30);
                 index = 2;
@@ -64,6 +69,8 @@ public class AchatSeed : MonoBehaviour
         {
             if (RessourceManager.CheckIfCanBuild(35, 15, 50))
             {
+                prix3.GetComponentInParent<Button>().enabled = false;
+                _textRacine.text = "3".ToString();
                 RessourceManager.EditWoodAmount(-35);
                 RessourceManager.EditStoneAmount(-15);
                 RessourceManager.EditWaterAmount(-50);
