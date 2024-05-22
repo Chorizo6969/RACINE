@@ -63,6 +63,13 @@ public class RessourceManager : MonoBehaviour
     /// </summary>
     [SerializeField] private GameObject _errorText;
 
+    public static RessourceManager Instance;
+
+    private void Awake()
+    {
+        Instance = this;
+    }
+
     private void Start()
     {
         _woodText.text = _wood.ToString() + "/" + _maxWood.ToString();
@@ -134,7 +141,7 @@ public class RessourceManager : MonoBehaviour
             newWoodText.transform.localPosition = new Vector3(-20, -40, 0);
             newWoodText.GetComponent<AddScoreJuice>().ChangeValues(amount);
 
-            StartCoroutine(WoodAttend());
+            StartCoroutine(WoodAttend(1));
         }
         else if (amount < 0)
         {
@@ -154,12 +161,18 @@ public class RessourceManager : MonoBehaviour
             newWoodText.transform.localPosition = new Vector3(-20, -40, 0);
             newWoodText.GetComponent<AddScoreJuice>().ChangeValues(amount);
 
-            StartCoroutine(WoodAttend());
+            StartCoroutine(WoodAttend(1));
         }
         else if (_wood == _maxWood)
         {
             Debug.Log("Stockage WOOD full");
         }
+    }
+
+    public void AddWoodStock(int amount)
+    {
+        _maxWood += amount;
+        StartCoroutine(WoodAttend(0));
     }
 
     /// <summary>
@@ -186,7 +199,7 @@ public class RessourceManager : MonoBehaviour
             newWaterText.transform.localPosition = new Vector3(-260, -40, 0);
             newWaterText.GetComponent<AddScoreJuice>().ChangeValues(amount);
 
-            StartCoroutine(WaterAttend());
+            StartCoroutine(WaterAttend(1));
         }
         else if (amount < 0)
         {
@@ -206,12 +219,18 @@ public class RessourceManager : MonoBehaviour
             newWaterText.transform.localPosition = new Vector3(-260, -40, 0);
             newWaterText.GetComponent<AddScoreJuice>().ChangeValues(amount);
 
-            StartCoroutine(WaterAttend());
+            StartCoroutine(WaterAttend(1));
         }
         else if ( _water == _maxWater)
         {
             Debug.Log("Stockage WATER full");
         }
+    }
+
+    public void AddWaterStock(int amount)
+    {
+        _maxWater += amount;
+        StartCoroutine(WaterAttend(0));
     }
 
     /// <summary>
@@ -238,7 +257,7 @@ public class RessourceManager : MonoBehaviour
             newStoneText.transform.localPosition = new Vector3(280, -40, 0);
             newStoneText.GetComponent<AddScoreJuice>().ChangeValues(amount);
 
-            StartCoroutine(StoneAttend());
+            StartCoroutine(StoneAttend(1));
         }
         else if (amount < 0)
         {
@@ -258,12 +277,18 @@ public class RessourceManager : MonoBehaviour
             newStoneText.transform.localPosition = new Vector3(280, -40, 0);
             newStoneText.GetComponent<AddScoreJuice>().ChangeValues(amount);
 
-            StartCoroutine(StoneAttend());
+            StartCoroutine(StoneAttend(1));
         }
         else if (_stone == _maxStone)
         {
             Debug.Log("Stockage STONE full");
         }
+    }
+
+    public void AddStoneStock(int amount)
+    {
+        _maxStone += amount;
+        StartCoroutine(StoneAttend(0));
     }
 
     /// <summary>
@@ -296,21 +321,21 @@ public class RessourceManager : MonoBehaviour
         _errorText.SetActive(false);
     }
 
-    IEnumerator WoodAttend()
+    IEnumerator WoodAttend(float _time)
     {
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(_time);
         _woodText.text = _wood.ToString() + "/" + _maxWood.ToString();
     }
 
-    IEnumerator WaterAttend()
+    IEnumerator WaterAttend(float _time)
     {
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(_time);
         _waterText.text = _water.ToString() + "/" + _maxWater.ToString();
     }
 
-    IEnumerator StoneAttend()
+    IEnumerator StoneAttend(float _time)
     {
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(_time);
         _stoneText.text = _stone.ToString() + "/" + _maxStone.ToString();
     }
 }

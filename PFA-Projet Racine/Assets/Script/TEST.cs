@@ -1,26 +1,24 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class TEST : MonoBehaviour
 {
-    private void OnCollisionEnter(Collision collision)
+    private void Start()
     {
-        Debug.Log("Enter " + collision.gameObject.name);
+        //StartCoroutine(Test());
     }
 
-    private void OnCollisionStay(Collision collision)
+    IEnumerator Test()
     {
-        Debug.Log("Stay " + collision.gameObject.name);
-
-        if (collision.gameObject.name == "Cube (1)" &&  collision.gameObject.name == "Cube (2)")
-        {
-            Debug.Log("NOUNOURS");
-        }
+        yield return new WaitForSeconds(0.1f);
+        Debug.Log(transform.position);
+        StartCoroutine(Test());
     }
 
-    private void OnCollisionExit(Collision collision)
+    private void Update()
     {
-        Debug.Log("Exit " + collision.gameObject.name);
+        Debug.Log(transform.position);
     }
 }
