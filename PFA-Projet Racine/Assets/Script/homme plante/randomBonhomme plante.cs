@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class MoveToRandomPosition : MonoBehaviour
+public class RandomBonhommePlant : MonoBehaviour
 {
     [SerializeField] private float speed;
     [SerializeField] private GameObject listOwner;
@@ -24,10 +24,9 @@ public class MoveToRandomPosition : MonoBehaviour
 
     public void Update()
     {
-        /*if (_canMove && !GetComponent<HideNSeek>().IsHiding)
+        /*if (GetComponent<IA>().IsEnExpedition)
         {
-            Vector3 _directionToGo = Vector3.MoveTowards(transform.position, _positionToGo, speed * Time.deltaTime);
-            transform.position = _directionToGo;
+            _navMeshAgent.speed = 3;
         }*/
     }
 
@@ -52,9 +51,17 @@ public class MoveToRandomPosition : MonoBehaviour
         return direction;
     }
 
-    IEnumerator AutorizeMove()
+    public IEnumerator AutorizeMove()
     {
-        if (!GetComponent<HideNSeek>().IsHiding && !GetComponent<IA>().IsEnExpedition)
+        Debug.Log(GetComponent<HideNSeek>().IsHiding || GetComponent<IA>().IsEnExpedition);
+
+        if (GetComponent<HideNSeek>().IsHiding || GetComponent<IA>().IsEnExpedition)
+        {
+            _navMeshAgent.speed = 3;
+            yield return new WaitForSeconds(1);
+            StartCoroutine(AutorizeMove());
+        }
+        else
         {
             _canMove = true;
             _navMeshAgent.speed = 2;
@@ -62,12 +69,8 @@ public class MoveToRandomPosition : MonoBehaviour
             yield return new WaitForSeconds(timeToWait);
             _canMove = false;
             _navMeshAgent.speed = 0;
+            Debug.Log("Speed 0 randomBonhommePlant");
             yield return new WaitForSeconds(timeToWait);
-            StartCoroutine(AutorizeMove());
-        }
-        else
-        {
-            yield return new WaitForSeconds(1);
             StartCoroutine(AutorizeMove());
         }
     }

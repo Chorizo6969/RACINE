@@ -5,20 +5,15 @@ using UnityEngine;
 
 public class TEST : MonoBehaviour
 {
-    private void Start()
-    {
-        //StartCoroutine(Test());
-    }
-
-    IEnumerator Test()
-    {
-        yield return new WaitForSeconds(0.1f);
-        Debug.Log(transform.position);
-        StartCoroutine(Test());
-    }
+    public bool bool1;
+    public bool bool2;
 
     private void Update()
     {
-        Debug.Log(transform.position);
+       /* Debug.Log("bool1 " + bool1);
+
+        Debug.Log("bool2 " + bool2);
+
+        Debug.Log(!bool1 && !bool2);*/
     }
 }

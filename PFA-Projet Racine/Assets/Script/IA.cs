@@ -87,6 +87,8 @@ public class IA : MonoBehaviour
     {
         _agent.speed = 3;
         _agent.SetDestination(_currentTarget.transform.position); //Ne met pas à jours le chemin de l'IA
+        StopCoroutine(GetComponent<RandomBonhommePlant>().AutorizeMove());
+        StartCoroutine(ATTEND());
         StartCoroutine(Task());
     }
 
@@ -115,5 +117,11 @@ public class IA : MonoBehaviour
     {
         yield return new WaitForSeconds(0.2f);
         _agent.enabled = true;
+    }
+
+    IEnumerator ATTEND()
+    {
+        yield return new WaitForSeconds(0.001f);
+        StartCoroutine(GetComponent<RandomBonhommePlant>().AutorizeMove());
     }
 }

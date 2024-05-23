@@ -37,6 +37,7 @@ public class HideNSeek : MonoBehaviour
             _startHiding = false;
             IsHiding = false;
             _naveshAgent.speed = 0;
+            Debug.Log("Speed 0 H&S");
         }
     }
 
