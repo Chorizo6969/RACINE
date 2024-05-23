@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 697954174110399331}
   - component: {fileID: -5293121928937657418}
   - component: {fileID: 2807229176912376564}
+  - component: {fileID: 8848479631780987939}
   m_Layer: 0
   m_Name: 3Maison Bucheron
   m_TagString: building
@@ -47,7 +48,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c532825e25c1c8418b69caa9893e0e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  height: 0.4
+  height: 0
 --- !u!114 &2807229176912376564
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -66,6 +67,20 @@ MonoBehaviour:
   normal: {fileID: 0}
   BuildingPlacableTrue: {fileID: 284798809823294670, guid: f133b5d59e5bc3f468f25da29072ba94, type: 3}
   BuildingPlacableFalse: {fileID: 2291975707558987528, guid: 1017c73f41769a344becfcc96f294a41, type: 3}
+--- !u!114 &8848479631780987939
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1293946590759701267}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77aa68e7f1723e34190bdfd249f0e2b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 0
+  stock: 3
 --- !u!1 &3747112920948013910
 GameObject:
   m_ObjectHideFlags: 0
@@ -106,6 +121,18 @@ PrefabInstance:
     m_TransformParent: {fileID: 697954174110399331}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 0c337019daa42a44899be1fc2b5092f5, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.45
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0c337019daa42a44899be1fc2b5092f5, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.45
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0c337019daa42a44899be1fc2b5092f5, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.45
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0c337019daa42a44899be1fc2b5092f5, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -144,6 +171,10 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 0c337019daa42a44899be1fc2b5092f5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0c337019daa42a44899be1fc2b5092f5, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0c337019daa42a44899be1fc2b5092f5, type: 3}
       propertyPath: m_Name

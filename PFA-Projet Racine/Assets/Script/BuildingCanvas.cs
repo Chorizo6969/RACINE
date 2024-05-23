@@ -16,9 +16,15 @@ public class BuildingCanvas : MonoBehaviour
 
     public Material BuildingPlacableFalse;
 
+    [SerializeField] private int id;
+
     private void Awake()
     {
         normal = Building.GetComponent<MeshRenderer>().material;
+        if (id != 0)
+        {
+            IncrementHuman.instance.EditMaxHuman(5);
+        }
     }
 
     public void PanelSetActive(bool enabled)

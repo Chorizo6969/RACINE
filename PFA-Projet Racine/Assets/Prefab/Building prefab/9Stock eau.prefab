@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2439094545548758811}
   - component: {fileID: -1768593801104769138}
   - component: {fileID: 3685419080705175954}
+  - component: {fileID: 7575359771361848069}
   m_Layer: 0
   m_Name: 9Stock eau
   m_TagString: building
@@ -47,7 +48,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c532825e25c1c8418b69caa9893e0e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  height: 0.4
+  height: 0
 --- !u!114 &3685419080705175954
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -66,6 +67,20 @@ MonoBehaviour:
   normal: {fileID: 0}
   BuildingPlacableTrue: {fileID: 284798809823294670, guid: f133b5d59e5bc3f468f25da29072ba94, type: 3}
   BuildingPlacableFalse: {fileID: 2291975707558987528, guid: 1017c73f41769a344becfcc96f294a41, type: 3}
+--- !u!114 &7575359771361848069
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2673577714733791471}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aee937a2f4909604996d76a6b77f0128, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 1
+  stock: 50
 --- !u!1 &9113411741326085527
 GameObject:
   m_ObjectHideFlags: 0

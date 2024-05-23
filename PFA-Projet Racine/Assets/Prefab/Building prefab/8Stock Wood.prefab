@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2439094545548758811}
   - component: {fileID: -1768593801104769138}
   - component: {fileID: 241582593320376871}
+  - component: {fileID: 7939777621538764245}
   m_Layer: 0
   m_Name: 8Stock Wood
   m_TagString: building
@@ -47,7 +48,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c532825e25c1c8418b69caa9893e0e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  height: 0.4
+  height: 0
 --- !u!114 &241582593320376871
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -64,8 +65,22 @@ MonoBehaviour:
   <HidePoint>k__BackingField: {fileID: 6889939645566023625}
   Building: {fileID: 724298216619848602}
   normal: {fileID: 0}
-  BuildingPlacableTrue: {fileID: 0}
-  BuildingPlacableFalse: {fileID: 0}
+  BuildingPlacableTrue: {fileID: 284798809823294670, guid: e5ac9053118caec44b4efbc0f7a10d50, type: 3}
+  BuildingPlacableFalse: {fileID: 2291975707558987528, guid: 13a0f5ccdc61ec44b983937f86b8dd54, type: 3}
+--- !u!114 &7939777621538764245
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2673577714733791471}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aee937a2f4909604996d76a6b77f0128, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 0
+  stock: 50
 --- !u!1 &6889939645566023625
 GameObject:
   m_ObjectHideFlags: 0

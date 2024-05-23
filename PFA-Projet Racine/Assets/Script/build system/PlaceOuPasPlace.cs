@@ -16,10 +16,6 @@ public class PlaceOuPasPlace : MonoBehaviour
 
     private void OnTriggerEnter(Collider collision)
     {
-        /*if (gameObject.name == "Water_house" && collision.CompareTag("Water"))
-        {
-
-        }*/
         if (gameObject.layer != 7 && (collision.CompareTag("Water") || collision.CompareTag("building")))
         {
             isPlacable = false;
@@ -28,8 +24,18 @@ public class PlaceOuPasPlace : MonoBehaviour
         {
             isPlacable = true;
         }
+    }
 
-        Debug.Log(collision.gameObject.tag);
+    private void OnTriggerStay(Collider collision)
+    {
+        if (gameObject.layer != 7 && (collision.CompareTag("Water") || collision.CompareTag("building")))
+        {
+            isPlacable = false;
+        }
+        else if (gameObject.layer == 7 && collision.CompareTag("Water"))
+        {
+            isPlacable = true;
+        }
     }
 
     private void OnTriggerExit(Collider other)

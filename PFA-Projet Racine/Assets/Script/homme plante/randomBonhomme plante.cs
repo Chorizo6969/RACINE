@@ -13,8 +13,7 @@ public class MoveToRandomPosition : MonoBehaviour
 
     private void Awake()
     {
-        listOwner = wayPointPosManager.Instance.gameObject;
-        _navMeshAgent = GetComponent<NavMeshAgent>();
+        
     }
 
     // Start is called before the first frame update
@@ -48,8 +47,8 @@ public class MoveToRandomPosition : MonoBehaviour
 
     private Vector3 FindDirection(GameObject thisGO, GameObject targetDestination)
     {
-        Vector3 direction = targetDestination.transform.position - thisGO.transform.position;
-        direction.y = 1;
+        Vector3 direction = targetDestination.transform.position;
+        //direction.y = 1;
         return direction;
     }
 
@@ -58,7 +57,7 @@ public class MoveToRandomPosition : MonoBehaviour
         if (!GetComponent<HideNSeek>().IsHiding && !GetComponent<IA>().IsEnExpedition)
         {
             _canMove = true;
-            _navMeshAgent.speed = 1;
+            _navMeshAgent.speed = 2;
             int timeToWait = Random.Range(2, 5);
             yield return new WaitForSeconds(timeToWait);
             _canMove = false;
@@ -75,6 +74,9 @@ public class MoveToRandomPosition : MonoBehaviour
 
     IEnumerator ATTEND()
     {
+        yield return new WaitForSeconds(0.1f);
+        listOwner = wayPointPosManager.Instance.gameObject;
+        _navMeshAgent = GetComponent<NavMeshAgent>();
         yield return new WaitForSeconds(3);
         StartCoroutine(FindRandomPositionToGo());
         StartCoroutine(AutorizeMove());
