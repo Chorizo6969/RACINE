@@ -141,7 +141,7 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "OnRightClick",
+                    "name": "OnLeftClickBuild",
                     "type": "Button",
                     "id": "5bbdd229-19ec-4171-a9f4-2b402c3136cc",
                     "expectedControlType": "Button",
@@ -150,7 +150,7 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "OnLeftClick",
+                    "name": "OnLeftClickAutre",
                     "type": "Button",
                     "id": "07dffb48-224b-4d36-8c0b-fc9615bdf543",
                     "expectedControlType": "Button",
@@ -654,11 +654,11 @@
                 {
                     "name": "",
                     "id": "68cabad5-a0f8-48e3-b37f-13a27500efd0",
-                    "path": "<Mouse>/rightButton",
+                    "path": "<Mouse>/leftButton",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "OnRightClick",
+                    "action": "OnLeftClickBuild",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -669,7 +669,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "OnLeftClick",
+                    "action": "OnLeftClickAutre",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },

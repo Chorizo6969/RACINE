@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 8157766959814971811}
   - component: {fileID: 2271285938365749324}
   - component: {fileID: 3745107551415990572}
-  - component: {fileID: 661806330653536008}
   - component: {fileID: 2273926913654001889}
   - component: {fileID: 5939256798891156267}
+  - component: {fileID: -781356051346972959}
   m_Layer: 0
   m_Name: Aquaman
   m_TagString: humanPlant
@@ -103,33 +103,6 @@ MonoBehaviour:
   _reservoir: []
   <_agent>k__BackingField: {fileID: 0}
   IsEnExpedition: 0
---- !u!54 &661806330653536008
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5123115511750519978}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 112
-  m_CollisionDetection: 1
 --- !u!114 &2273926913654001889
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -160,6 +133,29 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 1
   listOwner: {fileID: 0}
+--- !u!136 &-781356051346972959
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5123115511750519978}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Height: 1
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &500972205231066528
 PrefabInstance:
   m_ObjectHideFlags: 0
