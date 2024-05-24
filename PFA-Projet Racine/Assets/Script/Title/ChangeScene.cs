@@ -12,20 +12,19 @@ public class ChangeScene : MonoBehaviour
     public void StartGame()
     {
         _id = 0;
-        _anim.Play();
         StartCoroutine(Delay());
     }
 
     public void Credits()
     {
         _id = 1;
-        _anim.Play();
         StartCoroutine(Delay());
     }
 
     public void backmenu()
     {
-        SceneManager.LoadScene("Menu");
+        _id = 2;
+        StartCoroutine(Delay());
     }
 
     public void QuitGame()
@@ -35,12 +34,17 @@ public class ChangeScene : MonoBehaviour
 
     IEnumerator Delay()
     {
-        yield return new WaitForSeconds(2.7f);
+        _anim.Play("CloseCercle");
+        yield return new WaitForSeconds(2f);
         if (_id == 1)
         {
             SceneManager.LoadScene("Credits");
         }
-        else
+        else if (_id == 2)
+        {
+            SceneManager.LoadScene("Menu");
+        }
+        else 
         {
             SceneManager.LoadScene("Vrai Scene");
         }
