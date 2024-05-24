@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Test Scene/Vrai Scene.unity
     guid: fab06391df677d04d86b6b3a58183b0f
+  - enabled: 1
+    path: Assets/Scenes/Credits.unity
+    guid: 513705fc8ee7f9d41a3f43f18ead8aca
   m_configObjects: {}

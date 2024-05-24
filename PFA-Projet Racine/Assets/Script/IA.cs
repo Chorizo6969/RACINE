@@ -57,14 +57,17 @@ public class IA : MonoBehaviour
         if (_scriptableHuman.Work == ("Bucheron"))
         {
             _currentTarget = work[0];
+            IncrementHuman.instance.EditBucheron(1);
         }
         else if (_scriptableHuman.Work == ("Mineur"))
         {
             _currentTarget = work[1];
+            IncrementHuman.instance.EditStoneMan(1);
         }
         else 
         {
             _currentTarget = work[2];
+            IncrementHuman.instance.EditAquaman(1);
         }
     }
 
@@ -84,6 +87,8 @@ public class IA : MonoBehaviour
     {
         _agent.speed = 3;
         _agent.SetDestination(_currentTarget.transform.position); //Ne met pas à jours le chemin de l'IA
+        StopCoroutine(GetComponent<RandomBonhommePlant>().AutorizeMove());
+        StartCoroutine(ATTEND());
         StartCoroutine(Task());
     }
 
@@ -112,5 +117,11 @@ public class IA : MonoBehaviour
     {
         yield return new WaitForSeconds(0.2f);
         _agent.enabled = true;
+    }
+
+    IEnumerator ATTEND()
+    {
+        yield return new WaitForSeconds(0.001f);
+        StartCoroutine(GetComponent<RandomBonhommePlant>().AutorizeMove());
     }
 }

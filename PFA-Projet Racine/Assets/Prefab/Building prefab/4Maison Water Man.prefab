@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 697954174110399331}
   - component: {fileID: -5293121928937657418}
   - component: {fileID: 2488260547179814950}
+  - component: {fileID: -7874422862695922564}
   m_Layer: 7
   m_Name: 4Maison Water Man
   m_TagString: building
@@ -31,7 +32,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 4087751970026899978}
   - {fileID: 304421241556915538}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -61,42 +61,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CanvasOptionPanel: {fileID: 0}
-  <HidePoint>k__BackingField: {fileID: 2382358403554043595}
+  <HidePoint>k__BackingField: {fileID: 0}
   Building: {fileID: 1113045709804081128}
   normal: {fileID: 0}
   BuildingPlacableTrue: {fileID: 284798809823294670, guid: f133b5d59e5bc3f468f25da29072ba94, type: 3}
   BuildingPlacableFalse: {fileID: 2291975707558987528, guid: 1017c73f41769a344becfcc96f294a41, type: 3}
---- !u!1 &2382358403554043595
-GameObject:
+  id: 0
+--- !u!114 &-7874422862695922564
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 4087751970026899978}
-  m_Layer: 7
-  m_Name: HidePoint
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &4087751970026899978
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2382358403554043595}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.739, y: 0, z: 0.514}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 697954174110399331}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_GameObject: {fileID: 1293946590759701267}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77aa68e7f1723e34190bdfd249f0e2b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 1
+  stock: 3
 --- !u!1001 &266623859793867449
 PrefabInstance:
   m_ObjectHideFlags: 0

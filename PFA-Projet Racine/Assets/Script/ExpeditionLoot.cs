@@ -14,13 +14,26 @@ public class ExpeditionLoot : MonoBehaviour
     [SerializeField]
     private TextMeshProUGUI scoreWood;
     [SerializeField]
-    private GameObject listExpeditionOwner;
+    private TextMeshProUGUI scoreStone;
+    [SerializeField]
+    private TextMeshProUGUI scoreWater;
+    [SerializeField]
+    private GameObject listExpeditionOwnerBucheron;
+    [SerializeField]
+    private GameObject listExpeditionOwnerMineur;
+    [SerializeField]
+    private GameObject listExpeditionOwnerAquaman;
     [SerializeField]
     private List<GameObject> listBucheron;
+    [SerializeField]
+    private List<GameObject> listMineur;
+    [SerializeField]
+    private List<GameObject> listAquaman;
 
     private int woodscore;
 
     private bool mort = false;
+    private int index = 1;
 
 
     public static ExpeditionLoot instance;
@@ -33,17 +46,39 @@ public class ExpeditionLoot : MonoBehaviour
 
     public void SortHuman()
     {
-        foreach (GameObject _human in listExpeditionOwner.GetComponent<Listexpedition>().listHuman)
+        foreach (GameObject _human in listExpeditionOwnerBucheron.GetComponent<Listexpedition>().listHuman)
         {
             if (_human.GetComponent<IA>()._scriptableHuman.Work == ("Bucheron") && !listBucheron.Contains(_human))
             {
                 listBucheron.Add(_human);
+                index = 1;
             }
         }
+
+        foreach (GameObject _human in listExpeditionOwnerMineur.GetComponent<Listexpedition>().listHuman)
+        {
+            if (_human.GetComponent<IA>()._scriptableHuman.Work == ("Mineur") && !listMineur.Contains(_human))
+            {
+                Debug.Log("caca");
+                listMineur.Add(_human);
+                index = 2;
+            }
+        }
+
+        foreach (GameObject _human in listExpeditionOwnerAquaman.GetComponent<Listexpedition>().listHuman)
+        {
+            if (_human.GetComponent<IA>()._scriptableHuman.Work == ("Eau") && !listAquaman.Contains(_human))
+            {
+                listAquaman.Add(_human);
+                index = 3;
+            }
+        }
+
     }
 
     public void WorkingWood()
     {
+        Debug.Log("expédition lancé");
         mort = false;
         woodscore = 0;
         int lootWood = Random.Range(0, maxloot + 1);
@@ -61,12 +96,38 @@ public class ExpeditionLoot : MonoBehaviour
         yield return new WaitForSeconds(expeditionTime);
         if (mort == true)
         {
-            int indexmort = Random.Range(0, listBucheron.Count);
-            GameObject _humanToDestroy = listBucheron[indexmort];
-            IncrementHuman.instance.Death(indexmort);
-            listBucheron.Remove(_humanToDestroy);
-            Destroy(_humanToDestroy);
+            if (index == 1)
+            {
+                int indexmort = Random.Range(0, listBucheron.Count);
+                Debug.Log($"il y a eu {indexmort} morts durant l'expédition...");
+                GameObject _humanToDestroy = listBucheron[indexmort];
+                IncrementHuman.instance.Death(indexmort);
+                listBucheron.Remove(_humanToDestroy);
+                Destroy(_humanToDestroy);
+                RessourceManager.Instance.EditWoodAmount(woodscore);
+
+            }
+            else if (index == 2)
+            {
+                int indexmort = Random.Range(0, listMineur.Count);
+                Debug.Log($"il y a eu {indexmort} morts durant l'expédition...");
+                GameObject _humanToDestroy = listMineur[indexmort];
+                IncrementHuman.instance.Death(indexmort);
+                listMineur.Remove(_humanToDestroy);
+                Destroy(_humanToDestroy);
+                RessourceManager.Instance.EditStoneAmount(woodscore);
+            }
+            else
+            {
+                int indexmort = Random.Range(0, listAquaman.Count);
+                Debug.Log($"il y a eu {indexmort} morts durant l'expédition...");
+                GameObject _humanToDestroy = listAquaman[indexmort];
+                IncrementHuman.instance.Death(indexmort);
+                listAquaman.Remove(_humanToDestroy);
+                Destroy(_humanToDestroy);
+                RessourceManager.Instance.EditWaterAmount(woodscore);
+            }
         }
-        scoreWood.text += woodscore.ToString();
+        Debug.Log("Fin de l'expédition.");
     }
 }

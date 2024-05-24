@@ -5,8 +5,8 @@ using UnityEngine.InputSystem;
 
 public class BuildOptionPanel : MonoBehaviour
 {
-    private GameObject _lastClickBuilding;
-    public void OnRightClick(InputAction.CallbackContext callbackContext)
+    public GameObject PANELRACINE;
+    public void OnLeftClick(InputAction.CallbackContext callbackContext)
     {
         if (callbackContext.started)
         {
@@ -15,22 +15,11 @@ public class BuildOptionPanel : MonoBehaviour
             Physics.Raycast(ray, out hitInfo);
             if (hitInfo.collider != null)
             {
-                GameObject collider = hitInfo.collider.gameObject;
-                if (hitInfo.collider.CompareTag("building") || hitInfo.collider.CompareTag("field"))
+                if (hitInfo.collider.CompareTag("RACINE"))
                 {
-                    _lastClickBuilding = collider;
-                    /*if (collider.GetComponent<BuildingCanvas>().CanvasOptionPanel != null)
-                    {
-                        collider.GetComponent<BuildingCanvas>().PanelSetActive(true);
-                    }*/
-                }
-                else if (_lastClickBuilding != null) 
-                {
-                    _lastClickBuilding.GetComponent<BuildingCanvas>().PanelSetActive(false);
-                    _lastClickBuilding = null;
+                    PANELRACINE.SetActive(true);
                 }
             }
-            
         }
     }
 }
