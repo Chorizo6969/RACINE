@@ -1,19 +1,26 @@
 using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class ChangeScene : MonoBehaviour
 {
+    [SerializeField]
+    private Animation _anim;
+    [SerializeField]
+    private int _id = 0;
+
     public void StartGame()
     {
-        SceneManager.LoadScene("Vrai Scene");
+        _id = 0;
+        _anim.Play();
+        StartCoroutine(Delay());
     }
 
     public void Credits()
     {
-        SceneManager.LoadScene("Credits");
+        _id = 1;
+        _anim.Play();
+        StartCoroutine(Delay());
     }
 
     public void backmenu()
@@ -24,5 +31,18 @@ public class ChangeScene : MonoBehaviour
     public void QuitGame()
     {
         Application.Quit();
+    }
+
+    IEnumerator Delay()
+    {
+        yield return new WaitForSeconds(2.7f);
+        if (_id == 1)
+        {
+            SceneManager.LoadScene("Credits");
+        }
+        else
+        {
+            SceneManager.LoadScene("Vrai Scene");
+        }
     }
 }
