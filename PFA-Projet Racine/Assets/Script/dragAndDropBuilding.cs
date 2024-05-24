@@ -15,11 +15,20 @@ public class dragAndDropBuilding : MonoBehaviour
     /// <summary>
     /// booléen qui renvoit si l'on a cliqué sur un bouton pour mettre un batiment
     /// </summary>
-    [field : SerializeField] public bool HasClickOnBuildingButtonInstance {  get; private set; }
+    [field : SerializeField] public bool HasClickOnBuildingButtonInstance {  get; set; }
+
+    public static dragAndDropBuilding instance;
+
+    public GameObject PPAANNEELL;
 
     public float HauteurSpawn = -1;
 
     public LayerMask LayerMask;
+
+    private void Awake()
+    {
+        instance = this;
+    }
 
     public void OnLeftClick(InputAction.CallbackContext callBackContext)
     {
@@ -27,10 +36,12 @@ public class dragAndDropBuilding : MonoBehaviour
         {
             if (BOUGE.GetComponent<BuildingCanvas>().Building.GetComponent<PlaceOuPasPlace>().isPlacable)
             {
+                BOUGE.GetComponent<BuildingCanvas>().placeOrNot = true;
                 HasClickOnBuildingButtonInstance = false;
                 BOUGE.GetComponent<BuildingCanvas>().Building.GetComponent<PlaceOuPasPlace>().SetBox();
-                Destroy(BOUGE.GetComponent<BuildingCanvas>().Building.GetComponent<PlaceOuPasPlace>());
+                BOUGE.GetComponent<BuildingCanvas>().Building.GetComponent<PlaceOuPasPlace>().enabled = false;
                 BOUGE.GetComponent<BuildingCanvas>().NormalMat();
+                PPAANNEELL.SetActive(true);
                 BOUGE = null;
             }
         }

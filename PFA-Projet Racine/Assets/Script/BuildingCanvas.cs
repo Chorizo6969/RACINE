@@ -18,6 +18,11 @@ public class BuildingCanvas : MonoBehaviour
 
     [SerializeField] private int id;
 
+    public bool placeOrNot;
+
+    public int woodDestroyCost;
+    public int stoneDestroyCost;
+
     private void Awake()
     {
         normal = Building.GetComponent<MeshRenderer>().material;

@@ -17,6 +17,7 @@ public class GiveBuildingToBuild : MonoBehaviour
         if (GetComponent<BuildingCost>().PlayerRessourceManager.CheckIfCanBuild(GetComponent<BuildingCost>().WoodCost, GetComponent<BuildingCost>().StoneCost, 0))
         {
             GetComponent<BuildingCost>().BuyBuilding();
+            dragAndDropBuilding.instance.PPAANNEELL.SetActive(false);
             GameObject _objectToGiveBuilding = FindAnyObjectByType<dragAndDropBuilding>().gameObject;
             GameObject newBuilding = Instantiate(building);
             _objectToGiveBuilding.GetComponent<dragAndDropBuilding>().BOUGE = newBuilding;
