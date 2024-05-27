@@ -14,7 +14,7 @@ public class GiveBuildingToBuild : MonoBehaviour
 
     public void OnClick()
     {
-        if (GetComponent<BuildingCost>().PlayerRessourceManager.CheckIfCanBuild(GetComponent<BuildingCost>().WoodCost, GetComponent<BuildingCost>().StoneCost, 0))
+        if (GetComponent<BuildingCost>().PlayerRessourceManager.CheckIfCanBuild(GetComponent<BuildingCost>().WoodCost, GetComponent<BuildingCost>().StoneCost, 0) && MaxBatPlacable.Instance.actuBat < MaxBatPlacable.Instance.maxBat)
         {
             GetComponent<BuildingCost>().BuyBuilding();
             dragAndDropBuilding.instance.PPAANNEELL.SetActive(false);
