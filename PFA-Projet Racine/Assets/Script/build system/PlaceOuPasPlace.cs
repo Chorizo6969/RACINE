@@ -5,9 +5,22 @@ using UnityEngine;
 public class PlaceOuPasPlace : MonoBehaviour
 {
     public bool isPlacable = true;
+    public GameObject SecondBox;
+
+    public Vector3 ColliderBoxSize1;
+    public Vector3 ColliderBoxPosition1;
+
+    public Vector3 ColliderBoxSize2;
+    public Vector3 ColliderBoxPosition2;
 
     private void Start()
     {
+        ColliderBoxSize1 = GetComponent<BoxCollider>().size;
+        ColliderBoxPosition1 = GetComponent<BoxCollider>().center;
+
+        ColliderBoxSize2 = new Vector3(7.00000095f, 6.99999952f, 10.0000019f);
+        ColliderBoxPosition2 = new Vector3(0.148981839f, 1.43600392f, -1.7643292f);
+
         if (gameObject.layer == 7)
         {
             isPlacable = false;
@@ -22,7 +35,10 @@ public class PlaceOuPasPlace : MonoBehaviour
         }
         else if (gameObject.layer == 7 && collision.CompareTag("Water"))
         {
-            isPlacable = true;
+            if (SecondBox.GetComponent<CheckIfInGround>().IsInGround)
+            {
+                isPlacable = true;
+            }
         }
     }
 
@@ -34,7 +50,13 @@ public class PlaceOuPasPlace : MonoBehaviour
         }
         else if (gameObject.layer == 7 && collision.CompareTag("Water"))
         {
-            isPlacable = true;
+            
+
+            if (SecondBox.GetComponent<CheckIfInGround>().IsInGround)
+            {
+                isPlacable = true;
+            }
+            
         }
     }
 
@@ -47,6 +69,8 @@ public class PlaceOuPasPlace : MonoBehaviour
         }
         else if (other.CompareTag("Water") || other.CompareTag("building") || other.CompareTag("forest") && gameObject.layer != 7)
         {
+            
+
             isPlacable = true;
         }
     }
@@ -61,6 +85,14 @@ public class PlaceOuPasPlace : MonoBehaviour
         {
             GetComponentInParent<BuildingCanvas>().FalseMat();
         }
+
+        if (SecondBox != null)
+        {
+            if (!SecondBox.GetComponent<CheckIfInGround>().IsInGround)
+            {
+                isPlacable = false;
+            }
+        }
     }
 
     public void SetBox()
@@ -71,11 +103,21 @@ public class PlaceOuPasPlace : MonoBehaviour
         }
         else if (gameObject.name == "Water_house")
         {
-            Destroy(gameObject.GetComponent<BoxCollider>());
-            StartCoroutine(ATTENNNNNNNNNNNNND());
+            ChangeBoxSizeNormal();
         }
     }
 
+    public void ChangeBoxSizeUp()
+    {
+        GetComponent<BoxCollider>().size = ColliderBoxSize1;
+        GetComponent<BoxCollider>().center = ColliderBoxPosition1;
+    }
+
+    public void ChangeBoxSizeNormal()
+    {
+        GetComponent<BoxCollider>().size = ColliderBoxSize2;
+        GetComponent<BoxCollider>().center = ColliderBoxPosition2;
+    }
     IEnumerator ATTENNNNNNNNNNNNND()
     {
         yield return new WaitForSeconds(0.001f);
