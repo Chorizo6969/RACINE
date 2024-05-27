@@ -92,9 +92,13 @@ public class IA : MonoBehaviour
         _animator.SetTrigger("Job");
         _agent.SetDestination(_currentTarget.transform.position); //Ne met pas à jours le chemin de l'IA
         StopCoroutine(GetComponent<RandomBonhommePlant>().AutorizeMove());
-        _animator.SetTrigger("Job");
-        StartCoroutine(ATTEND());
         StartCoroutine(Task());
+        _animator.SetTrigger("Job");
+        if (_currentTarget = work[2])
+        {
+            StartCoroutine(AnimationJump());
+        }
+        StartCoroutine(ATTEND());
     }
 
     /// <summary>
@@ -105,6 +109,10 @@ public class IA : MonoBehaviour
     {
         IsEnExpedition = true;
         yield return new WaitForSeconds(60);
+        if (_currentTarget = work[2])
+        {
+            _animator.SetTrigger("Fin");
+        }
         _animator.SetTrigger("Walk");
         GetComponent<HideNSeek>()._startHiding = true;
         IsEnExpedition = false;
@@ -128,5 +136,19 @@ public class IA : MonoBehaviour
     {
         yield return new WaitForSeconds(0.001f);
         StartCoroutine(GetComponent<RandomBonhommePlant>().AutorizeMove());
+    }
+
+    IEnumerator AnimationJump()
+    {
+        StopCoroutine(GetComponent<RandomBonhommePlant>().AutorizeMove());
+        if (Vector3.Distance(gameObject.transform.position, _currentTarget.transform.position) <= 0.5f)
+        {
+            _animator.SetTrigger("Task");
+        }
+        else
+        {
+            yield return new WaitForSeconds(1);
+            StartCoroutine(AnimationJump());
+        }
     }
 }
