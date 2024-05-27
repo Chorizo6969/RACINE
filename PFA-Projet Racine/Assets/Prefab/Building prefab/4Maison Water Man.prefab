@@ -33,6 +33,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 304421241556915538}
+  - {fileID: 1677131424355399276}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &-5293121928937657418
@@ -67,6 +68,9 @@ MonoBehaviour:
   BuildingPlacableTrue: {fileID: 284798809823294670, guid: f133b5d59e5bc3f468f25da29072ba94, type: 3}
   BuildingPlacableFalse: {fileID: 2291975707558987528, guid: 1017c73f41769a344becfcc96f294a41, type: 3}
   id: 0
+  placeOrNot: 0
+  woodDestroyCost: 0
+  stoneDestroyCost: 0
 --- !u!114 &-7874422862695922564
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -81,6 +85,59 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 1
   stock: 3
+--- !u!1 &4634489859766911375
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1677131424355399276}
+  - component: {fileID: 95760394644401824}
+  m_Layer: 0
+  m_Name: SecondBoxCollider
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1677131424355399276
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4634489859766911375}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 697954174110399331}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &95760394644401824
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4634489859766911375}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 2.1376069, z: 1.6841891}
+  m_Center: {x: 0, y: 0.32600582, z: -0.34209466}
 --- !u!1001 &266623859793867449
 PrefabInstance:
   m_ObjectHideFlags: 0
