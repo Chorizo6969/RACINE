@@ -11,10 +11,8 @@ public class RandomBonhommePlant : MonoBehaviour
     private Vector3 _positionToGo;
     private NavMeshAgent _navMeshAgent;
 
-    private void Awake()
-    {
-        
-    }
+    [SerializeField]
+    private Animator _animator;
 
     // Start is called before the first frame update
     void Start()
@@ -39,7 +37,6 @@ public class RandomBonhommePlant : MonoBehaviour
         {
             _navMeshAgent.SetDestination(_positionToGo);
         }
-
         yield return new WaitForSeconds(Random.Range(2, 7));
         StartCoroutine(FindRandomPositionToGo());
     }
@@ -69,7 +66,9 @@ public class RandomBonhommePlant : MonoBehaviour
             yield return new WaitForSeconds(timeToWait);
             _canMove = false;
             _navMeshAgent.speed = 0;
-            Debug.Log("Speed 0 randomBonhommePlant");
+            _animator.SetBool("Walk", false);
+            _animator.SetBool("Job", false);
+            _animator.SetBool("Breath", true);
             yield return new WaitForSeconds(timeToWait);
             StartCoroutine(AutorizeMove());
         }

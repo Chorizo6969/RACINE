@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Animations;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.Timeline;
@@ -40,6 +41,10 @@ public class IA : MonoBehaviour
     /// Cible des humains plantes (forêt, mine, ou rivière)
     /// </summary>
     private GameObject _currentTarget;
+
+    [SerializeField]
+    private Animator _animator;
+
 
     [field :SerializeField]
     /// <summary>
@@ -98,8 +103,13 @@ public class IA : MonoBehaviour
     /// <returns> retourne un new WaitForSeconds de 5s </returns>
     IEnumerator Task()
     {
+        _animator.SetBool("Breath", false);
+        _animator.SetBool("Walk", false);
+        _animator.SetBool("Job", true);
         IsEnExpedition = true;
         yield return new WaitForSeconds(60);
+        _animator.SetBool("Job", false);
+        _animator.SetBool("Walk", true);
         GetComponent<HideNSeek>()._startHiding = true;
         IsEnExpedition = false;
         if (_goHdv )
