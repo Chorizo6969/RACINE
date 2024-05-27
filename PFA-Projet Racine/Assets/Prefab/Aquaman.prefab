@@ -74,7 +74,7 @@ NavMeshAgent:
   m_Speed: 3
   m_Acceleration: 8
   avoidancePriority: 50
-  m_AngularSpeed: 90
+  m_AngularSpeed: 5000
   m_StoppingDistance: 0.2
   m_AutoTraverseOffMeshLink: 0
   m_AutoBraking: 1
@@ -101,6 +101,7 @@ MonoBehaviour:
   work: []
   _hdv: {fileID: 0}
   _reservoir: []
+  _animator: {fileID: 2620529119558931344}
   <_agent>k__BackingField: {fileID: 0}
   IsEnExpedition: 0
 --- !u!114 &2273926913654001889
@@ -133,6 +134,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 1
   listOwner: {fileID: 0}
+  _animator: {fileID: 2620529119558931344}
 --- !u!136 &-781356051346972959
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -238,7 +240,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 734832487773597937}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: a785927d5d21bf04d91d1f197550a2cd, type: 2}
   m_CullingMode: 0

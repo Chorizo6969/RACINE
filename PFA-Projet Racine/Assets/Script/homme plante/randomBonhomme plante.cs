@@ -11,10 +11,8 @@ public class RandomBonhommePlant : MonoBehaviour
     private Vector3 _positionToGo;
     private NavMeshAgent _navMeshAgent;
 
-    private void Awake()
-    {
-        
-    }
+    [SerializeField]
+    private Animator _animator;
 
     // Start is called before the first frame update
     void Start()
@@ -39,7 +37,6 @@ public class RandomBonhommePlant : MonoBehaviour
         {
             _navMeshAgent.SetDestination(_positionToGo);
         }
-
         yield return new WaitForSeconds(Random.Range(2, 7));
         StartCoroutine(FindRandomPositionToGo());
     }
@@ -57,19 +54,29 @@ public class RandomBonhommePlant : MonoBehaviour
 
         if (GetComponent<HideNSeek>().IsHiding || GetComponent<IA>().IsEnExpedition)
         {
-            _navMeshAgent.speed = 3;
-            yield return new WaitForSeconds(1);
-            StartCoroutine(AutorizeMove());
+            if (Vector3.Distance(gameObject.transform.position, _positionToGo) <= 0.5f)
+            {
+                _navMeshAgent.speed = 3;
+                _animator.SetTrigger("Walk");
+                yield return new WaitForSeconds(1);
+                StartCoroutine(AutorizeMove());
+            }
+            else
+            {
+                _animator.SetTrigger("Breath");
+                StartCoroutine(AutorizeMove());
+            }
         }
         else
         {
             _canMove = true;
-            _navMeshAgent.speed = 2;
+            _navMeshAgent.speed = 3;
+            _animator.SetTrigger("Walk");
             int timeToWait = Random.Range(2, 5);
             yield return new WaitForSeconds(timeToWait);
             _canMove = false;
             _navMeshAgent.speed = 0;
-            Debug.Log("Speed 0 randomBonhommePlant");
+            _animator.SetTrigger("Breath");
             yield return new WaitForSeconds(timeToWait);
             StartCoroutine(AutorizeMove());
         }

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Animations;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.Timeline;
@@ -40,6 +41,10 @@ public class IA : MonoBehaviour
     /// Cible des humains plantes (forêt, mine, ou rivière)
     /// </summary>
     private GameObject _currentTarget;
+
+    [SerializeField]
+    private Animator _animator;
+
 
     [field :SerializeField]
     /// <summary>
@@ -86,8 +91,10 @@ public class IA : MonoBehaviour
     public void GiveTarget()
     {
         _agent.speed = 3;
+        _animator.SetTrigger("Job");
         _agent.SetDestination(_currentTarget.transform.position); //Ne met pas à jours le chemin de l'IA
         StopCoroutine(GetComponent<RandomBonhommePlant>().AutorizeMove());
+        _animator.SetTrigger("Job");
         StartCoroutine(ATTEND());
         StartCoroutine(Task());
     }
@@ -100,12 +107,12 @@ public class IA : MonoBehaviour
     {
         IsEnExpedition = true;
         yield return new WaitForSeconds(60);
+        _animator.SetTrigger("Walk");
         GetComponent<HideNSeek>()._startHiding = true;
         IsEnExpedition = false;
         if (_goHdv )
         {
             /*_agent.SetDestination(new Vector3(3, 0.8277f, 3));*/
-            
         }
         else
         {

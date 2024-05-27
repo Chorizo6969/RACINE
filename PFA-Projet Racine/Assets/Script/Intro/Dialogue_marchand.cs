@@ -16,14 +16,9 @@ public class Dialoguemarchand : MonoBehaviour
 
     private int index;
 
-    void Start()
-    {
-        text.text = string.Empty;
-        StartDialogue();
-    }
-
     public void StartDialogue()
     {
+        text.text = string.Empty;
         index = 0;
         StartCoroutine(TypeLines());
     }
