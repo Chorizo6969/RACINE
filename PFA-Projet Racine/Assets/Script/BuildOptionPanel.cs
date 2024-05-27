@@ -26,7 +26,7 @@ public class BuildOptionPanel : MonoBehaviour
                     if (hitInfo.collider.GetComponentInParent<BuildingCanvas>().placeOrNot)
                     {
                         PANEL.SetActive(true);
-                        PANEL.GetComponent<ClickInfo>().lastBat = hitInfo.collider.gameObject;
+                        PANEL.GetComponent<ClickInfo>().lastBat = hitInfo.collider.GetComponentInParent<BuildingCanvas>().gameObject;
                         
                     }
                 }
