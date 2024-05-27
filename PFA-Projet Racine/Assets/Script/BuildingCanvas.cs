@@ -18,6 +18,11 @@ public class BuildingCanvas : MonoBehaviour
 
     [SerializeField] private int id;
 
+    public bool placeOrNot;
+
+    public int woodDestroyCost;
+    public int stoneDestroyCost;
+
     private void Awake()
     {
         normal = Building.GetComponent<MeshRenderer>().material;
@@ -25,6 +30,7 @@ public class BuildingCanvas : MonoBehaviour
         {
             IncrementHuman.instance.EditMaxHuman(5);
         }
+        MaxBatPlacable.Instance.IncreaseActuBat(1);
     }
 
     public void PanelSetActive(bool enabled)
@@ -47,4 +53,8 @@ public class BuildingCanvas : MonoBehaviour
         Building.GetComponent<MeshRenderer>().material = normal;
     }
 
+    private void OnDestroy()
+    {
+        MaxBatPlacable.Instance.IncreaseActuBat(-1);
+    }
 }

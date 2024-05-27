@@ -11,6 +11,7 @@ TagManager:
   - humanPlant
   - Water
   - RACINE
+  - forest
   layers:
   - Default
   - TransparentFX
