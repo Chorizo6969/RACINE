@@ -14,6 +14,11 @@ public class GiveBuildingToBuild : MonoBehaviour
 
     public void OnClick()
     {
+        Debug.Log(GetComponent<BuildingCost>());
+        Debug.Log(GetComponent<BuildingCost>().PlayerRessourceManager);
+        Debug.Log(MaxBatPlacable.Instance);
+
+
         if (GetComponent<BuildingCost>().PlayerRessourceManager.CheckIfCanBuild(GetComponent<BuildingCost>().WoodCost, GetComponent<BuildingCost>().StoneCost, 0) && MaxBatPlacable.Instance.actuBat < MaxBatPlacable.Instance.maxBat)
         {
             GetComponent<BuildingCost>().BuyBuilding();
