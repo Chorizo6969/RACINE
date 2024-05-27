@@ -50,20 +50,20 @@ public class RandomBonhommePlant : MonoBehaviour
 
     public IEnumerator AutorizeMove()
     {
-        Debug.Log(GetComponent<HideNSeek>().IsHiding || GetComponent<IA>().IsEnExpedition);
-
         if (GetComponent<HideNSeek>().IsHiding || GetComponent<IA>().IsEnExpedition)
         {
             if (Vector3.Distance(gameObject.transform.position, _positionToGo) <= 0.5f)
             {
-                _navMeshAgent.speed = 3;
-                _animator.SetTrigger("Walk");
+                _navMeshAgent.speed = 0;
+                _animator.SetTrigger("Breath");
                 yield return new WaitForSeconds(1);
                 StartCoroutine(AutorizeMove());
             }
             else
             {
-                _animator.SetTrigger("Breath");
+                _navMeshAgent.speed = 3;
+                _animator.SetTrigger("Walk");
+                yield return new WaitForSeconds(1);
                 StartCoroutine(AutorizeMove());
             }
         }
