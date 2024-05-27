@@ -91,8 +91,10 @@ public class IA : MonoBehaviour
     public void GiveTarget()
     {
         _agent.speed = 3;
+        _animator.SetTrigger("Job");
         _agent.SetDestination(_currentTarget.transform.position); //Ne met pas à jours le chemin de l'IA
         StopCoroutine(GetComponent<RandomBonhommePlant>().AutorizeMove());
+        _animator.SetTrigger("Job");
         StartCoroutine(ATTEND());
         StartCoroutine(Task());
     }
@@ -103,19 +105,14 @@ public class IA : MonoBehaviour
     /// <returns> retourne un new WaitForSeconds de 5s </returns>
     IEnumerator Task()
     {
-        _animator.SetBool("Breath", false);
-        _animator.SetBool("Walk", false);
-        _animator.SetBool("Job", true);
         IsEnExpedition = true;
         yield return new WaitForSeconds(60);
-        _animator.SetBool("Job", false);
-        _animator.SetBool("Walk", true);
+        _animator.SetTrigger("Walk");
         GetComponent<HideNSeek>()._startHiding = true;
         IsEnExpedition = false;
         if (_goHdv )
         {
             /*_agent.SetDestination(new Vector3(3, 0.8277f, 3));*/
-            
         }
         else
         {

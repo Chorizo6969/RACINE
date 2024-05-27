@@ -54,21 +54,29 @@ public class RandomBonhommePlant : MonoBehaviour
 
         if (GetComponent<HideNSeek>().IsHiding || GetComponent<IA>().IsEnExpedition)
         {
-            _navMeshAgent.speed = 3;
-            yield return new WaitForSeconds(1);
-            StartCoroutine(AutorizeMove());
+            if (Vector3.Distance(gameObject.transform.position, _positionToGo) <= 0.5f)
+            {
+                _navMeshAgent.speed = 3;
+                _animator.SetTrigger("Walk");
+                yield return new WaitForSeconds(1);
+                StartCoroutine(AutorizeMove());
+            }
+            else
+            {
+                _animator.SetTrigger("Breath");
+                StartCoroutine(AutorizeMove());
+            }
         }
         else
         {
             _canMove = true;
-            _navMeshAgent.speed = 2;
+            _navMeshAgent.speed = 3;
+            _animator.SetTrigger("Walk");
             int timeToWait = Random.Range(2, 5);
             yield return new WaitForSeconds(timeToWait);
             _canMove = false;
             _navMeshAgent.speed = 0;
-            _animator.SetBool("Walk", false);
-            _animator.SetBool("Job", false);
-            _animator.SetBool("Breath", true);
+            _animator.SetTrigger("Breath");
             yield return new WaitForSeconds(timeToWait);
             StartCoroutine(AutorizeMove());
         }
