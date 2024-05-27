@@ -12,12 +12,12 @@ public class RessourceManager : MonoBehaviour
     /// <summary>
     /// Quantité actuelle de bois
     /// </summary>
-    [SerializeField] private int _wood;
+    public int _wood;
 
     /// <summary>
     /// Quantité maximum de bois
     /// </summary>
-    [SerializeField] private int _maxWood;
+    public int _maxWood;
 
     /// <summary>
     /// Texte qui affiche la quantité de bois
@@ -27,12 +27,12 @@ public class RessourceManager : MonoBehaviour
     /// <summary>
     /// Quantité actuelle d'eau
     /// </summary>
-    [SerializeField] private int _water;
+    public int _water;
 
     /// <summary>
     /// Quantité maximum d'eau
     /// </summary>
-    [SerializeField] private int _maxWater;
+    public int _maxWater;
 
     /// <summary>
     /// Texte qui affiche la quantité d'eau
@@ -42,12 +42,12 @@ public class RessourceManager : MonoBehaviour
     /// <summary>
     /// Quantité actuelle de pierre
     /// </summary>
-    [SerializeField] private int _stone;
+    public int _stone;
 
     /// <summary>
     /// Quantité maximum de pierre
     /// </summary>
-    [SerializeField] private int _maxStone;
+    public int _maxStone;
 
     /// <summary>
     /// texte qui affiche la quantité de pierre
@@ -325,17 +325,29 @@ public class RessourceManager : MonoBehaviour
     {
         yield return new WaitForSeconds(_time);
         _woodText.text = _wood.ToString() + "/" + _maxWood.ToString();
+        foreach (GameObject bat in StockBatListManager.instance.listWoodStock)
+        {
+            bat.GetComponent<FillRessourceStock>().SetGoodStock(_wood, _maxWood);
+        }
     }
 
     IEnumerator WaterAttend(float _time)
     {
         yield return new WaitForSeconds(_time);
         _waterText.text = _water.ToString() + "/" + _maxWater.ToString();
+        foreach (GameObject bat in StockBatListManager.instance.listWaterStock)
+        {
+            bat.GetComponent<FillRessourceStock>().SetGoodStock(_water, _maxWater);
+        }
     }
 
     IEnumerator StoneAttend(float _time)
     {
         yield return new WaitForSeconds(_time);
         _stoneText.text = _stone.ToString() + "/" + _maxStone.ToString();
+        foreach (GameObject bat in StockBatListManager.instance.listStoneStock)
+        {
+            bat.GetComponent<FillRessourceStock>().SetGoodStock(_stone, _maxStone);
+        }
     }
 }
