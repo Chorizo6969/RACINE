@@ -8,6 +8,9 @@ public class ClickInfo : MonoBehaviour
 
     public void OnClickDestroy()
     {
+        Debug.Log(RessourceManager.Instance);
+        Debug.Log(lastBat.GetComponent<BuildingCanvas>());
+
         RessourceManager.Instance.EditStoneAmount(lastBat.GetComponent<BuildingCanvas>().woodDestroyCost);
         RessourceManager.Instance.EditStoneAmount(lastBat.GetComponent<BuildingCanvas>().stoneDestroyCost);
         Destroy(lastBat);
