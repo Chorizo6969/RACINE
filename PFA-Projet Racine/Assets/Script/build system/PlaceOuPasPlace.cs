@@ -7,6 +7,8 @@ public class PlaceOuPasPlace : MonoBehaviour
     public bool isPlacable = true;
     public GameObject SecondBox;
 
+    [SerializeField] private List<CheckIfInGround> _checkIfInGrounds = new();
+
     public Vector3 ColliderBoxSize1;
     public Vector3 ColliderBoxPosition1;
 
@@ -27,72 +29,67 @@ public class PlaceOuPasPlace : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter(Collider collision)
-    {
-        if (gameObject.layer != 7 && (collision.CompareTag("Water") || collision.CompareTag("building") || collision.CompareTag("forest") ))
-        {
-            isPlacable = false;
-        }
-        else if (gameObject.layer == 7 && collision.CompareTag("Water"))
-        {
-            if (SecondBox.GetComponent<CheckIfInGround>().IsInGround)
-            {
-                isPlacable = true;
-            }
-        }
-    }
+    //private void OnTriggerEnter(Collider collision)
+    //{
+    //    if (gameObject.layer != 7 && (collision.CompareTag("Water") || collision.CompareTag("building") || collision.CompareTag("forest") ))
+    //    {
+    //        isPlacable = false;
+    //    }
+    //    else if (gameObject.layer == 7 && collision.CompareTag("Water"))
+    //    {
+    //        if (SecondBox.GetComponent<CheckIfInGround>().IsInGround)
+    //        {
+    //            isPlacable = true;
+    //        }
+    //    }
+    //}
 
-    private void OnTriggerStay(Collider collision)
-    {
-        if (gameObject.layer != 7 && (collision.CompareTag("Water") || collision.CompareTag("building") || collision.CompareTag("forest") ))
-        {
-            isPlacable = false;
-        }
-        else if (gameObject.layer == 7 && collision.CompareTag("Water"))
-        {
-            
+    //private void OnTriggerStay(Collider collision)
+    //{
+    //    if (gameObject.layer != 7 && (collision.CompareTag("Water") || collision.CompareTag("building") || collision.CompareTag("forest") ))
+    //    {
+    //        isPlacable = false;
+    //    }
+    //    else if (gameObject.layer == 7 && collision.CompareTag("Water"))
+    //    {
 
-            if (SecondBox.GetComponent<CheckIfInGround>().IsInGround)
-            {
-                isPlacable = true;
-            }
-            
-        }
-    }
+    //        if (SecondBox.GetComponent<CheckIfInGround>().IsInGround)
+    //        {
+    //            Debug.Log("3");
+    //            isPlacable = true;
+    //        }
 
-    private void OnTriggerExit(Collider other)
-    {
+    //    }
+    //}
 
-        if (gameObject.layer == 7 && other.CompareTag("Water"))
-        {
-            isPlacable = false;
-        }
-        else if (other.CompareTag("Water") || other.CompareTag("building") || other.CompareTag("forest") && gameObject.layer != 7)
-        {
-            
+    //private void OnTriggerExit(Collider other)
+    //{
 
-            isPlacable = true;
-        }
-    }
+    //    if (gameObject.layer == 7 && other.CompareTag("Water"))
+    //    {
+    //        isPlacable = false;
+    //    }
+    //    else if (other.CompareTag("Water") || other.CompareTag("building") || other.CompareTag("forest") && gameObject.layer != 7)
+    //    {
+
+
+    //        isPlacable = true;
+    //    }
+    //}
 
     private void Update()
     {
-        if (isPlacable) 
+        isPlacable = IsPlacableFunc();
+        if (IsPlacableFunc()) 
         {
             GetComponentInParent<BuildingCanvas>().TrueMat();
         }
-        else if (!isPlacable)
+        else
         {
             GetComponentInParent<BuildingCanvas>().FalseMat();
         }
 
-        if (SecondBox != null)
-        {
-            if (!SecondBox.GetComponent<CheckIfInGround>().IsInGround)
-            {
-                isPlacable = false;
-            }
-        }
+        
     }
 
     public void SetBox()
@@ -118,6 +115,16 @@ public class PlaceOuPasPlace : MonoBehaviour
         GetComponent<BoxCollider>().size = ColliderBoxSize2;
         GetComponent<BoxCollider>().center = ColliderBoxPosition2;
     }
+
+    bool IsPlacableFunc()
+    {
+        foreach (CheckIfInGround checkIfInGround in _checkIfInGrounds)
+        {
+            if (!checkIfInGround.IsInGround) return false;
+        }
+        return true;
+    }
+
     IEnumerator ATTENNNNNNNNNNNNND()
     {
         yield return new WaitForSeconds(0.001f);

@@ -68,6 +68,9 @@ MonoBehaviour:
   BuildingPlacableTrue: {fileID: 284798809823294670, guid: f133b5d59e5bc3f468f25da29072ba94, type: 3}
   BuildingPlacableFalse: {fileID: 2291975707558987528, guid: 1017c73f41769a344becfcc96f294a41, type: 3}
   id: 0
+  placeOrNot: 0
+  woodDestroyCost: 0
+  stoneDestroyCost: 0
 --- !u!114 &-9151477133217694892
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -198,6 +201,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: df883f2e63964204c88e4d04d399f0d6, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1240794140305545727}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: df883f2e63964204c88e4d04d399f0d6, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7378883011206454536}
   m_SourcePrefab: {fileID: 100100000, guid: df883f2e63964204c88e4d04d399f0d6, type: 3}
 --- !u!4 &2312999988502405034 stripped
 Transform:
@@ -243,6 +249,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isPlacable: 1
+  SecondBox: {fileID: 0}
+  checkIfInGrounds:
+  - {fileID: 7378883011206454536}
+  ColliderBoxSize1: {x: 0, y: 0, z: 0}
+  ColliderBoxPosition1: {x: 0, y: 0, z: 0}
+  ColliderBoxSize2: {x: 0, y: 0, z: 0}
+  ColliderBoxPosition2: {x: 0, y: 0, z: 0}
 --- !u!54 &1240794140305545727
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -270,3 +283,23 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 1
+--- !u!114 &7378883011206454536
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3121765920085329168}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e7d1de544b56e646a3d060277e1793f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  IsInGround: 0
+  _allowedTag: tile
+  _prohibedTags:
+  - Water
+  - building
+  - forest
+  - field
+  _hitColliders: []

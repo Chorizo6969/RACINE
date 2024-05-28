@@ -95,8 +95,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1677131424355399276}
   - component: {fileID: 95760394644401824}
-  - component: {fileID: 6514106017612119068}
   - component: {fileID: 4604542731069462564}
+  - component: {fileID: 7082168106557475732}
   m_Layer: 0
   m_Name: SecondBoxCollider
   m_TagString: Untagged
@@ -138,21 +138,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.13186464, y: 7.1535034, z: 0.26962298}
-  m_Center: {x: -0.054524764, y: 2.8339548, z: -1.0493777}
---- !u!114 &6514106017612119068
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4634489859766911375}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9e7d1de544b56e646a3d060277e1793f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  IsInGround: 0
+  m_Size: {x: 0.040307343, y: 7.1535034, z: 1.1343305}
+  m_Center: {x: 0.02177295, y: 2.8339548, z: -0.61702394}
 --- !u!54 &4604542731069462564
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -180,6 +167,26 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &7082168106557475732
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4634489859766911375}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e7d1de544b56e646a3d060277e1793f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  IsInGround: 0
+  _allowedTag: tile
+  _prohibedTags:
+  - Water
+  - building
+  - forest
+  - field
+  _hitColliders: []
 --- !u!1001 &266623859793867449
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -281,6 +288,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 1e19b4e9dc071d64fb5527b525b9e205, type: 3}
       insertIndex: -1
       addedObject: {fileID: 5323517415044769669}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 1e19b4e9dc071d64fb5527b525b9e205, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8948107626162247727}
   m_SourcePrefab: {fileID: 100100000, guid: 1e19b4e9dc071d64fb5527b525b9e205, type: 3}
 --- !u!4 &304421241556915538 stripped
 Transform:
@@ -311,8 +321,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1.7086365, y: 16.667255, z: 0.8522108}
-  m_Center: {x: 0.24879569, y: 6.995046, z: -4.6153245}
+  m_Size: {x: 0.06531451, y: 16.667255, z: 0.8522108}
+  m_Center: {x: 0.41486147, y: 6.995046, z: -4.6153245}
 --- !u!54 &1398995711906141934
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -354,7 +364,29 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isPlacable: 1
   SecondBox: {fileID: 4634489859766911375}
+  _checkIfInGrounds:
+  - {fileID: 8948107626162247727}
+  - {fileID: 7082168106557475732}
   ColliderBoxSize1: {x: 0, y: 0, z: 0}
   ColliderBoxPosition1: {x: 0, y: 0, z: 0}
   ColliderBoxSize2: {x: 0, y: 0, z: 0}
   ColliderBoxPosition2: {x: 0, y: 0, z: 0}
+--- !u!114 &8948107626162247727
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1113045709804081128}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e7d1de544b56e646a3d060277e1793f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  IsInGround: 0
+  _allowedTag: Water
+  _prohibedTags:
+  - building
+  - forest
+  - field
+  _hitColliders: []

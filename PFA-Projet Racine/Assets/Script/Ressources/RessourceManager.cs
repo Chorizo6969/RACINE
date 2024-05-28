@@ -165,7 +165,7 @@ public class RessourceManager : MonoBehaviour
         }
         else if (_wood == _maxWood)
         {
-            Debug.Log("Stockage WOOD full");
+            //Debug.Log("Stockage WOOD full");
         }
     }
 
@@ -223,7 +223,7 @@ public class RessourceManager : MonoBehaviour
         }
         else if ( _water == _maxWater)
         {
-            Debug.Log("Stockage WATER full");
+            //Debug.Log("Stockage WATER full");
         }
     }
 
@@ -281,7 +281,7 @@ public class RessourceManager : MonoBehaviour
         }
         else if (_stone == _maxStone)
         {
-            Debug.Log("Stockage STONE full");
+            //Debug.Log("Stockage STONE full");
         }
     }
 

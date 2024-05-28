@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 4817859156386158252}
   - component: {fileID: 1098490790427338086}
   - component: {fileID: 1643309386439174999}
+  - component: {fileID: 8357035364092867228}
   m_Layer: 0
   m_Name: Mineur
   m_TagString: humanPlant
@@ -127,7 +128,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1894347967618378471}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b9231c23551ac2947a9bc7a9d5b480d7, type: 3}
   m_Name: 
@@ -158,6 +159,20 @@ CapsuleCollider:
   m_Height: 1
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &8357035364092867228
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1894347967618378471}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8ffea7453a35af489f3c24bb2c044f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _listOwner: {fileID: 0}
+  _animator: {fileID: 0}
 --- !u!1001 &1807986682935523855
 PrefabInstance:
   m_ObjectHideFlags: 0
