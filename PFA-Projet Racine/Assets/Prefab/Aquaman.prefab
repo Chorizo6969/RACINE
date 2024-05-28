@@ -58,10 +58,10 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
-  m_Height: 2
+  m_Radius: 1.4174826
+  m_Height: 5.1545744
   m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0.031345684, y: 1.5772862, z: 0.07114092}
 --- !u!195 &2271285938365749324
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -175,6 +175,7 @@ MonoBehaviour:
   _positionToGo: {x: 0, y: 0, z: 0}
   _animator: {fileID: 0}
   timeToWait: 0
+  tempo: 0
 --- !u!1001 &500972205231066528
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -113,6 +113,7 @@ MonoBehaviour:
   _positionToGo: {x: 0, y: 0, z: 0}
   _animator: {fileID: 0}
   timeToWait: 5
+  tempo: 0
 --- !u!114 &5939256798891156267
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -147,10 +148,10 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
-  m_Height: 1
+  m_Radius: 1.2382404
+  m_Height: 5.0603213
   m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0.061520733, y: 2.03016, z: 0.061519146}
 --- !u!1001 &3375847290660139817
 PrefabInstance:
   m_ObjectHideFlags: 0
