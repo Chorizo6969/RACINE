@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 4817859156386158252}
   - component: {fileID: 1098490790427338086}
   - component: {fileID: 8357035364092867228}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Mineur
   m_TagString: humanPlant
   m_Icon: {fileID: 0}
@@ -212,25 +212,81 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7786690950205267968, guid: e0b55913f09a89e48afb6e12c88370a3, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: -4925240426290398973, guid: e0b55913f09a89e48afb6e12c88370a3, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: -4322761315505366616, guid: e0b55913f09a89e48afb6e12c88370a3, type: 3}
       propertyPath: m_Name
       value: Casque_lampe
+      objectReference: {fileID: 0}
+    - target: {fileID: -4322761315505366616, guid: e0b55913f09a89e48afb6e12c88370a3, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: -4291427750462208439, guid: e0b55913f09a89e48afb6e12c88370a3, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: -4291427750462208439, guid: e0b55913f09a89e48afb6e12c88370a3, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1599381417666333, guid: e0b55913f09a89e48afb6e12c88370a3, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 166721758866915952, guid: e0b55913f09a89e48afb6e12c88370a3, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 303259896569379675, guid: e0b55913f09a89e48afb6e12c88370a3, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 303259896569379675, guid: e0b55913f09a89e48afb6e12c88370a3, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 833498932508521986, guid: e0b55913f09a89e48afb6e12c88370a3, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: e0b55913f09a89e48afb6e12c88370a3, type: 3}
       propertyPath: m_Name
       value: Mineur
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: e0b55913f09a89e48afb6e12c88370a3, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: e0b55913f09a89e48afb6e12c88370a3, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1034090998974449747, guid: e0b55913f09a89e48afb6e12c88370a3, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7036213049465896255, guid: e0b55913f09a89e48afb6e12c88370a3, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7200519262285043367, guid: e0b55913f09a89e48afb6e12c88370a3, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7395336592578580910, guid: e0b55913f09a89e48afb6e12c88370a3, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7624774710881067793, guid: e0b55913f09a89e48afb6e12c88370a3, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

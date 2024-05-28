@@ -18,7 +18,7 @@ public class FindHUmanPlant : MonoBehaviour
                 {
                     GameObject _touchedPlant = hitInfo.collider.gameObject;
                     _touchedPlant.GetComponent<HideNSeek>()._startHiding = true;
-                    Debug.Log("TA GROSSE MERE LA PUTE ICI C POUR LE SON");
+                    HumanSound.instance.Verification(hitInfo.collider.gameObject);
                 }
             }
             
