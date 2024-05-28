@@ -7,6 +7,8 @@ public class ExpeditionLoot : MonoBehaviour
 {
     [SerializeField]
     private int maxloot = 10;
+    [SerializeField] 
+    private int minloot = 4;
     [SerializeField]
     private int chanceToDie = 10;
     [SerializeField]
@@ -42,6 +44,7 @@ public class ExpeditionLoot : MonoBehaviour
     public void Awake()
     {
         instance = this;
+        mort = false;
     }
 
     public void SortHuman()
@@ -59,7 +62,6 @@ public class ExpeditionLoot : MonoBehaviour
         {
             if (_human.GetComponent<IA>()._scriptableHuman.Work == ("Mineur") && !listMineur.Contains(_human))
             {
-                Debug.Log("caca");
                 listMineur.Add(_human);
                 index = 2;
             }
@@ -81,7 +83,7 @@ public class ExpeditionLoot : MonoBehaviour
         Debug.Log("expédition lancé");
         mort = false;
         woodscore = 0;
-        int lootWood = Random.Range(0, maxloot + 1);
+        int lootWood = Random.Range(minloot, maxloot + 1);
         woodscore = lootWood;
         int humainmort = Random.Range(0, chanceToDie + 1);
         if (humainmort == chanceToDie)
@@ -99,7 +101,6 @@ public class ExpeditionLoot : MonoBehaviour
             if (index == 1)
             {
                 int indexmort = Random.Range(0, listBucheron.Count);
-                Debug.Log($"il y a eu {indexmort} morts durant l'expédition...");
                 GameObject _humanToDestroy = listBucheron[indexmort];
                 IncrementHuman.instance.Death(indexmort);
                 listBucheron.Remove(_humanToDestroy);
@@ -110,7 +111,6 @@ public class ExpeditionLoot : MonoBehaviour
             else if (index == 2)
             {
                 int indexmort = Random.Range(0, listMineur.Count);
-                Debug.Log($"il y a eu {indexmort} morts durant l'expédition...");
                 GameObject _humanToDestroy = listMineur[indexmort];
                 IncrementHuman.instance.Death(indexmort);
                 listMineur.Remove(_humanToDestroy);
@@ -120,7 +120,6 @@ public class ExpeditionLoot : MonoBehaviour
             else
             {
                 int indexmort = Random.Range(0, listAquaman.Count);
-                Debug.Log($"il y a eu {indexmort} morts durant l'expédition...");
                 GameObject _humanToDestroy = listAquaman[indexmort];
                 IncrementHuman.instance.Death(indexmort);
                 listAquaman.Remove(_humanToDestroy);
@@ -128,6 +127,20 @@ public class ExpeditionLoot : MonoBehaviour
                 RessourceManager.Instance.EditWaterAmount(woodscore);
             }
         }
-        Debug.Log("Fin de l'expédition.");
+        else
+        {
+            if (index == 1)
+            {
+                RessourceManager.Instance.EditWoodAmount(woodscore);
+            }
+            else if (index == 2)
+            {
+                RessourceManager.Instance.EditStoneAmount(woodscore);
+            }
+            else
+            {
+                RessourceManager.Instance.EditWaterAmount(woodscore);
+            }
+        }
     }
 }
