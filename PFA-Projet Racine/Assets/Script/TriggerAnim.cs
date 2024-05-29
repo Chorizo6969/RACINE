@@ -3,14 +3,16 @@ using UnityEngine;
 
 public class TriggerAnim : MonoBehaviour
 {
-    [SerializeField]
-    private Animation _plongeon;
+    private Animator _plongeon;
 
     private void OnTriggerEnter(Collider other)
     {
+        Debug.Log("qergeqr");
         if (other.gameObject.layer == 8)
         {
-            _plongeon.Play("animation plongeon");
+            _plongeon = other.GetComponentInChildren<Animator>();
+            _plongeon.SetBool("Plonge", true);
+            _plongeon.SetBool("Job", false);
             StartCoroutine(Delay());
         }
     }
@@ -18,6 +20,7 @@ public class TriggerAnim : MonoBehaviour
     IEnumerator Delay()
     {
         yield return new WaitForSeconds(50);
-        _plongeon.Play("Sortie eau");
+        _plongeon.SetBool("Plonge", false);
+        _plongeon.SetBool("Job", true);
     }
 }

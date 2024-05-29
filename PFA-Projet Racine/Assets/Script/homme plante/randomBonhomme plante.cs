@@ -14,7 +14,6 @@ public class RandomBonhommePlant : MonoBehaviour
     [SerializeField]
     private Animator _animator;
 
-    // Start is called before the first frame update
     void Start()
     {
         StartCoroutine(ATTEND());
@@ -55,14 +54,12 @@ public class RandomBonhommePlant : MonoBehaviour
             if (Vector3.Distance(gameObject.transform.position, _positionToGo) <= 0.5f)
             {
                 _navMeshAgent.speed = 0;
-                _animator.SetTrigger("Breath");
                 yield return new WaitForSeconds(1);
                 StartCoroutine(AutorizeMove());
             }
             else
             {
                 _navMeshAgent.speed = 3;
-                _animator.SetTrigger("Walk");
                 yield return new WaitForSeconds(1);
                 StartCoroutine(AutorizeMove());
             }
@@ -71,12 +68,10 @@ public class RandomBonhommePlant : MonoBehaviour
         {
             _canMove = true;
             _navMeshAgent.speed = 3;
-            _animator.SetTrigger("Walk");
             int timeToWait = Random.Range(2, 5);
             yield return new WaitForSeconds(timeToWait);
             _canMove = false;
             _navMeshAgent.speed = 0;
-            _animator.SetTrigger("Breath");
             yield return new WaitForSeconds(timeToWait);
             StartCoroutine(AutorizeMove());
         }

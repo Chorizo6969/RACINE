@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 4816564189557415425}
   - component: {fileID: 7974659306354573153}
   - component: {fileID: 4817859156386158252}
-  - component: {fileID: 1098490790427338086}
   - component: {fileID: 8357035364092867228}
   m_Layer: 10
   m_Name: Mineur
@@ -120,21 +119,6 @@ MonoBehaviour:
   _isWorking: 0
   _startHiding: 0
   <IsHiding>k__BackingField: 0
---- !u!114 &1098490790427338086
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1894347967618378471}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b9231c23551ac2947a9bc7a9d5b480d7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 1
-  listOwner: {fileID: 0}
-  _animator: {fileID: 3503678050502365081}
 --- !u!114 &8357035364092867228
 MonoBehaviour:
   m_ObjectHideFlags: 0
