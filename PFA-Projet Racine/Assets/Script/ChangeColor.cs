@@ -27,7 +27,6 @@ public class ChangeColor : MonoBehaviour
 
     public void Work()
     {
-        Image button_image = GetComponent<Image>();
         foreach (GameObject obj in List.list)
         {
             if (obj.GetComponent<ChangeColor>().index == 1)

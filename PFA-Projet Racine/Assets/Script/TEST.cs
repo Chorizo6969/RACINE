@@ -1,4 +1,4 @@
-using System.Collections;
+/*using System.Collections;
 using System.Collections.Generic;
 using Unity.AI.Navigation;
 using Unity.VisualScripting;
@@ -17,4 +17,4 @@ public class TEST : MonoBehaviour
             Debug.Log("build");
         }
     }
-}
+}*/
