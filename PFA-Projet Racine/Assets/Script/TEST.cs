@@ -1,19 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.AI.Navigation;
 using Unity.VisualScripting;
+using UnityEditor.AI;
 using UnityEngine;
 
 public class TEST : MonoBehaviour
 {
-    public bool bool1;
-    public bool bool2;
+    public NavMeshSurface NavMeshSurface;
 
     private void Update()
     {
-       /* Debug.Log("bool1 " + bool1);
-
-        Debug.Log("bool2 " + bool2);
-
-        Debug.Log(!bool1 && !bool2);*/
+        if (Input.GetKeyDown(KeyCode.J))
+        {
+            NavMeshBuilder.BuildNavMesh();
+            Debug.Log("build");
+        }
     }
 }

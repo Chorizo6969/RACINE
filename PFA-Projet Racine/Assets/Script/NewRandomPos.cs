@@ -70,7 +70,6 @@ public class NewRandomPos : MonoBehaviour
     {
         if (!_hideNSeed.IsHiding && !_IA.IsEnExpedition)
         {
-            Debug.Log("Lucas je me permets de te censurer " + _IA.IsEnExpedition);
             timeToWait = Random.Range(2, 7);
             _navMeshAgent.speed = 0;
             _animator.SetTrigger("Breath");
@@ -82,7 +81,6 @@ public class NewRandomPos : MonoBehaviour
         }
         else
         {
-            Debug.Log("attends");
             yield return new WaitForSeconds(4);
             //StartCoroutine(AutorizeMove());
         }
