@@ -40,8 +40,8 @@ public class AchatSeed : MonoBehaviour
         _textRacine.text = "1".ToString();
         prix1.SetActive(true);
         prix2.SetActive(false);
-        string wood = "20";
-        string water = "20";
+        string wood = "30";
+        string water = "40";
         textWood.text = wood.ToString();
         textO.text = water.ToString();
     }
@@ -49,17 +49,17 @@ public class AchatSeed : MonoBehaviour
     {
         if (index == 1)
         {
-            string wood = "35";
-            string stone = "15";
-            string water = "50";
+            string wood = "40";
+            string stone = "20";
+            string water = "60";
             textWood2.text = wood.ToString();
             textStone.text = stone.ToString();
             textO2.text = water.ToString();
-            if (RessourceManager.CheckIfCanBuild(20,0,20))
+            if (RessourceManager.CheckIfCanBuild(30,0,40))
             {
                 _textRacine.text = "2".ToString();
-                RessourceManager.EditWoodAmount(-20);
-                RessourceManager.EditWaterAmount(-30);
+                RessourceManager.EditWoodAmount(-30);
+                RessourceManager.EditWaterAmount(-40);
                 index = 2;
                 prix1.SetActive(false);
                 prix2.SetActive(true);
@@ -67,27 +67,17 @@ public class AchatSeed : MonoBehaviour
         }
         else if (index == 2)
         {
-            if (RessourceManager.CheckIfCanBuild(35, 15, 50))
+            if (RessourceManager.CheckIfCanBuild(40, 20, 60))
             {
                 prix3.GetComponentInParent<Button>().enabled = false;
                 _textRacine.text = "3".ToString();
-                RessourceManager.EditWoodAmount(-35);
-                RessourceManager.EditStoneAmount(-15);
-                RessourceManager.EditWaterAmount(-50);
+                RessourceManager.EditWoodAmount(-40);
+                RessourceManager.EditStoneAmount(-20);
+                RessourceManager.EditWaterAmount(-60);
                 prix1.SetActive(false);
                 prix2.SetActive(false);
                 prix3.SetActive(true);
             }
-        }
-    }
-
-    public void SetBuilder()
-    {
-        if (RessourceManager.CheckIfCanBuild(2,2,0))
-        {
-            RessourceManager.EditWoodAmount(-2);
-            RessourceManager.EditStoneAmount(-2);
-            builder._nombreGraines++;
         }
     }
 

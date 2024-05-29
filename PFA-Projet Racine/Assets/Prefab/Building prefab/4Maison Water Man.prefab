@@ -84,7 +84,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 1
-  stock: 3
+  stock: 4
 --- !u!1 &4634489859766911375
 GameObject:
   m_ObjectHideFlags: 0

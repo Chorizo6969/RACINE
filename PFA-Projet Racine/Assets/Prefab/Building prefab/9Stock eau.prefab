@@ -85,7 +85,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 1
-  stock: 50
+  stock: 20
 --- !u!114 &1450876034525310834
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -276,8 +276,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isPlacable: 1
   SecondBox: {fileID: 0}
-  checkIfInGrounds:
-  - {fileID: 5538535250198244777}
+  _checkIfInGrounds: []
   ColliderBoxSize1: {x: 0, y: 0, z: 0}
   ColliderBoxPosition1: {x: 0, y: 0, z: 0}
   ColliderBoxSize2: {x: 0, y: 0, z: 0}

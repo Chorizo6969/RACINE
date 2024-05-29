@@ -85,7 +85,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 2
-  stock: 50
+  stock: 10
 --- !u!114 &3372496651725825264
 MonoBehaviour:
   m_ObjectHideFlags: 0
