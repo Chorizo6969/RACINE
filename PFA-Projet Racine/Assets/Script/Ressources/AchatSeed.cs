@@ -32,11 +32,20 @@ public class AchatSeed : MonoBehaviour
     private GivePlant mineur;
     [SerializeField]
     private GivePlant aquaman;
+    [SerializeField]
+    private GameObject Racine1;
+    [SerializeField]
+    private GameObject Racine2;
+    [SerializeField]
+    private GameObject Racine3;
 
     private int index = 1;
 
     public void Start()
     {
+        Racine1.SetActive(true);
+        Racine2.SetActive(false);
+        Racine3.SetActive(false);
         _textRacine.text = "1".ToString();
         prix1.SetActive(true);
         prix2.SetActive(false);
@@ -63,6 +72,8 @@ public class AchatSeed : MonoBehaviour
                 index = 2;
                 prix1.SetActive(false);
                 prix2.SetActive(true);
+                Racine1.SetActive(false);
+                Racine2.SetActive(true);
             }
         }
         else if (index == 2)
@@ -77,6 +88,8 @@ public class AchatSeed : MonoBehaviour
                 prix1.SetActive(false);
                 prix2.SetActive(false);
                 prix3.SetActive(true);
+                Racine2.SetActive(false);
+                Racine3.SetActive(true);
             }
         }
     }
