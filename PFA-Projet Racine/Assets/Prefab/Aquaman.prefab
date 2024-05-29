@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 5939256798891156267}
   - component: {fileID: -781356051346972959}
   - component: {fileID: -7424296015791253587}
+  - component: {fileID: 1289029134364008687}
   m_Layer: 8
   m_Name: Aquaman
   m_TagString: humanPlant
@@ -176,6 +177,23 @@ MonoBehaviour:
   _animator: {fileID: 0}
   timeToWait: 0
   tempo: 0
+--- !u!111 &1289029134364008687
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5123115511750519978}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: 45d9cd1e916eabc4e92a8acb921e38c5, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: 45d9cd1e916eabc4e92a8acb921e38c5, type: 2}
+  - {fileID: 7400000, guid: 1c1797992ca31a049837417ed1b003e7, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 0
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!1001 &500972205231066528
 PrefabInstance:
   m_ObjectHideFlags: 0

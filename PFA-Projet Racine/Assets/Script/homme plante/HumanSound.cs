@@ -16,6 +16,8 @@ public class HumanSound : MonoBehaviour
     [SerializeField]
     private AudioSource _source;
 
+    private bool _isPlaying;
+
     public static HumanSound instance;
 
     private void Awake()
@@ -25,20 +27,31 @@ public class HumanSound : MonoBehaviour
 
     public void Verification(GameObject human)
     {
-        if (human.layer == 8)
+        if (human.layer == 8 && !_isPlaying)
         {
             int sound = Random.Range(0, _aqua.Count);
             _source.PlayOneShot(_aqua[sound]);
+            StartCoroutine(AutorizeSound());
         }
-        else if (human.layer == 9)
+        else if (human.layer == 9 && !_isPlaying)
         {
             int sound = Random.Range(0, _buchron.Count);
             _source.PlayOneShot(_buchron[sound]);
+            StartCoroutine(AutorizeSound());
         }
-        else if (human.layer == 10)
+        else if (human.layer == 10 && !_isPlaying)
         {
             int sound = Random.Range(0, _mineur.Count);
             _source.PlayOneShot(_mineur[sound]);
+            StartCoroutine(AutorizeSound());
         }
+
+    }
+
+    IEnumerator AutorizeSound()
+    {
+        _isPlaying = true;
+        yield return new WaitForSeconds(1);
+        _isPlaying = false;
     }
 }
