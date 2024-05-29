@@ -39,7 +39,7 @@ public class NewRandomPos : MonoBehaviour
         if (Vector3.Distance(gameObject.transform.position, _positionToGo) < 0.25f)
         {
             _navMeshAgent.speed = 0;
-            _animator.SetTrigger("Breath");
+            _animator.SetBool("Walk", false);
         }
     }
 
@@ -72,10 +72,10 @@ public class NewRandomPos : MonoBehaviour
         {
             timeToWait = Random.Range(2, 7);
             _navMeshAgent.speed = 0;
-            _animator.SetTrigger("Breath");
+            _animator.SetBool("Walk", false);
             yield return new WaitForSeconds(timeToWait);
             _navMeshAgent.speed = 3;
-            _animator.SetTrigger("Walk");
+            _animator.SetBool("Walk", true);
             yield return new WaitForSeconds(timeToWait);
            //StartCoroutine(AutorizeMove());
         }

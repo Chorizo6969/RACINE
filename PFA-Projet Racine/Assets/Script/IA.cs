@@ -74,34 +74,19 @@ public class IA : MonoBehaviour
         }
     }
 
-    private void Update()
-    {
-
-        if (_reservoir == null)
-        {
-            _goHdv = true;
-        }
-    }
-
     /// <summary>
     /// Fonction qui envoit l'humain plante travailler
     /// </summary>
     public void GiveTarget()
     {
         _agent.speed = 3;
-        _animator.SetTrigger("Job");
-        //_agent.SetDestination(_currentTarget.transform.position); //Ne met pas à jours le chemin de l'IA
         StopCoroutine(GetComponent<NewRandomPos>().AutorizeMove());
         GetComponent<NewRandomPos>().SetDestinationToGo(_currentTarget.transform.position);
+        _animator.SetBool("Job", true);
 
 
         //StopCoroutine(GetComponent<RandomBonhommePlant>().AutorizeMove());
         StartCoroutine(Task());
-        _animator.SetTrigger("Job");
-        if (_currentTarget = work[2])
-        {
-            StartCoroutine(AnimationJump());
-        }
         StartCoroutine(ATTEND());
     }
 
@@ -113,21 +98,9 @@ public class IA : MonoBehaviour
     {
         IsEnExpedition = true;
         yield return new WaitForSeconds(60);
-        if (_currentTarget = work[2])
-        {
-            _animator.SetTrigger("Fin");
-        }
-        _animator.SetTrigger("Walk");
         GetComponent<HideNSeek>()._startHiding = true;
         IsEnExpedition = false;
-        if (_goHdv )
-        {
-            /*_agent.SetDestination(new Vector3(3, 0.8277f, 3));*/
-        }
-        else
-        {
-            /*_agent.SetDestination(new Vector3(1, 0, 0));*/
-        }
+        _animator.SetBool("Job", false);
     }
 
     IEnumerator Activation()
@@ -140,19 +113,5 @@ public class IA : MonoBehaviour
     {
         yield return new WaitForSeconds(0.001f);
         //StartCoroutine(GetComponent<RandomBonhommePlant>().AutorizeMove());
-    }
-
-    IEnumerator AnimationJump()
-    {
-        //StopCoroutine(GetComponent<RandomBonhommePlant>().AutorizeMove());
-        if (Vector3.Distance(gameObject.transform.position, _currentTarget.transform.position) <= 0.5f)
-        {
-            _animator.SetTrigger("Task");
-        }
-        else
-        {
-            yield return new WaitForSeconds(1);
-            StartCoroutine(AnimationJump());
-        }
     }
 }
