@@ -250,7 +250,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isPlacable: 1
   SecondBox: {fileID: 0}
-  checkIfInGrounds:
+  _checkIfInGrounds:
   - {fileID: 8028911651048831917}
   ColliderBoxSize1: {x: 0, y: 0, z: 0}
   ColliderBoxPosition1: {x: 0, y: 0, z: 0}

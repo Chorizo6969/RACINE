@@ -85,7 +85,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 2
-  stock: 50
+  stock: 10
 --- !u!114 &3372496651725825264
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -98,11 +98,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b19c8c2c9b27a704aa22f76872b67dca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Stock1: {fileID: 0}
-  Stock2: {fileID: 0}
-  Stock3: {fileID: 0}
-  Stock4: {fileID: 0}
-  Stock5: {fileID: 0}
+  Stock1: {fileID: 6157833035837151995}
+  Stock2: {fileID: 8199794578789694344}
+  Stock3: {fileID: 145545499205389302}
+  Stock4: {fileID: 8231002564713251727}
+  Stock5: {fileID: 826371420441739998}
   id: 2
 --- !u!1 &5595304493116836607
 GameObject:
@@ -534,8 +534,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isPlacable: 1
   SecondBox: {fileID: 0}
-  checkIfInGrounds:
-  - {fileID: 6194005454190763520}
+  _checkIfInGrounds: []
   ColliderBoxSize1: {x: 0, y: 0, z: 0}
   ColliderBoxPosition1: {x: 0, y: 0, z: 0}
   ColliderBoxSize2: {x: 0, y: 0, z: 0}
