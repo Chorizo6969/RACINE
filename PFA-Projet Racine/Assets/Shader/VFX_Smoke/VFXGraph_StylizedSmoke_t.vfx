@@ -72,8 +72,8 @@ VisualEffectResource:
       lightProbeUsage: 0
     m_CullingFlags: 0
     m_UpdateMode: 0
-    m_PreWarmDeltaTime: 0.05
-    m_PreWarmStepCount: 0
+    m_PreWarmDeltaTime: 3
+    m_PreWarmStepCount: 100
     m_InitialEventName: OnPlay
     m_InstancingMode: 0
     m_InstancingCapacity: 64
@@ -2208,7 +2208,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: UnityEngine.Gradient, UnityEngine.CoreModule, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
-      m_SerializableObject: '{"colorKeys":[{"color":{"r":1.0,"g":1.0,"b":1.0,"a":1.0},"time":0.7088273167610169},{"color":{"r":0.36501970887184145,"g":0.36501970887184145,"b":0.36501970887184145,"a":1.0},"time":1.0}],"alphaKeys":[{"alpha":1.0,"time":0.0},{"alpha":1.0,"time":1.0}],"gradientMode":0}'
+      m_SerializableObject: '{"colorKeys":[{"color":{"r":1.0,"g":1.0,"b":1.0,"a":1.0},"time":0.3000076413154602},{"color":{"r":0.3207547068595886,"g":0.3207547068595886,"b":0.3207547068595886,"a":1.0},"time":1.0}],"alphaKeys":[{"alpha":1.0,"time":0.0},{"alpha":1.0,"time":1.0}],"gradientMode":0}'
     m_Space: 2147483647
   m_Property:
     name: gradient
