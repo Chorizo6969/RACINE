@@ -73,7 +73,7 @@ public class ControlCamera : MonoBehaviour
     {
         if (Camera.GetComponent<Camera>().orthographicSize >= ZoomMin)
         {
-            Camera.GetComponent<Camera>().orthographicSize -= 0.06f;
+            Camera.GetComponent<Camera>().orthographicSize -= 0.5f;
             if (Camera.GetComponent<Camera>().orthographicSize <= ZoomMin)
             {
                 Camera.GetComponent<Camera>().orthographicSize = ZoomMin;
@@ -89,7 +89,7 @@ public class ControlCamera : MonoBehaviour
     {
         if (Camera.GetComponent<Camera>().orthographicSize <= ZoomMax)
         {
-            Camera.GetComponent<Camera>().orthographicSize += 0.06f;
+            Camera.GetComponent<Camera>().orthographicSize += 0.5f;
             if (Camera.GetComponent<Camera>().orthographicSize >= ZoomMax)
             {
                 Camera.GetComponent<Camera>().orthographicSize = ZoomMax;
@@ -123,19 +123,19 @@ public class ControlCamera : MonoBehaviour
 
             if (GOParentTransform.position.x < minX)
             {
-                GOParentTransform.transform.position = new Vector3(minX, GOParentTransform.position.y, GOParentTransform.position.z);
+                GOParentTransform.position = new Vector3(minX, GOParentTransform.position.y, GOParentTransform.position.z);
             }
             if (GOParentTransform.position.x > maxX)
             {
-                GOParentTransform.transform.position = new Vector3(maxX, GOParentTransform.position.y, GOParentTransform.position.z);
+                GOParentTransform.position = new Vector3(maxX, GOParentTransform.position.y, GOParentTransform.position.z);
             }
             if (GOParentTransform.position.z < minZ)
             {
-                GOParentTransform.transform.position = new Vector3(GOParentTransform.position.x, GOParentTransform.position.y, minZ);
+                GOParentTransform.position = new Vector3(GOParentTransform.position.x, GOParentTransform.position.y, minZ);
             }
             if (GOParentTransform.position.z > maxZ)
             {
-                GOParentTransform.transform.position = new Vector3(GOParentTransform.position.x, GOParentTransform.position.y, maxZ);
+                GOParentTransform.position = new Vector3(GOParentTransform.position.x, GOParentTransform.position.y, maxZ);
             }
 
             if (GOParentTransform.position.x >= minX && GOParentTransform.position.x <= maxX && GOParentTransform.position.z >= minZ && GOParentTransform.position.z <= maxZ)

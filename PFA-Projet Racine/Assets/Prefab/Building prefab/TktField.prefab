@@ -95,6 +95,10 @@ MonoBehaviour:
   normal: {fileID: 0}
   BuildingPlacableTrue: {fileID: 284798809823294670, guid: f133b5d59e5bc3f468f25da29072ba94, type: 3}
   BuildingPlacableFalse: {fileID: 2291975707558987528, guid: 1017c73f41769a344becfcc96f294a41, type: 3}
+  id: 0
+  placeOrNot: 0
+  woodDestroyCost: 0
+  stoneDestroyCost: 0
 --- !u!114 &4184211009867161145
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -323,6 +327,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 1e14eed8c8170d74d8b8bc4b5cb34bfe, type: 3}
       insertIndex: -1
       addedObject: {fileID: 8055882160948908883}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 1e14eed8c8170d74d8b8bc4b5cb34bfe, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1594122957604226002}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 1e14eed8c8170d74d8b8bc4b5cb34bfe, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2760882486105487656}
   m_SourcePrefab: {fileID: 100100000, guid: 1e14eed8c8170d74d8b8bc4b5cb34bfe, type: 3}
 --- !u!4 &5025553021026236198 stripped
 Transform:
@@ -368,6 +378,59 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isPlacable: 1
+  SecondBox: {fileID: 0}
+  _checkIfInGrounds: []
+  ColliderBoxSize1: {x: 0, y: 0, z: 0}
+  ColliderBoxPosition1: {x: 0, y: 0, z: 0}
+  ColliderBoxSize2: {x: 0, y: 0, z: 0}
+  ColliderBoxPosition2: {x: 0, y: 0, z: 0}
+--- !u!114 &1594122957604226002
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5689604835571707292}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e7d1de544b56e646a3d060277e1793f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  IsInGround: 0
+  _allowedTag: tile
+  _prohibedTags:
+  - Water
+  - forest
+  - building
+  - field
+  _hitColliders: []
+--- !u!54 &2760882486105487656
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5689604835571707292}
+  serializedVersion: 4
+  m_Mass: 0.0000001
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1001 &5125639655039220164
 PrefabInstance:
   m_ObjectHideFlags: 0
