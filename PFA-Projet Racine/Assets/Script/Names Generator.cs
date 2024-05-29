@@ -55,7 +55,6 @@ public class NamesGenerator : MonoBehaviour
             int randomAdjectif = Random.Range(0, _arrayAdjectifMasc.Count);
             string AdjectifMasc = _arrayAdjectifMasc[randomAdjectif];
             Adjectif = AdjectifMasc;
-            Debug.Log(NameMasc + " " + AdjectifMasc);
         }
         else
         {
@@ -66,7 +65,6 @@ public class NamesGenerator : MonoBehaviour
             int randomAdjectif = Random.Range(0, _arrayAdjectifFem.Count);
             string AdjectifFem = _arrayAdjectifFem[randomAdjectif];
             Adjectif = AdjectifFem;
-            Debug.Log(NameF + " " + AdjectifFem);
         }
     }
 }

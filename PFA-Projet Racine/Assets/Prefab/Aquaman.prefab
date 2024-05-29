@@ -15,7 +15,8 @@ GameObject:
   - component: {fileID: 2273926913654001889}
   - component: {fileID: 5939256798891156267}
   - component: {fileID: -781356051346972959}
-  m_Layer: 0
+  - component: {fileID: -7424296015791253587}
+  m_Layer: 8
   m_Name: Aquaman
   m_TagString: humanPlant
   m_Icon: {fileID: 0}
@@ -57,10 +58,10 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
-  m_Height: 2
+  m_Radius: 1.4174826
+  m_Height: 5.1545744
   m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0.031345684, y: 1.5772862, z: 0.07114092}
 --- !u!195 &2271285938365749324
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -127,7 +128,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5123115511750519978}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b9231c23551ac2947a9bc7a9d5b480d7, type: 3}
   m_Name: 
@@ -158,6 +159,23 @@ CapsuleCollider:
   m_Height: 1
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &-7424296015791253587
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5123115511750519978}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8ffea7453a35af489f3c24bb2c044f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _listOwner: {fileID: 0}
+  _positionToGo: {x: 0, y: 0, z: 0}
+  _animator: {fileID: 0}
+  timeToWait: 0
+  tempo: 0
 --- !u!1001 &500972205231066528
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -206,13 +224,73 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -5769022790234989073, guid: 6435c926c79744c4d9de7cc427ec2392, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: -4925240426290398973, guid: 6435c926c79744c4d9de7cc427ec2392, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: -4322761315505366616, guid: 6435c926c79744c4d9de7cc427ec2392, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: -4291427750462208439, guid: 6435c926c79744c4d9de7cc427ec2392, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1599381417666333, guid: 6435c926c79744c4d9de7cc427ec2392, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 166721758866915952, guid: 6435c926c79744c4d9de7cc427ec2392, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 303259896569379675, guid: 6435c926c79744c4d9de7cc427ec2392, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 833498932508521986, guid: 6435c926c79744c4d9de7cc427ec2392, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 6435c926c79744c4d9de7cc427ec2392, type: 3}
       propertyPath: m_Name
       value: Recolteur_deau
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 6435c926c79744c4d9de7cc427ec2392, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 6435c926c79744c4d9de7cc427ec2392, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1034090998974449747, guid: 6435c926c79744c4d9de7cc427ec2392, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7036213049465896255, guid: 6435c926c79744c4d9de7cc427ec2392, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7200519262285043367, guid: 6435c926c79744c4d9de7cc427ec2392, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7395336592578580910, guid: 6435c926c79744c4d9de7cc427ec2392, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7624774710881067793, guid: 6435c926c79744c4d9de7cc427ec2392, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7907085681978662915, guid: 6435c926c79744c4d9de7cc427ec2392, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

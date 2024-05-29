@@ -90,8 +90,12 @@ public class IA : MonoBehaviour
     {
         _agent.speed = 3;
         _animator.SetTrigger("Job");
-        _agent.SetDestination(_currentTarget.transform.position); //Ne met pas à jours le chemin de l'IA
-        StopCoroutine(GetComponent<RandomBonhommePlant>().AutorizeMove());
+        //_agent.SetDestination(_currentTarget.transform.position); //Ne met pas à jours le chemin de l'IA
+        StopCoroutine(GetComponent<NewRandomPos>().AutorizeMove());
+        GetComponent<NewRandomPos>().SetDestinationToGo(_currentTarget.transform.position);
+
+
+        //StopCoroutine(GetComponent<RandomBonhommePlant>().AutorizeMove());
         StartCoroutine(Task());
         _animator.SetTrigger("Job");
         if (_currentTarget = work[2])
@@ -135,12 +139,12 @@ public class IA : MonoBehaviour
     IEnumerator ATTEND()
     {
         yield return new WaitForSeconds(0.001f);
-        StartCoroutine(GetComponent<RandomBonhommePlant>().AutorizeMove());
+        //StartCoroutine(GetComponent<RandomBonhommePlant>().AutorizeMove());
     }
 
     IEnumerator AnimationJump()
     {
-        StopCoroutine(GetComponent<RandomBonhommePlant>().AutorizeMove());
+        //StopCoroutine(GetComponent<RandomBonhommePlant>().AutorizeMove());
         if (Vector3.Distance(gameObject.transform.position, _currentTarget.transform.position) <= 0.5f)
         {
             _animator.SetTrigger("Task");

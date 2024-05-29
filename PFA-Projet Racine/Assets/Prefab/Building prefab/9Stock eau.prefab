@@ -232,6 +232,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: b29ad144758b18f48a0586ac2aa65bb5, type: 3}
       insertIndex: -1
       addedObject: {fileID: 8657394689133733666}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: b29ad144758b18f48a0586ac2aa65bb5, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5538535250198244777}
   m_SourcePrefab: {fileID: 100100000, guid: b29ad144758b18f48a0586ac2aa65bb5, type: 3}
 --- !u!1 &1157653023485337844 stripped
 GameObject:
@@ -272,6 +275,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isPlacable: 1
+  SecondBox: {fileID: 0}
+  checkIfInGrounds:
+  - {fileID: 5538535250198244777}
+  ColliderBoxSize1: {x: 0, y: 0, z: 0}
+  ColliderBoxPosition1: {x: 0, y: 0, z: 0}
+  ColliderBoxSize2: {x: 0, y: 0, z: 0}
+  ColliderBoxPosition2: {x: 0, y: 0, z: 0}
 --- !u!54 &8657394689133733666
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -299,6 +309,26 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 1
+--- !u!114 &5538535250198244777
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1157653023485337844}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e7d1de544b56e646a3d060277e1793f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  IsInGround: 0
+  _allowedTag: tile
+  _prohibedTags:
+  - Water
+  - building
+  - forest
+  - field
+  _hitColliders: []
 --- !u!4 &1971204334820555342 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: b29ad144758b18f48a0586ac2aa65bb5, type: 3}

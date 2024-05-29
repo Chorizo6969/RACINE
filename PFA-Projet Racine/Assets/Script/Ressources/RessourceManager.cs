@@ -165,7 +165,7 @@ public class RessourceManager : MonoBehaviour
         }
         else if (_wood == _maxWood)
         {
-            Debug.Log("Stockage WOOD full");
+            //Debug.Log("Stockage WOOD full");
         }
     }
 
@@ -223,7 +223,7 @@ public class RessourceManager : MonoBehaviour
         }
         else if ( _water == _maxWater)
         {
-            Debug.Log("Stockage WATER full");
+            //Debug.Log("Stockage WATER full");
         }
     }
 
@@ -281,7 +281,7 @@ public class RessourceManager : MonoBehaviour
         }
         else if (_stone == _maxStone)
         {
-            Debug.Log("Stockage STONE full");
+            //Debug.Log("Stockage STONE full");
         }
     }
 
@@ -325,9 +325,12 @@ public class RessourceManager : MonoBehaviour
     {
         yield return new WaitForSeconds(_time);
         _woodText.text = _wood.ToString() + "/" + _maxWood.ToString();
-        foreach (GameObject bat in StockBatListManager.instance.listWoodStock)
+        if (StockBatListManager.instance != null )
         {
-            bat.GetComponent<FillRessourceStock>().SetGoodStock(_wood, _maxWood);
+            foreach (GameObject bat in StockBatListManager.instance.listWoodStock)
+            {
+                bat.GetComponent<FillRessourceStock>().SetGoodStock(_wood, _maxWood);
+            }
         }
     }
 
@@ -335,9 +338,12 @@ public class RessourceManager : MonoBehaviour
     {
         yield return new WaitForSeconds(_time);
         _waterText.text = _water.ToString() + "/" + _maxWater.ToString();
-        foreach (GameObject bat in StockBatListManager.instance.listWaterStock)
+        if (StockBatListManager.instance != null)
         {
-            bat.GetComponent<FillRessourceStock>().SetGoodStock(_water, _maxWater);
+            foreach (GameObject bat in StockBatListManager.instance.listWaterStock)
+            {
+                bat.GetComponent<FillRessourceStock>().SetGoodStock(_water, _maxWater);
+            }
         }
     }
 
@@ -345,9 +351,12 @@ public class RessourceManager : MonoBehaviour
     {
         yield return new WaitForSeconds(_time);
         _stoneText.text = _stone.ToString() + "/" + _maxStone.ToString();
-        foreach (GameObject bat in StockBatListManager.instance.listStoneStock)
+        if (StockBatListManager.instance != null)
         {
-            bat.GetComponent<FillRessourceStock>().SetGoodStock(_stone, _maxStone);
+            foreach (GameObject bat in StockBatListManager.instance.listStoneStock)
+            {
+                bat.GetComponent<FillRessourceStock>().SetGoodStock(_stone, _maxStone);
+            }
         }
     }
 }
