@@ -186,6 +186,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 078e590760b605746bce021a587cf100, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2860203305464759982}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 078e590760b605746bce021a587cf100, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 931818971891177009}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 078e590760b605746bce021a587cf100, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2503716032697170597}
   m_SourcePrefab: {fileID: 100100000, guid: 078e590760b605746bce021a587cf100, type: 3}
 --- !u!4 &2406262422847387344 stripped
 Transform:
@@ -231,6 +237,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isPlacable: 1
+  SecondBox: {fileID: 0}
+  _checkIfInGrounds:
+  - {fileID: 931818971891177009}
+  ColliderBoxSize1: {x: 0, y: 0, z: 0}
+  ColliderBoxPosition1: {x: 0, y: 0, z: 0}
+  ColliderBoxSize2: {x: 0, y: 0, z: 0}
+  ColliderBoxPosition2: {x: 0, y: 0, z: 0}
 --- !u!54 &2860203305464759982
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -258,3 +271,39 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 1
+--- !u!114 &931818971891177009
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3039668340332178538}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e7d1de544b56e646a3d060277e1793f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  IsInGround: 0
+  _allowedTag: tile
+  _prohibedTags:
+  - Water
+  - building
+  - forest
+  - field
+  _hitColliders: []
+--- !u!208 &2503716032697170597
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3039668340332178538}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 2.5, y: 2.5, z: 2.5}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: -0.076000005, y: 2.463, z: -0.040000003}
+  m_TimeToStationary: 0.5

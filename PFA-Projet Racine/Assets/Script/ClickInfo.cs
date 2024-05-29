@@ -17,6 +17,10 @@ public class ClickInfo : MonoBehaviour
 
     public void OnClickMove()
     {
+        if (lastBat.name == "4Maison Water Man(Clone)")
+        {
+            lastBat.GetComponentInChildren<PlaceOuPasPlace>().ChangeBoxSizeUp();
+        }
         dragAndDropBuilding.instance.BOUGE = lastBat;
         dragAndDropBuilding.instance.HasClickOnBuildingButtonInstance = true;
         lastBat.GetComponent<BuildingCanvas>().Building.GetComponent<PlaceOuPasPlace>().enabled = true;

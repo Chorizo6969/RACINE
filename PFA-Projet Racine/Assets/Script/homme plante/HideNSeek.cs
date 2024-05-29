@@ -50,7 +50,10 @@ public class HideNSeek : MonoBehaviour
             _startHiding = false;
             IsHiding = true;
             _naveshAgent.speed = 3;
-            _naveshAgent.SetDestination(list[Random.Range(0, list.Count)].transform.position);
+
+            GetComponent<NewRandomPos>().SetDestinationToGo(list[Random.Range(0, list.Count)].transform.position);
+
+            //_naveshAgent.SetDestination(list[Random.Range(0, list.Count)].transform.position);
         }
     }
 }
