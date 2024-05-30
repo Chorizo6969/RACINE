@@ -1,6 +1,5 @@
 using TMPro;
 using UnityEngine;
-using UnityEngine.SocialPlatforms.Impl;
 
 /// <summary>
 /// Script qui gère le cycle Jour / Nuit du jeu
