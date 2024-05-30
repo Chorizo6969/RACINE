@@ -7,6 +7,12 @@ using UnityEngine.UI;
 public class IntroManager : MonoBehaviour
 {
     [SerializeField]
+    private GameObject _activation;
+
+    [SerializeField]
+    private GameObject _panelRacine;
+
+    [SerializeField]
     private ModifDialogue _modif;
 
     [SerializeField]
@@ -18,53 +24,76 @@ public class IntroManager : MonoBehaviour
     [SerializeField]
     private Image _image;
 
-    private async Task Intro()
-    {
+    public bool bouliste;
 
-        //lorsque clic fin fleche et unfocus
-        //Lorsque champ placé Dialogue 3
-        //Fin dialogue 3
-        //Lorsque graine placé Dialogue 4
-        //fleche + focus fin dialogue 4
-        //lorsque clic fin fleche et unfocus
-        //lorsque humain plante apparait dialogue 5
-        await Task.Yield();
+    public int id = 0;
+
+    public static IntroManager Instance;
+
+    private void Awake()
+    {
+        Instance = this;
     }
 
-    public async void Start()
+    public void Start()
+    {
+        Distribution();
+    }
+
+    public async void Distribution()
     {
         while (!_dialogue.isfinish) await Task.Yield();
         fleche[0].SetActive(true);
+        while (id != 1) await Task.Yield();
+        fleche[0].SetActive(false);
+        _panelRacine.SetActive(false);
+        Dialogue2();
+    
     }
-
-    public async void Dialogue2()  //Lorsque clic sur la graine bucheron dialogue 2
+    public async void Dialogue2()
     {
         _modif.modifDialogue1();
         await Task.Delay(2000);
         while (!_dialogue.isfinish) await Task.Yield();
         fleche[1].SetActive(true);
-        //Transition fleche + focus lorsque fin dialogue
-
-
+        while (id != 2) await Task.Yield();
+        fleche[1].SetActive(false);
+        fleche[2].SetActive(true);
+        while (id != 3) await Task.Yield();
+        fleche[2].SetActive(false);
+        Dialogue3();
     }
-    public void Dialogue3()
+    public async void Dialogue3()
     {
         _modif.modifDialogue2();
+        await Task.Delay(2000);
+        while (!_dialogue.isfinish) await Task.Yield();
+        fleche[1].SetActive(true);
+        bouliste = true;
+        while (id != 4) await Task.Yield();
+        fleche[1].SetActive(false);
+        fleche[3].SetActive(true);
+        while (id != 5) await Task.Yield();
+        bouliste = false;
+        fleche[3].SetActive(false);
+        Dialogue4();
     }
-    public void Dialogue4()
+    public async void Dialogue4()
     {
         _modif.modifDialogue3();
-    }
-    public void Dialogue5()
-    {
+        await Task.Delay(2000);
+        while (!_dialogue.isfinish) await Task.Yield();
+        bouliste = true;
+        fleche[1].SetActive(true);
+        while (id != 6) await Task.Yield();
+        fleche[1].SetActive(false);
+        fleche[4].SetActive(true);
+        while (id != 7) await Task.Yield();
+        fleche[4].SetActive(false);
+        fleche[3].SetActive(true);
+        while (id != 8) await Task.Yield();
+        fleche[3].SetActive(false);
         _modif.modifDialogue4();
     }
-    public void Dialogue6()
-    {
-        _modif.modifDialogue5();
-    }
-    public void Dialogue7()
-    {
-        _modif.modifDialogue6();
-    }
+
 }

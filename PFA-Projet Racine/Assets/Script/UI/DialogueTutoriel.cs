@@ -29,7 +29,6 @@ public class DialogueTutoriel : MonoBehaviour
 
     public void OnEnable()
     {
-        Debug.Log("grgseg");
         StartDialogue();
     }
 
@@ -46,6 +45,22 @@ public class DialogueTutoriel : MonoBehaviour
     {
         foreach (char c in lines[index].ToCharArray())
         {
+            /*if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Return))
+            {
+                TextSpeed = 0;
+            }*/
+            if (c == ',')
+            {
+                float speed = TextSpeed;
+                text.text += c;
+                await Task.Delay((int)((speed + 0.25f) * 1000));
+            }
+            if (c == '.' || c == '?' || c == '!')
+            {
+                float speed = TextSpeed;
+                text.text += c;
+                await Task.Delay((int)((speed + 1) * 1000));
+            }
             text.text += c;
             await Task.Delay((int)(TextSpeed*1000));
         }
