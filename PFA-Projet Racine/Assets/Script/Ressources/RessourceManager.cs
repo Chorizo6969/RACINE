@@ -65,6 +65,8 @@ public class RessourceManager : MonoBehaviour
 
     public static RessourceManager Instance;
 
+    
+
     private void Awake()
     {
         Instance = this;
@@ -167,6 +169,14 @@ public class RessourceManager : MonoBehaviour
         {
             //Debug.Log("Stockage WOOD full");
         }
+
+        if (StockBatListManager.instance.listWoodStock.Count != 0)
+        {
+            foreach (GameObject bat in StockBatListManager.instance.listWoodStock)
+            {
+                bat.GetComponent<FillRessourceStock>().SetGoodStock(_wood, _maxWood);
+            }
+        }
     }
 
     public void AddWoodStock(int amount)
@@ -225,6 +235,14 @@ public class RessourceManager : MonoBehaviour
         {
             //Debug.Log("Stockage WATER full");
         }
+
+        if (StockBatListManager.instance.listWaterStock.Count != 0)
+        {
+            foreach (GameObject bat in StockBatListManager.instance.listWaterStock)
+            {
+                bat.GetComponent<FillRessourceStock>().SetGoodStock(_water, _maxWater);
+            }
+        }
     }
 
     public void AddWaterStock(int amount)
@@ -282,6 +300,14 @@ public class RessourceManager : MonoBehaviour
         else if (_stone == _maxStone)
         {
             //Debug.Log("Stockage STONE full");
+        }
+
+        if (StockBatListManager.instance.listStoneStock.Count != 0)
+        {
+            foreach (GameObject bat in StockBatListManager.instance.listStoneStock)
+            {
+                bat.GetComponent<FillRessourceStock>().SetGoodStock(_stone, _maxStone);
+            }
         }
     }
 
