@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 1293946590759701267}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -0.272}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -291,6 +291,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 1e19b4e9dc071d64fb5527b525b9e205, type: 3}
       insertIndex: -1
       addedObject: {fileID: 8948107626162247727}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 1e19b4e9dc071d64fb5527b525b9e205, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2171156041164922812}
   m_SourcePrefab: {fileID: 100100000, guid: 1e19b4e9dc071d64fb5527b525b9e205, type: 3}
 --- !u!4 &304421241556915538 stripped
 Transform:
@@ -390,3 +393,19 @@ MonoBehaviour:
   - forest
   - field
   _hitColliders: []
+--- !u!208 &2171156041164922812
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1113045709804081128}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 3.945, y: 0.5, z: 4.07}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 0
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
