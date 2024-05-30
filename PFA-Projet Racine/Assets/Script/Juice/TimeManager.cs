@@ -15,23 +15,27 @@ public class TimeManager : MonoBehaviour
 
     [SerializeField] private Light globalLight;
 
-    private int minutes;
+    [SerializeField] private int minutes;
 
     public int Minutes
     { get { return minutes; } set { minutes = value; OnMinutesChange(value); } }
 
     private int hours = 5;
 
-    public int Hours
+    [SerializeField] public int Hours
     { get { return hours; } set { hours = value; OnHoursChange(value); } }
 
-    private int days;
+    [SerializeField] private int days;
 
     public int Days
     { get { return days; } set { days = value; } }
 
     private float tempSecond;
 
+    private void Start()
+    {
+        Time.timeScale = 50;
+    }
     public void Update()
     {
         tempSecond += Time.deltaTime;
