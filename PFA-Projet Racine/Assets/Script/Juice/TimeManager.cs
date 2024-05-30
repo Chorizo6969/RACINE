@@ -62,22 +62,22 @@ public class TimeManager : MonoBehaviour
     {
         if (value == 6)
         {
-            StartCoroutine(LerpSkybox(_skyboxNuit, _skyboxDebutSoleil, 10f));
+            //StartCoroutine(LerpSkybox(_skyboxNuit, _skyboxDebutSoleil, 10f));
             StartCoroutine(LerpLight(graddientNightToSunrise, 10f));
         }
         else if (value == 8)
         {
-            StartCoroutine(LerpSkybox(_skyboxDebutSoleil, _skyboxJour, 10f));
+            //StartCoroutine(LerpSkybox(_skyboxDebutSoleil, _skyboxJour, 10f));
             StartCoroutine(LerpLight(graddientSunriseToDay, 10f));
         }
         else if (value == 18)
         {
-            StartCoroutine(LerpSkybox(_skyboxJour, _skyboxCouchéSoleil, 10f));
+            //StartCoroutine(LerpSkybox(_skyboxJour, _skyboxCouchéSoleil, 10f));
             StartCoroutine(LerpLight(graddientDayToSunset, 10f));
         }
         else if (value == 22)
         {
-            StartCoroutine(LerpSkybox(_skyboxCouchéSoleil, _skyboxNuit, 10f));
+            //StartCoroutine(LerpSkybox(_skyboxCouchéSoleil, _skyboxNuit, 10f));
             StartCoroutine(LerpLight(graddientSunsetToNight, 10f));
         }
     }
