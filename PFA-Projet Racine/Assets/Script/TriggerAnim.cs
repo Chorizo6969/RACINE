@@ -7,7 +7,7 @@ public class TriggerAnim : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("qergeqr");
+        //Debug.Log("qergeqr");
         if (other.gameObject.layer == 8)
         {
             _plongeon = other.GetComponentInChildren<Animator>();
