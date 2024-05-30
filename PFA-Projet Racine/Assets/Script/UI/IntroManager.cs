@@ -13,20 +13,14 @@ public class IntroManager : MonoBehaviour
     private DialogueTutoriel _dialogue;
 
     [SerializeField]
-    private GameObject fleche;
-
-    [SerializeField]
-    private Animation _focus;
-
-    [SerializeField]
-    private Animation _unfocus;
+    private List<GameObject> fleche;
 
     [SerializeField]
     private Image _image;
 
     private async Task Intro()
     {
-        //Transition fleche + focus lorsque fin dialogue
+
         //lorsque clic fin fleche et unfocus
         //Lorsque champ placé Dialogue 3
         //Fin dialogue 3
@@ -36,12 +30,20 @@ public class IntroManager : MonoBehaviour
         //lorsque humain plante apparait dialogue 5
         await Task.Yield();
     }
+
+    public async void Start()
+    {
+        while (!_dialogue.isfinish) await Task.Yield();
+        fleche[0].SetActive(true);
+    }
+
     public async void Dialogue2()  //Lorsque clic sur la graine bucheron dialogue 2
     {
         _modif.modifDialogue1();
         await Task.Delay(2000);
         while (!_dialogue.isfinish) await Task.Yield();
-        Debug.Log("dfbser");
+        fleche[1].SetActive(true);
+        //Transition fleche + focus lorsque fin dialogue
 
 
     }
