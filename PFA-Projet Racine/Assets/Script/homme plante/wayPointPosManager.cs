@@ -31,4 +31,16 @@ public class wayPointPosManager : MonoBehaviour
         }
         yield return new WaitForSeconds(10); StartCoroutine(RandomizeWaypointPos());
     }
+
+    void CheckIfDebilosCanGoHere(GameObject _debilos)
+    {
+        if (_debilos.GetComponent<CheckIfInGround>().IsInGround)
+        {
+            return;
+        }
+        else
+        {
+            _debilos.transform.position = new Vector3(this.gameObject.transform.position.x + Random.Range(minX, maxX), wayPoint.transform.position.y, this.gameObject.transform.position.z + Random.Range(minZ, maxZ));
+        }
+    }
 }
