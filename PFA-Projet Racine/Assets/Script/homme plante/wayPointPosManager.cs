@@ -20,7 +20,15 @@ public class wayPointPosManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        StartCoroutine(RandomizeWaypointPos());
+        foreach (GameObject wayPoint in WayPoints)
+        {
+            wayPoint.transform.position = new Vector3(this.gameObject.transform.position.x + Random.Range(minX, maxX), wayPoint.transform.position.y, this.gameObject.transform.position.z + Random.Range(minZ, maxZ));
+            Debug.Log(wayPoint.name + wayPoint.GetComponent<CheckIfInGround>().IsInGround);
+            CheckIfDebilosCanGoHere(wayPoint);
+        }
+
+
+        StartCoroutine(WaitBeforeTrueStart());
     }
 
     IEnumerator RandomizeWaypointPos()
@@ -28,19 +36,36 @@ public class wayPointPosManager : MonoBehaviour
         foreach (GameObject wayPoint in WayPoints)
         {
             wayPoint.transform.position = new Vector3(this.gameObject.transform.position.x + Random.Range(minX, maxX), wayPoint.transform.position.y, this.gameObject.transform.position.z + Random.Range(minZ, maxZ));
+            Debug.Log(wayPoint.name + wayPoint.GetComponent<CheckIfInGround>().IsInGround);
+            CheckIfDebilosCanGoHere(wayPoint);
         }
         yield return new WaitForSeconds(10); StartCoroutine(RandomizeWaypointPos());
     }
 
     void CheckIfDebilosCanGoHere(GameObject _debilos)
     {
+        Debug.Log("Start Check");
+
         if (_debilos.GetComponent<CheckIfInGround>().IsInGround)
         {
             return;
         }
         else
         {
-            _debilos.transform.position = new Vector3(this.gameObject.transform.position.x + Random.Range(minX, maxX), wayPoint.transform.position.y, this.gameObject.transform.position.z + Random.Range(minZ, maxZ));
+            _debilos.transform.position = new Vector3(this.gameObject.transform.position.x + Random.Range(minX, maxX), _debilos.transform.position.y, this.gameObject.transform.position.z + Random.Range(minZ, maxZ));
+            StartCoroutine(WaitBeforeReCheck(_debilos));
         }
+    }
+
+    IEnumerator WaitBeforeTrueStart()
+    {
+        yield return new WaitForSeconds(1f);
+        StartCoroutine(RandomizeWaypointPos());
+    }
+
+    IEnumerator WaitBeforeReCheck(GameObject _debilos)
+    {
+        yield return new WaitForSeconds(0.5f);
+        CheckIfDebilosCanGoHere(_debilos);
     }
 }
