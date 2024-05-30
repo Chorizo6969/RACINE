@@ -105,6 +105,7 @@ MonoBehaviour:
   Stock4: {fileID: 8085311797730628272}
   Stock5: {fileID: 4648455771701527175}
   id: 1
+  tranche: 0
 --- !u!208 &145931077523153178
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -344,6 +345,7 @@ MonoBehaviour:
   - building
   - forest
   - field
+  - RACINE
   _hitColliders: []
 --- !u!4 &1971204334820555342 stripped
 Transform:

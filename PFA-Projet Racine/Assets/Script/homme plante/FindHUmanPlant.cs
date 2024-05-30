@@ -17,7 +17,10 @@ public class FindHUmanPlant : MonoBehaviour
                 if (hitInfo.collider.gameObject.CompareTag("humanPlant"))
                 {
                     GameObject _touchedPlant = hitInfo.collider.gameObject;
-                    _touchedPlant.GetComponent<HideNSeek>()._startHiding = true;
+                    if (_touchedPlant.GetComponent<HideNSeek>().IsHiding)
+                    {
+                        _touchedPlant.GetComponent<HideNSeek>()._startHiding = true;
+                    }
                     HumanSound.instance.Verification(hitInfo.collider.gameObject);
                 }
             }
