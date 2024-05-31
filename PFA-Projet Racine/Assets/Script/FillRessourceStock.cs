@@ -12,6 +12,8 @@ public class FillRessourceStock : MonoBehaviour
 
     public int id;
 
+    public float tranche;
+
     private void Start()
     {
 
@@ -35,7 +37,7 @@ public class FillRessourceStock : MonoBehaviour
 
     public void SetGoodStock(int _currentStock, int _maxStock)
     {
-        int tranche = _maxStock / 5;
+        tranche = _maxStock / 5;
 
         if (_currentStock == 0)
         {
@@ -45,7 +47,7 @@ public class FillRessourceStock : MonoBehaviour
             Stock4.SetActive(false);
             Stock5.SetActive(false);
         }
-        else if (tranche * 1 > 0)
+        else if (_currentStock > 0 && _currentStock < tranche * 1)
         {
             Stock1.SetActive(true);
             Stock2.SetActive(true);
@@ -53,7 +55,7 @@ public class FillRessourceStock : MonoBehaviour
             Stock4.SetActive(false);
             Stock5.SetActive(false);
         }
-        else if (tranche * 2 > _currentStock) 
+        else if (_currentStock > tranche * 1 && _currentStock < tranche * 2) 
         {
             Stock1.SetActive(true);
             Stock2.SetActive(true);
@@ -61,7 +63,7 @@ public class FillRessourceStock : MonoBehaviour
             Stock4.SetActive(false);
             Stock5.SetActive(false);
         }
-        else if (tranche * 3 > _currentStock)
+        else if (_currentStock > tranche * 2 && _currentStock < tranche * 3)
         {
             Stock1.SetActive(true);
             Stock2.SetActive(true);
@@ -69,7 +71,7 @@ public class FillRessourceStock : MonoBehaviour
             Stock4.SetActive(true);
             Stock5.SetActive(false);
         }
-        else if (tranche * 4 > _currentStock)
+        else if (tranche * 4 < _currentStock)
         {
             Stock1.SetActive(true);
             Stock2.SetActive(true);
