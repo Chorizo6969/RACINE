@@ -11,8 +11,8 @@ public class ExpeditionLoot : MonoBehaviour
     private int minloot = 4;
     [SerializeField]
     private int chanceToDie = 10;
-    [SerializeField]
-    private int expeditionTime = 60;
+
+    public int expeditionTime = 60;
     [SerializeField]
     private TextMeshProUGUI scoreWood;
     [SerializeField]
