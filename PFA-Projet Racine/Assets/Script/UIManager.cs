@@ -12,13 +12,22 @@ public class UIManager : MonoBehaviour
     [SerializeField]
     private Button _button;
 
+    public bool _isOpen;
+
     private int index = 1;
+    public static UIManager Instance;
+
+    private void Awake()
+    {
+        Instance = this;
+    }
 
     public void ActivationUi()
     {
         if (index == 1)
         {
             _button.interactable = false;
+            _isOpen = true;
             _uiAnimator.SetInteger("Click", 1);
             StartCoroutine(Delay());
             index += 1;
@@ -26,6 +35,7 @@ public class UIManager : MonoBehaviour
         else if (index == 2)
         {
             _button.interactable = false;
+            _isOpen = false;
             _uiAnimator.SetInteger("Click", 2);
             StartCoroutine(Delay());
             index = 1;
