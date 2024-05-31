@@ -9,8 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2439094545548758811}
-  - component: {fileID: -1768593801104769138}
   - component: {fileID: 3685419080705175954}
+  - component: {fileID: -1768593801104769138}
   - component: {fileID: 7575359771361848069}
   - component: {fileID: 1450876034525310834}
   - component: {fileID: 145931077523153178}
@@ -38,19 +38,6 @@ Transform:
   - {fileID: 1971204334820555342}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &-1768593801104769138
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2673577714733791471}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2c532825e25c1c8418b69caa9893e0e3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  height: 0
 --- !u!114 &3685419080705175954
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -69,10 +56,23 @@ MonoBehaviour:
   normal: {fileID: 0}
   BuildingPlacableTrue: {fileID: 284798809823294670, guid: f133b5d59e5bc3f468f25da29072ba94, type: 3}
   BuildingPlacableFalse: {fileID: 2291975707558987528, guid: 1017c73f41769a344becfcc96f294a41, type: 3}
-  id: 0
+  <id>k__BackingField: 5
   placeOrNot: 0
   woodDestroyCost: 0
   stoneDestroyCost: 0
+--- !u!114 &-1768593801104769138
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2673577714733791471}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c532825e25c1c8418b69caa9893e0e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  height: 0
 --- !u!114 &7575359771361848069
 MonoBehaviour:
   m_ObjectHideFlags: 0

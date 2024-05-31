@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -23,6 +22,19 @@ public class ChangeColor : MonoBehaviour
             button_image.color = Color.white;
             index = 0;
         }
+    }
+
+    public void Désactive() //Sur le bouton expédition
+    {
+        StartCoroutine(Delay());
+    }
+
+    IEnumerator Delay()
+    {
+        yield return new WaitForSeconds(ExpeditionLoot.instance.expeditionTime);
+        Image button_image = GetComponent<Image>();
+        button_image.color = Color.white;
+        index = 0;
     }
 
     public void Work()

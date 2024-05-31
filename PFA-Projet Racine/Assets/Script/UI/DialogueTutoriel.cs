@@ -45,10 +45,6 @@ public class DialogueTutoriel : MonoBehaviour
     {
         foreach (char c in lines[index].ToCharArray())
         {
-            /*if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Return))
-            {
-                TextSpeed = 0;
-            }*/
             if (c == ',')
             {
                 float speed = TextSpeed;
@@ -62,7 +58,7 @@ public class DialogueTutoriel : MonoBehaviour
                 await Task.Delay((int)((speed + 1) * 1000));
             }
             text.text += c;
-            await Task.Delay((int)(TextSpeed*1000));
+            await Task.Delay((int)(TextSpeed * 1000));
         }
         await Accept();
 
