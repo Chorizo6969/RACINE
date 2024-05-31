@@ -31,6 +31,45 @@ public class BuildingCanvas : MonoBehaviour
             IncrementHuman.instance.EditMaxHuman(5);
         }
         MaxBatPlacable.Instance.IncreaseActuBat(1, id);
+
+        switch (id)
+        {
+            case 0:
+                gameObject.name = "Maison";
+                break;
+            case 1:
+                gameObject.name = "Maison de Bucheron";
+                break;
+            case 2:
+                gameObject.name = "Maison des Plongeurs";
+                break;
+            case 3:
+                gameObject.name = "Maison des Mineurs";
+                break;
+            case 4:
+                gameObject.name = "Reserve de bois";
+                break;
+            case 5:
+                gameObject.name = "Reserve d'Eau";
+                break;
+            case 6:
+                gameObject.name = "Reserve de Pierre";
+                break;
+            case 7:
+                gameObject.name = "Torche";
+                break;
+            case 8:
+                gameObject.name = "Toilette";
+                break;
+            case 9:
+                gameObject.name = "Champ";
+                break;
+            case 10:
+                gameObject.name = "JukeBox";
+                break;
+
+        }
+
     }
 
     public void PanelSetActive(bool enabled)
