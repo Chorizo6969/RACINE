@@ -29,7 +29,6 @@ public class ModifDialogue : MonoBehaviour
         DialogueTutoriel.instance.lines.Add("WAAAAAAAAA, IL A RÉUSSSIIIIIII, IL EST TROP FOOOOORT");
         DialogueTutoriel.instance.lines.Add("M-M-MAINTENANT, IL FAUT CONSTRUIRE DES MAISONS POUR VOS HUMAINS PLAAAAANTES");
         DialogueTutoriel.instance.lines.Add("UTILISEZ LES MATÉRIAUX POUR EN CONSTRUIRE UNE.");
-
         _GOdialogue.SetActive(true);
     }
     public void modifDialogue4()
@@ -37,7 +36,6 @@ public class ModifDialogue : MonoBehaviour
         DialogueTutoriel.instance.lines.Clear();
         DialogueTutoriel.instance.lines.Add("WAAAAAAAAA VOUS AVEZ RÉUSSI, VIVE NOTRE GRAND CHEFFFFF ! IL EST TROP FOOOOOORT !!!");
         DialogueTutoriel.instance.lines.Add("OHHHHH REGRADEZ, L'HUMAIN PLANTE EST NÉ");
-
         _GOdialogue.SetActive(true);
     }
 }
