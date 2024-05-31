@@ -16,7 +16,7 @@ public class BuildingCanvas : MonoBehaviour
 
     public Material BuildingPlacableFalse;
 
-    [SerializeField] private int id;
+    [field : SerializeField] public int id {  get; private set; }
 
     public bool placeOrNot;
 
@@ -26,11 +26,11 @@ public class BuildingCanvas : MonoBehaviour
     private void Awake()
     {
         normal = Building.GetComponent<MeshRenderer>().material;
-        if (id != 0)
+        if (id == 0)
         {
             IncrementHuman.instance.EditMaxHuman(5);
         }
-        MaxBatPlacable.Instance.IncreaseActuBat(1);
+        MaxBatPlacable.Instance.IncreaseActuBat(1, id);
     }
 
     public void PanelSetActive(bool enabled)
@@ -55,6 +55,6 @@ public class BuildingCanvas : MonoBehaviour
 
     private void OnDestroy()
     {
-        MaxBatPlacable.Instance.IncreaseActuBat(-1);
+        MaxBatPlacable.Instance.IncreaseActuBat(-1, id);
     }
 }

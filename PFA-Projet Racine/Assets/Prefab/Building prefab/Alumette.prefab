@@ -9,11 +9,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8785827238811314212}
+  - component: {fileID: 8346664501606312587}
   - component: {fileID: 5696942113410153190}
   - component: {fileID: 757925606890874286}
   - component: {fileID: -6508803568892263607}
   - component: {fileID: 1490123895141028993}
-  - component: {fileID: 8346664501606312587}
   - component: {fileID: 7603969856120163219}
   - component: {fileID: 5920924334387715992}
   - component: {fileID: 87164515932376397}
@@ -41,6 +41,28 @@ Transform:
   - {fileID: 7926006819713476870}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8346664501606312587
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5269674263738028252}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a02b9dfc88aa96d4cb0b378a1bbb2ed2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CanvasOptionPanel: {fileID: 0}
+  <HidePoint>k__BackingField: {fileID: 0}
+  Building: {fileID: 5269674263738028252}
+  normal: {fileID: 0}
+  BuildingPlacableTrue: {fileID: 284798809823294670, guid: f133b5d59e5bc3f468f25da29072ba94, type: 3}
+  BuildingPlacableFalse: {fileID: 2291975707558987528, guid: 13a0f5ccdc61ec44b983937f86b8dd54, type: 3}
+  <id>k__BackingField: 7
+  placeOrNot: 0
+  woodDestroyCost: 0
+  stoneDestroyCost: 0
 --- !u!33 &5696942113410153190
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -120,28 +142,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   height: 0
---- !u!114 &8346664501606312587
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5269674263738028252}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a02b9dfc88aa96d4cb0b378a1bbb2ed2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CanvasOptionPanel: {fileID: 0}
-  <HidePoint>k__BackingField: {fileID: 0}
-  Building: {fileID: 5269674263738028252}
-  normal: {fileID: 0}
-  BuildingPlacableTrue: {fileID: 284798809823294670, guid: f133b5d59e5bc3f468f25da29072ba94, type: 3}
-  BuildingPlacableFalse: {fileID: 2291975707558987528, guid: 13a0f5ccdc61ec44b983937f86b8dd54, type: 3}
-  id: 0
-  placeOrNot: 0
-  woodDestroyCost: 0
-  stoneDestroyCost: 0
 --- !u!65 &7603969856120163219
 BoxCollider:
   m_ObjectHideFlags: 0

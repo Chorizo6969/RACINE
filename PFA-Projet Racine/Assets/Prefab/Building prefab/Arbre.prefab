@@ -9,10 +9,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7141252814498803544}
+  - component: {fileID: 3189675041014636913}
   - component: {fileID: 3020980403963269886}
   - component: {fileID: 6779626115578161661}
   - component: {fileID: 2765294251460937496}
-  - component: {fileID: 3189675041014636913}
   - component: {fileID: 6546830914778249599}
   - component: {fileID: -4627957208215636243}
   - component: {fileID: 7175613078122594820}
@@ -41,6 +41,28 @@ Transform:
   - {fileID: 6750762270610734157}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
+--- !u!114 &3189675041014636913
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 197059891112798537}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a02b9dfc88aa96d4cb0b378a1bbb2ed2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CanvasOptionPanel: {fileID: 0}
+  <HidePoint>k__BackingField: {fileID: 0}
+  Building: {fileID: 197059891112798537}
+  normal: {fileID: 0}
+  BuildingPlacableTrue: {fileID: 284798809823294670, guid: f133b5d59e5bc3f468f25da29072ba94, type: 3}
+  BuildingPlacableFalse: {fileID: 2291975707558987528, guid: 1017c73f41769a344becfcc96f294a41, type: 3}
+  <id>k__BackingField: 10
+  placeOrNot: 0
+  woodDestroyCost: 0
+  stoneDestroyCost: 0
 --- !u!33 &3020980403963269886
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -104,28 +126,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   height: 0
---- !u!114 &3189675041014636913
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 197059891112798537}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a02b9dfc88aa96d4cb0b378a1bbb2ed2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CanvasOptionPanel: {fileID: 0}
-  <HidePoint>k__BackingField: {fileID: 0}
-  Building: {fileID: 197059891112798537}
-  normal: {fileID: 0}
-  BuildingPlacableTrue: {fileID: 284798809823294670, guid: f133b5d59e5bc3f468f25da29072ba94, type: 3}
-  BuildingPlacableFalse: {fileID: 2291975707558987528, guid: 1017c73f41769a344becfcc96f294a41, type: 3}
-  id: 3
-  placeOrNot: 0
-  woodDestroyCost: 0
-  stoneDestroyCost: 0
 --- !u!114 &6546830914778249599
 MonoBehaviour:
   m_ObjectHideFlags: 0
