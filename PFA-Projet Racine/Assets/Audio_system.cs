@@ -1,11 +1,16 @@
+using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Events;
 
 public class playerAnimationEventReceiver : MonoBehaviour
 {
-    public UnityEvent Coin1;
-    public UnityEvent Coin2;
-    public UnityEvent Coin3;
 
-    public void Canard() => Coin1.Invoke();
+    public AudioSource audioSource;
+    //public void Canard() => Coin1.Invoke();
+    public List<AudioClip> sons = new();
+    void PlaySound()
+    {
+        //audioSource.clip = Son1;
+        audioSource.clip = sons[Random.Range(0, sons.Count)];
+        audioSource.Play();
+    }
 }

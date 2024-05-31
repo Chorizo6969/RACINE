@@ -3261,7 +3261,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1706571240223193561, guid: 74c08e197cb131743b83b42a71989715, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 16.334986
+      value: -10.439996
       objectReference: {fileID: 0}
     - target: {fileID: 4265861964482685203, guid: 74c08e197cb131743b83b42a71989715, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -3269,9 +3269,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4265861964482685203, guid: 74c08e197cb131743b83b42a71989715, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 16.334986
+      value: -10.439996
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -5716681864270162303, guid: 74c08e197cb131743b83b42a71989715, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
@@ -3281,6 +3282,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: -927199367670048503, guid: 74c08e197cb131743b83b42a71989715, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1545836975}
+    - targetCorrespondingSourceObject: {fileID: -927199367670048503, guid: 74c08e197cb131743b83b42a71989715, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1545836980}
   m_SourcePrefab: {fileID: 100100000, guid: 74c08e197cb131743b83b42a71989715, type: 3}
 --- !u!1 &1545836974 stripped
 GameObject:
@@ -3299,27 +3303,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09e3841a016c3d341b8c2885115b66f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Coin1:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1545836976}
-        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
-        m_MethodName: Play
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 1
-  Coin2:
-    m_PersistentCalls:
-      m_Calls: []
-  Coin3:
-    m_PersistentCalls:
-      m_Calls: []
+  audioSource: {fileID: 1545836976}
 --- !u!82 &1545836976
 AudioSource:
   m_ObjectHideFlags: 0
@@ -3331,7 +3315,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 762cb900bc5ce3042aafb3873c83716d, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -3406,7 +3390,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 1.1
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -3416,6 +3400,27 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!95 &1545836980
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1545836974}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 0cd2a5ecf43e175408da570eaa261801, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1587275670
 GameObject:
   m_ObjectHideFlags: 0
