@@ -1,5 +1,9 @@
 fileFormatVersion: 2
-guid: 871f2252019a2544d8a0850fbab763d6
+<<<<<<<< HEAD:PFA-Projet Racine/Assets/Shader/VFX_Plongée/Mesh_Plongeon/CircleWater01.fbx.meta
+guid: dfb1e03194e337c4c97670e1de9a7a31
+========
+guid: 80882db255fe74b428d5f3e0461da695
+>>>>>>>> main:PFA-Projet Racine/Assets/Import/Mesh Blender/AUTRE MESH/Duck.fbx.meta
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -35,7 +39,7 @@ ModelImporter:
     isReadable: 0
   meshes:
     lODScreenPercentages: []
-    globalScale: 1
+    globalScale: 0.3
     meshCompression: 0
     addColliders: 0
     useSRGBMaterialColor: 1
@@ -52,7 +56,7 @@ ModelImporter:
     useFileUnits: 1
     keepQuads: 0
     weldVertices: 1
-    bakeAxisConversion: 1
+    bakeAxisConversion: 0
     preserveHierarchy: 0
     skinWeightsMode: 0
     maxBonesPerVertex: 4
@@ -67,7 +71,7 @@ ModelImporter:
     secondaryUVMinLightmapResolution: 40
     secondaryUVMinObjectScale: 1
     secondaryUVPackMargin: 4
-    useFileScale: 0
+    useFileScale: 1
     strictVertexDataChecks: 0
   tangentSpace:
     normalSmoothAngle: 60
@@ -90,7 +94,11 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    globalScale: 1
+<<<<<<<< HEAD:PFA-Projet Racine/Assets/Shader/VFX_Plongée/Mesh_Plongeon/CircleWater01.fbx.meta
+    globalScale: 0.01
+========
+    globalScale: 0.3
+>>>>>>>> main:PFA-Projet Racine/Assets/Import/Mesh Blender/AUTRE MESH/Duck.fbx.meta
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 0
