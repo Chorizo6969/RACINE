@@ -13,6 +13,7 @@ public class StockBatListManager : MonoBehaviour
     private void Awake()
     {
         instance = this;
+        Debug.Log(gameObject.name);
     }
 
     public void AddObjectToList(GameObject obj, int listId)

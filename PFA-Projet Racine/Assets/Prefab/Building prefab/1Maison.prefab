@@ -307,6 +307,7 @@ MonoBehaviour:
   - building
   - forest
   - field
+  - RACINE
   _hitColliders: []
 --- !u!208 &2503716032697170597
 NavMeshObstacle:
