@@ -8,7 +8,7 @@ public class AddStock : MonoBehaviour
     [SerializeField] int id;
     [SerializeField] int stock;
 
-    private void Start()
+    public void DropBuilding()
     {
         switch (id)
         {

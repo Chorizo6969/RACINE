@@ -41,12 +41,22 @@ public class dragAndDropBuilding : MonoBehaviour
                 BOUGE.GetComponent<BuildingCanvas>().Building.GetComponent<PlaceOuPasPlace>().SetBox();
                 BOUGE.GetComponent<BuildingCanvas>().Building.GetComponent<PlaceOuPasPlace>().enabled = false;
                 BOUGE.GetComponent<BuildingCanvas>().NormalMat();
+                BOUGE.GetComponent <BuildingCanvas>().DropBuilding();
                 PPAANNEELL.SetActive(true);
                 BOUGE = null;
             }
         }
     }
 
+    public void OnEscapeCancelBuild(InputAction.CallbackContext callBackContext)
+    {
+        if (callBackContext.started && BOUGE != null)
+        {
+            PPAANNEELL.SetActive(true);
+            Destroy(BOUGE);
+            BOUGE = null;
+        }
+    }
     public void BuildRotation(InputAction.CallbackContext callBackContext)
     {
         if (callBackContext.started && BOUGE != null)

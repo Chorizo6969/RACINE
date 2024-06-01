@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 7955988378043525990}
   - component: {fileID: 3372496651725825264}
   - component: {fileID: 1853484239739953807}
+  - component: {fileID: 6295068028992145054}
   m_Layer: 0
   m_Name: 10Stock Kaillou
   m_TagString: building
@@ -122,6 +123,20 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: 0, z: 0}
   m_TimeToStationary: 0.5
+--- !u!114 &6295068028992145054
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2673577714733791471}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47b49e4557a042b419c6f049b1d4ba0a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <WoodCost>k__BackingField: 3
+  <StoneCost>k__BackingField: 2
 --- !u!1 &5595304493116836607
 GameObject:
   m_ObjectHideFlags: 0

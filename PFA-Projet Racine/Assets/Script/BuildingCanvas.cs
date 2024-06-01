@@ -26,11 +26,17 @@ public class BuildingCanvas : MonoBehaviour
     private void Awake()
     {
         normal = Building.GetComponent<MeshRenderer>().material;
+
+    }
+    public void DropBuilding()
+    {
         if (id == 0)
         {
             IncrementHuman.instance.EditMaxHuman(5);
         }
         MaxBatPlacable.Instance.IncreaseActuBat(1, id);
+
+        GetComponent<BuildingCost>().BuyBuilding();
 
         switch (id)
         {
@@ -48,12 +54,15 @@ public class BuildingCanvas : MonoBehaviour
                 break;
             case 4:
                 gameObject.name = "Reserve de bois";
+                GetComponent<AddStock>().DropBuilding();
                 break;
             case 5:
                 gameObject.name = "Reserve d'Eau";
+                GetComponent<AddStock>().DropBuilding();
                 break;
             case 6:
                 gameObject.name = "Reserve de Pierre";
+                GetComponent<AddStock>().DropBuilding();
                 break;
             case 7:
                 gameObject.name = "Torche";
@@ -67,9 +76,7 @@ public class BuildingCanvas : MonoBehaviour
             case 10:
                 gameObject.name = "JukeBox";
                 break;
-
         }
-
     }
 
     public void PanelSetActive(bool enabled)

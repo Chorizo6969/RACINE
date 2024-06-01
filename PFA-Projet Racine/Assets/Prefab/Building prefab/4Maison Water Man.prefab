@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2488260547179814950}
   - component: {fileID: -5293121928937657418}
   - component: {fileID: -7874422862695922564}
+  - component: {fileID: -2629452553217730085}
   m_Layer: 7
   m_Name: 4Maison Water Man
   m_TagString: building
@@ -85,6 +86,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 1
   stock: 4
+--- !u!114 &-2629452553217730085
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1293946590759701267}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47b49e4557a042b419c6f049b1d4ba0a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <WoodCost>k__BackingField: 7
+  <StoneCost>k__BackingField: 0
 --- !u!1 &4634489859766911375
 GameObject:
   m_ObjectHideFlags: 0
