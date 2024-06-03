@@ -21,6 +21,12 @@ public class Jkh : MonoBehaviour
     public bool boolisteExpedPierrePanel;
     public bool BOOLISTEEXPEDPIERREPANEL;
 
+    public bool boolisteBatimentPanel;
+    public bool BOOLISTEBATIMENTPANEL;
+
+    public bool boolistePanelVerif;
+    public bool BOOLISTEPANELVERIF;
+
     public static Jkh Instance;
 
     private void Awake()
@@ -102,29 +108,44 @@ public class Jkh : MonoBehaviour
         }
     }
 
-    /*public void OnClickExpedPierrePanel()
+    public void OnClickBatimentPanel()
     {
-        boolisteExpedPierrePanel = true;
-        if (boolisteExpedPierrePanel && !BOOLISTEEXPEDEAUPANEL)
+        boolisteBatimentPanel = true;
+        if (boolisteBatimentPanel && !BOOLISTEBATIMENTPANEL)
         {
-            boolisteExpedPierrePanel = false;
-            BOOLISTEEXPEDEAUPANEL = true;
+            boolisteBatimentPanel = false;
+            BOOLISTEBATIMENTPANEL = true;
         }
-        else if (boolisteExpedPierrePanel && BOOLISTEEXPEDEAUPANEL)
+        else if (boolisteBatimentPanel && BOOLISTEBATIMENTPANEL)
         {
-            boolisteExpedPierrePanel = false;
-            BOOLISTEEXPEDEAUPANEL = false;
+            boolisteBatimentPanel = false;
+            BOOLISTEBATIMENTPANEL = false;
         }
-    }*/
+    }
+
+    public void OnClickPanelVerif()
+    {
+        boolistePanelVerif = true;
+        if (boolistePanelVerif && !BOOLISTEPANELVERIF)
+        {
+            boolistePanelVerif = false;
+            BOOLISTEPANELVERIF = true;
+        }
+        else if (boolistePanelVerif && BOOLISTEPANELVERIF)
+        {
+            boolistePanelVerif = false;
+            BOOLISTEPANELVERIF = false;
+        }
+    }
 
     public bool CheckAllBool()
     {
-        OriginalBooliste = !boolisteBuildingPanel && !boolisteOptionPanel && !boolisteExpedBoisPanel && !boolisteExpedEauPanel && !boolisteExpedPierrePanel;
+        OriginalBooliste = !BOOLISTEBUILDINGPANEL && !BOOLISTEOPTIONPANEL && !BOOLISTEEXPEDBOISPANEL && !BOOLISTEEXPEDEAUPANEL && !BOOLISTEEXPEDPIERREPANEL && !BOOLISTEBATIMENTPANEL && !BOOLISTEPANELVERIF;
         return OriginalBooliste;
     }
 
     private void Update()
     {
-        Debug.Log(!boolisteBuildingPanel && !boolisteOptionPanel && !boolisteExpedBoisPanel && !boolisteExpedEauPanel && !boolisteExpedPierrePanel);
+        Debug.Log(!BOOLISTEBUILDINGPANEL && !BOOLISTEOPTIONPANEL && !BOOLISTEEXPEDBOISPANEL && !BOOLISTEEXPEDEAUPANEL && !BOOLISTEEXPEDPIERREPANEL && !BOOLISTEBATIMENTPANEL && !BOOLISTEPANELVERIF);
     }
 }
