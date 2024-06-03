@@ -119,7 +119,12 @@ public class Jkh : MonoBehaviour
 
     public bool CheckAllBool()
     {
-        OriginalBooliste = boolisteBuildingPanel && boolisteOptionPanel && boolisteExpedBoisPanel && boolisteExpedEauPanel && boolisteExpedPierrePanel;
+        OriginalBooliste = !boolisteBuildingPanel && !boolisteOptionPanel && !boolisteExpedBoisPanel && !boolisteExpedEauPanel && !boolisteExpedPierrePanel;
         return OriginalBooliste;
+    }
+
+    private void Update()
+    {
+        Debug.Log(!boolisteBuildingPanel && !boolisteOptionPanel && !boolisteExpedBoisPanel && !boolisteExpedEauPanel && !boolisteExpedPierrePanel);
     }
 }

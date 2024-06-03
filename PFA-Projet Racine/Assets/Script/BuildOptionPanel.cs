@@ -15,7 +15,7 @@ public class BuildOptionPanel : MonoBehaviour
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit hitInfo;
             Physics.Raycast(ray, out hitInfo );
-            if (hitInfo.collider != null && !Jkh.Instance.BOOLISTEBUILDINGPANEL)
+            if (hitInfo.collider != null && Jkh.Instance.CheckAllBool())
             {
                 if (hitInfo.collider.CompareTag("RACINE"))
                 {
