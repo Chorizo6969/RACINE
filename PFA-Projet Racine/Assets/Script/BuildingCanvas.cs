@@ -23,6 +23,8 @@ public class BuildingCanvas : MonoBehaviour
     public int woodDestroyCost;
     public int stoneDestroyCost;
 
+    public bool FirstPlacement = true;
+
     private void Awake()
     {
         normal = Building.GetComponent<MeshRenderer>().material;
@@ -37,6 +39,8 @@ public class BuildingCanvas : MonoBehaviour
         MaxBatPlacable.Instance.IncreaseActuBat(1, id);
 
         GetComponent<BuildingCost>().BuyBuilding();
+
+        FirstPlacement = false;
 
         switch (id)
         {
