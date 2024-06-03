@@ -1,20 +1,15 @@
-/*using System.Collections;
-using System.Collections.Generic;
-using Unity.AI.Navigation;
-using Unity.VisualScripting;
-using UnityEditor.AI;
+using System.Collections;
 using UnityEngine;
 
 public class TEST : MonoBehaviour
 {
-    public NavMeshSurface NavMeshSurface;
-
-    private void Update()
+    private void Start()
     {
-        if (Input.GetKeyDown(KeyCode.J))
-        {
-            NavMeshBuilder.BuildNavMesh();
-            Debug.Log("build");
-        }
+        StartCoroutine(Blorg());
     }
-}*/
+
+    IEnumerator Blorg()
+    {
+        yield return new WaitForSeconds(3600);
+    }
+}
