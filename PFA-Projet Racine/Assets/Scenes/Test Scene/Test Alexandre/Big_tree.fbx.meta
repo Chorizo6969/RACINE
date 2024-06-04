@@ -9,6 +9,11 @@ ModelImporter:
       assembly: UnityEngine.CoreModule
       name: Leaf
     second: {fileID: 2100000, guid: 9e90511e85f42b5469449ab3b3e75c92, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material_big_tree.001
+    second: {fileID: 2100000, guid: d9fba8c1e93f2754780a6e5ded3a78b5, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
