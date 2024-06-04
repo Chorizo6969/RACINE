@@ -38,4 +38,9 @@ public class Modifcursor : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
     {
         Cursor.SetCursor(null, hotSpot, cursorMode);
     }
+
+    public void ChangeCursor(Texture2D texture)
+    {
+        Cursor.SetCursor(texture, hotSpot, cursorMode);
+    }
 }

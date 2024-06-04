@@ -46,6 +46,7 @@ public class Field : MonoBehaviour
             _currentPlant.transform.position = new Vector3(transform.position.x, _currentPlant.transform.position.y, transform.position.z);
             IsPlanted = true;
             _currentPlant.SetActive(false);
+            Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
         }
     }
     
