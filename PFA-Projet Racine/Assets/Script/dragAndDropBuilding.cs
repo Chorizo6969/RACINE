@@ -52,9 +52,12 @@ public class dragAndDropBuilding : MonoBehaviour
     {
         if (callBackContext.started && BOUGE != null)
         {
-            PPAANNEELL.SetActive(true);
-            Destroy(BOUGE);
-            BOUGE = null;
+            if (BOUGE.GetComponent<BuildingCanvas>().FirstPlacement)
+            {
+                PPAANNEELL.SetActive(true);
+                Destroy(BOUGE);
+                BOUGE = null;
+            }
         }
     }
     public void BuildRotation(InputAction.CallbackContext callBackContext)
