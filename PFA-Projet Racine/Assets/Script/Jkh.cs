@@ -96,15 +96,15 @@ public class Jkh : MonoBehaviour
     public void OnClickExpedPierrePanel()
     {
         boolisteExpedPierrePanel = true;
-        if (boolisteExpedPierrePanel && !BOOLISTEEXPEDEAUPANEL)
+        if (boolisteExpedPierrePanel && !BOOLISTEEXPEDPIERREPANEL)
         {
             boolisteExpedPierrePanel = false;
-            BOOLISTEEXPEDEAUPANEL = true;
+            BOOLISTEEXPEDPIERREPANEL = true;
         }
-        else if (boolisteExpedPierrePanel && BOOLISTEEXPEDEAUPANEL)
+        else if (boolisteExpedPierrePanel && BOOLISTEEXPEDPIERREPANEL)
         {
             boolisteExpedPierrePanel = false;
-            BOOLISTEEXPEDEAUPANEL = false;
+            BOOLISTEEXPEDPIERREPANEL = false;
         }
     }
 

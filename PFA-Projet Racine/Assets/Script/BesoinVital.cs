@@ -5,6 +5,30 @@ using UnityEngine;
 public class BesoinVital : MonoBehaviour
 {
     public int id;
+
+
+
+    private void OnEnable()
+    {
+        switch (id)
+        {
+            case 0:
+                break;
+            case 1:
+                break;
+            case 2:
+                break;
+            case 3:
+                break;
+            case 4:
+                Jkh.Instance.OnClickBatimentPanel();
+                break;
+            case 5:
+                Jkh.Instance.OnClickPanelVerif();
+                break;
+        }
+    }
+
     private void OnDisable()
     {
         switch (id)
@@ -23,6 +47,14 @@ public class BesoinVital : MonoBehaviour
 
             case 3:
                 Jkh.Instance.OnClickExpedPierrePanel();
+                break;
+
+            case 4:
+                Jkh.Instance.OnClickBatimentPanel();
+                break;
+
+            case 5:
+                Jkh.Instance.OnClickPanelVerif();
                 break;
         }
     }
