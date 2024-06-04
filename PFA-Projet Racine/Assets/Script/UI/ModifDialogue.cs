@@ -11,7 +11,7 @@ public class ModifDialogue : MonoBehaviour
     {
         DialogueTutoriel.instance.lines.Clear();
         DialogueTutoriel.instance.lines.Add("WAAAAAA, UNE GRAINE, IL FAUT LA PLANTER DANS UN CHAMP !");
-        DialogueTutoriel.instance.lines.Add("CONSTRUISEZ UN CHAMP DEPUIS LA RUBRIQUE GRAINE DANS LE PANEL DE CONSTRUCTION.");
+        DialogueTutoriel.instance.lines.Add("CONSTRUISEZ UN CHAMP DEPUIS ICI CHEF !");
         _GOdialogue.SetActive(true);
     }
 
@@ -20,6 +20,7 @@ public class ModifDialogue : MonoBehaviour
         DialogueTutoriel.instance.lines.Clear();
         DialogueTutoriel.instance.lines.Add("QUEL BEAUUUUU CHAMMMMP ! VOUS ÊTES TROP FORTTTT ! ON VA ENFIN POUVOIR DEVENIR BEAUCOUP.");
         DialogueTutoriel.instance.lines.Add("M-M-MAINTNENANT PLANTEZ LA GRAINE QUE VOUS AVEZ DANS VOTRE SUPER CHAMP.");
+        DialogueTutoriel.instance.lines.Add("N'OUBLIEZ PAS D'ARROSER VOTRE CHAMP APRES AVOIR PLANTE VOTRE HUMAIN PLANTE");
         _GOdialogue.SetActive(true);
     }
 
@@ -35,8 +36,8 @@ public class ModifDialogue : MonoBehaviour
     public void modifDialogue4()
     {
         DialogueTutoriel.instance.lines.Clear();
-        DialogueTutoriel.instance.lines.Add("WAAAAAAAAA VOUS AVEZ RÉUSSI, VIVE NOTRE GRAND CHEFFFFF ! IL EST TROP FOOOOOORT !!!");
-        DialogueTutoriel.instance.lines.Add("OHHHHH REGRADEZ, L'HUMAIN PLANTE EST NÉ");
+        DialogueTutoriel.instance.lines.Add("WAAAAAAAAA VOUS AVEZ RÉUSSI, VIVE NOTRE GRAND CHEFFFFF ! IL EST TROP FOOOOOORT !");
+        DialogueTutoriel.instance.lines.Add("OHHHHH REGRADEZ, L'HUMAIN PLANTE EST NÉ, CLIQUEZ DESSUS POUR LE RECUPERER.");
         _GOdialogue.SetActive(true);
     }
 }
