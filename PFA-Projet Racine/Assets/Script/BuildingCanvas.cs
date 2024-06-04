@@ -26,7 +26,7 @@ public class BuildingCanvas : MonoBehaviour
     public bool FirstPlacement = true;
 
     private static bool _tuto = true;
-    public static bool _tuto2LeRetourDuJedi = false;
+    public static bool _tuto2LeRetourDuJedi = true;
 
     private void Awake()
     {
