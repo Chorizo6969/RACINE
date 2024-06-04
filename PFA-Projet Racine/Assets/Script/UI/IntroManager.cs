@@ -73,7 +73,7 @@ public class IntroManager : MonoBehaviour
         while (id != 4) await Task.Yield();
         fleche[1].SetActive(false);
         fleche[3].SetActive(true);
-        while (id != 5) await Task.Yield();
+        while (ExpeditionLoot.instance.listBucheron.Count == 0) await Task.Yield();
         bouliste = false;
         fleche[3].SetActive(false);
         Dialogue4();

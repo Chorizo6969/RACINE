@@ -63,6 +63,7 @@ MonoBehaviour:
   placeOrNot: 0
   woodDestroyCost: 0
   stoneDestroyCost: 0
+  FirstPlacement: 1
 --- !u!33 &3959927818557254227
 MeshFilter:
   m_ObjectHideFlags: 0

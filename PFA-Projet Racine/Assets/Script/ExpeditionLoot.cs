@@ -25,8 +25,9 @@ public class ExpeditionLoot : MonoBehaviour
     private Listexpedition listExpeditionOwnerMineur;
     [SerializeField]
     private Listexpedition listExpeditionOwnerAquaman;
-    [SerializeField]
-    private List<GameObject> listBucheron;
+
+    public List<GameObject> listBucheron;
+
     [SerializeField]
     private List<GameObject> listMineur;
     [SerializeField]

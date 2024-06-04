@@ -30,13 +30,14 @@ public class UIManager : MonoBehaviour
             _isOpen = true;
             _uiAnimator.SetInteger("Click", 1);
             StartCoroutine(Delay());
-            index += 1;
+            index = 2;
         }
         else if (index == 2)
         {
             _button.interactable = false;
             _isOpen = false;
             _uiAnimator.SetInteger("Click", 2);
+            Jkh.Instance.OnClickBuildingPanel();
             StartCoroutine(Delay());
             index = 1;
         }

@@ -25,6 +25,9 @@ public class BuildingCanvas : MonoBehaviour
 
     public bool FirstPlacement = true;
 
+    private static bool _tuto = true;
+    public static bool _tuto2LeRetourDuJedi = true;
+
     private void Awake()
     {
         normal = Building.GetComponent<MeshRenderer>().material;
@@ -49,6 +52,12 @@ public class BuildingCanvas : MonoBehaviour
                 break;
             case 1:
                 gameObject.name = "Maison de Bucheron";
+                if (_tuto2LeRetourDuJedi == true)
+                {
+                    _tuto2LeRetourDuJedi = false;
+                    Leroidesdéchets.instance.Incremente();
+                    Destroy(Leroidesdéchets.instance.gameObject, 1);
+                }
                 break;
             case 2:
                 gameObject.name = "Maison des Plongeurs";
@@ -76,6 +85,11 @@ public class BuildingCanvas : MonoBehaviour
                 break;
             case 9:
                 gameObject.name = "Champ";
+                if (_tuto == true)
+                {
+                    _tuto = false;
+                    Leroidesdéchets.instance.Incremente();
+                }
                 break;
             case 10:
                 gameObject.name = "JukeBox";
