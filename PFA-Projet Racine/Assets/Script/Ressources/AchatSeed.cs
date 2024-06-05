@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -39,6 +40,9 @@ public class AchatSeed : MonoBehaviour
     [SerializeField]
     private GameObject Racine3;
 
+    public List<GameObject> ListeLvl2;
+    public List<GameObject> ListeLvl3;
+
     private int index = 1;
 
     public void Start()
@@ -74,6 +78,10 @@ public class AchatSeed : MonoBehaviour
                 prix2.SetActive(true);
                 Racine1.SetActive(false);
                 Racine2.SetActive(true);
+                foreach (GameObject PAnEL in ListeLvl2)
+                {
+                    PAnEL.SetActive(false);
+                }
             }
         }
         else if (index == 2)
@@ -90,6 +98,10 @@ public class AchatSeed : MonoBehaviour
                 prix3.SetActive(true);
                 Racine2.SetActive(false);
                 Racine3.SetActive(true);
+                foreach (GameObject PAnEL in ListeLvl3)
+                {
+                    PAnEL.SetActive(false);
+                }
             }
         }
     }
