@@ -64,6 +64,7 @@ MonoBehaviour:
   placeOrNot: 0
   woodDestroyCost: 0
   stoneDestroyCost: 0
+  FirstPlacement: 1
 --- !u!33 &5696942113410153190
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -92,7 +93,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 1773342992352833476, guid: 555034e14e8d0b64fabf443982f621ae, type: 3}
+  - {fileID: 2100000, guid: d9fba8c1e93f2754780a6e5ded3a78b5, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
