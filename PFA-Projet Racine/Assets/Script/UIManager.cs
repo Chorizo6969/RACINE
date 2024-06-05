@@ -24,6 +24,7 @@ public class UIManager : MonoBehaviour
 
     public void ActivationUi()
     {
+        Jkh.Instance.OnClickBuildingPanel();
         if (index == 1)
         {
             _button.interactable = false;
@@ -37,7 +38,6 @@ public class UIManager : MonoBehaviour
             _button.interactable = false;
             _isOpen = false;
             _uiAnimator.SetInteger("Click", 2);
-            Jkh.Instance.OnClickBuildingPanel();
             StartCoroutine(Delay());
             index = 1;
         }
