@@ -13,6 +13,14 @@ public class ExpeditionLoot : MonoBehaviour
     private int chanceToDie = 10;
 
     public int expeditionTime = 60;
+
+    [SerializeField]
+    private ChangeColor ChangeColorBucheron;
+    [SerializeField]
+    private ChangeColor ChangeColorAquaman;
+    [SerializeField]
+    private ChangeColor ChangeColorMineur;
+
     [SerializeField]
     private TextMeshProUGUI scoreWood;
     [SerializeField]
@@ -36,7 +44,6 @@ public class ExpeditionLoot : MonoBehaviour
 
     public static ExpeditionLoot instance;
 
-    //BUG : Index de merde
     //BUG : On peut lancer plusieurs fois les expéditions
     public void Awake()
     {
@@ -89,15 +96,22 @@ public class ExpeditionLoot : MonoBehaviour
     IEnumerator endExpeditionWood(bool mort, int score)
     {
         yield return new WaitForSeconds(expeditionTime);
-        if (mort == true)
+        if (mort || !mort)
         {
-
-            int indexmort = Random.Range(0, listBucheron.Count);
-            GameObject _humanToDestroy = listBucheron[indexmort]; // tout les humains, pas que l'expédition.
-            IncrementHuman.instance.Death(indexmort);
-            listBucheron.Remove(_humanToDestroy);
-            Destroy(_humanToDestroy);
-            //Détruire l'image humain dans panel expé
+            int numberOfDeath = Random.Range(1, ChangeColorBucheron.ButtonOfHumanInExpedition.Count);
+            if (numberOfDeath > 0)
+            {
+                for (int i = 0; i < numberOfDeath; i++)
+                {
+                    IncrementHuman.instance.Death(1);
+                    GameObject FirstButton = ChangeColorBucheron.ButtonOfHumanInExpedition[0];
+                    GameObject FirstHuman = ChangeColorBucheron.HumanInExpedition[0];
+                    listExpeditionOwnerBucheron.list.Remove(FirstHuman);
+                    ChangeColorBucheron.HumanInExpedition.Remove(FirstHuman);
+                    Destroy(FirstButton);
+                    Destroy(FirstHuman);
+                }
+            }
             RessourceManager.Instance.EditWoodAmount(score);
         }
         else
@@ -123,21 +137,29 @@ public class ExpeditionLoot : MonoBehaviour
     IEnumerator endExpeditionStone(bool mort, int score)
     {
         yield return new WaitForSeconds(expeditionTime);
-        if (mort == true)
+        if (mort || !mort)
         {
-            int indexmort = Random.Range(0, listMineur.Count);
-            GameObject _humanToDestroy = listMineur[indexmort];
-            IncrementHuman.instance.Death(indexmort);
-            listMineur.Remove(_humanToDestroy);
-            Destroy(_humanToDestroy);
-            RessourceManager.Instance.EditStoneAmount(score);
+            int numberOfDeath = Random.Range(1, ChangeColorMineur.ButtonOfHumanInExpedition.Count);
+            if (numberOfDeath > 0)
+            {
+                for (int i = 0; i < numberOfDeath; i++)
+                {
+                    IncrementHuman.instance.Death(1);
+                    GameObject FirstButton = ChangeColorMineur.ButtonOfHumanInExpedition[0];
+                    GameObject FirstHuman = ChangeColorMineur.HumanInExpedition[0];
+                    listExpeditionOwnerBucheron.list.Remove(FirstHuman);
+                    ChangeColorMineur.HumanInExpedition.Remove(FirstHuman);
+                    Destroy(FirstButton);
+                    Destroy(FirstHuman);
+                }
+            }
         }
         else
         {
             RessourceManager.Instance.EditStoneAmount(score);
         }
-
     }
+
 
     public void WorkingWater()
     {
@@ -156,18 +178,26 @@ public class ExpeditionLoot : MonoBehaviour
     IEnumerator endExpeditionWater(bool mort, int score)
     {
         yield return new WaitForSeconds(expeditionTime);
-        if (mort == true)
+        if (mort || !mort)
         {
-            int indexmort = Random.Range(0, listAquaman.Count);
-            GameObject _humanToDestroy = listAquaman[indexmort];
-            IncrementHuman.instance.Death(indexmort);
-            listAquaman.Remove(_humanToDestroy);
-            Destroy(_humanToDestroy);
-            RessourceManager.Instance.EditWaterAmount(score);
-        }
-        else
-        {
-            RessourceManager.Instance.EditWaterAmount(score);
+            int numberOfDeath = Random.Range(1, ChangeColorBucheron.ButtonOfHumanInExpedition.Count);
+            if (numberOfDeath > 0)
+            {
+                for (int i = 0; i < numberOfDeath; i++)
+                {
+                    IncrementHuman.instance.Death(1);
+                    GameObject FirstButton = ChangeColorAquaman.ButtonOfHumanInExpedition[0];
+                    GameObject FirstHuman = ChangeColorAquaman.HumanInExpedition[0];
+                    listExpeditionOwnerAquaman.list.Remove(FirstHuman);
+                    ChangeColorAquaman.HumanInExpedition.Remove(FirstHuman);
+                    Destroy(FirstButton);
+                    Destroy(FirstHuman);
+                }
+            }
+            else
+            {
+                RessourceManager.Instance.EditWaterAmount(score);
+            }
         }
     }
 }
