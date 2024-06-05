@@ -24,7 +24,7 @@ public class UIManager : MonoBehaviour
 
     public void ActivationUi()
     {
-            Jkh.Instance.OnClickBuildingPanel();
+        Jkh.Instance.OnClickBuildingPanel();
         if (index == 1)
         {
             _button.interactable = false;
