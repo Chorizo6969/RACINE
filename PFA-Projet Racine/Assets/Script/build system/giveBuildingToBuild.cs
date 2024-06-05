@@ -19,10 +19,9 @@ public class GiveBuildingToBuild : MonoBehaviour
         Debug.Log(MaxBatPlacable.Instance);*/
 
 
-        if (GetComponent<BuildingCost>().PlayerRessourceManager.CheckIfCanBuild(GetComponent<BuildingCost>().WoodCost, GetComponent<BuildingCost>().StoneCost, 0) && MaxBatPlacable.Instance.CheckIfBatIsPlacable(building.GetComponent<BuildingCanvas>().id))
+        if (/*GetComponent<BuildingCost>().PlayerRessourceManager*/ RessourceManager.Instance.CheckIfCanBuild(GetComponent<BuildingCost>().WoodCost, GetComponent<BuildingCost>().StoneCost, 0) && MaxBatPlacable.Instance.CheckIfBatIsPlacable(building.GetComponent<BuildingCanvas>().id))
         {
-            GetComponent<BuildingCost>().BuyBuilding();
-            dragAndDropBuilding.instance.PPAANNEELL.SetActive(false);
+            UIManager.Instance.ActivationUi();
             GameObject _objectToGiveBuilding = FindAnyObjectByType<dragAndDropBuilding>().gameObject;
             GameObject newBuilding = Instantiate(building);
             _objectToGiveBuilding.GetComponent<dragAndDropBuilding>().BOUGE = newBuilding;

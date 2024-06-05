@@ -18,6 +18,7 @@ GameObject:
   - component: {fileID: 7175613078122594820}
   - component: {fileID: 6316497875878327816}
   - component: {fileID: 5568001306523610912}
+  - component: {fileID: -8249647123135983341}
   m_Layer: 0
   m_Name: Arbre
   m_TagString: building
@@ -33,14 +34,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 197059891112798537}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 111.06, y: 0.057, z: -2.9}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6750762270610734157}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &3189675041014636913
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -63,6 +64,7 @@ MonoBehaviour:
   placeOrNot: 0
   woodDestroyCost: 0
   stoneDestroyCost: 0
+  FirstPlacement: 1
 --- !u!33 &3020980403963269886
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -91,7 +93,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 1773342992352833476, guid: eefe8c32dab26614f8b202ff64742cf4, type: 3}
+  - {fileID: 2100000, guid: d9fba8c1e93f2754780a6e5ded3a78b5, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -231,6 +233,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &-8249647123135983341
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 197059891112798537}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47b49e4557a042b419c6f049b1d4ba0a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <WoodCost>k__BackingField: 8
+  <StoneCost>k__BackingField: 4
 --- !u!1 &8408812849870623926
 GameObject:
   m_ObjectHideFlags: 0
@@ -294,7 +310,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 1773342992352833476, guid: 93206be147f39ca40b8fad1d1e1f8c50, type: 3}
+  - {fileID: 2100000, guid: d9fba8c1e93f2754780a6e5ded3a78b5, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

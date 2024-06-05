@@ -67,10 +67,11 @@ MonoBehaviour:
   normal: {fileID: 0}
   BuildingPlacableTrue: {fileID: 284798809823294670, guid: f133b5d59e5bc3f468f25da29072ba94, type: 3}
   BuildingPlacableFalse: {fileID: 2291975707558987528, guid: 1017c73f41769a344becfcc96f294a41, type: 3}
-  id: 0
+  <id>k__BackingField: 0
   placeOrNot: 0
   woodDestroyCost: 0
   stoneDestroyCost: 0
+  FirstPlacement: 1
 --- !u!208 &3904557025677924368
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -218,6 +219,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: ad97f5a92bc78984280e758811f4fd0e, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: d9fba8c1e93f2754780a6e5ded3a78b5, type: 2}
     - target: {fileID: 919132149155446097, guid: ad97f5a92bc78984280e758811f4fd0e, type: 3}
       propertyPath: m_Name
       value: Builder_house

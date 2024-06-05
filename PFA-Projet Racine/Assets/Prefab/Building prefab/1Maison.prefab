@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4676488285106477996}
   - component: {fileID: -5293121928937657418}
   - component: {fileID: 598091894409627112}
+  - component: {fileID: 6493641739715012869}
   m_Layer: 0
   m_Name: 1Maison
   m_TagString: building
@@ -54,7 +55,7 @@ MonoBehaviour:
   normal: {fileID: 0}
   BuildingPlacableTrue: {fileID: 284798809823294670, guid: f133b5d59e5bc3f468f25da29072ba94, type: 3}
   BuildingPlacableFalse: {fileID: 2291975707558987528, guid: 1017c73f41769a344becfcc96f294a41, type: 3}
-  id: 0
+  <id>k__BackingField: 0
   placeOrNot: 0
   woodDestroyCost: 0
   stoneDestroyCost: 0
@@ -87,6 +88,20 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 0
   m_Center: {x: 0, y: 0, z: 0}
   m_TimeToStationary: 0.5
+--- !u!114 &6493641739715012869
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1293946590759701267}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47b49e4557a042b419c6f049b1d4ba0a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <WoodCost>k__BackingField: 5
+  <StoneCost>k__BackingField: 0
 --- !u!1 &2746445512441768310
 GameObject:
   m_ObjectHideFlags: 0

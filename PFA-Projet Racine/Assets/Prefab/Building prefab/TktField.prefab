@@ -14,6 +14,8 @@ GameObject:
   - component: {fileID: 7223929643097783217}
   - component: {fileID: 3263280653432247146}
   - component: {fileID: 4184211009867161145}
+  - component: {fileID: 2603497125644007906}
+  - component: {fileID: 5889700265940024532}
   m_Layer: 0
   m_Name: TktField
   m_TagString: field
@@ -61,6 +63,7 @@ MonoBehaviour:
   placeOrNot: 0
   woodDestroyCost: 0
   stoneDestroyCost: 0
+  FirstPlacement: 1
 --- !u!33 &3959927818557254227
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -116,6 +119,47 @@ MonoBehaviour:
   Parent: {fileID: 0}
   worktarget: []
   NamesGenerator: {fileID: 0}
+--- !u!114 &2603497125644007906
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1717048504819187851}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47b49e4557a042b419c6f049b1d4ba0a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <WoodCost>k__BackingField: 2
+  <StoneCost>k__BackingField: 0
+--- !u!54 &5889700265940024532
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1717048504819187851}
+  serializedVersion: 4
+  m_Mass: 0.0000001
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &4908711219762673393
 GameObject:
   m_ObjectHideFlags: 0
@@ -314,6 +358,10 @@ PrefabInstance:
       value: champ
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 1e14eed8c8170d74d8b8bc4b5cb34bfe, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 1e14eed8c8170d74d8b8bc4b5cb34bfe, type: 3}
       propertyPath: m_TagString
       value: building
       objectReference: {fileID: 0}
@@ -382,7 +430,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isPlacable: 1
   SecondBox: {fileID: 0}
-  _checkIfInGrounds: []
+  _checkIfInGrounds:
+  - {fileID: 1594122957604226002}
   ColliderBoxSize1: {x: 0, y: 0, z: 0}
   ColliderBoxPosition1: {x: 0, y: 0, z: 0}
   ColliderBoxSize2: {x: 0, y: 0, z: 0}
@@ -406,6 +455,7 @@ MonoBehaviour:
   - forest
   - building
   - field
+  - RACINE
   _hitColliders: []
 --- !u!54 &2760882486105487656
 Rigidbody:

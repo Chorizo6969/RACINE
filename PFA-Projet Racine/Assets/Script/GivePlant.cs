@@ -13,6 +13,9 @@ public class GivePlant : MonoBehaviour
     /// </summary>
     [SerializeField] private GameObject _seed;
 
+    public Texture2D _seedTexture;
+    public Modifcursor _modifcursor;
+
     /// <summary>
     /// référence de la caméra
     /// </summary>
@@ -36,6 +39,7 @@ public class GivePlant : MonoBehaviour
             ClickFieldManager _clickFieldManager = _camera.GetComponent<ClickFieldManager>();
             _clickFieldManager.HumanSeed = _seed;
             GiveRefToField.instance.GiveRefPasTuple(_clickFieldManager.gameObject, _humanPlantPrefab, _buttonExpeditionPrefab, _content);
+            _modifcursor.ChangeCursor(_seedTexture);
             _nombreGraines --;
         }
         else

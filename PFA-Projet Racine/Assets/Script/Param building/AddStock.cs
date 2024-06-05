@@ -8,7 +8,7 @@ public class AddStock : MonoBehaviour
     [SerializeField] int id;
     [SerializeField] int stock;
 
-    private void Start()
+    public void DropBuilding()
     {
         switch (id)
         {
@@ -20,6 +20,22 @@ public class AddStock : MonoBehaviour
                 break;
             case 2:
                 RessourceManager.Instance.AddStoneStock(stock);
+                break;
+        }
+    }
+
+    private void OnDestroy()
+    {
+        switch (id)
+        {
+            case 0:
+                RessourceManager.Instance.AddWoodStock(-stock);
+                break;
+            case 1:
+                RessourceManager.Instance.AddWaterStock(-stock);
+                break;
+            case 2:
+                RessourceManager.Instance.AddStoneStock(-stock);
                 break;
         }
     }

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.Rendering;
 
@@ -8,44 +9,65 @@ public class MaxBatPlacable : MonoBehaviour
     public static MaxBatPlacable Instance;
 
     //id = 0
-    public int maxHouse;
     public int actuHouse;
+    public int maxHouse;
+    public TextMeshProUGUI HouseText;
+    public TextMeshProUGUI MaxHouseText;
 
     //id = 1
-    public int maxBucheHouse;
     public int actuBucheHouse;
+    public int maxBucheHouse;
+    public TextMeshProUGUI BucheHouseText;
+    public TextMeshProUGUI MaxBucheHouseText;
 
     //id = 2
-    public int maxWaterHouse;
     public int actuWaterHouse;
+    public int maxWaterHouse;
+    public TextMeshProUGUI WaterHouseText;
+    public TextMeshProUGUI MaxWaterHouseText;
+
 
     //id = 3
-    public int maxStoneHouse;
     public int actuStoneHouse;
+    public int maxStoneHouse;
+    public TextMeshProUGUI StoneHouseText;
+    public TextMeshProUGUI MaxStoneHouseText;
 
     //id = 4
-    public int maxStockWood;
     public int actuStockWood;
+    public int maxStockWood;
+    public TextMeshProUGUI StockWoodText;
+    public TextMeshProUGUI MaxStockWoodText;
 
     //id = 5
-    public int maxStockWater;
     public int actuStockWater;
+    public int maxStockWater;
+    public TextMeshProUGUI StockWaterText;
+    public TextMeshProUGUI MaxStockWaterText;
 
     //id = 6
-    public int maxStockStone;
     public int actuStockStone;
+    public int maxStockStone;
+    public TextMeshProUGUI StockStoneText;
+    public TextMeshProUGUI MaxStockStoneText;
 
     //id = 7
-    public int maxTorche;
     public int actuTorche;
+    public int maxTorche;
+    public TextMeshProUGUI TorcheText;
+    public TextMeshProUGUI MaxTorcheText;
 
     //id = 8
-    public int maxToilette;
     public int actuToilette;
+    public int maxToilette;
+    public TextMeshProUGUI ToiletteText;
+    public TextMeshProUGUI MaxToiletteText;
 
     //id = 9
-    public int maxField;
     public int actuField;
+    public int maxField;
+    public TextMeshProUGUI FieldText;
+    public TextMeshProUGUI MaxFieldText;
 
     //id = 10
     public int jukeBox;
@@ -55,39 +77,73 @@ public class MaxBatPlacable : MonoBehaviour
         Instance = this;
     }
 
+    private void Start()
+    {
+        HouseText.text          = actuHouse.ToString();
+        MaxHouseText.text       = maxHouse.ToString();
+        BucheHouseText.text     = actuBucheHouse.ToString();
+        MaxBucheHouseText.text  = maxBucheHouse.ToString();
+        WaterHouseText.text     = actuWaterHouse.ToString();
+        MaxWaterHouseText.text  = maxWaterHouse.ToString();
+        StoneHouseText.text     = actuStockStone.ToString();
+        MaxStoneHouseText.text  = maxStoneHouse.ToString();
+        StockWoodText.text      = actuStockWood.ToString();
+        MaxStockWoodText.text   = maxStockWood.ToString();
+        StockWaterText.text     = actuStockWater.ToString();
+        MaxStockWaterText.text  = maxStockWater.ToString();
+        StockStoneText.text     = actuStockStone.ToString();
+        MaxStockStoneText.text  = maxStockStone.ToString();
+        TorcheText.text         = actuTorche.ToString();
+        MaxTorcheText.text      = maxTorche.ToString();
+        ToiletteText.text       = actuToilette.ToString();
+        MaxToiletteText.text    = maxToilette.ToString();
+        FieldText.text          = actuField.ToString();
+        MaxFieldText.text       = maxField.ToString();
+    }
+
     public void IncreaseMaxBat(int plusBat, int batId)
     {
         switch (batId)
         {
             case 0:
                 maxHouse += plusBat;
+                MaxHouseText.text = maxHouse.ToString();
                 break;
             case 1:
                 maxBucheHouse += plusBat;
+                MaxBucheHouseText.text = maxBucheHouse.ToString();
                 break;
             case 2:
                 maxWaterHouse += plusBat;
+                MaxWaterHouseText.text = maxWaterHouse.ToString();
                 break;
             case 3:
                 maxStoneHouse += plusBat;
+                MaxStoneHouseText.text = maxStoneHouse.ToString();
                 break;
             case 4:
                 maxStockWood += plusBat;
+                MaxStockWoodText.text = maxStockWood.ToString();
                 break;
             case 5:
                 maxStockWater += plusBat;
+                MaxStockWaterText.text = maxStockWater.ToString();
                 break;
             case 6:
                 maxStockStone += plusBat;
+                MaxStockStoneText.text = maxStockStone.ToString();
                 break;
             case 7:
                 maxTorche += plusBat;
+                MaxTorcheText.text = maxTorche.ToString();
                 break;
             case 8:
                 maxToilette += plusBat;
+                MaxToiletteText.text = maxToilette.ToString();
                 break;
             case 9:
                 maxField += plusBat;
+                MaxFieldText.text = maxField.ToString();
                 break;
         }
     }
@@ -98,33 +154,43 @@ public class MaxBatPlacable : MonoBehaviour
         {
             case 0:
                 actuHouse += plusBat;
+                HouseText.text = actuHouse.ToString();
                 break;
             case 1:
                 actuBucheHouse += plusBat;
+                BucheHouseText.text = actuBucheHouse.ToString();
                 break;
             case 2:
                 actuWaterHouse += plusBat;
+                WaterHouseText.text = actuWaterHouse.ToString();
                 break;
             case 3:
                 actuStoneHouse += plusBat;
+                StoneHouseText.text = actuStoneHouse.ToString();
                 break;
             case 4:
                 actuStockWood += plusBat;
+                StockWoodText.text = actuStockWood.ToString();
                 break;
             case 5:
                 actuStockWater += plusBat;
+                StockWaterText.text = actuStockWater.ToString();
                 break;
             case 6:
                 actuStockStone += plusBat;
+                StockStoneText.text = actuStockStone.ToString();
                 break;
             case 7:
                 actuTorche += plusBat;
+                TorcheText.text = actuTorche.ToString();
                 break;
             case 8:
                 actuToilette += plusBat;
+                ToiletteText.text = actuToilette.ToString();
                 break;
             case 9:
                 actuField += plusBat;
+                FieldText.text = actuField.ToString();
                 break;
             case 10:
                 jukeBox++;

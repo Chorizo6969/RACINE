@@ -1,10 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
+using Unity.VisualScripting;
 
 public class ClickInfo : MonoBehaviour
 {
     public GameObject lastBat;
+    public TextMeshProUGUI textMeshPro;
+
+    private void OnEnable()
+    {
+        StartCoroutine(Attend());
+    }
 
     public void OnClickDestroy()
     {
@@ -29,5 +37,11 @@ public class ClickInfo : MonoBehaviour
     public void OnClickInfo()
     {
         Debug.Log("BWARG");
+    }
+
+    IEnumerator Attend()
+    {
+        yield return null;
+        textMeshPro.text = lastBat.name;
     }
 }

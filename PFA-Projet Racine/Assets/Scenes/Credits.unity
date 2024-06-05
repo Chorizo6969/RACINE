@@ -598,7 +598,7 @@ MonoBehaviour:
 
     Game design
 
-    Intergration Unity
+    Integration Unity
 
     2D
 
@@ -986,7 +986,7 @@ MonoBehaviour:
 
     Game Design
 
-    Intergration Unity
+    Integration Unity
 
     3D
 
@@ -999,6 +999,8 @@ MonoBehaviour:
     Lightning
 
     Photomontage
+
+    Animation
 
     Doublage'
   m_isRightToLeft: 0
@@ -2095,13 +2097,15 @@ MonoBehaviour:
 
     Game design
 
-    Intergration Unity
+    Integration Unity
 
     3D
 
     2D
 
     UI/UX
+
+    Animation
 
     Doublage'
   m_isRightToLeft: 0

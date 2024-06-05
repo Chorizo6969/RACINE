@@ -18,6 +18,7 @@ GameObject:
   - component: {fileID: -5514545924676005103}
   - component: {fileID: 5348404438680823201}
   - component: {fileID: 8892026610295509101}
+  - component: {fileID: -4426881970695317406}
   m_Layer: 0
   m_Name: toilette
   m_TagString: building
@@ -62,6 +63,7 @@ MonoBehaviour:
   placeOrNot: 0
   woodDestroyCost: 0
   stoneDestroyCost: 0
+  FirstPlacement: 1
 --- !u!33 &693726412672710324
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -90,7 +92,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 1773342992352833476, guid: daf68477956291c4eb819f0fd4438c1e, type: 3}
+  - {fileID: 2100000, guid: d9fba8c1e93f2754780a6e5ded3a78b5, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -230,3 +232,17 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &-4426881970695317406
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6094021221908071786}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47b49e4557a042b419c6f049b1d4ba0a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <WoodCost>k__BackingField: 4
+  <StoneCost>k__BackingField: 2

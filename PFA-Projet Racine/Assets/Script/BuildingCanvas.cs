@@ -23,14 +23,78 @@ public class BuildingCanvas : MonoBehaviour
     public int woodDestroyCost;
     public int stoneDestroyCost;
 
+    public bool FirstPlacement = true;
+
+    private static bool _tuto = true;
+    public static bool _tuto2LeRetourDuJedi = true;
+
     private void Awake()
     {
         normal = Building.GetComponent<MeshRenderer>().material;
+
+    }
+    public void DropBuilding()
+    {
         if (id == 0)
         {
             IncrementHuman.instance.EditMaxHuman(5);
         }
         MaxBatPlacable.Instance.IncreaseActuBat(1, id);
+
+        GetComponent<BuildingCost>().BuyBuilding();
+
+        FirstPlacement = false;
+
+        switch (id)
+        {
+            case 0:
+                gameObject.name = "Maison";
+                break;
+            case 1:
+                gameObject.name = "Maison de Bucheron";
+                if (_tuto2LeRetourDuJedi == true)
+                {
+                    _tuto2LeRetourDuJedi = false;
+                    Leroidesdéchets.instance.Incremente();
+                    Destroy(Leroidesdéchets.instance.gameObject, 1);
+                }
+                break;
+            case 2:
+                gameObject.name = "Maison des Plongeurs";
+                break;
+            case 3:
+                gameObject.name = "Maison des Mineurs";
+                break;
+            case 4:
+                gameObject.name = "Reserve de bois";
+                GetComponent<AddStock>().DropBuilding();
+                break;
+            case 5:
+                gameObject.name = "Reserve d'Eau";
+                GetComponent<AddStock>().DropBuilding();
+                break;
+            case 6:
+                gameObject.name = "Reserve de Pierre";
+                GetComponent<AddStock>().DropBuilding();
+                break;
+            case 7:
+                gameObject.name = "Torche";
+                break;
+            case 8:
+                gameObject.name = "Toilette";
+                break;
+            case 9:
+                gameObject.name = "Champ";
+                if (_tuto == true)
+                {
+                    _tuto = false;
+                    Leroidesdéchets.instance.Incremente();
+                }
+                break;
+            case 10:
+                gameObject.name = "JukeBox";
+                break;
+        }
     }
 
     public void PanelSetActive(bool enabled)

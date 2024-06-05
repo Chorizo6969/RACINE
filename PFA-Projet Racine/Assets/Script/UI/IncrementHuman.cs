@@ -13,12 +13,18 @@ public class IncrementHuman : MonoBehaviour
 
     public int _countBucheron;
     public int _maxBucheron;
+    public TextMeshProUGUI BucheronText;
+    public TextMeshProUGUI MaxBucheronText;
 
     public int _countAquaman;
     public int _maxAquaman;
+    public TextMeshProUGUI AquamanText;
+    public TextMeshProUGUI MaxAquamanText;
 
     public int _countStoneMan;
     public int _maxStoneMan;
+    public TextMeshProUGUI StoneManText;
+    public TextMeshProUGUI MaxStoneManText;
 
     public static IncrementHuman instance;
 
@@ -26,6 +32,17 @@ public class IncrementHuman : MonoBehaviour
     {
         instance = this;
         EditMaxHuman(0);
+        Debug.Log(gameObject.name);
+    }
+
+    private void Start()
+    {
+        BucheronText.text = _countBucheron.ToString();
+        MaxBucheronText.text = _maxBucheron.ToString();
+        AquamanText.text = _countAquaman.ToString();
+        MaxAquamanText.text = _maxAquaman.ToString();
+        StoneManText.text = _countStoneMan.ToString();
+        MaxStoneManText.text = _maxStoneMan.ToString();
     }
 
     public void Stonks()
@@ -49,30 +66,36 @@ public class IncrementHuman : MonoBehaviour
     public void EditBucheron(int amount)
     {
         _countBucheron += amount;
+        BucheronText.text = _countBucheron.ToString();
     }
     
     public void EditMaxBucheron(int amount)
     {
         _maxBucheron += amount;
+        MaxBucheronText.text = _maxBucheron.ToString();
     }
 
     public void EditAquaman(int amount)
     {
         _countAquaman += amount;
+        AquamanText.text = _countAquaman.ToString();
     }
     
     public void EditMaxAquaman(int amount)
     {
         _maxAquaman += amount;
+        MaxAquamanText.text = _maxAquaman.ToString();
     }
 
     public void EditStoneMan(int amount)
     {
         _countStoneMan += amount;
+        StoneManText.text = _countStoneMan.ToString();
     }
     
     public void EditMaxStoneMan(int amount)
     {
         _maxStoneMan += amount;
+        MaxStoneManText.text = _maxStoneMan.ToString();
     }
 }
