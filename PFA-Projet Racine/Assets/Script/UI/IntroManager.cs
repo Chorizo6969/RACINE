@@ -42,7 +42,7 @@ public class IntroManager : MonoBehaviour
 
     public async void Distribution()
     {
-        while (!_dialogue.isfinish) await Task.Yield();
+        while (!_dialogue._isfinish) await Task.Yield();
         fleche[0].SetActive(true);
         while (id != 1) await Task.Yield();
         fleche[0].SetActive(false);
@@ -54,7 +54,7 @@ public class IntroManager : MonoBehaviour
     {
         _modif.modifDialogue1();
         await Task.Delay(2000);
-        while (!_dialogue.isfinish) await Task.Yield();
+        while (!_dialogue._isfinish) await Task.Yield();
         fleche[1].SetActive(true);
         while (id != 2) await Task.Yield();
         fleche[1].SetActive(false);
@@ -67,7 +67,7 @@ public class IntroManager : MonoBehaviour
     {
         _modif.modifDialogue2();
         await Task.Delay(2000);
-        while (!_dialogue.isfinish) await Task.Yield();
+        while (!_dialogue._isfinish) await Task.Yield();
         fleche[1].SetActive(true);
         bouliste = true;
         while (id != 4) await Task.Yield();
@@ -82,7 +82,7 @@ public class IntroManager : MonoBehaviour
     {
         _modif.modifDialogue3();
         await Task.Delay(2000);
-        while (!_dialogue.isfinish) await Task.Yield();
+        while (!_dialogue._isfinish) await Task.Yield();
         bouliste = true;
         fleche[1].SetActive(true);
         while (id != 6) await Task.Yield();
