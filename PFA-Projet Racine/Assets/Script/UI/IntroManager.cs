@@ -97,6 +97,8 @@ public class IntroManager : MonoBehaviour
         while (id != 8) await Task.Yield();
         fleche[3].SetActive(false);
         _modif.modifDialogue4();
+        await Task.Delay(2000);
+        while (!_dialogue._isfinish) await Task.Yield();
         _panelIntroduction.SetActive(false);
     }
 
