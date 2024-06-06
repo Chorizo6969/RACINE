@@ -24,6 +24,9 @@ public class IntroManager : MonoBehaviour
     [SerializeField]
     private Image _image;
 
+    [SerializeField]
+    private GameObject _panelIntroduction;
+
     public bool bouliste;
 
     public int id = 0;
@@ -94,6 +97,7 @@ public class IntroManager : MonoBehaviour
         while (id != 8) await Task.Yield();
         fleche[3].SetActive(false);
         _modif.modifDialogue4();
+        _panelIntroduction.SetActive(false);
     }
 
 }

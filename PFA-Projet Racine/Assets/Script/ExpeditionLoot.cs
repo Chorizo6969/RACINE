@@ -106,8 +106,12 @@ public class ExpeditionLoot : MonoBehaviour
                     IncrementHuman.instance.Death(1);
                     GameObject FirstButton = ChangeColorBucheron.ButtonOfHumanInExpedition[0];
                     GameObject FirstHuman = ChangeColorBucheron.HumanInExpedition[0];
-                    listExpeditionOwnerBucheron.list.Remove(FirstHuman);
+                    listExpeditionOwnerBucheron.list.Remove(FirstButton);
+                    ChangeColorBucheron.ButtonOfHumanInExpedition.Remove(FirstButton);
+
+                    listExpeditionOwnerBucheron.listHuman.Remove(FirstHuman);
                     ChangeColorBucheron.HumanInExpedition.Remove(FirstHuman);
+                    listBucheron.Remove(FirstHuman);
                     Destroy(FirstButton);
                     Destroy(FirstHuman);
                 }
@@ -147,8 +151,12 @@ public class ExpeditionLoot : MonoBehaviour
                     IncrementHuman.instance.Death(1);
                     GameObject FirstButton = ChangeColorMineur.ButtonOfHumanInExpedition[0];
                     GameObject FirstHuman = ChangeColorMineur.HumanInExpedition[0];
-                    listExpeditionOwnerBucheron.list.Remove(FirstHuman);
+                    listExpeditionOwnerMineur.list.Remove(FirstButton);
+                    ChangeColorMineur.ButtonOfHumanInExpedition.Remove(FirstButton);
+
+                    listExpeditionOwnerMineur.list.Remove(FirstHuman);
                     ChangeColorMineur.HumanInExpedition.Remove(FirstHuman);
+                    listMineur.Remove(FirstHuman);
                     Destroy(FirstButton);
                     Destroy(FirstHuman);
                 }
@@ -188,8 +196,12 @@ public class ExpeditionLoot : MonoBehaviour
                     IncrementHuman.instance.Death(1);
                     GameObject FirstButton = ChangeColorAquaman.ButtonOfHumanInExpedition[0];
                     GameObject FirstHuman = ChangeColorAquaman.HumanInExpedition[0];
+                    listExpeditionOwnerAquaman.list.Remove(FirstButton);
+                    ChangeColorAquaman.ButtonOfHumanInExpedition.Remove(FirstButton);
+
                     listExpeditionOwnerAquaman.list.Remove(FirstHuman);
                     ChangeColorAquaman.HumanInExpedition.Remove(FirstHuman);
+                    listAquaman.Remove(FirstHuman);
                     Destroy(FirstButton);
                     Destroy(FirstHuman);
                 }

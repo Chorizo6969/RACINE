@@ -23,7 +23,9 @@ public class GivePlant : MonoBehaviour
 
     [SerializeField] private GameObject _humanPlantPrefab;
 
-    [SerializeField] private GameObject _buttonExpeditionPrefab;
+    [SerializeField] private GameObject _buttonExpeditionPrefabBuche;
+    [SerializeField] private GameObject _buttonExpeditionPrefabAquaman;
+    [SerializeField] private GameObject _buttonExpeditionPrefabMineur;
 
     [SerializeField] private GameObject _content;
 
@@ -38,7 +40,7 @@ public class GivePlant : MonoBehaviour
         {
             ClickFieldManager _clickFieldManager = _camera.GetComponent<ClickFieldManager>();
             _clickFieldManager.HumanSeed = _seed;
-            GiveRefToField.instance.GiveRefPasTuple(_clickFieldManager.gameObject, _humanPlantPrefab, _buttonExpeditionPrefab, _content);
+            GiveRefToField.instance.GiveRefPasTuple(_clickFieldManager.gameObject, _humanPlantPrefab, _buttonExpeditionPrefabBuche, _buttonExpeditionPrefabAquaman, _buttonExpeditionPrefabMineur, _content);
             _modifcursor.ChangeCursor(_seedTexture);
             _nombreGraines --;
         }
