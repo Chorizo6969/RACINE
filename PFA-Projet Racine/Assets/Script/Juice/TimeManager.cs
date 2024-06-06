@@ -20,7 +20,7 @@ public class TimeManager : MonoBehaviour
     public int Minutes
     { get { return minutes; } set { minutes = value; OnMinutesChange(value); } }
 
-    private int hours = 5;
+    private int hours = 1;
     public int Hours
     { get { return hours; } set { hours = value; OnHoursChange(value); } }
 
@@ -50,13 +50,13 @@ public class TimeManager : MonoBehaviour
 
     private void OnMinutesChange(int value)
     {
-        globalLight.transform.Rotate(Vector3.up, (1f / (1440f / 4f)) * 360f, Space.World);
+        globalLight.transform.Rotate(Vector3.up, 0.1f / (1440f / 4f) * 360f, Space.World);
         if (value >= 60)
         {
             Hours++;
             minutes = 0;
         }
-        if (Hours >= 12)
+        if (Hours >= 9)
         {
             Hours = 0;
             Days++;
@@ -65,22 +65,22 @@ public class TimeManager : MonoBehaviour
 
     private void OnHoursChange(int value)
     {
-        if (value == 3)
+        if (value == 1)
         {
             //StartCoroutine(LerpSkybox(_skyboxNuit, _skyboxDebutSoleil, 10f));
             StartCoroutine(LerpLight(graddientNightToSunrise, 10f));
         }
-        else if (value == 6)
+        else if (value == 2)
         {
             //StartCoroutine(LerpSkybox(_skyboxDebutSoleil, _skyboxJour, 10f));
             StartCoroutine(LerpLight(graddientSunriseToDay, 10f));
         }
-        else if (value == 9)
+        else if (value == 5)
         {
             //StartCoroutine(LerpSkybox(_skyboxJour, _skyboxCouchéSoleil, 10f));
             StartCoroutine(LerpLight(graddientDayToSunset, 10f));
         }
-        else if (value == 12)
+        else if (value == 6)
         {
             //StartCoroutine(LerpSkybox(_skyboxCouchéSoleil, _skyboxNuit, 10f));
             StartCoroutine(LerpLight(graddientSunsetToNight, 10f));

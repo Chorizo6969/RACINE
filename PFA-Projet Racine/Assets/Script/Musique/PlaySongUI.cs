@@ -15,21 +15,25 @@ public class PlaySongUI : MonoBehaviour
 
     public void Ouverture()
     {
-        if (gameObject.layer == 14 && id == 1)
+        if (gameObject.layer == 14)
         {
-            AudioSource.PlayOneShot(_ouverture);
-            id = 2;
+            if (Jkh.Instance.BOOLISTEBUILDINGPANEL)
+            {
+                AudioSource.PlayOneShot(_ouverture);
+                id = 2;
+            }
+            else if (gameObject.layer == 14)
+            {
+                Fermeture();
+            }
         }
-        else if(gameObject.layer == 14)
-        {
-            Fermeture();
-        }
+
         AudioSource.PlayOneShot(_ouverture);
     }
 
     public void Fermeture()
     {
-        if (gameObject.layer == 14 && id == 2)
+        if (!Jkh.Instance.BOOLISTEBUILDINGPANEL)
         {
             AudioSource.PlayOneShot(_femeture);
             id = 1;

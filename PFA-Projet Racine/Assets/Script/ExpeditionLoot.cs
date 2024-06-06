@@ -96,7 +96,7 @@ public class ExpeditionLoot : MonoBehaviour
     IEnumerator endExpeditionWood(bool mort, int score)
     {
         yield return new WaitForSeconds(expeditionTime);
-        if (mort || !mort)
+        if (mort)
         {
             int numberOfDeath = Random.Range(1, ChangeColorBucheron.ButtonOfHumanInExpedition.Count);
             if (numberOfDeath > 0)
@@ -141,7 +141,7 @@ public class ExpeditionLoot : MonoBehaviour
     IEnumerator endExpeditionStone(bool mort, int score)
     {
         yield return new WaitForSeconds(expeditionTime);
-        if (mort || !mort)
+        if (mort)
         {
             int numberOfDeath = Random.Range(1, ChangeColorMineur.ButtonOfHumanInExpedition.Count);
             if (numberOfDeath > 0)
@@ -186,7 +186,7 @@ public class ExpeditionLoot : MonoBehaviour
     IEnumerator endExpeditionWater(bool mort, int score)
     {
         yield return new WaitForSeconds(expeditionTime);
-        if (mort || !mort)
+        if (mort)
         {
             int numberOfDeath = Random.Range(1, ChangeColorBucheron.ButtonOfHumanInExpedition.Count);
             if (numberOfDeath > 0)
