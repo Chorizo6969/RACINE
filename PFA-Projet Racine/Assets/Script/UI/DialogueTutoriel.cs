@@ -12,7 +12,13 @@ public class DialogueTutoriel : MonoBehaviour
     private TMP_Text _text;
 
     [SerializeField]
-    private Image _image;
+    private Image _hommePlante;
+
+    [SerializeField]
+    private Sprite _imageNormal;
+
+    [SerializeField]
+    private Sprite _imageContent;
 
     /// <summary>
     /// Liste de lignes à afficher séquentiellement.
@@ -66,7 +72,7 @@ public class DialogueTutoriel : MonoBehaviour
     {
         _isfinish = false;
         _text.text = string.Empty;
-        _image.gameObject.SetActive(true);
+        _hommePlante.gameObject.SetActive(true);
         _lineIndex = -1;
         _printLineCoroutine = StartCoroutine(PrintNextLine());
     }
@@ -93,11 +99,19 @@ public class DialogueTutoriel : MonoBehaviour
     {
         if (_printLineCoroutine != null) yield break;
 
+        if (_lineIndex == -1)
+        {
+            _hommePlante.sprite = _imageContent;
+        }
+        else
+        {
+            _hommePlante.sprite = _imageNormal;
+        }
+
         if (_lineIndex >= lines.Count - 1)
         {
-            Debug.Log("dialogue fini !");
             gameObject.SetActive(false);
-            _image.gameObject.SetActive(false);
+            _hommePlante.gameObject.SetActive(false);
             _isfinish = true;
             yield break;
         }
