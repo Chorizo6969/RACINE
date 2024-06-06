@@ -34,7 +34,9 @@ public class TimeManager : MonoBehaviour
 
     private void Start()
     {
-        Time.timeScale = 50;
+        Time.timeScale = 1
+
+            ;
     }
     public void Update()
     {
