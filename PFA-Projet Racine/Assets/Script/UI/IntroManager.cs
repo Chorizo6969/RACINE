@@ -22,7 +22,7 @@ public class IntroManager : MonoBehaviour
     private List<GameObject> fleche;
 
     [SerializeField]
-    private Image _image;
+    private GameObject _panelIntroduction;
 
     public bool bouliste;
 
@@ -48,7 +48,6 @@ public class IntroManager : MonoBehaviour
         fleche[0].SetActive(false);
         _panelRacine.SetActive(false);
         Dialogue2();
-    
     }
     public async void Dialogue2()
     {
@@ -94,6 +93,9 @@ public class IntroManager : MonoBehaviour
         while (id != 8) await Task.Yield();
         fleche[3].SetActive(false);
         _modif.modifDialogue4();
+        await Task.Delay(2000);
+        while (!_dialogue._isfinish) await Task.Yield();
+        _panelIntroduction.SetActive(false);
     }
 
 }
