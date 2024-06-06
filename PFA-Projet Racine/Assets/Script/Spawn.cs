@@ -5,7 +5,9 @@ using UnityEngine;
 public class Spawn : MonoBehaviour
 {
     public GameObject HumanPrefab;
-    public GameObject PrefabButton;
+    public GameObject PrefabButtonBucheron;
+    public GameObject PrefabButtonAquaman;
+    public GameObject PrefabButtonMineur;
     public GameObject Parent;
 
     public List<GameObject> worktarget;
@@ -19,7 +21,7 @@ public class Spawn : MonoBehaviour
 
     public void Spawner()
     {
-        GameObject new_button = Instantiate(PrefabButton);
+        GameObject new_button = ChoseButton(HumanPrefab.GetComponent<IA>()._scriptableHuman.Work);
         new_button.transform.parent = Parent.transform;
         Parent.GetComponent<Listexpedition>().AddObject(new_button);
         GameObject new_human = Instantiate(HumanPrefab);
@@ -29,9 +31,36 @@ public class Spawn : MonoBehaviour
         NamesGenerator.RandomName();
         new_human.GetComponent<IA>().Nom = NamesGenerator.Nom;
         new_human.GetComponent<IA>().Adjectif = NamesGenerator.Adjectif;
+
         new_button.GetComponent<Expédition>().Ia = new_human;
         new_button.GetComponent<ChangeColor>().expédition = new_button.GetComponent<Expédition>();
+
         new_human.transform.position = GetComponent<Field>()._currentPlant.transform.position;
         ExpeditionLoot.instance.SortHuman();
+    }
+
+    public GameObject ChoseButton(string metier)
+    {
+        if (metier == "Bucheron")
+        {
+            GameObject new_button = Instantiate(PrefabButtonBucheron);
+            new_button.transform.parent = Parent.transform;
+            Parent.GetComponent<Listexpedition>().AddObject(new_button);
+            return new_button;
+        }
+        else if (metier == "Eau")
+        {
+            GameObject new_button = Instantiate(PrefabButtonAquaman);
+            new_button.transform.parent = Parent.transform;
+            Parent.GetComponent<Listexpedition>().AddObject(new_button);
+            return new_button;
+        }
+        else
+        {
+            GameObject new_button = Instantiate(PrefabButtonMineur);
+            new_button.transform.parent = Parent.transform;
+            Parent.GetComponent<Listexpedition>().AddObject(new_button);
+            return new_button;
+        }
     }
 }

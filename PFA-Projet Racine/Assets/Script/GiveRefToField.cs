@@ -13,13 +13,15 @@ public class GiveRefToField : MonoBehaviour
         instance = this;
     }
 
-    public void GiveRefPasTuple(GameObject go, GameObject _newPrefabPlant, GameObject _newButtonPrefab, GameObject _newContent)
+    public void GiveRefPasTuple(GameObject go, GameObject _newPrefabPlant, GameObject _newButtonPrefabBuche, GameObject _newButtonPrefabAquaman, GameObject _newButtonPrefabMineur, GameObject _newContent)
     {
         if (go.GetComponent<Spawn>() != null)
         {
             Spawn _spawn = go.GetComponent<Spawn>();
             _spawn.HumanPrefab = _newPrefabPlant;
-            _spawn.PrefabButton = _newButtonPrefab;
+            _spawn.PrefabButtonBucheron = _newButtonPrefabBuche;
+            _spawn.PrefabButtonAquaman = _newButtonPrefabAquaman;
+            _spawn.PrefabButtonMineur = _newButtonPrefabMineur;
             _spawn.Parent = _newContent;
         }
     }

@@ -29,7 +29,7 @@ public class ClickFieldManager : MonoBehaviour
                 {
                     _fieldPlantScript.ThePlant = HumanSeed;
                     _fieldPlantScript.PlantField();
-                    GiveRefToField.instance.GiveRefPasTuple(_touchedField, GetComponent<Spawn>().HumanPrefab, GetComponent<Spawn>().PrefabButton, GetComponent<Spawn>().Parent);
+                    GiveRefToField.instance.GiveRefPasTuple(_touchedField, GetComponent<Spawn>().HumanPrefab, GetComponent<Spawn>().PrefabButtonBucheron, GetComponent<Spawn>().PrefabButtonAquaman, GetComponent<Spawn>().PrefabButtonMineur, GetComponent<Spawn>().Parent);
                     
                     HumanSeed = null;
                 }
