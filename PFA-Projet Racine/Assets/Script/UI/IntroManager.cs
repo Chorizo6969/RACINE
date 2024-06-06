@@ -22,9 +22,6 @@ public class IntroManager : MonoBehaviour
     private List<GameObject> fleche;
 
     [SerializeField]
-    private Image _image;
-
-    [SerializeField]
     private GameObject _panelIntroduction;
 
     public bool bouliste;
@@ -51,7 +48,6 @@ public class IntroManager : MonoBehaviour
         fleche[0].SetActive(false);
         _panelRacine.SetActive(false);
         Dialogue2();
-    
     }
     public async void Dialogue2()
     {
