@@ -15,14 +15,13 @@ public class TimeManager : MonoBehaviour
 
     [SerializeField] private Light globalLight;
 
-    [SerializeField] private int minutes;
+    [SerializeField] private int minutes = 59;
 
     public int Minutes
     { get { return minutes; } set { minutes = value; OnMinutesChange(value); } }
 
     private int hours = 5;
-
-    [SerializeField] public int Hours
+    public int Hours
     { get { return hours; } set { hours = value; OnHoursChange(value); } }
 
     [SerializeField] private int days;
@@ -57,7 +56,7 @@ public class TimeManager : MonoBehaviour
             Hours++;
             minutes = 0;
         }
-        if (Hours >= 24)
+        if (Hours >= 12)
         {
             Hours = 0;
             Days++;
@@ -66,22 +65,22 @@ public class TimeManager : MonoBehaviour
 
     private void OnHoursChange(int value)
     {
-        if (value == 6)
+        if (value == 3)
         {
             //StartCoroutine(LerpSkybox(_skyboxNuit, _skyboxDebutSoleil, 10f));
             StartCoroutine(LerpLight(graddientNightToSunrise, 10f));
         }
-        else if (value == 8)
+        else if (value == 6)
         {
             //StartCoroutine(LerpSkybox(_skyboxDebutSoleil, _skyboxJour, 10f));
             StartCoroutine(LerpLight(graddientSunriseToDay, 10f));
         }
-        else if (value == 18)
+        else if (value == 9)
         {
             //StartCoroutine(LerpSkybox(_skyboxJour, _skyboxCouchéSoleil, 10f));
             StartCoroutine(LerpLight(graddientDayToSunset, 10f));
         }
-        else if (value == 22)
+        else if (value == 12)
         {
             //StartCoroutine(LerpSkybox(_skyboxCouchéSoleil, _skyboxNuit, 10f));
             StartCoroutine(LerpLight(graddientSunsetToNight, 10f));
