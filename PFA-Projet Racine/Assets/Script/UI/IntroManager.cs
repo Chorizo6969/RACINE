@@ -43,10 +43,12 @@ public class IntroManager : MonoBehaviour
     public async void Distribution()
     {
         while (!_dialogue._isfinish) await Task.Yield();
+        LockIntro.instance.Racine.GetComponent<MeshCollider>().enabled = true;
         fleche[0].SetActive(true);
         while (id != 1) await Task.Yield();
         fleche[0].SetActive(false);
         _panelRacine.SetActive(false);
+        LockIntro.instance.Racine.GetComponent<MeshCollider>().enabled = false;
         Dialogue2();
     }
     public async void Dialogue2()
@@ -54,6 +56,8 @@ public class IntroManager : MonoBehaviour
         _modif.modifDialogue1();
         await Task.Delay(2000);
         while (!_dialogue._isfinish) await Task.Yield();
+        LockIntro.instance.House.interactable = true;
+        LockIntro.instance.Champ.interactable = true;
         fleche[1].SetActive(true);
         while (id != 2) await Task.Yield();
         fleche[1].SetActive(false);
@@ -67,6 +71,8 @@ public class IntroManager : MonoBehaviour
         _modif.modifDialogue2();
         await Task.Delay(2000);
         while (!_dialogue._isfinish) await Task.Yield();
+        LockIntro.instance.Champ.interactable = false;
+        LockIntro.instance.Bucheron.interactable = true;
         fleche[1].SetActive(true);
         bouliste = true;
         while (id != 4) await Task.Yield();
@@ -82,6 +88,8 @@ public class IntroManager : MonoBehaviour
         _modif.modifDialogue3();
         await Task.Delay(2000);
         while (!_dialogue._isfinish) await Task.Yield();
+        LockIntro.instance.Bucheron.interactable = false;
+        LockIntro.instance.MaisonBucheron.interactable = true;
         bouliste = true;
         fleche[1].SetActive(true);
         while (id != 6) await Task.Yield();
@@ -95,6 +103,12 @@ public class IntroManager : MonoBehaviour
         _modif.modifDialogue4();
         await Task.Delay(2000);
         while (!_dialogue._isfinish) await Task.Yield();
+        LockIntro.instance.House.interactable = true;
+        LockIntro.instance.Champ.interactable = true;
+        LockIntro.instance.Bucheron.interactable = true;
+        LockIntro.instance.MaisonBucheron.interactable = true;
+        LockIntro.instance.Lock();
+        LockIntro.instance.Racine.GetComponent<MeshCollider>().enabled = true;
         _panelIntroduction.SetActive(false);
     }
 

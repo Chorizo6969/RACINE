@@ -57,6 +57,16 @@ public class AchatSeed : MonoBehaviour
         string water = "40";
         textWood.text = wood.ToString();
         textO.text = water.ToString();
+        foreach(GameObject obj in ListeLvl2 )
+        {
+            Button button = obj.GetComponent<Button>();
+            button.interactable = false;
+        }
+        foreach (GameObject obj in ListeLvl3)
+        {
+            Button button = obj.GetComponent<Button>();
+            button.interactable = false;
+        }
     }
     public void UpgradeRoot()
     {
@@ -78,9 +88,10 @@ public class AchatSeed : MonoBehaviour
                 prix2.SetActive(true);
                 Racine1.SetActive(false);
                 Racine2.SetActive(true);
-                foreach (GameObject PAnEL in ListeLvl2)
+                foreach (GameObject obj in ListeLvl2)
                 {
-                    PAnEL.SetActive(false);
+                    Button button = obj.GetComponent<Button>();
+                    button.interactable = true;
                 }
             }
         }
@@ -98,9 +109,10 @@ public class AchatSeed : MonoBehaviour
                 prix3.SetActive(true);
                 Racine2.SetActive(false);
                 Racine3.SetActive(true);
-                foreach (GameObject PAnEL in ListeLvl3)
+                foreach (GameObject obj in ListeLvl2)
                 {
-                    PAnEL.SetActive(false);
+                    Button button = obj.GetComponent<Button>();
+                    button.interactable = true;
                 }
             }
         }
