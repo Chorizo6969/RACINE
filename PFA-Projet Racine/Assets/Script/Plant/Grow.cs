@@ -1,4 +1,6 @@
+using System.Collections;
 using UnityEngine;
+using UnityEngine.VFX;
 
 /// <summary>
 /// Script qui fait pousser la plante
@@ -15,14 +17,17 @@ public class Grow : MonoBehaviour
     /// </summary>
     [SerializeField] private float _maxHighGrow;
 
-    void Update()
+    public GameObject VFX;
+    private void Start()
     {
-        //fait monter la plante et l'arrete lorsqu'elle est à sa hauteur max
-        transform.position += new Vector3(0, _growSpeed, 0) * Time.deltaTime;
-        if (transform.position.y >= _maxHighGrow)
-        {
-            transform.position = new Vector3(transform.position.x, _maxHighGrow, transform.position.z);
-            Destroy(GetComponent<Grow>());
-        }
+        GetComponent<Animator>().SetTrigger("IsPlanted");
+        StartCoroutine(ATTEND());
+    }
+
+    IEnumerator ATTEND()
+    {
+        yield return new WaitForSeconds(3);
+        GetComponent<Animator>().SetTrigger("IsReady");
+        VFX.GetComponent<VisualEffect>().Play();
     }
 }
