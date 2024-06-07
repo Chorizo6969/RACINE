@@ -10,10 +10,13 @@ public class Count : MonoBehaviour
     TextMeshProUGUI numberText;
     float currentValue = 0, targetValue = 0;
     Coroutine _C2T;
+    RectTransform _rectTransform;
 
     void Awake()
     {
         numberText = GetComponent<TextMeshProUGUI>();
+        _rectTransform = GetComponent<RectTransform>();
+        Destroy(gameObject, 1);
     }
 
     void Start()
@@ -47,5 +50,10 @@ public class Count : MonoBehaviour
         if (_C2T != null)
             StopCoroutine(_C2T);
         _C2T = StartCoroutine(CountTo(targetValue));
+    }
+
+    private void Update()
+    {
+        _rectTransform.localPosition += new Vector3(0, 100, 0) * Time.deltaTime;
     }
 }

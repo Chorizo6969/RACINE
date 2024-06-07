@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 1156453387382127321}
   - component: {fileID: 9118882912757023533}
   - component: {fileID: 1142275084612304307}
-  - component: {fileID: 2955402643527670783}
   m_Layer: 5
   m_Name: Add Rss Text
   m_TagString: Untagged
@@ -135,19 +134,3 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
---- !u!114 &2955402643527670783
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5478375298850419036}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b18aa5c9137d5cc4a87ffbdaa2a9985f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _value: 0
-  _baseValue: 0
-  _speed: 0
-  count: 0

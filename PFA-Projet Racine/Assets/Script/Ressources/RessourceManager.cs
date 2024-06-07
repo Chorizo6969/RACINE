@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using Unity.VisualScripting;
+using UnityEditor.ShaderGraph;
 using UnityEngine;
 using UnityEngine.SocialPlatforms.Impl;
 
@@ -55,6 +57,10 @@ public class RessourceManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _stoneText;
 
     [SerializeField] private GameObject AddingScoreText;
+
+    public GameObject SpawnWood;
+    public GameObject SpawnWater;
+    public GameObject SpawnStone;
 
     [SerializeField] private GameObject _panelParent;
 
@@ -137,11 +143,12 @@ public class RessourceManager : MonoBehaviour
                 _wood = 0;
             }
 
-            /*GameObject newWoodText = Instantiate(AddingScoreText);
+            GameObject newWoodText = Instantiate(AddingScoreText);
             newWoodText.name = "wood";
             newWoodText.transform.SetParent(_panelParent.transform, true);
-            newWoodText.transform.localPosition = new Vector3(-20, -40, 0);
-            newWoodText.GetComponent<AddScoreJuice>().ChangeValues(amount);*/
+            newWoodText.transform.position = SpawnWood.transform.position;
+            newWoodText.GetComponent<TextMeshProUGUI>().color = new Color(0.7803922f, 0.5882353f, 0.3843138f);
+            newWoodText.GetComponent<Count>().AddValue(amount);
 
             StartCoroutine(WoodAttend(1));
         }
@@ -157,11 +164,12 @@ public class RessourceManager : MonoBehaviour
                 _wood = 0;
             }
 
-            /*GameObject newWoodText = Instantiate(AddingScoreText);
+            GameObject newWoodText = Instantiate(AddingScoreText);
             newWoodText.name = "wood";
             newWoodText.transform.SetParent(_panelParent.transform, true);
-            newWoodText.transform.localPosition = new Vector3(-20, -40, 0);
-            newWoodText.GetComponent<AddScoreJuice>().ChangeValues(amount);*/
+            newWoodText.transform.position = SpawnWood.transform.position;
+            newWoodText.GetComponent<TextMeshProUGUI>().color = new Color(0.7803922f, 0.5882353f, 0.3843138f);
+            newWoodText.GetComponent<Count>().AddValue(amount);
 
             StartCoroutine(WoodAttend(1));
         }
@@ -203,11 +211,12 @@ public class RessourceManager : MonoBehaviour
                 _water = 0;
             }
 
-/*            GameObject newWaterText = Instantiate(AddingScoreText);
+            GameObject newWaterText = Instantiate(AddingScoreText);
             newWaterText.name = "water";
             newWaterText.transform.SetParent(_panelParent.transform, true);
-            newWaterText.transform.localPosition = new Vector3(-260, -40, 0);
-            newWaterText.GetComponent<AddScoreJuice>().ChangeValues(amount);*/
+            newWaterText.transform.position = SpawnWater.transform.position;
+            newWaterText.GetComponent<TextMeshProUGUI>().color = new Color(0.6941177f, 0.8274511f, 0.8980393f);
+            newWaterText.GetComponent<Count>().AddValue(amount);
 
             StartCoroutine(WaterAttend(1));
         }
@@ -223,11 +232,12 @@ public class RessourceManager : MonoBehaviour
                 _water = 0;
             }
 
-/*            GameObject newWaterText = Instantiate(AddingScoreText);
+            GameObject newWaterText = Instantiate(AddingScoreText);
             newWaterText.name = "water";
             newWaterText.transform.SetParent(_panelParent.transform, true);
-            newWaterText.transform.localPosition = new Vector3(-260, -40, 0);
-            newWaterText.GetComponent<AddScoreJuice>().ChangeValues(amount);*/
+            newWaterText.transform.position = SpawnWater.transform.position;
+            newWaterText.GetComponent<TextMeshProUGUI>().color = new Color(0.6941177f, 0.8274511f, 0.8980393f);
+            newWaterText.GetComponent<Count>().AddValue(amount);
 
             StartCoroutine(WaterAttend(1));
         }
@@ -269,11 +279,12 @@ public class RessourceManager : MonoBehaviour
                 _stone = 0;
             }
 
-/*            GameObject newStoneText = Instantiate(AddingScoreText);
-            newStoneText.name = "stone";
+            GameObject newStoneText = Instantiate(AddingScoreText);
+            newStoneText.name = "water";
             newStoneText.transform.SetParent(_panelParent.transform, true);
-            newStoneText.transform.localPosition = new Vector3(280, -40, 0);
-            newStoneText.GetComponent<AddScoreJuice>().ChangeValues(amount);*/
+            newStoneText.transform.position = SpawnStone.transform.position;
+            newStoneText.GetComponent<TextMeshProUGUI>().color = new Color(0.7882354f, 0.7490196f, 0.7803922f);
+            newStoneText.GetComponent<Count>().AddValue(amount);
 
             StartCoroutine(StoneAttend(1));
         }
@@ -289,11 +300,12 @@ public class RessourceManager : MonoBehaviour
                 _stone = 0;
             }
 
-/*            GameObject newStoneText = Instantiate(AddingScoreText);
-            newStoneText.name = "stone";
+            GameObject newStoneText = Instantiate(AddingScoreText);
+            newStoneText.name = "water";
             newStoneText.transform.SetParent(_panelParent.transform, true);
-            newStoneText.transform.localPosition = new Vector3(280, -40, 0);
-            newStoneText.GetComponent<AddScoreJuice>().ChangeValues(amount);*/
+            newStoneText.transform.position = SpawnStone.transform.position;
+            newStoneText.GetComponent<TextMeshProUGUI>().color = new Color(0.7882354f, 0.7490196f, 0.7803922f);
+            newStoneText.GetComponent<Count>().AddValue(amount);
 
             StartCoroutine(StoneAttend(1));
         }
