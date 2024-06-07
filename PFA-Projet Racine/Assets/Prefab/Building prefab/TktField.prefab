@@ -33,7 +33,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 0.1, z: 2}
+  m_LocalScale: {x: 1, y: 0.1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6477131982401752579}
@@ -305,7 +305,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 1e14eed8c8170d74d8b8bc4b5cb34bfe, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 1e14eed8c8170d74d8b8bc4b5cb34bfe, type: 3}
       propertyPath: m_LocalScale.y
@@ -313,7 +313,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 1e14eed8c8170d74d8b8bc4b5cb34bfe, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 1e14eed8c8170d74d8b8bc4b5cb34bfe, type: 3}
       propertyPath: m_LocalPosition.x
@@ -409,12 +409,12 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 2, y: 0.3730915, z: 2}
-  m_Center: {x: 0, y: -0.040113587, z: 0}
+  m_Size: {x: 2, y: 0.97143626, z: 2}
+  m_Center: {x: 0, y: -0.34076697, z: 0}
 --- !u!114 &8055882160948908883
 MonoBehaviour:
   m_ObjectHideFlags: 0
