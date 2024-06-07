@@ -20,11 +20,11 @@ public class FindHUmanPlant : MonoBehaviour
                     if (_touchedPlant.GetComponent<HideNSeek>().IsHiding)
                     {
                         _touchedPlant.GetComponent<HideNSeek>()._startHiding = true;
+                        _touchedPlant.GetComponent<NewRandomPos>().ParticleSystemSLEEP.Stop();
                     }
                     HumanSound.instance.Verification(hitInfo.collider.gameObject);
                 }
             }
-            
         }
     }
 }

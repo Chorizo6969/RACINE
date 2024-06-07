@@ -19,9 +19,12 @@ public class NewRandomPos : MonoBehaviour
 
     public float tempo;
 
+    public ParticleSystem ParticleSystemSLEEP;
+
     private void Awake()
     {
         _listOwner = wayPointPosManager.Instance.gameObject;
+        ParticleSystemSLEEP.Stop();
     }
 
     private void Start()
@@ -40,6 +43,10 @@ public class NewRandomPos : MonoBehaviour
         {
             _navMeshAgent.speed = 0;
             _animator.SetBool("Walk", false);
+            if (GetComponent<HideNSeek>().IsHiding && !ParticleSystemSLEEP.isPlaying)
+            {
+                ParticleSystemSLEEP.Play();
+            }
         }
     }
 
