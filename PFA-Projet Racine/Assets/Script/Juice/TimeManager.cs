@@ -37,8 +37,9 @@ public class TimeManager : MonoBehaviour
 
             ;
     }
-    public void Update()
+    public void FixedUpdate()
     {
+        globalLight.transform.Rotate(Vector3.up, 0.001f / (1440f / 4f) * 360f, Space.World);
         tempSecond += Time.deltaTime;
 
         if (tempSecond >= 1)
@@ -50,7 +51,6 @@ public class TimeManager : MonoBehaviour
 
     private void OnMinutesChange(int value)
     {
-        globalLight.transform.Rotate(Vector3.up, 0.1f / (1440f / 4f) * 360f, Space.World);
         if (value >= 60)
         {
             Hours++;
