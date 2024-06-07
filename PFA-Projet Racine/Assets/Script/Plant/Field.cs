@@ -31,9 +31,12 @@ public class Field : MonoBehaviour
     /// </summary>
     [field : SerializeField] public GameObject _progressCircle { get; private set; }
 
+    public GameObject WATERBUBUBUBUBUBUBUBUBUBUBUBUBUBUBUBUBUBUBUBUBUBUBUBUBUBUBUBUBUBUBUBUBUBULLE;
+
     private void Start()
     {
         _progressCircle.SetActive(false);
+        WATERBUBUBUBUBUBUBUBUBUBUBUBUBUBUBUBUBUBUBUBUBUBUBUBUBUBUBUBUBUBUBUBUBUBULLE.SetActive(false);
     }
 
     public void PlantField()
@@ -47,6 +50,7 @@ public class Field : MonoBehaviour
             IsPlanted = true;
             _currentPlant.SetActive(false);
             Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
+            WATERBUBUBUBUBUBUBUBUBUBUBUBUBUBUBUBUBUBUBUBUBUBUBUBUBUBUBUBUBUBUBUBUBUBULLE.SetActive(true);
         }
     }
     
@@ -69,6 +73,7 @@ public class Field : MonoBehaviour
             _progressCircle?.SetActive(true);
             IsWatered = true;
             _currentPlant?.SetActive(true);
+            WATERBUBUBUBUBUBUBUBUBUBUBUBUBUBUBUBUBUBUBUBUBUBUBUBUBUBUBUBUBUBUBUBUBUBULLE.SetActive(false);
         }
     }
 
