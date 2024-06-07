@@ -32,7 +32,6 @@ public class IncrementHuman : MonoBehaviour
     {
         instance = this;
         EditMaxHuman(0);
-        Debug.Log(gameObject.name);
     }
 
     private void Start()

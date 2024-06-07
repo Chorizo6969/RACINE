@@ -40,8 +40,10 @@ public class AchatSeed : MonoBehaviour
     [SerializeField]
     private GameObject Racine3;
 
-    public List<GameObject> ListeLvl2;
-    public List<GameObject> ListeLvl3;
+    public List<GameObject> ListeButtonLvl2;
+    public List<GameObject> ListePanelLockLvl2;
+    public List<GameObject> ListeButtonLvl3;
+    public List<GameObject> ListePanelLockLvl3;
 
     private int index = 1;
 
@@ -57,12 +59,12 @@ public class AchatSeed : MonoBehaviour
         string water = "40";
         textWood.text = wood.ToString();
         textO.text = water.ToString();
-        foreach(GameObject obj in ListeLvl2 )
+        foreach(GameObject obj in ListeButtonLvl2)
         {
             Button button = obj.GetComponent<Button>();
             button.interactable = false;
         }
-        foreach (GameObject obj in ListeLvl3)
+        foreach (GameObject obj in ListeButtonLvl3)
         {
             Button button = obj.GetComponent<Button>();
             button.interactable = false;
@@ -88,10 +90,14 @@ public class AchatSeed : MonoBehaviour
                 prix2.SetActive(true);
                 Racine1.SetActive(false);
                 Racine2.SetActive(true);
-                foreach (GameObject obj in ListeLvl2)
+                foreach (GameObject obj in ListeButtonLvl2)
                 {
                     Button button = obj.GetComponent<Button>();
                     button.interactable = true;
+                }
+                foreach (GameObject obj in ListePanelLockLvl2)
+                {
+                    obj.SetActive(false);
                 }
             }
         }
@@ -109,10 +115,14 @@ public class AchatSeed : MonoBehaviour
                 prix3.SetActive(true);
                 Racine2.SetActive(false);
                 Racine3.SetActive(true);
-                foreach (GameObject obj in ListeLvl2)
+                foreach (GameObject obj in ListeButtonLvl3)
                 {
                     Button button = obj.GetComponent<Button>();
                     button.interactable = true;
+                }
+                foreach (GameObject obj in ListePanelLockLvl3)
+                {
+                    obj.SetActive(false);
                 }
             }
         }
