@@ -124,7 +124,7 @@ VisualEffectResource:
   m_Infos:
     m_RendererSettings:
       motionVectorGenerationMode: 0
-      shadowCastingMode: 0
+      shadowCastingMode: 1
       receiveShadows: 0
       reflectionProbeUsage: 0
       lightProbeUsage: 0
@@ -831,7 +831,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: UnityEngine.Mesh, UnityEngine.CoreModule, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
-      m_SerializableObject: '{"obj":{"fileID":2534964839176971238,"guid":"dfb1e03194e337c4c97670e1de9a7a31","type":3}}'
+      m_SerializableObject: '{"obj":{"fileID":2534964839176971238,"guid":"c5c8d86db080caf4d8f9ec7ad21c1e1b","type":3}}'
     m_Space: 2147483647
   m_Property:
     name: mesh
@@ -2772,7 +2772,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: UnityEngine.Vector3, UnityEngine.CoreModule, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
-      m_SerializableObject: '{"x":210.3903350830078,"y":210.3903350830078,"z":210.3903350830078}'
+      m_SerializableObject: '{"x":0.8603978157043457,"y":0.7238157987594605,"z":0.07711110264062882}'
     m_Space: 2147483647
   m_Property:
     name: Color
