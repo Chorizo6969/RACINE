@@ -36,6 +36,7 @@ public class ChangeColor : MonoBehaviour
     public void Work()
     {
         ButtonOfHumanInExpedition.Clear();
+        HumanInExpedition.Clear();
         foreach (GameObject obj in List.list)
         {
             if (obj.GetComponent<ChangeColor>().index == 1)

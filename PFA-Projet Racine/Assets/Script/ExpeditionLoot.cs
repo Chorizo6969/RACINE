@@ -84,10 +84,14 @@ public class ExpeditionLoot : MonoBehaviour
         int scoreWood = 0;
         int lootWood = Random.Range(minloot, maxloot + 1);
         scoreWood = lootWood;
-        int humainmort = Random.Range(0, chanceToDie + 1);
-        if (humainmort == chanceToDie)
+        if (ChangeColorBucheron.HumanInExpedition.Count != 1)
         {
-            mortBuche = true;
+            int humainmort = Random.Range(0, chanceToDie + 1);
+            Debug.Log("mort");
+            if (humainmort == chanceToDie)
+            {
+                mortBuche = true;
+            }
         }
         StartCoroutine(endExpeditionWood(mortBuche, scoreWood));
     }
@@ -130,10 +134,13 @@ public class ExpeditionLoot : MonoBehaviour
         int scoreStone = 0;
         int lootStone = Random.Range(minloot, maxloot + 1);
         scoreStone = lootStone;
-        int humainmort = Random.Range(0, chanceToDie + 1);
-        if (humainmort == chanceToDie)
+        if (ChangeColorMineur.HumanInExpedition.Count != 1)
         {
-            mortPierre = true;
+            int humainmort = Random.Range(0, chanceToDie + 1);
+            if (humainmort == chanceToDie)
+            {
+                mortPierre = true;
+            }
         }
         StartCoroutine(endExpeditionStone(mortPierre, scoreStone));
     }
@@ -175,10 +182,13 @@ public class ExpeditionLoot : MonoBehaviour
         int WaterScore = 0;
         int lootWater = Random.Range(minloot, maxloot + 1);
         WaterScore = lootWater;
-        int humainmort = Random.Range(0, chanceToDie + 1);
-        if (humainmort == chanceToDie)
+        if (ChangeColorAquaman.HumanInExpedition.Count != 1)
         {
-            mortAquaman = true;
+            int humainmort = Random.Range(0, chanceToDie + 1);
+            if (humainmort == chanceToDie)
+            {
+                mortAquaman = true;
+            }
         }
         StartCoroutine(endExpeditionWater(mortAquaman, WaterScore));
     }
@@ -188,7 +198,7 @@ public class ExpeditionLoot : MonoBehaviour
         yield return new WaitForSeconds(expeditionTime);
         if (mort)
         {
-            int numberOfDeath = Random.Range(1, ChangeColorBucheron.ButtonOfHumanInExpedition.Count);
+            int numberOfDeath = Random.Range(1, ChangeColorAquaman.ButtonOfHumanInExpedition.Count);
             if (numberOfDeath > 0)
             {
                 for (int i = 0; i < numberOfDeath; i++)
