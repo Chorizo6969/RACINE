@@ -69,6 +69,10 @@ public class RessourceManager : MonoBehaviour
     /// </summary>
     [SerializeField] private GameObject _errorText;
 
+    public Animator _animatorRessource;
+    public Animator _animatorRessource2;
+    public Animator _animatorRessource3;
+
     public static RessourceManager Instance;
 
     
@@ -143,6 +147,7 @@ public class RessourceManager : MonoBehaviour
                 _wood = 0;
             }
 
+            _animatorRessource.SetTrigger("Wood");
             GameObject newWoodText = Instantiate(AddingScoreText);
             newWoodText.name = "wood";
             newWoodText.transform.SetParent(_panelParent.transform, true);
@@ -210,7 +215,7 @@ public class RessourceManager : MonoBehaviour
             {
                 _water = 0;
             }
-
+            _animatorRessource3.SetTrigger("Water");
             GameObject newWaterText = Instantiate(AddingScoreText);
             newWaterText.name = "water";
             newWaterText.transform.SetParent(_panelParent.transform, true);
@@ -279,6 +284,7 @@ public class RessourceManager : MonoBehaviour
                 _stone = 0;
             }
 
+            _animatorRessource2.SetTrigger("Stone");
             GameObject newStoneText = Instantiate(AddingScoreText);
             newStoneText.name = "water";
             newStoneText.transform.SetParent(_panelParent.transform, true);
@@ -362,6 +368,7 @@ public class RessourceManager : MonoBehaviour
     IEnumerator WoodAttend(float _time)
     {
         yield return new WaitForSeconds(_time);
+        _animatorRessource.SetTrigger("Wood2");
         _woodText.text = _wood.ToString() + "/" + _maxWood.ToString();
         if (StockBatListManager.instance != null )
         {
@@ -375,6 +382,7 @@ public class RessourceManager : MonoBehaviour
     IEnumerator WaterAttend(float _time)
     {
         yield return new WaitForSeconds(_time);
+        _animatorRessource3.SetTrigger("Water2");
         _waterText.text = _water.ToString() + "/" + _maxWater.ToString();
         if (StockBatListManager.instance != null)
         {
@@ -388,6 +396,7 @@ public class RessourceManager : MonoBehaviour
     IEnumerator StoneAttend(float _time)
     {
         yield return new WaitForSeconds(_time);
+        _animatorRessource2.SetTrigger("Stone2");
         _stoneText.text = _stone.ToString() + "/" + _maxStone.ToString();
         if (StockBatListManager.instance != null)
         {
