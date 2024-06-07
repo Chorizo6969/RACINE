@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 using UnityEngine.UI;
 
 public class LockIntro : MonoBehaviour
@@ -15,6 +16,7 @@ public class LockIntro : MonoBehaviour
     public GameObject Racine;
 
     public static LockIntro instance;
+    public TextMeshProUGUI textAquaman;
 
     public void Awake()
     {
@@ -40,5 +42,7 @@ public class LockIntro : MonoBehaviour
         {
             obj.interactable = true;
         }
+        textAquaman.text = "1 bois 3 eau".ToString();
+        textAquaman.color = Color.black;
     }
 }

@@ -40,6 +40,13 @@ public class AchatSeed : MonoBehaviour
     [SerializeField]
     private GameObject Racine3;
 
+    [SerializeField]
+    private GameObject HerbeMineur;
+    [SerializeField]
+    private GameObject Mineur;
+    [SerializeField]
+    private TextMeshProUGUI textMineur;
+
     public List<GameObject> ListeButtonLvl2;
     public List<GameObject> ListePanelLockLvl2;
     public List<GameObject> ListeButtonLvl3;
@@ -49,6 +56,8 @@ public class AchatSeed : MonoBehaviour
 
     public void Start()
     {
+        Mineur.SetActive(false);
+        HerbeMineur.SetActive(false);
         Racine1.SetActive(true);
         Racine2.SetActive(false);
         Racine3.SetActive(false);
@@ -99,6 +108,10 @@ public class AchatSeed : MonoBehaviour
                 {
                     obj.SetActive(false);
                 }
+                Mineur.SetActive(true);
+                HerbeMineur.SetActive(true);
+                textMineur.text = "1 pierre 3 bois".ToString();
+                textMineur.color = Color.black;
             }
         }
         else if (index == 2)
