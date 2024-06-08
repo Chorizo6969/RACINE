@@ -22,6 +22,7 @@ public class Grow : MonoBehaviour
     {
         GetComponent<Animator>().SetTrigger("IsPlanted");
         StartCoroutine(ATTEND());
+        VFX.GetComponent<VisualEffect>().Stop();
     }
 
     IEnumerator ATTEND()

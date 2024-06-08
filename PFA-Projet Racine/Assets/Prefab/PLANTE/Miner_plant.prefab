@@ -336,7 +336,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <_growSpeed>k__BackingField: 0.3333333
   _maxHighGrow: 0
-  VFX: {fileID: 0}
+  VFX: {fileID: 1447931807605721832}
 --- !u!114 &3245670061409825682
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -52,6 +52,11 @@ public class IA : MonoBehaviour
 
     public bool IsEnExpedition;
 
+    public GameObject ImageHEH;
+    public GameObject ImageHUH;
+    public AnimationClip HUHAnim;
+    public AnimationClip HEHAnim;
+
     private void Start()
     {
         _agent = GetComponent<NavMeshAgent>();
@@ -81,6 +86,7 @@ public class IA : MonoBehaviour
     {
         _agent.speed = 3;
         StopCoroutine(GetComponent<NewRandomPos>().AutorizeMove());
+        ImageHEH.GetComponent<Animator>().SetBool("Ordre", true);
         GetComponent<NewRandomPos>().SetDestinationToGo(_currentTarget.transform.position);
         _animator.SetBool("Job", true);
 
@@ -111,7 +117,8 @@ public class IA : MonoBehaviour
 
     IEnumerator ATTEND()
     {
-        yield return new WaitForSeconds(0.001f);
+        yield return new WaitForSeconds(1f);
+        ImageHEH.GetComponent<Animator>().SetBool("Ordre", false);
         //StartCoroutine(GetComponent<RandomBonhommePlant>().AutorizeMove());
     }
 }

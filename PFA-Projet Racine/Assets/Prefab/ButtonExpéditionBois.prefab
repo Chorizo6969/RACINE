@@ -164,7 +164,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c04289a9dc6dd3469855169cb452120, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  List: {fileID: 0}
   "exp\xE9dition": {fileID: 4061142285661727904}
+  ButtonOfHumanInExpedition: []
+  HumanInExpedition: []
 --- !u!1 &4236265168003619380
 GameObject:
   m_ObjectHideFlags: 0
