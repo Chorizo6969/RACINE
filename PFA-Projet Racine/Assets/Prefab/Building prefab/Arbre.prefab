@@ -19,6 +19,7 @@ GameObject:
   - component: {fileID: 6316497875878327816}
   - component: {fileID: 5568001306523610912}
   - component: {fileID: -8249647123135983341}
+  - component: {fileID: 3889963156522833449}
   m_Layer: 0
   m_Name: Arbre
   m_TagString: building
@@ -65,6 +66,8 @@ MonoBehaviour:
   woodDestroyCost: 0
   stoneDestroyCost: 0
   FirstPlacement: 1
+  EZTimeBuildSystem: {fileID: 0}
+  TKTJeGere: {fileID: 0}
 --- !u!33 &3020980403963269886
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -247,6 +250,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <WoodCost>k__BackingField: 8
   <StoneCost>k__BackingField: 4
+--- !u!114 &3889963156522833449
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 197059891112798537}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d9d3f2166fdd60449c4644a303e649f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cooldown: 0
+  BuildSYstemLifeMakerAkaGod: {fileID: 0}
+  BuildingAreaKILLER: {fileID: 0}
 --- !u!1 &8408812849870623926
 GameObject:
   m_ObjectHideFlags: 0

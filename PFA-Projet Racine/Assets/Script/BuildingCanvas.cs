@@ -28,6 +28,9 @@ public class BuildingCanvas : MonoBehaviour
     private static bool _tuto = true;
     public static bool _tuto2LeRetourDuJedi = true;
 
+    public GameObject EZTimeBuildSystem;
+    public GameObject TKTJeGere;
+
     private void Awake()
     {
         normal = Building.GetComponent<MeshRenderer>().material;
@@ -95,6 +98,8 @@ public class BuildingCanvas : MonoBehaviour
                 gameObject.name = "JukeBox";
                 break;
         }
+        EZTimeBuildSystem.SetActive(false);
+        TKTJeGere.SetActive(true);
     }
 
     public void PanelSetActive(bool enabled)

@@ -19,6 +19,7 @@ GameObject:
   - component: {fileID: 87164515932376397}
   - component: {fileID: 3472436916529185656}
   - component: {fileID: -7011691329122893073}
+  - component: {fileID: 4258568780125554286}
   m_Layer: 0
   m_Name: Alumette
   m_TagString: building
@@ -65,6 +66,8 @@ MonoBehaviour:
   woodDestroyCost: 0
   stoneDestroyCost: 0
   FirstPlacement: 1
+  EZTimeBuildSystem: {fileID: 0}
+  TKTJeGere: {fileID: 0}
 --- !u!33 &5696942113410153190
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -247,6 +250,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <WoodCost>k__BackingField: 2
   <StoneCost>k__BackingField: 0
+--- !u!114 &4258568780125554286
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5269674263738028252}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d9d3f2166fdd60449c4644a303e649f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cooldown: 0
+  BuildSYstemLifeMakerAkaGod: {fileID: 0}
+  BuildingAreaKILLER: {fileID: 0}
 --- !u!1001 &6699699909635153071
 PrefabInstance:
   m_ObjectHideFlags: 0
