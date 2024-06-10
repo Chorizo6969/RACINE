@@ -1,8 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
+using static Unity.VisualScripting.Member;
 public class DialogueTutoriel : MonoBehaviour
 {
     /// <summary>
@@ -19,6 +21,12 @@ public class DialogueTutoriel : MonoBehaviour
 
     [SerializeField]
     private Sprite _imageContent;
+
+    [SerializeField]
+    private List<AudioClip> _dialogueSong;
+
+    [SerializeField]
+    private AudioSource _audioSource;
 
     /// <summary>
     /// Liste de lignes à afficher séquentiellement.
@@ -97,6 +105,7 @@ public class DialogueTutoriel : MonoBehaviour
 
     private IEnumerator PrintNextLine()
     {
+        StartCoroutine(blabla());
         if (_printLineCoroutine != null) yield break;
 
         if (_lineIndex == -1)
@@ -110,6 +119,7 @@ public class DialogueTutoriel : MonoBehaviour
 
         if (_lineIndex >= lines.Count - 1)
         {
+            StopCoroutine(blabla());
             gameObject.SetActive(false);
             _hommePlante.gameObject.SetActive(false);
             _isfinish = true;
@@ -135,6 +145,14 @@ public class DialogueTutoriel : MonoBehaviour
         }
 
         _printLineCoroutine = null;
+    }
+
+    IEnumerator blabla()
+    {
+        _audioSource.Stop();
+        yield return new WaitForSeconds(0.1f);
+        int randomSong = Random.Range(0, _dialogueSong.Count);
+        _audioSource.PlayOneShot(_dialogueSong[randomSong]);
     }
 
     private void StopPrintAndShowAll()
