@@ -50,6 +50,9 @@ public class BuildingCanvas : MonoBehaviour
 
             EZTimeBuildSystem.SetActive(false);
             TKTJeGere.SetActive(true);
+
+            //C'EST ICI MATÉO 
+            //ps : J'TE BOUFFE LE CUL MATÉOOOOOOOOOOOOOO signé : Yael
         }
 
         switch (id)

@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using TMPro;
 using UnityEditor.Rendering;
 using UnityEngine;
 
@@ -29,6 +30,9 @@ public class GivePlant : MonoBehaviour
 
     [SerializeField] private GameObject _content;
 
+    [SerializeField] private TextMeshProUGUI _grainesMarchand;
+    [SerializeField] private Setgraines _setgraines;
+
     public int _nombreGraines;
 
     /// <summary>
@@ -43,6 +47,7 @@ public class GivePlant : MonoBehaviour
             GiveRefToField.instance.GiveRefPasTuple(_clickFieldManager.gameObject, _humanPlantPrefab, _buttonExpeditionPrefabBuche, _buttonExpeditionPrefabAquaman, _buttonExpeditionPrefabMineur, _content);
             _modifcursor.ChangeCursor(_seedTexture);
             _nombreGraines --;
+            _setgraines.DeleteGraines(_grainesMarchand);
         }
         else
         {
