@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class BuildingCanvas : MonoBehaviour
@@ -30,6 +31,7 @@ public class BuildingCanvas : MonoBehaviour
 
     public GameObject EZTimeBuildSystem;
     public GameObject TKTJeGere;
+    public GameObject Canvas;
 
     private void Awake()
     {
@@ -50,6 +52,7 @@ public class BuildingCanvas : MonoBehaviour
 
             EZTimeBuildSystem.SetActive(false);
             TKTJeGere.SetActive(true);
+            Canvas.SetActive(true);
         }
 
         switch (id)
