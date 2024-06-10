@@ -211,7 +211,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: UnityEngine.Color, UnityEngine.CoreModule, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
-      m_SerializableObject: '{"r":0.8537420034408569,"g":2.037313938140869,"b":0.7015278935432434,"a":0.0}'
+      m_SerializableObject: '{"r":1.520958423614502,"g":2.4120523929595949,"b":1.3994455337524415,"a":0.0}'
     min: -Infinity
     max: Infinity
     enumValues: []
@@ -1070,7 +1070,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: UnityEngine.Gradient, UnityEngine.CoreModule, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
-      m_SerializableObject: '{"colorKeys":[{"color":{"r":0.3148934245109558,"g":0.5283018946647644,"b":0.17693130671977998,"a":1.0},"time":0.0},{"color":{"r":0.31398874521255495,"g":0.5271153450012207,"b":0.17788846790790559,"a":1.0},"time":1.0}],"alphaKeys":[{"alpha":0.0,"time":0.0},{"alpha":1.0,"time":0.08824292570352555},{"alpha":1.0,"time":0.8941176533699036},{"alpha":0.0,"time":1.0}],"gradientMode":0}'
+      m_SerializableObject: '{"colorKeys":[{"color":{"r":0.3148934245109558,"g":0.5283018946647644,"b":0.17693130671977998,"a":1.0},"time":0.0},{"color":{"r":0.31398874521255495,"g":0.5271153450012207,"b":0.17788846790790559,"a":1.0},"time":1.0}],"alphaKeys":[{"alpha":0.0,"time":0.0},{"alpha":0.5882353186607361,"time":0.23529411852359773},{"alpha":0.5882353186607361,"time":0.7264667749404907},{"alpha":0.0,"time":1.0}],"gradientMode":0}'
     m_Space: 2147483647
   m_Property:
     name: Color
@@ -1565,7 +1565,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: UnityEngine.Color, UnityEngine.CoreModule, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
-      m_SerializableObject: '{"r":0.8537420034408569,"g":2.037313938140869,"b":0.7015278935432434,"a":0.0}'
+      m_SerializableObject: '{"r":1.520958423614502,"g":2.4120523929595949,"b":1.3994455337524415,"a":0.0}'
     m_Space: 2147483647
   m_Property:
     name: o
@@ -3291,7 +3291,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: UnityEngine.Gradient, UnityEngine.CoreModule, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
-      m_SerializableObject: '{"colorKeys":[{"color":{"r":0.10159622877836228,"g":0.20589879155158997,"b":0.03399272263050079,"a":1.0},"time":0.0},{"color":{"r":0.24188238382339478,"g":0.5,"b":0.07311320304870606,"a":1.0},"time":1.0}],"alphaKeys":[{"alpha":0.0,"time":0.0},{"alpha":1.0,"time":0.1588311642408371},{"alpha":1.0,"time":0.7882353067398071},{"alpha":0.0,"time":1.0}],"gradientMode":0}'
+      m_SerializableObject: '{"colorKeys":[{"color":{"r":0.10159622877836228,"g":0.20589879155158997,"b":0.03399272263050079,"a":1.0},"time":0.0},{"color":{"r":0.24188238382339478,"g":0.5,"b":0.07311320304870606,"a":1.0},"time":1.0}],"alphaKeys":[{"alpha":0.0,"time":0.0},{"alpha":0.5882353186607361,"time":0.21765469014644624},{"alpha":0.5882353186607361,"time":0.7882353067398071},{"alpha":0.0,"time":1.0}],"gradientMode":0}'
     m_Space: 2147483647
   m_Property:
     name: Color
@@ -9162,7 +9162,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: UnityEngine.Gradient, UnityEngine.CoreModule, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
-      m_SerializableObject: '{"colorKeys":[{"color":{"r":0.17788846790790559,"g":0.36625269055366518,"b":0.05612849444150925,"a":1.0},"time":0.0},{"color":{"r":0.17464745044708253,"g":0.3564002513885498,"b":0.054480280727148059,"a":1.0},"time":1.0}],"alphaKeys":[{"alpha":0.0,"time":0.0},{"alpha":1.0,"time":0.1588311642408371},{"alpha":1.0,"time":0.7882353067398071},{"alpha":0.0,"time":1.0}],"gradientMode":0}'
+      m_SerializableObject: '{"colorKeys":[{"color":{"r":0.17788846790790559,"g":0.36625269055366518,"b":0.05612849444150925,"a":1.0},"time":0.0},{"color":{"r":0.17464745044708253,"g":0.3564002513885498,"b":0.054480280727148059,"a":1.0},"time":1.0}],"alphaKeys":[{"alpha":0.0,"time":0.0},{"alpha":0.5882353186607361,"time":0.2882429361343384},{"alpha":0.5882353186607361,"time":0.7411764860153198},{"alpha":0.0,"time":1.0}],"gradientMode":0}'
     m_Space: 2147483647
   m_Property:
     name: Color
