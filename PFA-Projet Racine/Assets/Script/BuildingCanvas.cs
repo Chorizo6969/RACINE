@@ -38,15 +38,19 @@ public class BuildingCanvas : MonoBehaviour
     }
     public void DropBuilding()
     {
-        if (id == 0)
+        if (FirstPlacement)
         {
-            IncrementHuman.instance.EditMaxHuman(5);
+            if (id == 0)
+            {
+                IncrementHuman.instance.EditMaxHuman(5);
+            }
+            MaxBatPlacable.Instance.IncreaseActuBat(1, id);
+
+            GetComponent<BuildingCost>().BuyBuilding();
+
+            EZTimeBuildSystem.SetActive(false);
+            TKTJeGere.SetActive(true);
         }
-        MaxBatPlacable.Instance.IncreaseActuBat(1, id);
-
-        GetComponent<BuildingCost>().BuyBuilding();
-
-        FirstPlacement = false;
 
         switch (id)
         {
@@ -98,8 +102,9 @@ public class BuildingCanvas : MonoBehaviour
                 gameObject.name = "JukeBox";
                 break;
         }
-        EZTimeBuildSystem.SetActive(false);
-        TKTJeGere.SetActive(true);
+
+
+        FirstPlacement = false;
     }
 
     public void PanelSetActive(bool enabled)
