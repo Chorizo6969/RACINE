@@ -17,9 +17,10 @@ public class PTNCOMMENTJLEEZLESYSTEMDEBUILD : MonoBehaviour
         Destroy(BuildingAreaKILLER, cooldown);
         Destroy(Canvas, cooldown);
         AAAAAH.GetComponent<Fill>().FillSpeed = 1f / cooldown;
-        Debug.Log(cooldown);
-        Debug.Log(1/cooldown);
-        Debug.Log(AAAAAH.GetComponent<Fill>().FillSpeed);
+        AAAAAH.GetComponent<Fill>().FillSpeed += AAAAAH.GetComponent<Fill>().FillSpeed * 10 / 100;
+        /*Debug.Log(cooldown);
+        Debug.Log(1 / cooldown);
+        Debug.Log(AAAAAH.GetComponent<Fill>().FillSpeed);*/
     }
 
     IEnumerator JugementDernier()

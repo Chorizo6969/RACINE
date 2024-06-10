@@ -407,6 +407,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ProgressWheel
       objectReference: {fileID: 0}
+    - target: {fileID: 7773939748314107218, guid: f27da1454f004b6449b501ed4a45a1be, type: 3}
+      propertyPath: m_FillAmount
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
