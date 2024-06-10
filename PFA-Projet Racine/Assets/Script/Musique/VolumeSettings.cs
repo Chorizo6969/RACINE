@@ -9,6 +9,8 @@ public class VolumeSettings : MonoBehaviour
     [SerializeField]
     private Slider SFXSlider;
     [SerializeField]
+    private Slider GeneralSlider;
+    [SerializeField]
     private AudioMixer myMixer;
 
     private void Start()
@@ -21,7 +23,15 @@ public class VolumeSettings : MonoBehaviour
         {
             SetMusicVolume();
             SetSFXVolume();
+            SetGlobaleVolume();
         }
+    }
+
+    public void SetGlobaleVolume()
+    {
+        float volume = GeneralSlider.value;
+        myMixer.SetFloat("Master", Mathf.Log10(volume) * 20);
+        PlayerPrefs.SetFloat("MasterVolume", volume);
     }
 
     public void SetMusicVolume()
@@ -42,7 +52,9 @@ public class VolumeSettings : MonoBehaviour
     {
         musicSlider.value = PlayerPrefs.GetFloat("musiqueVolume");
         SFXSlider.value = PlayerPrefs.GetFloat("musiqueSFX");
+        GeneralSlider.value = PlayerPrefs.GetFloat("MasterVolume");
         SetMusicVolume();
         SetSFXVolume();
+        SetGlobaleVolume();
     }
 }
