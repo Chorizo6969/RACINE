@@ -1102,6 +1102,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 431650e7c3627b5478a5dcf8b7073242, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _survole: {fileID: 8300000, guid: f9db4266906ce4349b2a084e38024673, type: 3}
+  _AudioSource: {fileID: 878880092}
 --- !u!111 &55280519
 Animation:
   m_ObjectHideFlags: 0
@@ -14062,6 +14064,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 431650e7c3627b5478a5dcf8b7073242, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _survole: {fileID: 8300000, guid: f9db4266906ce4349b2a084e38024673, type: 3}
+  _AudioSource: {fileID: 878880092}
 --- !u!111 &568834637
 Animation:
   m_ObjectHideFlags: 0
@@ -14280,6 +14284,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 431650e7c3627b5478a5dcf8b7073242, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _survole: {fileID: 8300000, guid: f9db4266906ce4349b2a084e38024673, type: 3}
+  _AudioSource: {fileID: 878880092}
 --- !u!114 &584660259
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18300,7 +18306,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 115895975c21a964a982e847ad8275c9, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.7
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -24988,6 +24994,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 431650e7c3627b5478a5dcf8b7073242, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _survole: {fileID: 8300000, guid: f9db4266906ce4349b2a084e38024673, type: 3}
+  _AudioSource: {fileID: 878880092}
 --- !u!111 &1066926679
 Animation:
   m_ObjectHideFlags: 0
@@ -25657,6 +25665,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 431650e7c3627b5478a5dcf8b7073242, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _survole: {fileID: 8300000, guid: f9db4266906ce4349b2a084e38024673, type: 3}
+  _AudioSource: {fileID: 878880092}
 --- !u!114 &1088509198
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -33200,6 +33210,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 431650e7c3627b5478a5dcf8b7073242, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _survole: {fileID: 8300000, guid: f9db4266906ce4349b2a084e38024673, type: 3}
+  _AudioSource: {fileID: 878880092}
 --- !u!111 &1222407528
 Animation:
   m_ObjectHideFlags: 0
