@@ -7,6 +7,7 @@ public class BuildOptionPanel : MonoBehaviour
 {
     public GameObject PANELRACINE;
     public GameObject PANEL;
+    public GameObject PANEL2MUSIC;
 
     public void OnLeftClick(InputAction.CallbackContext callbackContext)
     {
@@ -23,11 +24,16 @@ public class BuildOptionPanel : MonoBehaviour
                 }
                 else if (hitInfo.collider.CompareTag("building"))
                 {
-                    if (hitInfo.collider.GetComponentInParent<BuildingCanvas>().placeOrNot)
+                    Debug.Log(hitInfo.collider.gameObject.name);
+                    if (hitInfo.collider.GetComponentInParent<BuildingCanvas>().gameObject.name == "JukeBox")
+                    {
+                        PANEL2MUSIC.SetActive(true);
+                        PANEL2MUSIC.GetComponent<ClickInfo>().lastBat = hitInfo.collider.GetComponentInParent<BuildingCanvas>().gameObject;
+                    }
+                    else if (hitInfo.collider.GetComponentInParent<BuildingCanvas>().placeOrNot)
                     {
                         PANEL.SetActive(true);
                         PANEL.GetComponent<ClickInfo>().lastBat = hitInfo.collider.GetComponentInParent<BuildingCanvas>().gameObject;
-                        
                     }
                 }
             }
