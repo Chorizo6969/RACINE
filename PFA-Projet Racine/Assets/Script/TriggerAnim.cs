@@ -7,7 +7,6 @@ public class TriggerAnim : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        //Debug.Log("qergeqr");
         if (other.gameObject.layer == 8)
         {
             _plongeon = other.GetComponentInChildren<Animator>();
@@ -19,7 +18,7 @@ public class TriggerAnim : MonoBehaviour
 
     IEnumerator Delay()
     {
-        yield return new WaitForSeconds(50);
+        yield return new WaitForSeconds(60);
         _plongeon.SetBool("Plonge", false);
         _plongeon.SetBool("Job", true);
     }
