@@ -6,6 +6,7 @@ public class ChangeMusic : MonoBehaviour
 {
     public AudioClip music;
     public AudioSource audioSource;
+
     public void OnClick()
     {
         audioSource.clip = music;
