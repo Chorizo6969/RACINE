@@ -7,7 +7,7 @@ public class ChangeColor : MonoBehaviour
 {
     [SerializeField]
     private int id = 0;
-
+    public GameObject imagevalidate;
     public Listexpedition List;
     public Expédition expédition;
     public List<GameObject> ButtonOfHumanInExpedition;
@@ -20,22 +20,14 @@ public class ChangeColor : MonoBehaviour
     {
         if (index == 0)
         {
-            Image button_image = GetComponent<Image>();
-            button_image.color = Color.red;
+            imagevalidate.SetActive(true);
             index++;
         }
         else if (index == 1)
         {
-            Image button_image = GetComponent<Image>();
-            button_image.color = Color.white;
+            imagevalidate.SetActive(false);
             index = 0;
         }
-    }
-
-    public void Désactive() // il faut qu'il change le prefab ptn
-    {
-        Image button_image = GetComponent<Image>();
-        button_image.color = Color.white;
     }
 
     public void Work()
