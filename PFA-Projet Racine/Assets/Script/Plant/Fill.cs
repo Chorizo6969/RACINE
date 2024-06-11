@@ -21,10 +21,11 @@ public class Fill : MonoBehaviour
     /// </summary>
     [field : SerializeField] public bool IsFillAmountFull { get; private set; }
 
+    public GameObject BWARG;
+
     private void OnEnable()
     {
         _imageSprite.fillAmount = 0;
-        Debug.Log(_imageSprite.fillAmount);
     }
 
     // Update is called once per frame
@@ -34,6 +35,10 @@ public class Fill : MonoBehaviour
         if (_imageSprite.fillAmount == 1)
         {
             IsFillAmountFull = true;
+            if (BWARG != null)
+            {
+                BWARG.GetComponent<PTNCOMMENTJLEEZLESYSTEMDEBUILD>().JugementDernier();
+            }
         }
         else
         {
@@ -41,10 +46,5 @@ public class Fill : MonoBehaviour
         }
 
         //Debug.Log(_imageSprite.fillAmount);
-    }
-
-    private void OnDestroy()
-    {
-        Debug.Log(_imageSprite.fillAmount);
     }
 }
