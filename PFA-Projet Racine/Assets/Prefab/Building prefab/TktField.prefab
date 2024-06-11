@@ -200,6 +200,7 @@ Transform:
   m_Children:
   - {fileID: 1727910873427081482}
   - {fileID: 5221336163884180912}
+  - {fileID: 5666146969240049681}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &-8158229954921943655
@@ -227,6 +228,7 @@ MonoBehaviour:
   FirstPlacement: 1
   EZTimeBuildSystem: {fileID: 9193198435712200185}
   TKTJeGere: {fileID: 4431227071251895222}
+  Canvas: {fileID: 852653124907554685}
 --- !u!33 &3959927818557254227
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -338,9 +340,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d9d3f2166fdd60449c4644a303e649f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cooldown: 20
+  cooldown: 10
   BuildSYstemLifeMakerAkaGod: {fileID: 9193198435712200185}
   BuildingAreaKILLER: {fileID: 4431227071251895222}
+  Canvas: {fileID: 852653124907554685}
+  AAAAAH: {fileID: 2119000046311544913}
 --- !u!1 &4908711219762673393
 GameObject:
   m_ObjectHideFlags: 0
@@ -368,17 +372,17 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4908711219762673393}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0.08165324}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 10, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5972643160456479174}
   - {fileID: 8031026963486625318}
-  m_Father: {fileID: 1727910873427081482}
+  m_Father: {fileID: 7912815107105801176}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 542.2392, y: 304.50952}
+  m_AnchoredPosition: {x: 544, y: 3059.999}
   m_SizeDelta: {x: 1088, y: 612}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &6908965352413658194
@@ -589,7 +593,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6477131982401752579}
-  - {fileID: 5666146969240049681}
   - {fileID: 5025553021026236198}
   m_Father: {fileID: 7912815107105801176}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -934,7 +937,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1568089756639197186, guid: f27da1454f004b6449b501ed4a45a1be, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -304.7378
+      value: -302.1647
       objectReference: {fileID: 0}
     - target: {fileID: 1568089756639197186, guid: f27da1454f004b6449b501ed4a45a1be, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -952,9 +955,17 @@ PrefabInstance:
       propertyPath: _imageSprite
       value: 
       objectReference: {fileID: 3225557132657685654}
+    - target: {fileID: 2158498825000085229, guid: f27da1454f004b6449b501ed4a45a1be, type: 3}
+      propertyPath: <FillSpeed>k__BackingField
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 5545291666270285497, guid: f27da1454f004b6449b501ed4a45a1be, type: 3}
       propertyPath: m_Name
       value: ProgressWheel
+      objectReference: {fileID: 0}
+    - target: {fileID: 5545291666270285497, guid: f27da1454f004b6449b501ed4a45a1be, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -966,12 +977,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 5545291666270285497, guid: f27da1454f004b6449b501ed4a45a1be, type: 3}
   m_PrefabInstance: {fileID: 5125639655039220164}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2119000046311544913 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6505974458055598485, guid: f27da1454f004b6449b501ed4a45a1be, type: 3}
+  m_PrefabInstance: {fileID: 5125639655039220164}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &3225557132657685654 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7773939748314107218, guid: f27da1454f004b6449b501ed4a45a1be, type: 3}
   m_PrefabInstance: {fileID: 5125639655039220164}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 2119000046311544913}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
