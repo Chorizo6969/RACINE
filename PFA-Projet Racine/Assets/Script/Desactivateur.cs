@@ -10,7 +10,7 @@ public class Desactivateur : MonoBehaviour
 
     IEnumerator Delay()
     {
-        yield return new WaitForSeconds(0.9f);
+        yield return new WaitForSeconds(2f);
         gameObject.SetActive(false);
     }
 }
