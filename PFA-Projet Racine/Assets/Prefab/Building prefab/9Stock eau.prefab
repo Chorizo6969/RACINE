@@ -415,6 +415,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2158498825000085229, guid: f27da1454f004b6449b501ed4a45a1be, type: 3}
+      propertyPath: BWARG
+      value: 
+      objectReference: {fileID: 2673577714733791471}
+    - target: {fileID: 2158498825000085229, guid: f27da1454f004b6449b501ed4a45a1be, type: 3}
       propertyPath: _imageSprite
       value: 
       objectReference: {fileID: 6930750144912922476}

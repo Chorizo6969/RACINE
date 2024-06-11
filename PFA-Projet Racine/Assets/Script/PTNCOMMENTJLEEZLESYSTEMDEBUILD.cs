@@ -12,20 +12,14 @@ public class PTNCOMMENTJLEEZLESYSTEMDEBUILD : MonoBehaviour
 
     // Start is called before the first frame update
     void Start()
-    {
-        StartCoroutine(JugementDernier());
-        Destroy(BuildingAreaKILLER, cooldown);
-        Destroy(Canvas, cooldown);
+    { 
         AAAAAH.GetComponent<Fill>().FillSpeed = 1f / cooldown;
-        AAAAAH.GetComponent<Fill>().FillSpeed += AAAAAH.GetComponent<Fill>().FillSpeed * 10 / 100;
-        /*Debug.Log(cooldown);
-        Debug.Log(1 / cooldown);
-        Debug.Log(AAAAAH.GetComponent<Fill>().FillSpeed);*/
     }
 
-    IEnumerator JugementDernier()
+    public void JugementDernier()
     {
-        yield return new WaitForSeconds(cooldown);
         BuildSYstemLifeMakerAkaGod.SetActive(true);
+        Destroy(BuildingAreaKILLER);
+        Destroy(Canvas);
     }
 }

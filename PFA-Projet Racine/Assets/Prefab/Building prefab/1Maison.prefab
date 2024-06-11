@@ -396,6 +396,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2158498825000085229, guid: f27da1454f004b6449b501ed4a45a1be, type: 3}
+      propertyPath: BWARG
+      value: 
+      objectReference: {fileID: 1293946590759701267}
+    - target: {fileID: 2158498825000085229, guid: f27da1454f004b6449b501ed4a45a1be, type: 3}
       propertyPath: _imageSprite
       value: 
       objectReference: {fileID: 7080623999332799102}
@@ -518,10 +522,10 @@ PrefabInstance:
       addedObject: {fileID: 8463215188617079038}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 078e590760b605746bce021a587cf100, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 2860203305464759982}
+      addedObject: {fileID: 931818971891177009}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 078e590760b605746bce021a587cf100, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 931818971891177009}
+      addedObject: {fileID: 2860203305464759982}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 078e590760b605746bce021a587cf100, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2503716032697170597}
@@ -559,6 +563,27 @@ MonoBehaviour:
   ColliderBoxPosition1: {x: 0, y: 0, z: 0}
   ColliderBoxSize2: {x: 0, y: 0, z: 0}
   ColliderBoxPosition2: {x: 0, y: 0, z: 0}
+--- !u!114 &931818971891177009
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3039668340332178538}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e7d1de544b56e646a3d060277e1793f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  IsInGround: 0
+  _allowedTag: tile
+  _prohibedTags:
+  - Water
+  - building
+  - forest
+  - field
+  - RACINE
+  _hitColliders: []
 --- !u!54 &2860203305464759982
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -586,27 +611,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 1
---- !u!114 &931818971891177009
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3039668340332178538}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9e7d1de544b56e646a3d060277e1793f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  IsInGround: 0
-  _allowedTag: tile
-  _prohibedTags:
-  - Water
-  - building
-  - forest
-  - field
-  - RACINE
-  _hitColliders: []
 --- !u!208 &2503716032697170597
 NavMeshObstacle:
   m_ObjectHideFlags: 0

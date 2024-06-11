@@ -19,7 +19,7 @@ public class ControlCamera : MonoBehaviour
     /// <summary>
     /// Stock les mouvements de la souris
     /// </summary>
-    private Vector2 mouseDelta;
+    public Vector2 mouseDelta;
 
     /// <summary>
     /// Vitesse de déplacement de la caméra
@@ -148,6 +148,7 @@ public class ControlCamera : MonoBehaviour
 
                 // Appliquer le mouvement à la position de la caméra
                 GOParentTransform.Translate(new Vector3(mouseDelta.x, 0, mouseDelta.y));
+                
                 // Réinitialiser le mouvement de la souris pour le frame suivant
                 mouseDelta = Vector2.zero;
             }
