@@ -5,11 +5,16 @@ using UnityEngine.UI;
 
 public class ChangeColor : MonoBehaviour
 {
-    private int index = 0;
+    [SerializeField]
+    private int id = 0;
+
     public Listexpedition List;
     public Expédition expédition;
     public List<GameObject> ButtonOfHumanInExpedition;
     public List<GameObject> HumanInExpedition;
+
+    private int index = 0;
+    public bool youCanWork;
 
     public void Change()
     {
@@ -41,10 +46,28 @@ public class ChangeColor : MonoBehaviour
         {
             if (obj.GetComponent<ChangeColor>().index == 1)
             {
+                Debug.Log("1");
                 ButtonOfHumanInExpedition.Add(obj);
                 HumanInExpedition.Add(obj.GetComponent<Expédition>().Ia);
                 obj.GetComponent<Expédition>().Ia.GetComponent<IA>().GiveTarget();
+                youCanWork = true;
             }
+        }
+        if (youCanWork && id == 1)
+        {
+            ExpeditionLoot.instance.WorkingWood();
+        }
+        else if (youCanWork && id == 2)
+        {
+            ExpeditionLoot.instance.WorkingStone();
+        }
+        else if (youCanWork && id == 3)
+        {
+            ExpeditionLoot.instance.WorkingWater();
+        }
+        else
+        {
+            Debug.Log("0 humain plante connard");
         }
     }
 }

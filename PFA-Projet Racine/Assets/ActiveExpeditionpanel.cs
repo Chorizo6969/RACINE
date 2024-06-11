@@ -5,16 +5,17 @@ public class ActiveExpeditionpanel : MonoBehaviour
 {
     [SerializeField]
     private GameObject panel;
+    [SerializeField]
+    private ChangeColor changecolor;
     private bool _iswaiting;
+
 
     public void DesactivationPanel()
     {
-        if (Jkh.Instance.BOOLISTEBATIMENTPANEL)
+        Debug.Log(changecolor.youCanWork);
+        if (!_iswaiting && changecolor.youCanWork)
         {
             panel.SetActive(true);
-        }
-        if (!_iswaiting)
-        {
             StartCoroutine(Delay());
             _iswaiting = true;
         }
