@@ -24,6 +24,7 @@ public class Fill : MonoBehaviour
     private void OnEnable()
     {
         _imageSprite.fillAmount = 0;
+        Debug.Log(_imageSprite.fillAmount);
     }
 
     // Update is called once per frame
@@ -38,5 +39,12 @@ public class Fill : MonoBehaviour
         {
             IsFillAmountFull = false;
         }
+
+        //Debug.Log(_imageSprite.fillAmount);
+    }
+
+    private void OnDestroy()
+    {
+        Debug.Log(_imageSprite.fillAmount);
     }
 }
