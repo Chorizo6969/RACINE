@@ -91,8 +91,7 @@ public class DialogueTutoriel : MonoBehaviour
         // espace est appuyée. Donc on s'arrête là si elle ne l'est pas.
 
         // Si vous utilisez l'ancien système d'input de Unity :
-        if (!Input.GetKeyDown(KeyCode.Space)) return;
-
+        if (!Input.GetKeyDown(KeyCode.Space) && !Input.GetKeyDown(KeyCode.Mouse0)) return;
         if (_printLineCoroutine != null)
         {
             StopPrintAndShowAll();
