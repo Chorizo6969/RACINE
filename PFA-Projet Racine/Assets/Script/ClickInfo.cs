@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using Unity.VisualScripting;
-using UnityEngine.UIElements;
+using UnityEngine.UI;
 
 public class ClickInfo : MonoBehaviour
 {
@@ -42,7 +42,7 @@ public class ClickInfo : MonoBehaviour
     public void OnClickInfo()
     {
         BuildingCanvas lastBatBuildingCanvas = lastBat.GetComponent<BuildingCanvas>();
-        imageBat.GetComponent<Image>().image = lastBatBuildingCanvas.imageBat;
+        imageBat.GetComponent<Image>().sprite = lastBatBuildingCanvas.imageBat;
         panelInfoNomBat.text = lastBatBuildingCanvas.NomBat;
         panelDescriptionBat.text = lastBatBuildingCanvas.descriptionBat;
     }

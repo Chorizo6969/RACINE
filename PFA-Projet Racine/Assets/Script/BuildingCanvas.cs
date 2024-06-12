@@ -33,7 +33,7 @@ public class BuildingCanvas : MonoBehaviour
     public GameObject TKTJeGere;
     public GameObject Canvas;
 
-    public Texture imageBat;
+    public Sprite imageBat;
     public string NomBat;
     public string descriptionBat;
 
@@ -56,6 +56,8 @@ public class BuildingCanvas : MonoBehaviour
             EZTimeBuildSystem.SetActive(false);
             TKTJeGere.SetActive(true);
             Canvas.SetActive(true);
+
+            PlayASound.Instance.PlaySound();
 
             //C'EST ICI MATÉO 
             //ps : J'TE BOUFFE LE CUL MATÉOOOOOOOOOOOOOO signé : Yael
