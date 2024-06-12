@@ -1,7 +1,8 @@
 using System.Collections;
+using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-using UnityEngine.InputSystem;
+
 
 public class Dialoguemarchand : MonoBehaviour
 {
@@ -14,12 +15,20 @@ public class Dialoguemarchand : MonoBehaviour
     [SerializeField]
     private float TextSpeed;
 
+    [SerializeField]
+    private List<AudioClip> clips;
+
+    [SerializeField]
+    private AudioSource _source;
+
     private int index;
 
     public void StartDialogue()
     {
         text.text = string.Empty;
         index = 0;
+        //int sound = Random.Range(0, clips.Count);
+        //_source.PlayOneShot(clips[sound]);
         StartCoroutine(TypeLines());
     }
 

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.VFX;
 
 public class HumanSound : MonoBehaviour
 {
@@ -29,18 +30,21 @@ public class HumanSound : MonoBehaviour
     {
         if (human.layer == 8 && !_isPlaying)
         {
+            human.GetComponent<IA>().VFX.Play();
             int sound = Random.Range(0, _aqua.Count);
             _source.PlayOneShot(_aqua[sound]);
             StartCoroutine(AutorizeSound());
         }
         else if (human.layer == 9 && !_isPlaying)
         {
+            human.GetComponent<IA>().VFX.Play();
             int sound = Random.Range(0, _buchron.Count);
             _source.PlayOneShot(_buchron[sound]);
             StartCoroutine(AutorizeSound());
         }
         else if (human.layer == 10 && !_isPlaying)
         {
+            human.GetComponent<IA>().VFX.Play();
             int sound = Random.Range(0, _mineur.Count);
             _source.PlayOneShot(_mineur[sound]);
             StartCoroutine(AutorizeSound());
