@@ -203,7 +203,7 @@ MonoBehaviour:
   Canvas: {fileID: 666743114284259317}
   imageBat: {fileID: 21300000, guid: e0bdce5f751cf40419196775e7728405, type: 3}
   NomBat: 
-  descriptionBat: blorg
+  descriptionBat: 'Permets a 3 Bucherons d''avoir acces a leurs travail. '
 --- !u!114 &-5293121928937657418
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -231,7 +231,7 @@ MonoBehaviour:
   Canvas: {fileID: 781499677509555547}
   imageBat: {fileID: 21300000, guid: c25bf82797212b848bc16f69feeaee8c, type: 3}
   NomBat: 
-  descriptionBat: HEHEHEHA
+  descriptionBat: Vous permet de planter une pousse d'humain plante!
 --- !u!33 &3959927818557254227
 MeshFilter:
   m_ObjectHideFlags: 0

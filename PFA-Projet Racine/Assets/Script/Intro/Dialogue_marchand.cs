@@ -15,6 +15,10 @@ public class Dialoguemarchand : MonoBehaviour
     [SerializeField]
     private float TextSpeed;
 
+    [SerializeField] 
+    private GameObject panel;
+
+
     [SerializeField]
     private List<AudioClip> clips;
 
@@ -23,12 +27,20 @@ public class Dialoguemarchand : MonoBehaviour
 
     private int index;
 
+    public static Dialoguemarchand instance;
+
+
+    private void Awake()
+    {
+        instance = this;
+    }
+
     public void StartDialogue()
     {
         text.text = string.Empty;
         index = 0;
-        //int sound = Random.Range(0, clips.Count);
-        //_source.PlayOneShot(clips[sound]);
+        int sound = Random.Range(0, clips.Count);
+        _source.PlayOneShot(clips[sound]);
         StartCoroutine(TypeLines());
     }
 
@@ -41,6 +53,12 @@ public class Dialoguemarchand : MonoBehaviour
             text.text += c;
             yield return new WaitForSeconds(TextSpeed);
         }
+    }
 
+    public void Desactive()
+    {
+        Debug.Log("effacer");
+        StopCoroutine(TypeLines());
+        text.text = string.Empty;
     }
 }

@@ -100,7 +100,7 @@ MonoBehaviour:
   Canvas: {fileID: 1746414682168952747}
   imageBat: {fileID: 21300000, guid: 237187be29764844ca6ede6592024134, type: 3}
   NomBat: 
-  descriptionBat: shgfgdhngdh
+  descriptionBat: 'Permets a 4 Recolteurs d''eau d''avoir acces a leurs travail. '
 --- !u!114 &-5293121928937657418
 MonoBehaviour:
   m_ObjectHideFlags: 0

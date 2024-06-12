@@ -345,7 +345,9 @@ MonoBehaviour:
   Canvas: {fileID: 838106862392827117}
   imageBat: {fileID: 21300000, guid: 4a4cfdafd6b845a439d1d5664d89fc90, type: 3}
   NomBat: 
-  descriptionBat: CHIOOOOOOOOOTTE
+  descriptionBat: Les toilettes (nom feminin) designent un local aussi appele cabinets,
+    ou petit coin consacre a la discretion et l'intimite du moment de soulagement
+    volontaire des dejections corporelles...
 --- !u!208 &4047306504062179770
 NavMeshObstacle:
   m_ObjectHideFlags: 0

@@ -67,7 +67,7 @@ MonoBehaviour:
   Canvas: {fileID: 1829204762547695864}
   imageBat: {fileID: 21300000, guid: 44413bd584382d444b8e7640493c0945, type: 3}
   NomBat: 
-  descriptionBat: DOUBLE TRANCHANT
+  descriptionBat: Un arbre capable de jouer de laa musique.
 --- !u!114 &2765294251460937496
 MonoBehaviour:
   m_ObjectHideFlags: 0

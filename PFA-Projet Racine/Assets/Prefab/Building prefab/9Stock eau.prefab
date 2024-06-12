@@ -171,7 +171,7 @@ MonoBehaviour:
   Canvas: {fileID: 183275320281170076}
   imageBat: {fileID: 21300000, guid: 4cb5ccde3957dd7429052057ade8d34d, type: 3}
   NomBat: 
-  descriptionBat: 468974
+  descriptionBat: Augmente la capacite en Eau.
 --- !u!114 &-1768593801104769138
 MonoBehaviour:
   m_ObjectHideFlags: 0
