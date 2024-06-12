@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class BuildingCanvas : MonoBehaviour
 {
@@ -32,10 +33,13 @@ public class BuildingCanvas : MonoBehaviour
     public GameObject TKTJeGere;
     public GameObject Canvas;
 
+    public Texture imageBat;
+    public string NomBat;
+    public string descriptionBat;
+
     private void Awake()
     {
         normal = Building.GetComponent<MeshRenderer>().material;
-
     }
     public void DropBuilding()
     {
@@ -107,6 +111,7 @@ public class BuildingCanvas : MonoBehaviour
                 gameObject.name = "JukeBox";
                 break;
         }
+        NomBat = gameObject.name;
 
 
         FirstPlacement = false;

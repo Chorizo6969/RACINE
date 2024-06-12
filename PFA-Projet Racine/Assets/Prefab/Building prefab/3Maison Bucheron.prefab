@@ -201,6 +201,9 @@ MonoBehaviour:
   EZTimeBuildSystem: {fileID: 722274232644792022}
   TKTJeGere: {fileID: 9175232785377608526}
   Canvas: {fileID: 666743114284259317}
+  imageBat: {fileID: 2800000, guid: e0bdce5f751cf40419196775e7728405, type: 3}
+  NomBat: 
+  descriptionBat: 
 --- !u!114 &-5293121928937657418
 MonoBehaviour:
   m_ObjectHideFlags: 0

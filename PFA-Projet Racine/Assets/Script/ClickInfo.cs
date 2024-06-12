@@ -3,11 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using Unity.VisualScripting;
+using UnityEngine.UIElements;
 
 public class ClickInfo : MonoBehaviour
 {
     public GameObject lastBat;
     public TextMeshProUGUI textMeshPro;
+
+    public GameObject imageBat;
+    public TextMeshProUGUI panelInfoNomBat;
+    public TextMeshProUGUI panelDescriptionBat;
 
     private void OnEnable()
     {
@@ -25,7 +30,7 @@ public class ClickInfo : MonoBehaviour
 
     public void OnClickMove()
     {
-        if (lastBat.name == "4Maison Water Man(Clone)")
+        if (lastBat.name == "Maison des Plongeurs")
         {
             lastBat.GetComponentInChildren<PlaceOuPasPlace>().ChangeBoxSizeUp();
         }
@@ -36,7 +41,10 @@ public class ClickInfo : MonoBehaviour
 
     public void OnClickInfo()
     {
-        //Debug.Log("BWARG");
+        BuildingCanvas lastBatBuildingCanvas = lastBat.GetComponent<BuildingCanvas>();
+        imageBat.GetComponent<Image>().image = lastBatBuildingCanvas.imageBat;
+        panelInfoNomBat.text = lastBatBuildingCanvas.NomBat;
+        panelDescriptionBat.text = lastBatBuildingCanvas.descriptionBat;
     }
 
     IEnumerator Attend()

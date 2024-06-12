@@ -148,6 +148,7 @@ public class RessourceManager : MonoBehaviour
             }
 
             _animatorRessource.SetTrigger("Wood");
+            _animatorRessource.gameObject.GetComponentInChildren<TextMeshProUGUI>().text = "+ " + amount.ToString() + " bois";
             GameObject newWoodText = Instantiate(AddingScoreText);
             newWoodText.name = "wood";
             newWoodText.transform.SetParent(_panelParent.transform, true);
@@ -155,7 +156,7 @@ public class RessourceManager : MonoBehaviour
             newWoodText.GetComponent<TextMeshProUGUI>().color = new Color(0.7803922f, 0.5882353f, 0.3843138f);
             newWoodText.GetComponent<Count>().AddValue(amount);
 
-            StartCoroutine(WoodAttend(1));
+            StartCoroutine(WoodAttend(1, amount));
         }
         else if (amount < 0)
         {
@@ -176,7 +177,7 @@ public class RessourceManager : MonoBehaviour
             newWoodText.GetComponent<TextMeshProUGUI>().color = new Color(0.7803922f, 0.5882353f, 0.3843138f);
             newWoodText.GetComponent<Count>().AddValue(amount);
 
-            StartCoroutine(WoodAttend(1));
+            StartCoroutine(WoodAttend(1, amount));
         }
         else if (_wood == _maxWood)
         {
@@ -195,7 +196,7 @@ public class RessourceManager : MonoBehaviour
     public void AddWoodStock(int amount)
     {
         _maxWood += amount;
-        StartCoroutine(WoodAttend(0));
+        StartCoroutine(WoodAttend(0, amount));
     }
 
     /// <summary>
@@ -216,6 +217,7 @@ public class RessourceManager : MonoBehaviour
                 _water = 0;
             }
             _animatorRessource3.SetTrigger("Water");
+            _animatorRessource3.gameObject.GetComponentInChildren<TextMeshProUGUI>().text = "+ " + amount.ToString() + " eau";
             GameObject newWaterText = Instantiate(AddingScoreText);
             newWaterText.name = "water";
             newWaterText.transform.SetParent(_panelParent.transform, true);
@@ -223,7 +225,7 @@ public class RessourceManager : MonoBehaviour
             newWaterText.GetComponent<TextMeshProUGUI>().color = new Color(0.6941177f, 0.8274511f, 0.8980393f);
             newWaterText.GetComponent<Count>().AddValue(amount);
 
-            StartCoroutine(WaterAttend(1));
+            StartCoroutine(WaterAttend(1, amount));
         }
         else if (amount < 0)
         {
@@ -244,7 +246,7 @@ public class RessourceManager : MonoBehaviour
             newWaterText.GetComponent<TextMeshProUGUI>().color = new Color(0.6941177f, 0.8274511f, 0.8980393f);
             newWaterText.GetComponent<Count>().AddValue(amount);
 
-            StartCoroutine(WaterAttend(1));
+            StartCoroutine(WaterAttend(1, amount));
         }
         else if ( _water == _maxWater)
         {
@@ -263,7 +265,7 @@ public class RessourceManager : MonoBehaviour
     public void AddWaterStock(int amount)
     {
         _maxWater += amount;
-        StartCoroutine(WaterAttend(0));
+        StartCoroutine(WaterAttend(0, amount));
     }
 
     /// <summary>
@@ -285,6 +287,7 @@ public class RessourceManager : MonoBehaviour
             }
 
             _animatorRessource2.SetTrigger("Stone");
+            _animatorRessource2.gameObject.GetComponentInChildren<TextMeshProUGUI>().text = "+ " + amount.ToString() + " stone";
             GameObject newStoneText = Instantiate(AddingScoreText);
             newStoneText.name = "water";
             newStoneText.transform.SetParent(_panelParent.transform, true);
@@ -292,7 +295,7 @@ public class RessourceManager : MonoBehaviour
             newStoneText.GetComponent<TextMeshProUGUI>().color = new Color(0.7882354f, 0.7490196f, 0.7803922f);
             newStoneText.GetComponent<Count>().AddValue(amount);
 
-            StartCoroutine(StoneAttend(1));
+            StartCoroutine(StoneAttend(1, amount));
         }
         else if (amount < 0)
         {
@@ -313,7 +316,7 @@ public class RessourceManager : MonoBehaviour
             newStoneText.GetComponent<TextMeshProUGUI>().color = new Color(0.7882354f, 0.7490196f, 0.7803922f);
             newStoneText.GetComponent<Count>().AddValue(amount);
 
-            StartCoroutine(StoneAttend(1));
+            StartCoroutine(StoneAttend(1, amount));
         }
         else if (_stone == _maxStone)
         {
@@ -332,7 +335,7 @@ public class RessourceManager : MonoBehaviour
     public void AddStoneStock(int amount)
     {
         _maxStone += amount;
-        StartCoroutine(StoneAttend(0));
+        StartCoroutine(StoneAttend(0, amount));
     }
 
     /// <summary>
@@ -365,10 +368,11 @@ public class RessourceManager : MonoBehaviour
         _errorText.SetActive(false);
     }
 
-    IEnumerator WoodAttend(float _time)
+    IEnumerator WoodAttend(float _time, int quantity)
     {
         yield return new WaitForSeconds(_time);
         _animatorRessource.SetTrigger("Wood2");
+        _animatorRessource.gameObject.GetComponentInChildren<TextMeshProUGUI>().text = "+ " + quantity.ToString() + " bois";
         _woodText.text = _wood.ToString() + "/" + _maxWood.ToString();
         if (StockBatListManager.instance != null )
         {
@@ -379,10 +383,11 @@ public class RessourceManager : MonoBehaviour
         }
     }
 
-    IEnumerator WaterAttend(float _time)
+    IEnumerator WaterAttend(float _time, int quantity)
     {
         yield return new WaitForSeconds(_time);
         _animatorRessource3.SetTrigger("Water2");
+        _animatorRessource3.gameObject.GetComponentInChildren<TextMeshProUGUI>().text = "+ " + quantity.ToString() + " eau";
         _waterText.text = _water.ToString() + "/" + _maxWater.ToString();
         if (StockBatListManager.instance != null)
         {
@@ -393,10 +398,11 @@ public class RessourceManager : MonoBehaviour
         }
     }
 
-    IEnumerator StoneAttend(float _time)
+    IEnumerator StoneAttend(float _time, int quantity)
     {
         yield return new WaitForSeconds(_time);
         _animatorRessource2.SetTrigger("Stone2");
+        _animatorRessource2.gameObject.GetComponentInChildren<TextMeshProUGUI>().text = "+ " + quantity.ToString() + " stone";
         _stoneText.text = _stone.ToString() + "/" + _maxStone.ToString();
         if (StockBatListManager.instance != null)
         {

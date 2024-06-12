@@ -12,6 +12,13 @@ public class GiveBuildingToBuild : MonoBehaviour
 
     [SerializeField] private GameObject HidePointListOwner;
 
+    public GameObject _objectToGiveBuilding;
+
+    private void Start()
+    {
+        _objectToGiveBuilding = dragAndDropBuilding.instance.gameObject;
+    }
+
     public void OnClick()
     {
         /*Debug.Log(GetComponent<BuildingCost>());
@@ -19,10 +26,9 @@ public class GiveBuildingToBuild : MonoBehaviour
         Debug.Log(MaxBatPlacable.Instance);*/
 
 
-        if (/*GetComponent<BuildingCost>().PlayerRessourceManager*/ RessourceManager.Instance.CheckIfCanBuild(GetComponent<BuildingCost>().WoodCost, GetComponent<BuildingCost>().StoneCost, 0) && MaxBatPlacable.Instance.CheckIfBatIsPlacable(building.GetComponent<BuildingCanvas>().id))
+        if (/*GetComponent<BuildingCost>().PlayerRessourceManager*/ RessourceManager.Instance.CheckIfCanBuild(GetComponent<BuildingCost>().WoodCost, GetComponent<BuildingCost>().StoneCost, 0) && MaxBatPlacable.Instance.CheckIfBatIsPlacable(building.GetComponent<BuildingCanvas>().id) && _objectToGiveBuilding.GetComponent<dragAndDropBuilding>().BOUGE == null)
         {
             UIManager.Instance.ActivationUi();
-            GameObject _objectToGiveBuilding = FindAnyObjectByType<dragAndDropBuilding>().gameObject;
             GameObject newBuilding = Instantiate(building);
             _objectToGiveBuilding.GetComponent<dragAndDropBuilding>().BOUGE = newBuilding;
             _objectToGiveBuilding.GetComponent<dragAndDropBuilding>().ClickOnButtonInstancier();

@@ -66,6 +66,9 @@ MonoBehaviour:
   EZTimeBuildSystem: {fileID: 4642988116337470803}
   TKTJeGere: {fileID: 7142003636158940239}
   Canvas: {fileID: 8634618357253398342}
+  imageBat: {fileID: 2800000, guid: caf62a64a829f95469bcfa5bfeff3e33, type: 3}
+  NomBat: Maison
+  descriptionBat: dcffgftftgfgtygtcftyfk;qlkesijughfblksqieurghvkjlsqghrlkqsgvbqksirbvlkjgriueqbvskqjgerulisbkgreuibvksgreiuhbvkqlriue
 --- !u!114 &-5293121928937657418
 MonoBehaviour:
   m_ObjectHideFlags: 0

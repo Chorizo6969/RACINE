@@ -27,6 +27,9 @@ public class Jkh : MonoBehaviour
     public bool boolistePanelVerif;
     public bool BOOLISTEPANELVERIF;
 
+    public bool boolistePanelInfoJukeBox;
+    public bool BOOLISTEPANELINFOJUKEBOX;
+
     public static Jkh Instance;
 
     private void Awake()
@@ -138,9 +141,24 @@ public class Jkh : MonoBehaviour
         }
     }
 
+    public void OnClickPanelInfoJukeBox()
+    {
+        boolistePanelInfoJukeBox = true;
+        if (boolistePanelInfoJukeBox && !BOOLISTEPANELINFOJUKEBOX)
+        {
+            boolistePanelInfoJukeBox = false;
+            BOOLISTEPANELINFOJUKEBOX = true;
+        }
+        else if (boolistePanelInfoJukeBox && BOOLISTEPANELINFOJUKEBOX)
+        {
+            boolistePanelInfoJukeBox = false;
+            BOOLISTEPANELINFOJUKEBOX = false;
+        }
+    }
+
     public bool CheckAllBool()
     {
-        OriginalBooliste = !BOOLISTEBUILDINGPANEL && !BOOLISTEOPTIONPANEL && !BOOLISTEEXPEDBOISPANEL && !BOOLISTEEXPEDEAUPANEL && !BOOLISTEEXPEDPIERREPANEL && !BOOLISTEBATIMENTPANEL && !BOOLISTEPANELVERIF;
+        OriginalBooliste = !BOOLISTEBUILDINGPANEL && !BOOLISTEOPTIONPANEL && !BOOLISTEEXPEDBOISPANEL && !BOOLISTEEXPEDEAUPANEL && !BOOLISTEEXPEDPIERREPANEL && !BOOLISTEBATIMENTPANEL && !BOOLISTEPANELVERIF && !BOOLISTEPANELINFOJUKEBOX;
         return OriginalBooliste;
     }
 }
