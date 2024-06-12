@@ -5,11 +5,14 @@ public class TriggerAnim : MonoBehaviour
 {
     private Animator _plongeon;
 
+    private void Start()
+    {
+        _plongeon = GetComponentInChildren<Animator>();
+    }
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.layer == 8)
+        if (other.gameObject.layer == 15)
         {
-            _plongeon = other.GetComponentInChildren<Animator>();
             _plongeon.SetBool("Plonge", true);
             _plongeon.SetBool("Job", false);
             StartCoroutine(Delay());
@@ -18,7 +21,7 @@ public class TriggerAnim : MonoBehaviour
 
     IEnumerator Delay()
     {
-        yield return new WaitForSeconds(60);
+        yield return new WaitForSeconds(40);
         _plongeon.SetBool("Plonge", false);
         _plongeon.SetBool("Job", true);
     }
