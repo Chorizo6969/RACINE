@@ -12,7 +12,7 @@ public class ChangeColor : MonoBehaviour
     public Expédition expédition;
     public List<GameObject> ButtonOfHumanInExpedition;
     public List<GameObject> HumanInExpedition;
-
+    public GameObject Slider;
     private int index = 0;
     public bool youCanWork;
 
@@ -48,18 +48,22 @@ public class ChangeColor : MonoBehaviour
         if (youCanWork && id == 1)
         {
             ExpeditionLoot.instance.WorkingWood();
+            Slider.SetActive(true);
         }
         else if (youCanWork && id == 2)
         {
             ExpeditionLoot.instance.WorkingStone();
+            Slider.SetActive(true);
         }
         else if (youCanWork && id == 3)
         {
+            Debug.Log("humain EAU");
             ExpeditionLoot.instance.WorkingWater();
+            Slider.SetActive(true);
         }
         else
         {
-            Debug.Log("0 humain plante connard");
+            Debug.Log("0 humain plante");
         }
     }
 }
