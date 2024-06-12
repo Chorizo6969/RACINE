@@ -129,21 +129,19 @@ public class ControlCamera : MonoBehaviour
         // Convertir le mouvement de la souris en Vector3
         mouseDelta += moveSpeed * Time.deltaTime * mouseMovement;
 
-        Vector3 targetPosition = GOParentTransform.position + new Vector3(mouseDelta.x, 0, mouseDelta.y);
+        Vector3 mouseScreen = new Vector3(-mouseDelta.x, 0, -mouseDelta.y);
 
-        if (!cameraLimits.Contains(targetPosition))
-        {
-            targetPosition = cameraLimits.ClosestPoint(targetPosition);
-        }
+        Vector3 mouseIso = Quaternion.Euler(0, 45, 0) * mouseScreen;
+            
+        Vector3 targetPosition = GOParentTransform.position + mouseIso;
 
-        // Appliquer le mouvement à la position de la caméra
-        GOParentTransform.localPosition = targetPosition;
+        GOParentTransform.position = cameraLimits.ClosestPoint(targetPosition);
 
         // Réinitialiser le mouvement de la souris pour le frame suivant
         mouseDelta = Vector2.zero;
     }
 
-    private void OnDrawGizmosSelected()
+    private void OnDrawGizmos()
     {
         Gizmos.color = Color.blue;
 

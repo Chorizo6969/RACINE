@@ -5,8 +5,9 @@ using UnityEngine.VFX;
 public class TriggerAnim : MonoBehaviour
 {
     private Animator _plongeon;
-    [SerializeField]
-    private VisualEffect _visualEffect;
+
+    public VisualEffect _visualEffect;
+    public VisualEffect _visualEffect2;
 
     private void Start()
     {
@@ -19,7 +20,7 @@ public class TriggerAnim : MonoBehaviour
             _plongeon.SetBool("Plonge", true);
             _plongeon.SetBool("Job", false);
             StartCoroutine(Delay());
-            //StartCoroutine(VFXPlonge());
+            StartCoroutine(VFXPlonge());
         }
     }
 
@@ -34,5 +35,6 @@ public class TriggerAnim : MonoBehaviour
     {
         yield return new WaitForSeconds(1);
         _visualEffect.Play();
+        _visualEffect2.Play();
     }
 }

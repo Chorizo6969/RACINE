@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.VFX;
 
 /// <summary>
 /// Script qui gère les cliques en rapport avec les champs
@@ -29,7 +30,7 @@ public class ClickFieldManager : MonoBehaviour
                 {
                     _fieldPlantScript.ThePlant = HumanSeed;
                     _fieldPlantScript.PlantField();
-                    GiveRefToField.instance.GiveRefPasTuple(_touchedField, GetComponent<Spawn>().HumanPrefab, GetComponent<Spawn>().PrefabButtonBucheron, GetComponent<Spawn>().PrefabButtonAquaman, GetComponent<Spawn>().PrefabButtonMineur, GetComponent<Spawn>().Parent);
+                    GiveRefToField.instance.GiveRefPasTuple(_touchedField, GetComponent<Spawn>().HumanPrefab, GetComponent<Spawn>().PrefabButtonBucheron, GetComponent<Spawn>().PrefabButtonAquaman, GetComponent<Spawn>().PrefabButtonMineur, GetComponent<Spawn>().Parent, GetComponent<Spawn>()._visualEffectEau1, GetComponent<Spawn>()._visualEffectEau2);
                     
                     HumanSeed = null;
                 }
