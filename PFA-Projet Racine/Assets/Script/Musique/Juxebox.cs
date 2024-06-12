@@ -19,6 +19,9 @@ public class Juxebox : MonoBehaviour
     [SerializeField] 
     private AudioClip _audio4;
 
+    [SerializeField]
+    private AudioClip _audio5;
+
     private bool _isPlaying = true;
 
     public void Pause()
@@ -64,4 +67,9 @@ public class Juxebox : MonoBehaviour
         _AudioSource.Play();
     }
 
+    public void PlaySong5()
+    {
+        _AudioSource.clip = _audio5;
+        _AudioSource.Play();
+    }
 }

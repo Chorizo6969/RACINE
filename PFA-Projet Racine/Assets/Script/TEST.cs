@@ -3,13 +3,8 @@ using UnityEngine;
 
 public class TEST : MonoBehaviour
 {
-    private void Start()
+    public void CLICKTEST(string taMereEnStringDeGuerre)
     {
-        StartCoroutine(Blorg());
-    }
-
-    IEnumerator Blorg()
-    {
-        yield return new WaitForSeconds(3600);
+        Debug.Log(taMereEnStringDeGuerre);
     }
 }

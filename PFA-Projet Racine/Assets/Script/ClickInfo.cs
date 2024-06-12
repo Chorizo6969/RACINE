@@ -36,7 +36,7 @@ public class ClickInfo : MonoBehaviour
 
     public void OnClickInfo()
     {
-        Debug.Log("BWARG");
+        //Debug.Log("BWARG");
     }
 
     IEnumerator Attend()
