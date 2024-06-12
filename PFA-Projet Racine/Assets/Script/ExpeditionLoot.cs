@@ -216,10 +216,14 @@ public class ExpeditionLoot : MonoBehaviour
                     Destroy(FirstHuman);
                 }
             }
-            else
+            /*else
             {
                 RessourceManager.Instance.EditWaterAmount(score);
-            }
+            }*/
+        }
+        else
+        {
+            RessourceManager.Instance.EditWaterAmount(score);
         }
     }
 }

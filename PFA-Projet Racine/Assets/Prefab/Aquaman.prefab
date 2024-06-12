@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 2273926913654001889}
   - component: {fileID: -781356051346972959}
   - component: {fileID: -7424296015791253587}
+  - component: {fileID: 1187887300671266483}
   m_Layer: 8
   m_Name: Aquaman
   m_TagString: humanPlant
@@ -105,10 +106,6 @@ MonoBehaviour:
   _animator: {fileID: 2620529119558931344}
   <_agent>k__BackingField: {fileID: 0}
   IsEnExpedition: 0
-  ImageHEH: {fileID: 0}
-  ImageHUH: {fileID: 0}
-  HUHAnim: {fileID: 7400000, guid: 5301c33b11bdf3340b831a7f818b89e8, type: 2}
-  HEHAnim: {fileID: 7400000, guid: 9403ec3b814a2c149a43836eedbf9555, type: 2}
 --- !u!114 &2273926913654001889
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -166,6 +163,18 @@ MonoBehaviour:
   timeToWait: 0
   tempo: 0
   ParticleSystemSLEEP: {fileID: 2352847701244565698}
+--- !u!114 &1187887300671266483
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5123115511750519978}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36a759667f701c74ca77247321587c24, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &500972205231066528
 PrefabInstance:
   m_ObjectHideFlags: 0
