@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.VFX;
 
 /// <summary>
 /// Script qui gère le comportement de l'IA
@@ -18,6 +19,8 @@ public class IA : MonoBehaviour
     public string Adjectif;
 
     public List<GameObject> work;
+
+    public VisualEffect VFX;
 
     /// <summary>
     /// lien vers le gameObject
