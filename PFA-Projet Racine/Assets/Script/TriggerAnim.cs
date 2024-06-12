@@ -1,9 +1,12 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.VFX;
 
 public class TriggerAnim : MonoBehaviour
 {
     private Animator _plongeon;
+    [SerializeField]
+    private VisualEffect _visualEffect;
 
     private void Start()
     {
@@ -16,6 +19,7 @@ public class TriggerAnim : MonoBehaviour
             _plongeon.SetBool("Plonge", true);
             _plongeon.SetBool("Job", false);
             StartCoroutine(Delay());
+            //StartCoroutine(VFXPlonge());
         }
     }
 
@@ -24,5 +28,11 @@ public class TriggerAnim : MonoBehaviour
         yield return new WaitForSeconds(40);
         _plongeon.SetBool("Plonge", false);
         _plongeon.SetBool("Job", true);
+    }
+
+    IEnumerator VFXPlonge()
+    {
+        yield return new WaitForSeconds(1);
+        _visualEffect.Play();
     }
 }

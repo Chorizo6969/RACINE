@@ -13,6 +13,7 @@ public class LockIntro : MonoBehaviour
     public Button Champ;
     public Button Bucheron;
     public Button MaisonBucheron;
+    public Button Batiment;
     public GameObject Racine;
 
     public static LockIntro instance;
@@ -34,6 +35,7 @@ public class LockIntro : MonoBehaviour
         Champ.interactable = false;
         Bucheron.interactable = false;
         MaisonBucheron.interactable = false;
+        Batiment.interactable = false;
     }
 
     public void Lock()

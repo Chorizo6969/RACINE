@@ -56,6 +56,9 @@ public class ControlCamera : MonoBehaviour
     /// </summary>
     [SerializeField] private float minZ;
 
+    [SerializeField]
+    private Bounds cameraLimits;
+
     public float ZoomMax;
     public float ZoomMin;
 
@@ -118,40 +121,32 @@ public class ControlCamera : MonoBehaviour
 
     private void Update()
     {
-        if (isLeftMouseButtonPress)
+        if (!isLeftMouseButtonPress) return;
+
+        // Récupérer les mouvements de la souris
+        Vector2 mouseMovement = Mouse.current.delta.ReadValue();
+
+        // Convertir le mouvement de la souris en Vector3
+        mouseDelta += moveSpeed * Time.deltaTime * mouseMovement;
+
+        Vector3 targetPosition = GOParentTransform.position + new Vector3(mouseDelta.x, 0, mouseDelta.y);
+
+        if (!cameraLimits.Contains(targetPosition))
         {
-
-            if (GOParentTransform.position.x < minX)
-            {
-                GOParentTransform.position = new Vector3(minX, GOParentTransform.position.y, GOParentTransform.position.z);
-            }
-            if (GOParentTransform.position.x > maxX)
-            {
-                GOParentTransform.position = new Vector3(maxX, GOParentTransform.position.y, GOParentTransform.position.z);
-            }
-            if (GOParentTransform.position.z < minZ)
-            {
-                GOParentTransform.position = new Vector3(GOParentTransform.position.x, GOParentTransform.position.y, minZ);
-            }
-            if (GOParentTransform.position.z > maxZ)
-            {
-                GOParentTransform.position = new Vector3(GOParentTransform.position.x, GOParentTransform.position.y, maxZ);
-            }
-
-            if (GOParentTransform.position.x >= minX && GOParentTransform.position.x <= maxX && GOParentTransform.position.z >= minZ && GOParentTransform.position.z <= maxZ)
-            {
-                // Récupérer les mouvements de la souris
-                Vector2 mouseMovement = Mouse.current.delta.ReadValue();
-
-                // Convertir le mouvement de la souris en Vector3
-                mouseDelta += mouseMovement * Time.deltaTime * moveSpeed;
-
-                // Appliquer le mouvement à la position de la caméra
-                GOParentTransform.Translate(new Vector3(mouseDelta.x, 0, mouseDelta.y));
-                
-                // Réinitialiser le mouvement de la souris pour le frame suivant
-                mouseDelta = Vector2.zero;
-            }
+            targetPosition = cameraLimits.ClosestPoint(targetPosition);
         }
+
+        // Appliquer le mouvement à la position de la caméra
+        GOParentTransform.localPosition = targetPosition;
+
+        // Réinitialiser le mouvement de la souris pour le frame suivant
+        mouseDelta = Vector2.zero;
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.blue;
+
+        Gizmos.DrawWireCube(cameraLimits.center, cameraLimits.size);
     }
 }

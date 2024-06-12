@@ -54,6 +54,7 @@ public class IntroManager : MonoBehaviour
     public async void Dialogue2()
     {
         _modif.modifDialogue1();
+        LockIntro.instance.House.interactable = false;
         await Task.Delay(2000);
         while (!_dialogue._isfinish) await Task.Yield();
         LockIntro.instance.House.interactable = true;
@@ -64,13 +65,17 @@ public class IntroManager : MonoBehaviour
         fleche[2].SetActive(true);
         while (id != 3) await Task.Yield();
         fleche[2].SetActive(false);
+        LockIntro.instance.House.interactable = false;
         Dialogue3();
     }
     public async void Dialogue3()
     {
         _modif.modifDialogue2();
+        LockIntro.instance.House.interactable = false;
         await Task.Delay(2000);
+        LockIntro.instance.House.interactable = false;
         while (!_dialogue._isfinish) await Task.Yield();
+        LockIntro.instance.House.interactable = true;
         LockIntro.instance.Champ.interactable = false;
         LockIntro.instance.Bucheron.interactable = true;
         fleche[1].SetActive(true);
@@ -86,9 +91,13 @@ public class IntroManager : MonoBehaviour
     }
     public async void Dialogue4()
     {
+        LockIntro.instance.House.interactable = false;
         _modif.modifDialogue3();
         await Task.Delay(2000);
+        LockIntro.instance.House.interactable = false;
         while (!_dialogue._isfinish) await Task.Yield();
+        LockIntro.instance.House.interactable = true;
+        LockIntro.instance.Batiment.interactable = true;
         LockIntro.instance.Bucheron.interactable = false;
         LockIntro.instance.MaisonBucheron.interactable = true;
         bouliste = true;
