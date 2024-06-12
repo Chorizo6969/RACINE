@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.VFX;
 
 public class Spawn : MonoBehaviour
 {
@@ -9,6 +10,9 @@ public class Spawn : MonoBehaviour
     public GameObject PrefabButtonAquaman;
     public GameObject PrefabButtonMineur;
     public GameObject Parent;
+
+    public VisualEffect _visualEffectEau1;
+    public VisualEffect _visualEffectEau2;
 
     public List<GameObject> worktarget;
     public NamesGenerator NamesGenerator;
@@ -30,7 +34,12 @@ public class Spawn : MonoBehaviour
         NamesGenerator.RandomName();
         new_human.GetComponent<IA>().Nom = NamesGenerator.Nom;
         new_human.GetComponent<IA>().Adjectif = NamesGenerator.Adjectif;
-
+        if (new_human.GetComponent <IA>()._scriptableHuman.Work == "Eau")
+        {
+            Debug.Log("Attribution");
+            new_human.GetComponent<TriggerAnim>()._visualEffect = _visualEffectEau1;
+            new_human.GetComponent<TriggerAnim>()._visualEffect2 = _visualEffectEau2;
+        }
         new_button.GetComponent<Expédition>().Ia = new_human;
         new_button.GetComponent<ChangeColor>().expédition = new_button.GetComponent<Expédition>();
 

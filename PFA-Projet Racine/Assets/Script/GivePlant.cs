@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEditor.Rendering;
 using UnityEngine;
+using UnityEngine.VFX;
 
 /// <summary>
 /// Script qui donne une graine à la souris
@@ -28,6 +29,9 @@ public class GivePlant : MonoBehaviour
     [SerializeField] private GameObject _buttonExpeditionPrefabAquaman;
     [SerializeField] private GameObject _buttonExpeditionPrefabMineur;
 
+    public VisualEffect VfxEau1;
+    public VisualEffect VfxEau2;
+
     [SerializeField] private GameObject _content;
 
     [SerializeField] private TextMeshProUGUI _grainesMarchand;
@@ -44,7 +48,7 @@ public class GivePlant : MonoBehaviour
         {
             ClickFieldManager _clickFieldManager = _camera.GetComponent<ClickFieldManager>();
             _clickFieldManager.HumanSeed = _seed;
-            GiveRefToField.instance.GiveRefPasTuple(_clickFieldManager.gameObject, _humanPlantPrefab, _buttonExpeditionPrefabBuche, _buttonExpeditionPrefabAquaman, _buttonExpeditionPrefabMineur, _content);
+            GiveRefToField.instance.GiveRefPasTuple(_clickFieldManager.gameObject, _humanPlantPrefab, _buttonExpeditionPrefabBuche, _buttonExpeditionPrefabAquaman, _buttonExpeditionPrefabMineur, _content, VfxEau1, VfxEau2);
             _modifcursor.ChangeCursor(_seedTexture);
             _nombreGraines --;
             _setgraines.DeleteGraines(_grainesMarchand);
