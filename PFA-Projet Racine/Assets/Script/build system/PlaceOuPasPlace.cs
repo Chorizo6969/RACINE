@@ -106,6 +106,7 @@ public class PlaceOuPasPlace : MonoBehaviour
 
     public void ChangeBoxSizeUp()
     {
+
         GetComponent<BoxCollider>().size = ColliderBoxSize1;
         GetComponent<BoxCollider>().center = ColliderBoxPosition1;
     }

@@ -24,7 +24,6 @@ public class BuildOptionPanel : MonoBehaviour
                 }
                 else if (hitInfo.collider.CompareTag("building"))
                 {
-                    Debug.Log(hitInfo.collider.gameObject.name);
                     if (hitInfo.collider.GetComponentInParent<BuildingCanvas>().gameObject.name == "JukeBox")
                     {
                         PANEL2MUSIC.SetActive(true);

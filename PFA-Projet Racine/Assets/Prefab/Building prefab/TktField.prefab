@@ -897,7 +897,6 @@ MonoBehaviour:
   - Water
   - forest
   - building
-  - field
   - RACINE
   _hitColliders: []
 --- !u!54 &2760882486105487656

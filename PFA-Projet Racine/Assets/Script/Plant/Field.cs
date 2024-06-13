@@ -73,6 +73,7 @@ public class Field : MonoBehaviour
             _progressCircle?.SetActive(true);
             IsWatered = true;
             _currentPlant?.SetActive(true);
+            RessourceManager.Instance.EditWaterAmount(-1);
             WATERBUBUBUBUBUBUBUBUBUBUBUBUBUBUBUBUBUBUBUBUBUBUBUBUBUBUBUBUBUBUBUBUBUBULLE.SetActive(false);
         }
     }
