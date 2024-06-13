@@ -65,7 +65,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: d30245b0e1b63524290f43f95aa776a1, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 942ca0f375a94bc49854c3738a69ebd4, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -247,6 +247,7 @@ MonoBehaviour:
   "exp\xE9dition": {fileID: 4061142285661727904}
   ButtonOfHumanInExpedition: []
   HumanInExpedition: []
+  Slider: {fileID: 0}
   youCanWork: 0
 --- !u!1 &2183818221645579393
 GameObject:
