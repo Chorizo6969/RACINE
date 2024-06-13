@@ -6,9 +6,17 @@ using UnityEngine;
 public class ExpeditionLoot : MonoBehaviour
 {
     [SerializeField]
-    private int maxloot = 10;
+    private int maxlootBois = 10;
     [SerializeField] 
-    private int minloot = 4;
+    private int minlootBois = 4;
+    [SerializeField]
+    private int maxlootPierre = 10;
+    [SerializeField]
+    private int minlootPierre = 4;
+    [SerializeField]
+    private int maxlootEau = 10;
+    [SerializeField]
+    private int minlootEau = 4;
     [SerializeField]
     private int chanceToDie = 10;
 
@@ -80,10 +88,19 @@ public class ExpeditionLoot : MonoBehaviour
 
     public void WorkingWood()
     {
+        foreach (GameObject obj in ChangeColorBucheron.HumanInExpedition)
+        {
+            maxlootBois += 4;
+            minlootBois += 4;
+        }
+            Debug.Log(maxlootBois);
+            Debug.Log(minlootBois);
         bool mortBuche = false;
         int scoreWood = 0;
-        int lootWood = Random.Range(minloot, maxloot + 1);
+        int lootWood = Random.Range(minlootBois, maxlootBois + 1);
         scoreWood = lootWood;
+        maxlootBois = 10;
+        minlootBois = 4;
         if (ChangeColorBucheron.HumanInExpedition.Count != 1)
         {
             int humainmort = Random.Range(0, chanceToDie + 1);
@@ -130,10 +147,19 @@ public class ExpeditionLoot : MonoBehaviour
 
     public void WorkingStone()
     {
+        foreach (GameObject obj in ChangeColorBucheron.HumanInExpedition)
+        {
+            maxlootPierre += 4;
+            minlootPierre += 4;
+        }
+            Debug.Log(maxlootPierre);
+            Debug.Log(minlootPierre);
         bool mortPierre = false;
         int scoreStone = 0;
-        int lootStone = Random.Range(minloot, maxloot + 1);
+        int lootStone = Random.Range(minlootPierre, maxlootPierre + 1);
         scoreStone = lootStone;
+        maxlootPierre = 10;
+        minlootPierre = 4;
         if (ChangeColorMineur.HumanInExpedition.Count != 1)
         {
             int humainmort = Random.Range(0, chanceToDie + 1);
@@ -178,10 +204,19 @@ public class ExpeditionLoot : MonoBehaviour
 
     public void WorkingWater()
     {
+        foreach (GameObject obj in ChangeColorBucheron.HumanInExpedition)
+        {
+            maxlootEau += 4;
+            minlootEau += 4;
+        }
+            Debug.Log(maxlootEau);
+            Debug.Log(minlootEau);
         bool mortAquaman = false;
         int WaterScore = 0;
-        int lootWater = Random.Range(minloot, maxloot + 1);
+        int lootWater = Random.Range(minlootEau, maxlootEau + 1);
         WaterScore = lootWater;
+        maxlootPierre = 10;
+        minlootPierre = 4;
         if (ChangeColorAquaman.HumanInExpedition.Count != 1)
         {
             int humainmort = Random.Range(0, chanceToDie + 1);
