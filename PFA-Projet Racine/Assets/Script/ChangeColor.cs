@@ -38,7 +38,6 @@ public class ChangeColor : MonoBehaviour
         {
             if (obj.GetComponent<ChangeColor>().index == 1)
             {
-                Debug.Log("1");
                 ButtonOfHumanInExpedition.Add(obj);
                 HumanInExpedition.Add(obj.GetComponent<Expédition>().Ia);
                 obj.GetComponent<Expédition>().Ia.GetComponent<IA>().GiveTarget();
@@ -57,7 +56,6 @@ public class ChangeColor : MonoBehaviour
         }
         else if (youCanWork && id == 3)
         {
-            Debug.Log("humain EAU");
             ExpeditionLoot.instance.WorkingWater();
             Slider.SetActive(true);
         }

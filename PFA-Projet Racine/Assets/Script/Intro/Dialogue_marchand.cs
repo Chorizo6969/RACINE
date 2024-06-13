@@ -25,6 +25,8 @@ public class Dialoguemarchand : MonoBehaviour
     [SerializeField]
     private AudioSource _source;
 
+    public bool canWright = true;
+
     private int index;
 
     public static Dialoguemarchand instance;
@@ -37,10 +39,12 @@ public class Dialoguemarchand : MonoBehaviour
 
     public void StartDialogue()
     {
+        StopCoroutine(TypeLines());
         text.text = string.Empty;
         index = 0;
         int sound = Random.Range(0, clips.Count);
         _source.PlayOneShot(clips[sound]);
+        canWright = true;
         StartCoroutine(TypeLines());
     }
 
@@ -50,14 +54,21 @@ public class Dialoguemarchand : MonoBehaviour
         index = _chooselines;
         foreach (char c in lines[index].ToCharArray())
         {
-            text.text += c;
-            yield return new WaitForSeconds(TextSpeed);
+            if (canWright)
+            {
+                text.text += c;
+                yield return new WaitForSeconds(TextSpeed);
+            }
+            else
+            {
+                StopAllCoroutines();
+            }
         }
     }
 
     public void Desactive()
     {
-        Debug.Log("effacer");
+        canWright = false; 
         StopCoroutine(TypeLines());
         text.text = string.Empty;
     }
