@@ -75,12 +75,11 @@ public class TimeManager : MonoBehaviour
     {
         if (value == 1)
         {
-            Debug.Log("jour");
+            _luciole.gameObject.SetActive(false);
             StartCoroutine(LerpLight(graddientNightToSunrise, 10f));
         }
         else if (value == 2)
         {
-            _luciole.gameObject.SetActive(false);
             _ambiance.clip = _oiseaux;
             _ambiance.Play();
             foreach(VisualEffect obj in _papillon)

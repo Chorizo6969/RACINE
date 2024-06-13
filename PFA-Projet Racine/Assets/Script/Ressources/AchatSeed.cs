@@ -26,8 +26,6 @@ public class AchatSeed : MonoBehaviour
     [SerializeField]
     private GameObject prix3;
     [SerializeField]
-    private GivePlant builder;
-    [SerializeField]
     private GivePlant bucheron;
     [SerializeField]
     private GivePlant mineur;

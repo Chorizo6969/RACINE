@@ -9,12 +9,24 @@ public class Setgraines : MonoBehaviour
     private TextMeshProUGUI _graines;
 
     [SerializeField]
+    private int _woodCost;
+
+    [SerializeField]
+    private int _stoneCost;
+
+    [SerializeField]
+    private int _waterCost;
+
+    [SerializeField]
     private int nombreGraines = 0;
 
     public void AddGraines()
     {
-        nombreGraines += 1;
-        _graines.text = nombreGraines.ToString();
+        if (RessourceManager.Instance.CheckIfCanBuild(_woodCost,_stoneCost ,_waterCost))
+        {
+            nombreGraines += 1;
+            _graines.text = nombreGraines.ToString();
+        }
     }
 
     public void DeleteGraines(TextMeshProUGUI graines)
