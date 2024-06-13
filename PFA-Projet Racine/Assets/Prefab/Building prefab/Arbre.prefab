@@ -107,7 +107,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d9d3f2166fdd60449c4644a303e649f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cooldown: 10
+  cooldown: 120
   BuildSYstemLifeMakerAkaGod: {fileID: 1459726029484901600}
   BuildingAreaKILLER: {fileID: 6639449399282960008}
   Canvas: {fileID: 1829204762547695864}

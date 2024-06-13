@@ -1,12 +1,20 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.VFX;
 
 public class TimeManager : MonoBehaviour
 {
-    [SerializeField] private Texture2D _skyboxNuit;
-    [SerializeField] private Texture2D _skyboxDebutSoleil;
-    [SerializeField] private Texture2D _skyboxJour;
-    [SerializeField] private Texture2D _skyboxCouchéSoleil;
+    [SerializeField]
+    private List<VisualEffect> _papillon;
+    [SerializeField]
+    private VisualEffect _luciole;
+    [SerializeField]
+    private AudioClip _hiboux;
+    [SerializeField]
+    private AudioClip _oiseaux;
+    [SerializeField]
+    private AudioSource _ambiance;
 
     [SerializeField] private Gradient graddientNightToSunrise;
     [SerializeField] private Gradient graddientSunriseToDay;
@@ -67,37 +75,39 @@ public class TimeManager : MonoBehaviour
     {
         if (value == 1)
         {
-            //StartCoroutine(LerpSkybox(_skyboxNuit, _skyboxDebutSoleil, 10f));
+            Debug.Log("jour");
             StartCoroutine(LerpLight(graddientNightToSunrise, 10f));
         }
         else if (value == 2)
         {
-            //StartCoroutine(LerpSkybox(_skyboxDebutSoleil, _skyboxJour, 10f));
+            _luciole.gameObject.SetActive(false);
+            _ambiance.clip = _oiseaux;
+            _ambiance.Play();
+            foreach(VisualEffect obj in _papillon)
+            {
+                obj.Play();
+                obj.gameObject.SetActive(true);
+            }
             StartCoroutine(LerpLight(graddientSunriseToDay, 10f));
         }
         else if (value == 5)
         {
-            //StartCoroutine(LerpSkybox(_skyboxJour, _skyboxCouchéSoleil, 10f));
+            Debug.Log("jour");
             StartCoroutine(LerpLight(graddientDayToSunset, 10f));
         }
         else if (value == 6)
         {
-            //StartCoroutine(LerpSkybox(_skyboxCouchéSoleil, _skyboxNuit, 10f));
+            //_ambiance.clip = _hiboux;
+            //_ambiance.Play();
+            foreach (VisualEffect obj in _papillon)
+            {
+                obj.gameObject.SetActive(false);
+            }
+            _luciole.gameObject.SetActive(true);
+            _luciole.Play();
+            Debug.Log("jour");
             StartCoroutine(LerpLight(graddientSunsetToNight, 10f));
         }
-    }
-
-    private IEnumerator LerpSkybox(Texture2D a, Texture2D b, float time)
-    {
-        RenderSettings.skybox.SetTexture("_Texture1", a);
-        RenderSettings.skybox.SetTexture("_Texture2", b);
-        RenderSettings.skybox.SetFloat("_Blend", 0);
-        for (float i = 0; i < time; i += Time.deltaTime)
-        {
-            RenderSettings.skybox.SetFloat("_Blend", i / time);
-            yield return null;
-        }
-        RenderSettings.skybox.SetTexture("_Texture1", b);
     }
 
     private IEnumerator LerpLight(Gradient lightGradient, float time)
