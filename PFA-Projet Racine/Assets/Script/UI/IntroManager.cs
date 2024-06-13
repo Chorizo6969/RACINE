@@ -43,6 +43,8 @@ public class IntroManager : MonoBehaviour
     public async void Distribution()
     {
         while (!_dialogue._isfinish) await Task.Yield();
+        RessourceManager.Instance.EditWoodAmount(20);
+        RessourceManager.Instance.EditWaterAmount(30);
         LockIntro.instance.Racine.GetComponent<MeshCollider>().enabled = true;
         fleche[0].SetActive(true);
         while (id != 1) await Task.Yield();

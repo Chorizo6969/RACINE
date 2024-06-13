@@ -39,10 +39,10 @@ public class Fill : MonoBehaviour
             {
                 BWARG.GetComponent<PTNCOMMENTJLEEZLESYSTEMDEBUILD>().JugementDernier();
             }
-            else
+            /*else
             {
                 gameObject.SetActive(false);
-            }
+            }*/
         }
         else
         {
