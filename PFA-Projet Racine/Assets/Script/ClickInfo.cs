@@ -30,7 +30,7 @@ public class ClickInfo : MonoBehaviour
 
     public void OnClickMove()
     {
-        if (lastBat.name == "Maison des Plongeurs")
+        if (lastBat.name == "Maison des Plongeurs" || lastBat.name == "Champ")
         {
             lastBat.GetComponentInChildren<PlaceOuPasPlace>().ChangeBoxSizeUp();
         }
