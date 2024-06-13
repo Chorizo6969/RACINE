@@ -117,4 +117,20 @@ public class IA : MonoBehaviour
         yield return new WaitForSeconds(1f);
         //StartCoroutine(GetComponent<RandomBonhommePlant>().AutorizeMove());
     }
+
+    private void OnDestroy()
+    {
+        if (_scriptableHuman.Work  == "Bucheron")
+        {
+            IncrementHuman.instance.EditBucheron(-1);
+        }
+        else if ( _scriptableHuman.Work == "Mineur")
+        {
+            IncrementHuman.instance.EditStoneMan(-1);
+        }
+        else if (_scriptableHuman.Work == "Eau")
+        {
+            IncrementHuman.instance.EditAquaman(-1);
+        }
+    }
 }
