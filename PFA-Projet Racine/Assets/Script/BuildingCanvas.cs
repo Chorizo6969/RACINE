@@ -141,6 +141,7 @@ public class BuildingCanvas : MonoBehaviour
 
     private void OnDestroy()
     {
+        if (FirstPlacement) return;
         MaxBatPlacable.Instance.IncreaseActuBat(-1, id);
     }
 }
