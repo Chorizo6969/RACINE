@@ -43,4 +43,13 @@ public class ModifDialogue : MonoBehaviour
         DialogueTutoriel.instance.lines.Add("VOUS POUVEZ AUSSI ME FAIRE PLEIN D'AUTRES COPAINS ! ALLEZ VOIR PAPI POUR VOIR LES GRAINES DE MES FUTURS COPAINS !");
         _GOdialogue.SetActive(true);
     }
+
+    public void modifDialogue5()
+    {
+        DialogueTutoriel.instance.lines.Clear();
+        DialogueTutoriel.instance.lines.Add("WAAAAAAAA, ATTENTION CHEF, VOUS NE POUVEZ PAS AVOIR PLUS DE COPAINS");
+        DialogueTutoriel.instance.lines.Add("VOUS NE POUVEZ AVOIR PLUS D'HUMAINS PLANTES QUE SI VOUS AVEZ ASSEZ DE MAISON ET D'OUTILS !");
+        DialogueTutoriel.instance.lines.Add("POUR AVOIR PLUS D'OUTILS, IL FAUT CONSTRUIRE D'AVANTAGE DE CABANE / HUTTE / ABRI !");
+        _GOdialogue.SetActive(true);
+    }
 }

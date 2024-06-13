@@ -119,7 +119,7 @@ public class ExpeditionLoot : MonoBehaviour
         yield return new WaitForSeconds(expeditionTime);
         if (mort)
         {
-            int numberOfDeath = Random.Range(1, ChangeColorBucheron.ButtonOfHumanInExpedition.Count);
+            int numberOfDeath = Random.Range(0, ChangeColorBucheron.ButtonOfHumanInExpedition.Count);
             if (numberOfDeath > 0)
             {
                 for (int i = 0; i < numberOfDeath; i++)
@@ -176,7 +176,7 @@ public class ExpeditionLoot : MonoBehaviour
         yield return new WaitForSeconds(expeditionTime);
         if (mort)
         {
-            int numberOfDeath = Random.Range(1, ChangeColorMineur.ButtonOfHumanInExpedition.Count);
+            int numberOfDeath = Random.Range(0, ChangeColorMineur.ButtonOfHumanInExpedition.Count);
             if (numberOfDeath > 0)
             {
                 for (int i = 0; i < numberOfDeath; i++)
@@ -233,7 +233,7 @@ public class ExpeditionLoot : MonoBehaviour
         yield return new WaitForSeconds(expeditionTime);
         if (mort)
         {
-            int numberOfDeath = Random.Range(1, ChangeColorAquaman.ButtonOfHumanInExpedition.Count);
+            int numberOfDeath = Random.Range(0, ChangeColorAquaman.ButtonOfHumanInExpedition.Count);
             if (numberOfDeath > 0)
             {
                 for (int i = 0; i < numberOfDeath; i++)
