@@ -87,18 +87,19 @@ public class IntroManager : MonoBehaviour
         fleche[1].SetActive(false);
         fleche[3].SetActive(true);
         while (!clic) await Task.Yield();
+        bouliste = false;
         fleche[3].SetActive(false);
         while (ExpeditionLoot.instance.listBucheron.Count == 0) await Task.Yield();
+        LockIntro.instance.House.interactable = false;
+        Debug.Log(id);
         if (Jkh.Instance.BOOLISTEBUILDINGPANEL)
         {
             UIManager.Instance.ActivationUi();
         }
-        bouliste = false;
         Dialogue4();
     }
     public async void Dialogue4()
     {
-        LockIntro.instance.House.interactable = false;
         _modif.modifDialogue3();
         await Task.Delay(2000);
         LockIntro.instance.House.interactable = false;
