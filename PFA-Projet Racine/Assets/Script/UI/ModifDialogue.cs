@@ -52,4 +52,12 @@ public class ModifDialogue : MonoBehaviour
         DialogueTutoriel.instance.lines.Add("POUR AVOIR PLUS D'OUTILS, IL FAUT CONSTRUIRE D'AVANTAGE DE CABANE / HUTTE / ABRI !");
         _GOdialogue.SetActive(true);
     }
+    public void modifDialogue6()
+    {
+        DialogueTutoriel.instance.lines.Clear();
+        DialogueTutoriel.instance.lines.Add("WAAAAAAAA, LA RACINE ELLE A GRANDI !");
+        DialogueTutoriel.instance.lines.Add("VOUS AVEZ DEBLOQUER UN NOUVEAU COPAIN, LE MINEUR ! IL EST CAPABLE DE TROUVER DE LA PIERRE DANS LA MINE.");
+        DialogueTutoriel.instance.lines.Add("VOIC UNE GRAINE DE MON COPAIN LE MINEUR !");
+        _GOdialogue.SetActive(true);
+    }
 }
