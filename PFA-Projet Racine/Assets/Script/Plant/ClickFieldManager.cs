@@ -38,7 +38,7 @@ public class ClickFieldManager : MonoBehaviour
                 {
                     _fieldPlantScript.WateringField();
                 }
-                else if (hitInfo.collider.CompareTag("field") && _fieldPlantScript.IsPlanted && !GetComponent<dragAndDropBuilding>().HasClickOnBuildingButtonInstance && _fieldPlantScript._progressCircle.GetComponentInChildren<Fill>().IsFillAmountFull)
+                else if (hitInfo.collider.CompareTag("field") && _fieldPlantScript.IsPlanted && !GetComponent<dragAndDropBuilding>().HasClickOnBuildingButtonInstance && _fieldPlantScript._progressCircle.GetComponentInChildren<Fill>().IsFillAmountFull && IncrementHuman.instance._count < IncrementHuman.instance._maxHuman)
                 {
                     if (_fieldPlantScript.ThePlant.GetComponent<PrePlantJob>().Work == "Bucheron" && IncrementHuman.instance._countBucheron < IncrementHuman.instance._maxBucheron)
                     {
