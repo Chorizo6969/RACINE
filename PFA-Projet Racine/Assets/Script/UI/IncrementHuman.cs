@@ -66,18 +66,21 @@ public class IncrementHuman : MonoBehaviour
     {
         _countBucheron += amount;
         BucheronText.text = _countBucheron.ToString();
+        TutoHuman.Instance.WarningTuto();
     }
     
     public void EditMaxBucheron(int amount)
     {
         _maxBucheron += amount;
         MaxBucheronText.text = _maxBucheron.ToString();
+        TutoHuman.Instance.WarningTuto();
     }
 
     public void EditAquaman(int amount)
     {
         _countAquaman += amount;
         AquamanText.text = _countAquaman.ToString();
+        TutoHuman.Instance.WarningTuto();
     }
     
     public void EditMaxAquaman(int amount)

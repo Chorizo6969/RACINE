@@ -26,8 +26,6 @@ public class AchatSeed : MonoBehaviour
     [SerializeField]
     private GameObject prix3;
     [SerializeField]
-    private GivePlant builder;
-    [SerializeField]
     private GivePlant bucheron;
     [SerializeField]
     private GivePlant mineur;
@@ -39,6 +37,24 @@ public class AchatSeed : MonoBehaviour
     private GameObject Racine2;
     [SerializeField]
     private GameObject Racine3;
+    [SerializeField] 
+    private List<Image> levelRacine;
+    [SerializeField] 
+    private List<Sprite> spriteRacine;
+    [SerializeField]
+    private GameObject Level3Racine;
+    [SerializeField]
+    private GameObject ensembleRacine;
+    [SerializeField]
+    private TextMeshProUGUI Leveltexte;
+    [SerializeField]
+    private TextMeshProUGUI Leveltexte2;
+
+    [SerializeField] 
+    private GameObject Unlock1;
+    [SerializeField] 
+    private GameObject Unlock2;
+
 
     [SerializeField]
     private GameObject HerbeMineur;
@@ -99,6 +115,12 @@ public class AchatSeed : MonoBehaviour
                 prix2.SetActive(true);
                 Racine1.SetActive(false);
                 Racine2.SetActive(true);
+                levelRacine[0].sprite = spriteRacine[1];
+                levelRacine[1].sprite = spriteRacine[2];
+                Leveltexte.text = "Niveau 2".ToString();
+                Leveltexte2.text = "Niveau 3".ToString();
+                Unlock1.SetActive(false);
+                Unlock2.SetActive(true);
                 foreach (GameObject obj in ListeButtonLvl2)
                 {
                     Button button = obj.GetComponent<Button>();
@@ -128,6 +150,10 @@ public class AchatSeed : MonoBehaviour
                 prix3.SetActive(true);
                 Racine2.SetActive(false);
                 Racine3.SetActive(true);
+                ensembleRacine.SetActive(false);
+                Level3Racine.SetActive(true);
+                Unlock2.SetActive(false);
+
                 foreach (GameObject obj in ListeButtonLvl3)
                 {
                     Button button = obj.GetComponent<Button>();

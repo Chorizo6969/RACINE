@@ -24,6 +24,7 @@ public class IntroManager : MonoBehaviour
     [SerializeField]
     private GameObject _panelIntroduction;
 
+    public bool clic;
     public bool bouliste;
 
     public int id = 0;
@@ -44,7 +45,7 @@ public class IntroManager : MonoBehaviour
     {
         while (!_dialogue._isfinish) await Task.Yield();
         RessourceManager.Instance.EditWoodAmount(20);
-        RessourceManager.Instance.EditWaterAmount(30);
+        RessourceManager.Instance.EditWaterAmount(45);
         LockIntro.instance.Racine.GetComponent<MeshCollider>().enabled = true;
         fleche[0].SetActive(true);
         while (id != 1) await Task.Yield();
@@ -85,10 +86,11 @@ public class IntroManager : MonoBehaviour
         while (id != 4) await Task.Yield();
         fleche[1].SetActive(false);
         fleche[3].SetActive(true);
+        while (!clic) await Task.Yield();
+        fleche[3].SetActive(false);
         while (ExpeditionLoot.instance.listBucheron.Count == 0) await Task.Yield();
         UIManager.Instance.ActivationUi();
         bouliste = false;
-        fleche[3].SetActive(false);
         Dialogue4();
     }
     public async void Dialogue4()
@@ -122,6 +124,11 @@ public class IntroManager : MonoBehaviour
         LockIntro.instance.Lock();
         LockIntro.instance.Racine.GetComponent<MeshCollider>().enabled = true;
         _panelIntroduction.SetActive(false);
+    }
+
+    public void cliked()
+    {
+        clic = true;
     }
 
 }
