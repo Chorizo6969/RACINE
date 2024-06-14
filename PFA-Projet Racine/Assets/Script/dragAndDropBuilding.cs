@@ -60,6 +60,7 @@ public class dragAndDropBuilding : MonoBehaviour
                 PPAANNEELL.SetActive(true);
                 Destroy(BOUGE);
                 BOUGE = null;
+                PanelBuildingTuto.SetActive(false);
             }
         }
     }
