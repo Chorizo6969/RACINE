@@ -95,7 +95,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 2
-  stock: 2
+  stock: 3
 --- !u!208 &-256577085161205398
 NavMeshObstacle:
   m_ObjectHideFlags: 0
