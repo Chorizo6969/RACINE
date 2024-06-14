@@ -25,6 +25,8 @@ public class dragAndDropBuilding : MonoBehaviour
 
     public LayerMask LayerMask;
 
+    public GameObject PanelBuildingTuto;
+
     private void Awake()
     {
         instance = this;
@@ -43,6 +45,7 @@ public class dragAndDropBuilding : MonoBehaviour
                 BOUGE.GetComponent<BuildingCanvas>().NormalMat();
                 BOUGE.GetComponent <BuildingCanvas>().DropBuilding();
                 PPAANNEELL.SetActive(true);
+                PanelBuildingTuto.SetActive(false);
                 BOUGE = null;
             }
         }

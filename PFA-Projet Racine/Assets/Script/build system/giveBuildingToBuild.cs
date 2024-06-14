@@ -14,6 +14,8 @@ public class GiveBuildingToBuild : MonoBehaviour
 
     public GameObject _objectToGiveBuilding;
 
+    public GameObject BuildingPanelTuto;
+
     private void Start()
     {
         _objectToGiveBuilding = dragAndDropBuilding.instance.gameObject;
@@ -36,6 +38,7 @@ public class GiveBuildingToBuild : MonoBehaviour
             {
                 HidePointListOwner.GetComponent<HidePointList>().AddObjectInList(newBuilding.GetComponent<BuildingCanvas>().HidePoint);
             }
+            BuildingPanelTuto.SetActive(true);
         }
     }
 }
