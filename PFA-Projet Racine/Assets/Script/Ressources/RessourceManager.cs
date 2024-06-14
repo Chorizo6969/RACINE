@@ -145,9 +145,15 @@ public class RessourceManager : MonoBehaviour
             {
                 _wood = 0;
             }
-
             _animatorRessource.SetTrigger("Wood");
-            _animatorRessource.gameObject.GetComponentInChildren<TextMeshProUGUI>().text = "+ " + amount.ToString() + " bois";
+            if (amount > 0)
+            {
+                _animatorRessource.gameObject.GetComponentInChildren<TextMeshProUGUI>().text = "+ " + amount.ToString() + " bois";
+            }
+            else if (amount < 0)
+            {
+                _animatorRessource.gameObject.GetComponentInChildren<TextMeshProUGUI>().text = amount.ToString() + " bois";
+            }
             GameObject newWoodText = Instantiate(AddingScoreText);
             newWoodText.name = "wood";
             newWoodText.transform.SetParent(_panelParent.transform, true);
@@ -168,7 +174,6 @@ public class RessourceManager : MonoBehaviour
             {
                 _wood = 0;
             }
-
             GameObject newWoodText = Instantiate(AddingScoreText);
             newWoodText.name = "wood";
             newWoodText.transform.SetParent(_panelParent.transform, true);
@@ -216,7 +221,14 @@ public class RessourceManager : MonoBehaviour
                 _water = 0;
             }
             _animatorRessource3.SetTrigger("Water");
-            _animatorRessource3.gameObject.GetComponentInChildren<TextMeshProUGUI>().text = "+ " + amount.ToString() + " eau";
+            if (amount > 0)
+            {
+                _animatorRessource3.gameObject.GetComponentInChildren<TextMeshProUGUI>().text = "+ " + amount.ToString() + " eau";
+            }
+            else
+            {
+                _animatorRessource3.gameObject.GetComponentInChildren<TextMeshProUGUI>().text = amount.ToString() + " eau";
+            }
             GameObject newWaterText = Instantiate(AddingScoreText);
             newWaterText.name = "water";
             newWaterText.transform.SetParent(_panelParent.transform, true);
@@ -237,7 +249,6 @@ public class RessourceManager : MonoBehaviour
             {
                 _water = 0;
             }
-
             GameObject newWaterText = Instantiate(AddingScoreText);
             newWaterText.name = "water";
             newWaterText.transform.SetParent(_panelParent.transform, true);
@@ -286,7 +297,14 @@ public class RessourceManager : MonoBehaviour
             }
 
             _animatorRessource2.SetTrigger("Stone");
-            _animatorRessource2.gameObject.GetComponentInChildren<TextMeshProUGUI>().text = "+ " + amount.ToString() + " stone";
+            if (amount > 0)
+            {
+                _animatorRessource2.gameObject.GetComponentInChildren<TextMeshProUGUI>().text = "+ " + amount.ToString() + " stone";
+            }
+            else
+            {
+                _animatorRessource2.gameObject.GetComponentInChildren<TextMeshProUGUI>().text = "+ " + amount.ToString() + " stone";
+            }
             GameObject newStoneText = Instantiate(AddingScoreText);
             newStoneText.name = "water";
             newStoneText.transform.SetParent(_panelParent.transform, true);
@@ -321,7 +339,6 @@ public class RessourceManager : MonoBehaviour
         {
             //Debug.Log("Stockage STONE full");
         }
-
         if (StockBatListManager.instance.listStoneStock.Count != 0)
         {
             foreach (GameObject bat in StockBatListManager.instance.listStoneStock)
@@ -371,7 +388,14 @@ public class RessourceManager : MonoBehaviour
     {
         yield return new WaitForSeconds(_time);
         _animatorRessource.SetTrigger("Wood2");
-        _animatorRessource.gameObject.GetComponentInChildren<TextMeshProUGUI>().text = "+ " + quantity.ToString() + " bois";
+        if (quantity > 0)
+        {
+            _animatorRessource.gameObject.GetComponentInChildren<TextMeshProUGUI>().text = "+ " + quantity.ToString() + " bois";
+        }
+        else if (quantity < 0)
+        {
+            _animatorRessource.gameObject.GetComponentInChildren<TextMeshProUGUI>().text = quantity.ToString() + " bois";
+        }
         _woodText.text = _wood.ToString() + "/" + _maxWood.ToString();
         if (StockBatListManager.instance != null )
         {
@@ -386,7 +410,14 @@ public class RessourceManager : MonoBehaviour
     {
         yield return new WaitForSeconds(_time);
         _animatorRessource3.SetTrigger("Water2");
-        _animatorRessource3.gameObject.GetComponentInChildren<TextMeshProUGUI>().text = "+ " + quantity.ToString() + " eau";
+        if (quantity > 0)
+        {
+            _animatorRessource3.gameObject.GetComponentInChildren<TextMeshProUGUI>().text = "+ " + quantity.ToString() + " eau";
+        }
+        else if (quantity < 0)
+        {
+            _animatorRessource3.gameObject.GetComponentInChildren<TextMeshProUGUI>().text = quantity.ToString() + " eau";
+        }
         _waterText.text = _water.ToString() + "/" + _maxWater.ToString();
         if (StockBatListManager.instance != null)
         {
@@ -401,7 +432,14 @@ public class RessourceManager : MonoBehaviour
     {
         yield return new WaitForSeconds(_time);
         _animatorRessource2.SetTrigger("Stone2");
-        _animatorRessource2.gameObject.GetComponentInChildren<TextMeshProUGUI>().text = "+ " + quantity.ToString() + " stone";
+        if (quantity > 0)
+        {
+            _animatorRessource2.gameObject.GetComponentInChildren<TextMeshProUGUI>().text = "+ " + quantity.ToString() + " stone";
+        }
+        else if (quantity < 0)
+        {
+            _animatorRessource2.gameObject.GetComponentInChildren<TextMeshProUGUI>().text = quantity.ToString() + " stone";
+        }
         _stoneText.text = _stone.ToString() + "/" + _maxStone.ToString();
         if (StockBatListManager.instance != null)
         {

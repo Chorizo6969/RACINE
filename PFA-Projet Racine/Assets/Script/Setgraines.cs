@@ -5,8 +5,7 @@ using UnityEngine;
 
 public class Setgraines : MonoBehaviour
 {
-    [SerializeField]
-    private TextMeshProUGUI _graines;
+    public TextMeshProUGUI _graines;
 
     [SerializeField]
     private int _woodCost;
@@ -17,8 +16,7 @@ public class Setgraines : MonoBehaviour
     [SerializeField]
     private int _waterCost;
 
-    [SerializeField]
-    private int nombreGraines = 0;
+    public int nombreGraines = 0;
 
     public void AddGraines()
     {

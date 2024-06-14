@@ -89,7 +89,10 @@ public class IntroManager : MonoBehaviour
         while (!clic) await Task.Yield();
         fleche[3].SetActive(false);
         while (ExpeditionLoot.instance.listBucheron.Count == 0) await Task.Yield();
-        UIManager.Instance.ActivationUi();
+        if (Jkh.Instance.BOOLISTEBUILDINGPANEL)
+        {
+            UIManager.Instance.ActivationUi();
+        }
         bouliste = false;
         Dialogue4();
     }

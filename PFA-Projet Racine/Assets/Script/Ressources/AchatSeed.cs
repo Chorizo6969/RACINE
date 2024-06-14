@@ -8,6 +8,8 @@ public class AchatSeed : MonoBehaviour
     [SerializeField]
     private RessourceManager RessourceManager;
     [SerializeField]
+    private GivePlant plant;
+    [SerializeField]
     private TextMeshProUGUI _textRacine;
     [SerializeField]
     private TextMeshProUGUI textWood;
@@ -49,19 +51,22 @@ public class AchatSeed : MonoBehaviour
     private TextMeshProUGUI Leveltexte;
     [SerializeField]
     private TextMeshProUGUI Leveltexte2;
-
     [SerializeField] 
     private GameObject Unlock1;
     [SerializeField] 
     private GameObject Unlock2;
-
-
     [SerializeField]
     private GameObject HerbeMineur;
     [SerializeField]
     private GameObject Mineur;
     [SerializeField]
     private TextMeshProUGUI textMineur;
+    [SerializeField]
+    private GameObject _upgradePanel;
+    [SerializeField]
+    private GameObject _racinePanel;
+    [SerializeField]
+    private Setgraines _setGraines;
 
     public List<GameObject> ListeButtonLvl2;
     public List<GameObject> ListePanelLockLvl2;
@@ -134,6 +139,13 @@ public class AchatSeed : MonoBehaviour
                 HerbeMineur.SetActive(true);
                 textMineur.text = "1 pierre 3 bois".ToString();
                 textMineur.color = Color.black;
+                _upgradePanel.SetActive(false);
+                _racinePanel.SetActive(false);
+                TutoMineur.Instance.LevelUpRacine();
+                plant._nombreGraines += 1;
+                _setGraines.nombreGraines += 1;
+                _setGraines._graines.text = _setGraines.nombreGraines.ToString();
+
             }
         }
         else if (index == 2)

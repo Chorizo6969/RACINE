@@ -29,6 +29,7 @@ public class TutoHuman : MonoBehaviour
             modifDialogue.modifDialogue5();
             while (!_dialogue._isfinish) await Task.Yield();
             _panelDialogue.SetActive(false);
+            IncrementHuman.instance._Warningpassed = true;
         }
     }
 }

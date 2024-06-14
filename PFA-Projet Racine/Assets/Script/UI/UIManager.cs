@@ -11,6 +11,8 @@ public class UIManager : MonoBehaviour
     private GameObject _panel;
     [SerializeField]
     private Button _button;
+    [SerializeField]
+    private Button _desactiveur;
 
     public bool _isOpen;
 
@@ -27,6 +29,7 @@ public class UIManager : MonoBehaviour
         Jkh.Instance.OnClickBuildingPanel();
         if (index == 1)
         {
+            _desactiveur.gameObject.SetActive(true);
             _button.interactable = false;
             _isOpen = true;
             _uiAnimator.SetInteger("Click", 1);
@@ -35,6 +38,7 @@ public class UIManager : MonoBehaviour
         }
         else if (index == 2)
         {
+            _desactiveur.gameObject.SetActive(false);
             _button.interactable = false;
             _isOpen = false;
             _uiAnimator.SetInteger("Click", 2);
