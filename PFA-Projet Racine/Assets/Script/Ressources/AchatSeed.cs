@@ -145,7 +145,17 @@ public class AchatSeed : MonoBehaviour
                 plant._nombreGraines += 1;
                 _setGraines.nombreGraines += 1;
                 _setGraines._graines.text = _setGraines.nombreGraines.ToString();
-
+                RessourceManager.AddWoodStock(5);
+                RessourceManager.AddWaterStock(10);
+                RessourceManager.AddStoneStock(10);
+                MaxBatPlacable.Instance.IncreaseMaxBat(5, 0);
+                MaxBatPlacable.Instance.IncreaseMaxBat(3, 1);
+                MaxBatPlacable.Instance.IncreaseMaxBat(3, 2);
+                MaxBatPlacable.Instance.IncreaseMaxBat(3, 3);
+                MaxBatPlacable.Instance.IncreaseMaxBat(3, 4);
+                MaxBatPlacable.Instance.IncreaseMaxBat(3, 5);
+                MaxBatPlacable.Instance.IncreaseMaxBat(3, 6);
+                MaxBatPlacable.Instance.IncreaseMaxBat(2, 9);
             }
         }
         else if (index == 2)
@@ -165,7 +175,6 @@ public class AchatSeed : MonoBehaviour
                 ensembleRacine.SetActive(false);
                 Level3Racine.SetActive(true);
                 Unlock2.SetActive(false);
-
                 foreach (GameObject obj in ListeButtonLvl3)
                 {
                     Button button = obj.GetComponent<Button>();
@@ -175,6 +184,17 @@ public class AchatSeed : MonoBehaviour
                 {
                     obj.SetActive(false);
                 }
+                RessourceManager.AddWoodStock(5);
+                RessourceManager.AddWaterStock(10);
+                RessourceManager.AddStoneStock(10);
+                MaxBatPlacable.Instance.IncreaseMaxBat(99, 0);
+                MaxBatPlacable.Instance.IncreaseMaxBat(99, 1);
+                MaxBatPlacable.Instance.IncreaseMaxBat(99, 2);
+                MaxBatPlacable.Instance.IncreaseMaxBat(99, 3);
+                MaxBatPlacable.Instance.IncreaseMaxBat(99, 4);
+                MaxBatPlacable.Instance.IncreaseMaxBat(99, 5);
+                MaxBatPlacable.Instance.IncreaseMaxBat(99, 6);
+                MaxBatPlacable.Instance.IncreaseMaxBat(99, 9);
             }
         }
     }
