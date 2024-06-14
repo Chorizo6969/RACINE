@@ -8,8 +8,8 @@ public class IncrementHuman : MonoBehaviour
 
     [SerializeField] private TextMeshProUGUI _textMaxHuman;
 
-    private int _count = 0;
-    [SerializeField] private int _maxHuman = 0;
+    public int _count = 0;
+    public int _maxHuman = 0;
 
     public int _countBucheron;
     public int _maxBucheron;
