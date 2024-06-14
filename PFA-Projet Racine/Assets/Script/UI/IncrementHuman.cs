@@ -26,7 +26,7 @@ public class IncrementHuman : MonoBehaviour
     public TextMeshProUGUI StoneManText;
     public TextMeshProUGUI MaxStoneManText;
 
-    private bool _Warningpassed;
+    public bool _Warningpassed;
 
     public static IncrementHuman instance;
 
@@ -71,7 +71,6 @@ public class IncrementHuman : MonoBehaviour
         if (!_Warningpassed)
         {
             TutoHuman.Instance.WarningTuto();
-            _Warningpassed = true;
         }
     }
     
@@ -82,7 +81,6 @@ public class IncrementHuman : MonoBehaviour
         if (!_Warningpassed)
         {
             TutoHuman.Instance.WarningTuto();
-            _Warningpassed = true;
         }
     }
 
@@ -93,7 +91,6 @@ public class IncrementHuman : MonoBehaviour
         if (!_Warningpassed)
         {
             TutoHuman.Instance.WarningTuto();
-            _Warningpassed = true;
         }
     }
     

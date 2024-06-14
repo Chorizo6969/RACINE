@@ -65,6 +65,8 @@ public class AchatSeed : MonoBehaviour
     private GameObject _upgradePanel;
     [SerializeField]
     private GameObject _racinePanel;
+    [SerializeField]
+    private Setgraines _setGraines;
 
     public List<GameObject> ListeButtonLvl2;
     public List<GameObject> ListePanelLockLvl2;
@@ -141,7 +143,8 @@ public class AchatSeed : MonoBehaviour
                 _racinePanel.SetActive(false);
                 TutoMineur.Instance.LevelUpRacine();
                 plant._nombreGraines += 1;
-
+                _setGraines.nombreGraines += 1;
+                _setGraines._graines.text = _setGraines.nombreGraines.ToString();
 
             }
         }
