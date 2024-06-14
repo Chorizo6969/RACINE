@@ -43,6 +43,9 @@ public class BuildingCanvas : MonoBehaviour
     }
     public void DropBuilding()
     {
+        woodDestroyCost = GetComponent<BuildingCost>().WoodCost / 2;
+        stoneDestroyCost = GetComponent<BuildingCost>().StoneCost / 2;
+
         if (FirstPlacement)
         {
             if (id == 0)

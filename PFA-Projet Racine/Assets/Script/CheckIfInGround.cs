@@ -39,4 +39,9 @@ public class CheckIfInGround : MonoBehaviour
         }
         return allow;
     }
+
+    private void OnDisable()
+    {
+        _hitColliders.Clear();
+    }
 }
