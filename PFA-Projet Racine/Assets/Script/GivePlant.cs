@@ -44,9 +44,9 @@ public class GivePlant : MonoBehaviour
     /// </summary>
     public void OnClick()
     {
-        if (_nombreGraines > 0)
+        ClickFieldManager _clickFieldManager = _camera.GetComponent<ClickFieldManager>();
+        if (_nombreGraines > 0 && _clickFieldManager.HumanSeed == null)
         {
-            ClickFieldManager _clickFieldManager = _camera.GetComponent<ClickFieldManager>();
             _clickFieldManager.HumanSeed = _seed;
             GiveRefToField.instance.GiveRefPasTuple(_clickFieldManager.gameObject, _humanPlantPrefab, _buttonExpeditionPrefabBuche, _buttonExpeditionPrefabAquaman, _buttonExpeditionPrefabMineur, _content, VfxEau1, VfxEau2);
             _modifcursor.ChangeCursor(_seedTexture);

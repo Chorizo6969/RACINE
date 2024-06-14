@@ -1,5 +1,7 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.VFX;
 
 /// <summary>
 /// Script qui gère les champs
@@ -33,10 +35,13 @@ public class Field : MonoBehaviour
 
     public GameObject WATERBUBUBUBUBUBUBUBUBUBUBUBUBUBUBUBUBUBUBUBUBUBUBUBUBUBUBUBUBUBUBUBUBUBULLE;
 
+    public ParticleSystem WaterRain;
+
     private void Start()
     {
         _progressCircle.SetActive(false);
         WATERBUBUBUBUBUBUBUBUBUBUBUBUBUBUBUBUBUBUBUBUBUBUBUBUBUBUBUBUBUBUBUBUBUBULLE.SetActive(false);
+        WaterRain.gameObject.SetActive(false);
     }
 
     public void PlantField()
@@ -73,9 +78,18 @@ public class Field : MonoBehaviour
             _progressCircle?.SetActive(true);
             IsWatered = true;
             _currentPlant?.SetActive(true);
+            WaterRain.gameObject.SetActive(true);
+            WaterRain.Play();
+            StartCoroutine(AttendGentimentStp());
             RessourceManager.Instance.EditWaterAmount(-1);
             WATERBUBUBUBUBUBUBUBUBUBUBUBUBUBUBUBUBUBUBUBUBUBUBUBUBUBUBUBUBUBUBUBUBUBULLE.SetActive(false);
         }
+    }
+
+    IEnumerator AttendGentimentStp()
+    {
+        yield return new WaitForSeconds(2);
+        WaterRain.gameObject.SetActive(false);
     }
 
     private void Update()

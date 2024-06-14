@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.VFX;
+using static Unity.VisualScripting.Member;
 
 /// <summary>
 /// Script qui gère le comportement de l'IA
@@ -75,6 +76,8 @@ public class IA : MonoBehaviour
             _currentTarget = work[2];
             IncrementHuman.instance.EditAquaman(1);
         }
+
+        StartCoroutine(AAAAH());
     }
 
     /// <summary>
@@ -82,6 +85,7 @@ public class IA : MonoBehaviour
     /// </summary>
     public void GiveTarget()
     {
+        if (GetComponent<HideNSeek>().IsHiding) return;
         _agent.speed = 3;
         StopCoroutine(GetComponent<NewRandomPos>().AutorizeMove());
         GetComponent<NewRandomPos>().SetDestinationToGo(_currentTarget.transform.position);
@@ -132,5 +136,30 @@ public class IA : MonoBehaviour
         {
             IncrementHuman.instance.EditAquaman(-1);
         }
+    }
+
+    IEnumerator AAAAH()
+    {
+        yield return new WaitForSeconds(60);
+        if (gameObject.layer == 8)
+        {
+            gameObject.GetComponent<IA>().VFX.Play();
+            int sound = Random.Range(0, HumanSound.instance._aqua.Count);
+            HumanSound.instance._source.PlayOneShot(HumanSound.instance._aqua[sound]);
+        }
+        else if (gameObject.layer == 9)
+        {
+            gameObject.GetComponent<IA>().VFX.Play();
+            int sound = Random.Range(0, HumanSound.instance._buchron.Count);
+            HumanSound.instance._source.PlayOneShot(HumanSound.instance._buchron[sound]);
+        }
+        else if (gameObject.layer == 10)
+        {
+            gameObject.GetComponent<IA>().VFX.Play();
+            int sound = Random.Range(0, HumanSound.instance._mineur.Count);
+            HumanSound.instance._source.PlayOneShot(HumanSound.instance._mineur[sound]);
+        }
+
+        StartCoroutine(AAAAH());
     }
 }

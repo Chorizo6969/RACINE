@@ -5,17 +5,13 @@ using UnityEngine.VFX;
 
 public class HumanSound : MonoBehaviour
 {
-    [SerializeField]
-    private List<AudioClip> _aqua;
+    public List<AudioClip> _aqua;
 
-    [SerializeField]
-    private List<AudioClip> _buchron;
+    public List<AudioClip> _buchron;
 
-    [SerializeField]
-    private List<AudioClip> _mineur;
+    public List<AudioClip> _mineur;
 
-    [SerializeField]
-    private AudioSource _source;
+    public AudioSource _source;
 
     private bool _isPlaying;
 

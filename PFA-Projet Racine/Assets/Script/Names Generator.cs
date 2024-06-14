@@ -51,7 +51,7 @@ public class NamesGenerator : MonoBehaviour
             int randomName = Random.Range(0, _arrayNameMasc.Count);
             string NameMasc = _arrayNameMasc[randomName];
             Nom = NameMasc;
-            _arrayNameMasc.Remove(_arrayNameMasc[randomName]);
+            //_arrayNameMasc.Remove(_arrayNameMasc[randomName]);
             int randomAdjectif = Random.Range(0, _arrayAdjectifMasc.Count);
             string AdjectifMasc = _arrayAdjectifMasc[randomAdjectif];
             Adjectif = AdjectifMasc;
@@ -61,7 +61,7 @@ public class NamesGenerator : MonoBehaviour
             int randomName = Random.Range(0, _arrayNameFem.Count);
             string NameF = _arrayNameFem[randomName];
             Nom = NameF;
-            _arrayNameFem.Remove(_arrayNameFem[randomName]);
+            //_arrayNameFem.Remove(_arrayNameFem[randomName]);
             int randomAdjectif = Random.Range(0, _arrayAdjectifFem.Count);
             string AdjectifFem = _arrayAdjectifFem[randomAdjectif];
             Adjectif = AdjectifFem;
