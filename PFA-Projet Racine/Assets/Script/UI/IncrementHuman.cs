@@ -26,6 +26,8 @@ public class IncrementHuman : MonoBehaviour
     public TextMeshProUGUI StoneManText;
     public TextMeshProUGUI MaxStoneManText;
 
+    private bool _Warningpassed;
+
     public static IncrementHuman instance;
 
     public void Awake()
@@ -66,21 +68,33 @@ public class IncrementHuman : MonoBehaviour
     {
         _countBucheron += amount;
         BucheronText.text = _countBucheron.ToString();
-        TutoHuman.Instance.WarningTuto();
+        if (!_Warningpassed)
+        {
+            TutoHuman.Instance.WarningTuto();
+            _Warningpassed = true;
+        }
     }
     
     public void EditMaxBucheron(int amount)
     {
         _maxBucheron += amount;
         MaxBucheronText.text = _maxBucheron.ToString();
-        TutoHuman.Instance.WarningTuto();
+        if (!_Warningpassed)
+        {
+            TutoHuman.Instance.WarningTuto();
+            _Warningpassed = true;
+        }
     }
 
     public void EditAquaman(int amount)
     {
         _countAquaman += amount;
         AquamanText.text = _countAquaman.ToString();
-        TutoHuman.Instance.WarningTuto();
+        if (!_Warningpassed)
+        {
+            TutoHuman.Instance.WarningTuto();
+            _Warningpassed = true;
+        }
     }
     
     public void EditMaxAquaman(int amount)
