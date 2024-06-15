@@ -637,7 +637,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1568089756639197186, guid: f27da1454f004b6449b501ed4a45a1be, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -2.54
       objectReference: {fileID: 0}
     - target: {fileID: 1568089756639197186, guid: f27da1454f004b6449b501ed4a45a1be, type: 3}
       propertyPath: m_LocalRotation.w
@@ -657,11 +657,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1568089756639197186, guid: f27da1454f004b6449b501ed4a45a1be, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -959.83
+      value: -959.93
       objectReference: {fileID: 0}
     - target: {fileID: 1568089756639197186, guid: f27da1454f004b6449b501ed4a45a1be, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -534.9
+      value: -532.69
       objectReference: {fileID: 0}
     - target: {fileID: 1568089756639197186, guid: f27da1454f004b6449b501ed4a45a1be, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -739,7 +739,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3239976418339103434, guid: 44e48a36a19c7b641b4a787b080424f8, type: 3}
       propertyPath: m_TagString
-      value: building
+      value: forest
       objectReference: {fileID: 0}
     - target: {fileID: 3809584787550688070, guid: 44e48a36a19c7b641b4a787b080424f8, type: 3}
       propertyPath: m_Enabled

@@ -685,7 +685,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3239976418339103434, guid: 44e48a36a19c7b641b4a787b080424f8, type: 3}
       propertyPath: m_TagString
-      value: building
+      value: forest
       objectReference: {fileID: 0}
     - target: {fileID: 6484547370428749004, guid: 44e48a36a19c7b641b4a787b080424f8, type: 3}
       propertyPath: m_LocalScale.x
@@ -938,8 +938,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 2, y: 12.0163355, z: 2}
-  m_Center: {x: 0, y: -5.863219, z: 0}
+  m_Size: {x: 1.517286, y: 12.0163355, z: 1.5635457}
+  m_Center: {x: -0.07066566, y: -5.863219, z: -0.05518508}
 --- !u!114 &8055882160948908883
 MonoBehaviour:
   m_ObjectHideFlags: 0

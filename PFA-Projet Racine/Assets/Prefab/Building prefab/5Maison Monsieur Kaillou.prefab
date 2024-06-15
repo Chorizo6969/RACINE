@@ -519,7 +519,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3239976418339103434, guid: 44e48a36a19c7b641b4a787b080424f8, type: 3}
       propertyPath: m_TagString
-      value: building
+      value: forest
       objectReference: {fileID: 0}
     - target: {fileID: 3809584787550688070, guid: 44e48a36a19c7b641b4a787b080424f8, type: 3}
       propertyPath: m_Enabled
