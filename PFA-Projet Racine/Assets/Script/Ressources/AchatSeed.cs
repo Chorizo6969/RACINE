@@ -104,9 +104,9 @@ public class AchatSeed : MonoBehaviour
     {
         if (index == 1)
         {
-            string wood = "40";
-            string stone = "20";
-            string water = "60";
+            string wood = "60";
+            string stone = "30";
+            string water = "80";
             textWood2.text = wood.ToString();
             textStone.text = stone.ToString();
             textO2.text = water.ToString();
@@ -160,13 +160,13 @@ public class AchatSeed : MonoBehaviour
         }
         else if (index == 2)
         {
-            if (RessourceManager.CheckIfCanBuild(40, 20, 60))
+            if (RessourceManager.CheckIfCanBuild(60, 30, 80))
             {
                 prix3.GetComponentInParent<Button>().enabled = false;
                 _textRacine.text = "3".ToString();
-                RessourceManager.EditWoodAmount(-40);
-                RessourceManager.EditStoneAmount(-20);
-                RessourceManager.EditWaterAmount(-60);
+                RessourceManager.EditWoodAmount(-60);
+                RessourceManager.EditStoneAmount(-30);
+                RessourceManager.EditWaterAmount(-80);
                 prix1.SetActive(false);
                 prix2.SetActive(false);
                 prix3.SetActive(true);
