@@ -187,14 +187,14 @@ public class AchatSeed : MonoBehaviour
                 RessourceManager.AddWoodStock(5);
                 RessourceManager.AddWaterStock(10);
                 RessourceManager.AddStoneStock(10);
-                MaxBatPlacable.Instance.IncreaseMaxBat(99, 0);
-                MaxBatPlacable.Instance.IncreaseMaxBat(99, 1);
-                MaxBatPlacable.Instance.IncreaseMaxBat(99, 2);
-                MaxBatPlacable.Instance.IncreaseMaxBat(99, 3);
-                MaxBatPlacable.Instance.IncreaseMaxBat(99, 4);
-                MaxBatPlacable.Instance.IncreaseMaxBat(99, 5);
-                MaxBatPlacable.Instance.IncreaseMaxBat(99, 6);
-                MaxBatPlacable.Instance.IncreaseMaxBat(99, 9);
+                MaxBatPlacable.Instance.IncreaseMaxBat(80, 0);
+                MaxBatPlacable.Instance.IncreaseMaxBat(80, 1);
+                MaxBatPlacable.Instance.IncreaseMaxBat(80, 2);
+                MaxBatPlacable.Instance.IncreaseMaxBat(80, 3);
+                MaxBatPlacable.Instance.IncreaseMaxBat(80, 4);
+                MaxBatPlacable.Instance.IncreaseMaxBat(80, 5);
+                MaxBatPlacable.Instance.IncreaseMaxBat(80, 6);
+                MaxBatPlacable.Instance.IncreaseMaxBat(80, 9);
             }
         }
     }
