@@ -90,7 +90,7 @@ public class RessourceManager : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKey(KeyCode.Q))
+        /*if (Input.GetKey(KeyCode.Q))
         {
             EditWoodAmount(10);
         }
@@ -125,7 +125,7 @@ public class RessourceManager : MonoBehaviour
         if (Input.GetKey(KeyCode.C))
         {
             EditStoneAmount(-100);
-        }
+        }*/
     }
 
     /// <summary>
