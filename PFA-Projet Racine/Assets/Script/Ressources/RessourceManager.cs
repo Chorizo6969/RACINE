@@ -10,6 +10,7 @@ using UnityEngine.SocialPlatforms.Impl;
 /// </summary>
 public class RessourceManager : MonoBehaviour
 {
+    [Header("Wood")]
     /// <summary>
     /// Quantité actuelle de bois
     /// </summary>
@@ -25,6 +26,7 @@ public class RessourceManager : MonoBehaviour
     /// </summary>
     [SerializeField] private TextMeshProUGUI _woodText;
 
+    [Header("Water")]
     /// <summary>
     /// Quantité actuelle d'eau
     /// </summary>
@@ -40,6 +42,7 @@ public class RessourceManager : MonoBehaviour
     /// </summary>
     [SerializeField] private TextMeshProUGUI _waterText;
 
+    [Header("Stone")]
     /// <summary>
     /// Quantité actuelle de pierre
     /// </summary>
@@ -55,6 +58,7 @@ public class RessourceManager : MonoBehaviour
     /// </summary>
     [SerializeField] private TextMeshProUGUI _stoneText;
 
+    [Header("Juice Objects")]
     [SerializeField] private GameObject AddingScoreText;
 
     public GameObject SpawnWood;
@@ -63,18 +67,21 @@ public class RessourceManager : MonoBehaviour
 
     [SerializeField] private GameObject _panelParent;
 
+    [Header("Osef")]
     /// <summary>
     /// Texte d'erreur affiché quand on a pas assez de ressources pour poser un batiment
     /// </summary>
     [SerializeField] private GameObject _errorText;
 
+    [Header("Animator")]
     public Animator _animatorRessource;
     public Animator _animatorRessource2;
     public Animator _animatorRessource3;
 
     public static RessourceManager Instance;
 
-    
+    [Header("Tkt ;)")]
+    public bool isCheat;
 
     private void Awake()
     {
@@ -90,6 +97,9 @@ public class RessourceManager : MonoBehaviour
 
     private void Update()
     {
+
+        if (!isCheat) return;
+
         if (Input.GetKeyDown(KeyCode.Q))
         {
             EditWoodAmount(10);
