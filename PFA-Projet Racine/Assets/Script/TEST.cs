@@ -1,10 +1,35 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class TEST : MonoBehaviour
 {
-    public void CLICKTEST(string taMereEnStringDeGuerre)
+    public KeyCode code1;
+    public KeyCode code2;
+    public KeyCode code3;
+
+    public Listexpedition List2trucs;
+
+    private void Update()
     {
-        Debug.Log(taMereEnStringDeGuerre);
+        if (Input.GetKey(code1))
+        {
+            GetComponent<Spawn>().Spawner();
+        }
+        
+        if (Input.GetKey(KeyCode.LeftShift) && Input.GetKeyDown(code2))
+        {
+            foreach (GameObject button in List2trucs.list)
+            {
+                button.GetComponent<ChangeColor>().Change();
+            }
+        }
+        else if (Input.GetKey(KeyCode.LeftShift) && Input.GetKeyDown(code3))
+        {
+            foreach (GameObject humanPlant in List2trucs.listHuman)
+            {
+                humanPlant.GetComponent<HideNSeek>()._startHiding = true;
+            }
+        }
     }
 }
