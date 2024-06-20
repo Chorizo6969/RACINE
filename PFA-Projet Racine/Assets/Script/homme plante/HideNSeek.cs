@@ -34,6 +34,10 @@ public class HideNSeek : MonoBehaviour
         }
         else if (_startHiding && IsHiding)
         {
+            if (GetComponent<NewRandomPos>().ParticleSystemSLEEP.isPlaying)
+            {
+                GetComponent<NewRandomPos>().ParticleSystemSLEEP.Stop();
+            }
             _startHiding = false;
             IsHiding = false;
             _naveshAgent.speed = 0;

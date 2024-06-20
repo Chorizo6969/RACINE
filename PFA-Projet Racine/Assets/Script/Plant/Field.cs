@@ -37,8 +37,11 @@ public class Field : MonoBehaviour
 
     public ParticleSystem WaterRain;
 
+    public bool CheatField;
+
     private void Start()
     {
+        if (CheatField) return;
         _progressCircle.SetActive(false);
         WATERBUBUBUBUBUBUBUBUBUBUBUBUBUBUBUBUBUBUBUBUBUBUBUBUBUBUBUBUBUBUBUBUBUBULLE.SetActive(false);
         WaterRain.gameObject.SetActive(false);

@@ -17,7 +17,7 @@ public class Spawn : MonoBehaviour
     public List<GameObject> worktarget;
     public NamesGenerator NamesGenerator;
 
-    private void Awake()
+    private void Start()
     {
         NamesGenerator = NamesGenerator.Instance;
         worktarget = TargetList.instance.TargetListObjects;
@@ -70,5 +70,10 @@ public class Spawn : MonoBehaviour
             Parent.GetComponent<Listexpedition>().AddObject(new_button);
             return new_button;
         }
+    }
+
+    IEnumerator Unity()
+    {
+        yield return new WaitForSeconds(0.25f);
     }
 }

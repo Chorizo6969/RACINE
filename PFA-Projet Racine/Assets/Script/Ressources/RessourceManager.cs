@@ -90,42 +90,154 @@ public class RessourceManager : MonoBehaviour
 
     private void Update()
     {
-        /*if (Input.GetKey(KeyCode.Q))
+        if (Input.GetKeyDown(KeyCode.Q))
         {
             EditWoodAmount(10);
         }
-        if (Input.GetKey(KeyCode.W))
+        if (Input.GetKeyDown(KeyCode.W))
         {
             EditWoodAmount(50);
         }
-        if (Input.GetKey(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.E))
         {
             EditWoodAmount(-100);
         }
-        if (Input.GetKey(KeyCode.A))
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            AddWoodStock(10);
+        }
+        if (Input.GetKeyDown(KeyCode.T))
+        {
+            AddWoodStock(50);
+        }
+        if (Input.GetKeyDown(KeyCode.Y))
+        {
+            AddWoodStock(-100);
+        }
+        if (Input.GetKeyDown(KeyCode.A))
         {
             EditWaterAmount(10);
         }
-        if (Input.GetKey(KeyCode.S))
+        if (Input.GetKeyDown(KeyCode.S))
         {
             EditWaterAmount(50);
         }
-        if (Input.GetKey(KeyCode.D))
+        if (Input.GetKeyDown(KeyCode.D))
         {
             EditWaterAmount(-100);
         }
-        if (Input.GetKey(KeyCode.Z))
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+            AddWaterStock(10);
+        }
+        if (Input.GetKeyDown(KeyCode.G))
+        {
+            AddWaterStock(50);
+        }
+        if (Input.GetKeyDown(KeyCode.H))
+        {
+            AddWaterStock(-100);
+        }
+        if (Input.GetKeyDown(KeyCode.Z))
         {
             EditStoneAmount(10);
         }
-        if (Input.GetKey(KeyCode.X))
+        if (Input.GetKeyDown(KeyCode.X))
         {
             EditStoneAmount(50);
         }
-        if (Input.GetKey(KeyCode.C))
+        if (Input.GetKeyDown(KeyCode.C))
         {
             EditStoneAmount(-100);
-        }*/
+        }
+        if (Input.GetKeyDown(KeyCode.V))
+        {
+            AddStoneStock(10);
+        }
+        if (Input.GetKeyDown(KeyCode.B))
+        {
+            AddStoneStock(50);
+        }
+        if (Input.GetKeyDown(KeyCode.N))
+        {
+            AddStoneStock(-100);
+        }
+
+        if (Input.GetKey(KeyCode.LeftShift))
+        {
+            if (Input.GetKey(KeyCode.Q))
+            {
+                EditWoodAmount(10);
+            }
+            if (Input.GetKey(KeyCode.W))
+            {
+                EditWoodAmount(50);
+            }
+            if (Input.GetKey(KeyCode.E))
+            {
+                EditWoodAmount(-100);
+            }
+            if (Input.GetKey(KeyCode.R))
+            {
+                AddWoodStock(10);
+            }
+            if (Input.GetKey(KeyCode.T))
+            {
+                AddWoodStock(50);
+            }
+            if (Input.GetKey(KeyCode.Y))
+            {
+                AddWoodStock(-100);
+            }
+            if (Input.GetKey(KeyCode.A))
+            {
+                EditWaterAmount(10);
+            }
+            if (Input.GetKey(KeyCode.S))
+            {
+                EditWaterAmount(50);
+            }
+            if (Input.GetKey(KeyCode.D))
+            {
+                EditWaterAmount(-100);
+            }
+            if (Input.GetKey(KeyCode.F))
+            {
+                AddWaterStock(10);
+            }
+            if (Input.GetKey(KeyCode.G))
+            {
+                AddWaterStock(50);
+            }
+            if (Input.GetKey(KeyCode.H))
+            {
+                AddWaterStock(-100);
+            }
+            if (Input.GetKey(KeyCode.Z))
+            {
+                EditStoneAmount(10);
+            }
+            if (Input.GetKey(KeyCode.X))
+            {
+                EditStoneAmount(50);
+            }
+            if (Input.GetKey(KeyCode.C))
+            {
+                EditStoneAmount(-100);
+            }
+            if (Input.GetKey(KeyCode.V))
+            {
+                AddStoneStock(10);
+            }
+            if (Input.GetKey(KeyCode.B))
+            {
+                AddStoneStock(50);
+            }
+            if (Input.GetKey(KeyCode.N))
+            {
+                AddStoneStock(-100);
+            }
+        }
     }
 
     /// <summary>
@@ -200,6 +312,10 @@ public class RessourceManager : MonoBehaviour
     public void AddWoodStock(int amount)
     {
         _maxWood += amount;
+        if (_maxWood < 0)
+        {
+            _maxWood = 0;
+        }
         StartCoroutine(WoodAttend(0, amount));
     }
 
@@ -275,6 +391,10 @@ public class RessourceManager : MonoBehaviour
     public void AddWaterStock(int amount)
     {
         _maxWater += amount;
+        if (_maxWater < 0)
+        {
+            _maxWater = 0;
+        }
         StartCoroutine(WaterAttend(0, amount));
     }
 
@@ -351,6 +471,10 @@ public class RessourceManager : MonoBehaviour
     public void AddStoneStock(int amount)
     {
         _maxStone += amount;
+        if (_maxStone < 0)
+        {
+            _maxStone = 0;
+        }
         StartCoroutine(StoneAttend(0, amount));
     }
 

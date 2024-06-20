@@ -1205,6 +1205,8 @@ MonoBehaviour:
   _buttonExpeditionPrefabBuche: {fileID: 0}
   _buttonExpeditionPrefabAquaman: {fileID: 0}
   _buttonExpeditionPrefabMineur: {fileID: 0}
+  VfxEau1: {fileID: 0}
+  VfxEau2: {fileID: 0}
   _content: {fileID: 0}
   _grainesMarchand: {fileID: 0}
   _setgraines: {fileID: 0}
@@ -2640,7 +2642,7 @@ Transform:
   m_GameObject: {fileID: 694609951}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.1, y: -0.1618045, z: 0}
+  m_LocalPosition: {x: -0.1, y: -1.06, z: 0}
   m_LocalScale: {x: 10, y: 0.1, z: 10}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3622,6 +3624,8 @@ MonoBehaviour:
   _buttonExpeditionPrefabBuche: {fileID: 0}
   _buttonExpeditionPrefabAquaman: {fileID: 0}
   _buttonExpeditionPrefabMineur: {fileID: 0}
+  VfxEau1: {fileID: 0}
+  VfxEau2: {fileID: 0}
   _content: {fileID: 0}
   _grainesMarchand: {fileID: 0}
   _setgraines: {fileID: 0}
@@ -4062,6 +4066,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   building: {fileID: 1553339804758017398, guid: abc961d8ca4bcd44fa9fc12c249b97b1, type: 3}
   HidePointListOwner: {fileID: 0}
+  _objectToGiveBuilding: {fileID: 0}
+  BuildingPanelTuto: {fileID: 0}
 --- !u!114 &895393586
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4399,6 +4405,9 @@ MonoBehaviour:
   minX: -14
   maxZ: 8.76
   minZ: -13.25
+  cameraLimits:
+    m_Center: {x: 0, y: 0, z: 0}
+    m_Extent: {x: 0, y: 0, z: 0}
   ZoomMax: 0
   ZoomMin: 0
 --- !u!114 &963194230
@@ -4420,6 +4429,7 @@ MonoBehaviour:
   LayerMask:
     serializedVersion: 2
     m_Bits: 0
+  PanelBuildingTuto: {fileID: 0}
 --- !u!114 &963194231
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5855,6 +5865,8 @@ MonoBehaviour:
   _buttonExpeditionPrefabBuche: {fileID: 0}
   _buttonExpeditionPrefabAquaman: {fileID: 0}
   _buttonExpeditionPrefabMineur: {fileID: 0}
+  VfxEau1: {fileID: 0}
+  VfxEau2: {fileID: 0}
   _content: {fileID: 0}
   _grainesMarchand: {fileID: 0}
   _setgraines: {fileID: 0}
@@ -6013,6 +6025,8 @@ MonoBehaviour:
   _buttonExpeditionPrefabBuche: {fileID: 0}
   _buttonExpeditionPrefabAquaman: {fileID: 0}
   _buttonExpeditionPrefabMineur: {fileID: 0}
+  VfxEau1: {fileID: 0}
+  VfxEau2: {fileID: 0}
   _content: {fileID: 0}
   _grainesMarchand: {fileID: 0}
   _setgraines: {fileID: 0}
@@ -6856,6 +6870,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   building: {fileID: 1293946590759701267, guid: dc4324ac253558f4190bb93a6ce607c5, type: 3}
   HidePointListOwner: {fileID: 0}
+  _objectToGiveBuilding: {fileID: 0}
+  BuildingPanelTuto: {fileID: 0}
 --- !u!114 &1351470408
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8294,6 +8310,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   building: {fileID: 2673577714733791471, guid: 5d14d16b33e3faa41a89007180a7c6fd, type: 3}
   HidePointListOwner: {fileID: 0}
+  _objectToGiveBuilding: {fileID: 0}
+  BuildingPanelTuto: {fileID: 0}
 --- !u!114 &1640542981
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8948,6 +8966,79 @@ MonoBehaviour:
   m_DeselectOnBackgroundClick: 1
   m_PointerBehavior: 0
   m_CursorLockBehavior: 0
+--- !u!1 &1896000021
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1896000024}
+  - component: {fileID: 1896000023}
+  - component: {fileID: 1896000022}
+  m_Layer: 0
+  m_Name: Bucheron Spawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1896000022
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1896000021}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 073043b9b294b2f41b30bdfa0aa24833, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HumanPrefab: {fileID: 5123115511750519978, guid: 3ea2b552a1cba5e488e17491e3ea66b9, type: 3}
+  PrefabButtonBucheron: {fileID: 352165112938733921, guid: 3a4eacc350aeda94ca7c567170a39c5d, type: 3}
+  PrefabButtonAquaman: {fileID: 352165112938733921, guid: f8d06f1e03caaf74195e60a298b7c069, type: 3}
+  PrefabButtonMineur: {fileID: 352165112938733921, guid: 9db0636e8f6c0164babe388f58bfebb3, type: 3}
+  Parent: {fileID: 1604657466}
+  _visualEffectEau1: {fileID: 0}
+  _visualEffectEau2: {fileID: 0}
+  worktarget: []
+  NamesGenerator: {fileID: 0}
+--- !u!114 &1896000023
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1896000021}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e2dfd1e877ebba4c96e933b6a86cad7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <ThePlant>k__BackingField: {fileID: 0}
+  <IsPlanted>k__BackingField: 0
+  <IsWatered>k__BackingField: 0
+  <_currentPlant>k__BackingField: {fileID: 1896000021}
+  <_progressCircle>k__BackingField: {fileID: 0}
+  WATERBUBUBUBUBUBUBUBUBUBUBUBUBUBUBUBUBUBUBUBUBUBUBUBUBUBUBUBUBUBUBUBUBUBULLE: {fileID: 0}
+  WaterRain: {fileID: 0}
+--- !u!4 &1896000024
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1896000021}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -5.83, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1899123559
 GameObject:
   m_ObjectHideFlags: 0
@@ -9659,6 +9750,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   building: {fileID: 1717048504819187851, guid: 40351c4ffa9d2ac49bd250448917c339, type: 3}
   HidePointListOwner: {fileID: 0}
+  _objectToGiveBuilding: {fileID: 0}
+  BuildingPanelTuto: {fileID: 0}
 --- !u!114 &2112089092
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10162,6 +10255,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Panel Selection musique
       objectReference: {fileID: 0}
+    - target: {fileID: 2404687796450270369, guid: 88ececafee84b414baf74a260a82294a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -10180,3 +10277,4 @@ SceneRoots:
   - {fileID: 213312432}
   - {fileID: 2101538979}
   - {fileID: 2135393874}
+  - {fileID: 1896000024}
