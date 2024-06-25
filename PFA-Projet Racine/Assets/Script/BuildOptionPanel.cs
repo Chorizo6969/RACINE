@@ -35,6 +35,15 @@ public class BuildOptionPanel : MonoBehaviour
                         StartCoroutine(Delay());
                         PANEL2MUSIC.GetComponent<ClickInfo>().lastBat = hitInfo.collider.GetComponentInParent<BuildingCanvas>().gameObject;
                     }
+                    else if (hitInfo.collider.GetComponentInParent<BuildingCanvas>().gameObject.name == "Champ")
+                    {
+                        if (!hitInfo.collider.GetComponentInParent<Field>().IsPlanted)
+                        {
+                            PANEL.SetActive(true);
+                            StartCoroutine(Delay2());
+                            PANEL.GetComponent<ClickInfo>().lastBat = hitInfo.collider.GetComponentInParent<BuildingCanvas>().gameObject;
+                        }
+                    }
                     else if (hitInfo.collider.GetComponentInParent<BuildingCanvas>().placeOrNot)
                     {
                         PANEL.SetActive(true);
