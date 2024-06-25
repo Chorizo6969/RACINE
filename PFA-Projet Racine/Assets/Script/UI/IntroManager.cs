@@ -46,7 +46,10 @@ public class IntroManager : MonoBehaviour
         while (!_dialogue._isfinish) await Task.Yield();
         RessourceManager.Instance.EditWoodAmount(20);
         RessourceManager.Instance.EditWaterAmount(45);
-        LockIntro.instance.Racine.GetComponent<MeshCollider>().enabled = true;
+        if (LockIntro.instance.Racine.GetComponent<MeshCollider>() != null)
+        {
+            LockIntro.instance.Racine.GetComponent<MeshCollider>().enabled = true;
+        }
         fleche[0].SetActive(true);
         while (id != 1) await Task.Yield();
         fleche[0].SetActive(false);

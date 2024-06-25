@@ -8,67 +8,77 @@ public class MaxBatPlacable : MonoBehaviour
 {
     public static MaxBatPlacable Instance;
 
+    [Header("Maison id = 0")]
     //id = 0
     public int actuHouse;
     public int maxHouse;
     public TextMeshProUGUI HouseText;
     public TextMeshProUGUI MaxHouseText;
 
+    [Header("Maison bucheron id = 1")]
     //id = 1
     public int actuBucheHouse;
     public int maxBucheHouse;
     public TextMeshProUGUI BucheHouseText;
     public TextMeshProUGUI MaxBucheHouseText;
 
+    [Header("Maison pecheur id = 2")]
     //id = 2
     public int actuWaterHouse;
     public int maxWaterHouse;
     public TextMeshProUGUI WaterHouseText;
     public TextMeshProUGUI MaxWaterHouseText;
 
-
+    [Header("Maison mineur id = 3")]
     //id = 3
     public int actuStoneHouse;
     public int maxStoneHouse;
     public TextMeshProUGUI StoneHouseText;
     public TextMeshProUGUI MaxStoneHouseText;
 
+    [Header("Stock bois id = 4")]
     //id = 4
     public int actuStockWood;
     public int maxStockWood;
     public TextMeshProUGUI StockWoodText;
     public TextMeshProUGUI MaxStockWoodText;
 
+    [Header("Stock eau id = 5")]
     //id = 5
     public int actuStockWater;
     public int maxStockWater;
     public TextMeshProUGUI StockWaterText;
     public TextMeshProUGUI MaxStockWaterText;
 
+    [Header("Stock pierre id = 6")]
     //id = 6
     public int actuStockStone;
     public int maxStockStone;
     public TextMeshProUGUI StockStoneText;
     public TextMeshProUGUI MaxStockStoneText;
 
+    [Header("Torche id = 7")]
     //id = 7
     public int actuTorche;
     public int maxTorche;
     public TextMeshProUGUI TorcheText;
     public TextMeshProUGUI MaxTorcheText;
 
+    [Header("Toilettes id = 8")]
     //id = 8
     public int actuToilette;
     public int maxToilette;
     public TextMeshProUGUI ToiletteText;
     public TextMeshProUGUI MaxToiletteText;
 
+    [Header("Champ id = 9")]
     //id = 9
     public int actuField;
     public int maxField;
     public TextMeshProUGUI FieldText;
     public TextMeshProUGUI MaxFieldText;
 
+    [Header("JukeBox id = 10")]
     //id = 10
     public int jukeBox;
 
