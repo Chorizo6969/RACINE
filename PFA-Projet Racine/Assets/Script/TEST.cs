@@ -8,10 +8,14 @@ public class TEST : MonoBehaviour
     public KeyCode code2;
     public KeyCode code3;
 
+    [SerializeField] bool isCheatActive;
+
     public Listexpedition List2trucs;
 
     private void Update()
     {
+        if (!isCheatActive) return;
+
         if (Input.GetKey(code1))
         {
             GetComponent<Spawn>().Spawner();
