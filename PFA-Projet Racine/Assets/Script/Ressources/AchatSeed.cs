@@ -108,7 +108,7 @@ public class AchatSeed : MonoBehaviour
             string stone = "30";
             string water = "80";
             textWood2.text = wood.ToString();
-            textStone.text = stone.ToString();
+            textStone.text = stone.ToString(); 
             textO2.text = water.ToString();
             if (RessourceManager.CheckIfCanBuild(30,0,40))
             {
@@ -137,7 +137,7 @@ public class AchatSeed : MonoBehaviour
                 }
                 Mineur.SetActive(true);
                 HerbeMineur.SetActive(true);
-                textMineur.text = "1 pierre 3 bois".ToString();
+                textMineur.text = "3 pierres 1 bois".ToString();
                 textMineur.color = Color.black;
                 _upgradePanel.SetActive(false);
                 _racinePanel.SetActive(false);

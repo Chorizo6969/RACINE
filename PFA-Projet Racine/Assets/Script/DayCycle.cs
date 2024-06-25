@@ -30,5 +30,9 @@ public class DayCycle : MonoBehaviour
             _cycleCount += 1;
             _actualDay.text = _cycleCount.ToString();
         }
+        if (_cycleCount == 2)
+        {
+            _sunSpeed = 0.6f;
+        }
     }
 }
