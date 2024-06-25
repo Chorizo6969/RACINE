@@ -30,6 +30,8 @@ public class Jkh : MonoBehaviour
     public bool boolistePanelInfoJukeBox;
     public bool BOOLISTEPANELINFOJUKEBOX;
 
+    public GameObject JeVeuxJouerLaisseMoiAllerJOUEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEER;
+
     public static Jkh Instance;
 
     private void Awake()

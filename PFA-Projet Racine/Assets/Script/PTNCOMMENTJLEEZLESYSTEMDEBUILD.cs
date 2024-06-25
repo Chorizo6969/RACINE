@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.VFX;
 
 public class PTNCOMMENTJLEEZLESYSTEMDEBUILD : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class PTNCOMMENTJLEEZLESYSTEMDEBUILD : MonoBehaviour
     public GameObject BuildingAreaKILLER;
     public GameObject Canvas;
     public GameObject AAAAAH;
+    public GameObject VFX;
 
     // Start is called before the first frame update
     void Start()
@@ -21,5 +23,6 @@ public class PTNCOMMENTJLEEZLESYSTEMDEBUILD : MonoBehaviour
         BuildSYstemLifeMakerAkaGod.SetActive(true);
         Destroy(BuildingAreaKILLER);
         Destroy(Canvas);
+        VFX.SetActive(true);
     }
 }

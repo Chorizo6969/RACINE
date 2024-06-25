@@ -1,0 +1,96 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3646418675922416701
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1769396709597719562}
+  - component: {fileID: 2440893416955418363}
+  - component: {fileID: 3861569273573492495}
+  - component: {fileID: 2680777783266034467}
+  m_Layer: 0
+  m_Name: MineurSpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1769396709597719562
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3646418675922416701}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 97.02, y: 0.10696, z: 2.19}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2440893416955418363
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3646418675922416701}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e2dfd1e877ebba4c96e933b6a86cad7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <ThePlant>k__BackingField: {fileID: 0}
+  <IsPlanted>k__BackingField: 0
+  <IsWatered>k__BackingField: 0
+  <_currentPlant>k__BackingField: {fileID: 3646418675922416701}
+  <_progressCircle>k__BackingField: {fileID: 0}
+  WATERBUBUBUBUBUBUBUBUBUBUBUBUBUBUBUBUBUBUBUBUBUBUBUBUBUBUBUBUBUBUBUBUBUBULLE: {fileID: 0}
+  WaterRain: {fileID: 0}
+  CheatField: 1
+--- !u!114 &3861569273573492495
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3646418675922416701}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 073043b9b294b2f41b30bdfa0aa24833, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HumanPrefab: {fileID: 1894347967618378471, guid: ab370483a3952c142a2c56c5523a06b1, type: 3}
+  PrefabButtonBucheron: {fileID: 352165112938733921, guid: 3a4eacc350aeda94ca7c567170a39c5d, type: 3}
+  PrefabButtonAquaman: {fileID: 352165112938733921, guid: f8d06f1e03caaf74195e60a298b7c069, type: 3}
+  PrefabButtonMineur: {fileID: 352165112938733921, guid: 9db0636e8f6c0164babe388f58bfebb3, type: 3}
+  Parent: {fileID: 0}
+  _visualEffectEau1: {fileID: 0}
+  _visualEffectEau2: {fileID: 0}
+  worktarget:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  NamesGenerator: {fileID: 0}
+--- !u!114 &2680777783266034467
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3646418675922416701}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b319874b9d97124ab9b62b24cf54478, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  code1: 112
+  code2: 263
+  code3: 264
+  List2trucs: {fileID: 0}

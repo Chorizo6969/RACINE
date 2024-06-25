@@ -104,11 +104,11 @@ public class AchatSeed : MonoBehaviour
     {
         if (index == 1)
         {
-            string wood = "40";
-            string stone = "20";
-            string water = "60";
+            string wood = "60";
+            string stone = "30";
+            string water = "80";
             textWood2.text = wood.ToString();
-            textStone.text = stone.ToString();
+            textStone.text = stone.ToString(); 
             textO2.text = water.ToString();
             if (RessourceManager.CheckIfCanBuild(30,0,40))
             {
@@ -137,7 +137,7 @@ public class AchatSeed : MonoBehaviour
                 }
                 Mineur.SetActive(true);
                 HerbeMineur.SetActive(true);
-                textMineur.text = "1 pierre 3 bois".ToString();
+                textMineur.text = "3 pierres 1 bois".ToString();
                 textMineur.color = Color.black;
                 _upgradePanel.SetActive(false);
                 _racinePanel.SetActive(false);
@@ -160,13 +160,13 @@ public class AchatSeed : MonoBehaviour
         }
         else if (index == 2)
         {
-            if (RessourceManager.CheckIfCanBuild(40, 20, 60))
+            if (RessourceManager.CheckIfCanBuild(60, 30, 80))
             {
                 prix3.GetComponentInParent<Button>().enabled = false;
                 _textRacine.text = "3".ToString();
-                RessourceManager.EditWoodAmount(-40);
-                RessourceManager.EditStoneAmount(-20);
-                RessourceManager.EditWaterAmount(-60);
+                RessourceManager.EditWoodAmount(-60);
+                RessourceManager.EditStoneAmount(-30);
+                RessourceManager.EditWaterAmount(-80);
                 prix1.SetActive(false);
                 prix2.SetActive(false);
                 prix3.SetActive(true);
@@ -187,14 +187,14 @@ public class AchatSeed : MonoBehaviour
                 RessourceManager.AddWoodStock(5);
                 RessourceManager.AddWaterStock(10);
                 RessourceManager.AddStoneStock(10);
-                MaxBatPlacable.Instance.IncreaseMaxBat(99, 0);
-                MaxBatPlacable.Instance.IncreaseMaxBat(99, 1);
-                MaxBatPlacable.Instance.IncreaseMaxBat(99, 2);
-                MaxBatPlacable.Instance.IncreaseMaxBat(99, 3);
-                MaxBatPlacable.Instance.IncreaseMaxBat(99, 4);
-                MaxBatPlacable.Instance.IncreaseMaxBat(99, 5);
-                MaxBatPlacable.Instance.IncreaseMaxBat(99, 6);
-                MaxBatPlacable.Instance.IncreaseMaxBat(99, 9);
+                MaxBatPlacable.Instance.IncreaseMaxBat(80, 0);
+                MaxBatPlacable.Instance.IncreaseMaxBat(80, 1);
+                MaxBatPlacable.Instance.IncreaseMaxBat(80, 2);
+                MaxBatPlacable.Instance.IncreaseMaxBat(80, 3);
+                MaxBatPlacable.Instance.IncreaseMaxBat(80, 4);
+                MaxBatPlacable.Instance.IncreaseMaxBat(80, 5);
+                MaxBatPlacable.Instance.IncreaseMaxBat(80, 6);
+                MaxBatPlacable.Instance.IncreaseMaxBat(80, 9);
             }
         }
     }
