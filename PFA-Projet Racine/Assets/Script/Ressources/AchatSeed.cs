@@ -156,6 +156,7 @@ public class AchatSeed : MonoBehaviour
                 MaxBatPlacable.Instance.IncreaseMaxBat(3, 5);
                 MaxBatPlacable.Instance.IncreaseMaxBat(3, 6);
                 MaxBatPlacable.Instance.IncreaseMaxBat(2, 9);
+                SuccesManager.instance.LevelupRacine(2);
             }
         }
         else if (index == 2)
@@ -195,6 +196,7 @@ public class AchatSeed : MonoBehaviour
                 MaxBatPlacable.Instance.IncreaseMaxBat(80, 5);
                 MaxBatPlacable.Instance.IncreaseMaxBat(80, 6);
                 MaxBatPlacable.Instance.IncreaseMaxBat(80, 9);
+                SuccesManager.instance.LevelupRacine(3);
             }
         }
     }

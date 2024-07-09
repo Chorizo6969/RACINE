@@ -59,16 +59,19 @@ public class ChangeColor : MonoBehaviour
         {
             ExpeditionLoot.instance.WorkingWood();
             Slider.SetActive(true);
+            Compteur.instance.nombreExpedition += 1;
         }
         else if (youCanWork && id == 2 && HumanInExpedition.Count > 0)
         {
             ExpeditionLoot.instance.WorkingStone();
             Slider.SetActive(true);
+            Compteur.instance.nombreExpedition += 1;
         }
         else if (youCanWork && id == 3 && HumanInExpedition.Count > 0)
         {
             ExpeditionLoot.instance.WorkingWater();
             Slider.SetActive(true);
+            Compteur.instance.nombreExpedition += 1;
         }
         else
         {
