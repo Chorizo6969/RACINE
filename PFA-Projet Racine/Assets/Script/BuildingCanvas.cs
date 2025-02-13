@@ -88,15 +88,12 @@ public class BuildingCanvas : MonoBehaviour
                 break;
             case 4:
                 gameObject.name = "Reserve de bois";
-                GetComponent<AddStock>().DropBuilding();
                 break;
             case 5:
                 gameObject.name = "Reserve d'Eau";
-                GetComponent<AddStock>().DropBuilding();
                 break;
             case 6:
                 gameObject.name = "Reserve de Pierre";
-                GetComponent<AddStock>().DropBuilding();
                 break;
             case 7:
                 gameObject.name = "Torche";
