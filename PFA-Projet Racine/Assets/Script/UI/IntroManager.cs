@@ -24,6 +24,9 @@ public class IntroManager : MonoBehaviour
     [SerializeField]
     private GameObject _panelIntroduction;
 
+    [SerializeField]
+    private Button _test;
+
     public bool clic;
     public bool bouliste;
 
@@ -38,6 +41,7 @@ public class IntroManager : MonoBehaviour
 
     public void Start()
     {
+        _test.interactable = false;
         Distribution();
     }
 
@@ -131,6 +135,7 @@ public class IntroManager : MonoBehaviour
         LockIntro.instance.Lock();
         LockIntro.instance.Racine.GetComponent<MeshCollider>().enabled = true;
         _panelIntroduction.SetActive(false);
+        _test.interactable = true;
     }
 
     public void cliked()
