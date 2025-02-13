@@ -31,14 +31,17 @@ public class AddStock : MonoBehaviour
             case 0:
                 RessourceManager.Instance.AddWoodStock(-stock);
                 StockBatListManager.instance.listWoodStock.Remove(this.gameObject);
+                RessourceManager.Instance.EditWoodAmount(0);
                 break;
             case 1:
                 RessourceManager.Instance.AddWaterStock(-stock);
                 StockBatListManager.instance.listWaterStock.Remove(this.gameObject);
+                RessourceManager.Instance.EditWaterAmount(0);
                 break;
             case 2:
                 RessourceManager.Instance.AddStoneStock(-stock);
                 StockBatListManager.instance.listStoneStock.Remove(this.gameObject);
+                RessourceManager.Instance.EditStoneAmount(0);
                 break;
         }
     }

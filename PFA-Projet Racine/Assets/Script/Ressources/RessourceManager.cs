@@ -305,6 +305,7 @@ public class RessourceManager : MonoBehaviour
 
             StartCoroutine(WoodAttend(1, amount));
         }
+        else if (_wood > _maxWood) { _wood = _maxWood; }
 
         if (StockBatListManager.instance.listWoodStock.Count != 0)
         {
@@ -384,6 +385,7 @@ public class RessourceManager : MonoBehaviour
 
             StartCoroutine(WaterAttend(1, amount));
         }
+        else if (_water > _maxWater) { _water = _maxWater; }
 
         if (StockBatListManager.instance.listWaterStock.Count != 0)
         {
@@ -464,10 +466,7 @@ public class RessourceManager : MonoBehaviour
 
             StartCoroutine(StoneAttend(1, amount));
         }
-        else if (_stone == _maxStone)
-        {
-            //Debug.Log("Stockage STONE full");
-        }
+        else if (_stone > _maxStone) { _stone = _maxStone; }
         if (StockBatListManager.instance.listStoneStock.Count != 0)
         {
             foreach (GameObject bat in StockBatListManager.instance.listStoneStock)
