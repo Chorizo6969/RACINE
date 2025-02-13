@@ -68,6 +68,7 @@ public class IncrementHuman : MonoBehaviour
     {
         _countBucheron += amount;
         BucheronText.text = _countBucheron.ToString();
+        SetupText.Instance.UpdateMaxText();
         if (!_Warningpassed)
         {
             TutoHuman.Instance.WarningTuto();
@@ -78,6 +79,7 @@ public class IncrementHuman : MonoBehaviour
     {
         _maxBucheron += amount;
         MaxBucheronText.text = _maxBucheron.ToString();
+        SetupText.Instance.UpdateMaxText();
         if (!_Warningpassed)
         {
             TutoHuman.Instance.WarningTuto();
@@ -88,6 +90,7 @@ public class IncrementHuman : MonoBehaviour
     {
         _countAquaman += amount;
         AquamanText.text = _countAquaman.ToString();
+        SetupText.Instance.UpdateMaxText();
         if (!_Warningpassed)
         {
             TutoHuman.Instance.WarningTuto();
@@ -98,17 +101,20 @@ public class IncrementHuman : MonoBehaviour
     {
         _maxAquaman += amount;
         MaxAquamanText.text = _maxAquaman.ToString();
+        SetupText.Instance.UpdateMaxText();
     }
 
     public void EditStoneMan(int amount)
     {
         _countStoneMan += amount;
         StoneManText.text = _countStoneMan.ToString();
+        SetupText.Instance.UpdateMaxText();
     }
     
     public void EditMaxStoneMan(int amount)
     {
         _maxStoneMan += amount;
         MaxStoneManText.text = _maxStoneMan.ToString();
+        SetupText.Instance.UpdateMaxText();
     }
 }
