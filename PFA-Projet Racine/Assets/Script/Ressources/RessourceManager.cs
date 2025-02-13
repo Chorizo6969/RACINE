@@ -305,10 +305,6 @@ public class RessourceManager : MonoBehaviour
 
             StartCoroutine(WoodAttend(1, amount));
         }
-        else if (_wood == _maxWood)
-        {
-            //Debug.Log("Stockage WOOD full");
-        }
 
         if (StockBatListManager.instance.listWoodStock.Count != 0)
         {
@@ -317,6 +313,10 @@ public class RessourceManager : MonoBehaviour
                 bat.GetComponent<FillRessourceStock>().SetGoodStock(_wood, _maxWood);
             }
         }
+
+        if (_wood == _maxWood) _woodText.color = UnityEngine.ColorUtility.TryParseHtmlString("#F3313A", out var color) ? color : _woodText.color;
+        if (_wood != _maxWood) _woodText.color = UnityEngine.ColorUtility.TryParseHtmlString("#C79662", out var color) ? color : _woodText.color;
+
     }
 
     public void AddWoodStock(int amount)
@@ -384,10 +384,6 @@ public class RessourceManager : MonoBehaviour
 
             StartCoroutine(WaterAttend(1, amount));
         }
-        else if ( _water == _maxWater)
-        {
-            //Debug.Log("Stockage WATER full");
-        }
 
         if (StockBatListManager.instance.listWaterStock.Count != 0)
         {
@@ -396,6 +392,9 @@ public class RessourceManager : MonoBehaviour
                 bat.GetComponent<FillRessourceStock>().SetGoodStock(_water, _maxWater);
             }
         }
+
+        if (_water == _maxWater) _waterText.color = UnityEngine.ColorUtility.TryParseHtmlString("#F3313A", out var color) ? color : _waterText.color;
+        if (_water != _maxWater) _waterText.color = UnityEngine.ColorUtility.TryParseHtmlString("#B1D3E5", out var color) ? color : _waterText.color;
     }
 
     public void AddWaterStock(int amount)
@@ -476,6 +475,9 @@ public class RessourceManager : MonoBehaviour
                 bat.GetComponent<FillRessourceStock>().SetGoodStock(_stone, _maxStone);
             }
         }
+
+        if (_stone == _maxStone) _stoneText.color = UnityEngine.ColorUtility.TryParseHtmlString("#F3313A", out var color) ? color : _stoneText.color;
+        if (_stone != _maxStone) _stoneText.color = UnityEngine.ColorUtility.TryParseHtmlString("#C9BFC7", out var color) ? color : _stoneText.color;
     }
 
     public void AddStoneStock(int amount)

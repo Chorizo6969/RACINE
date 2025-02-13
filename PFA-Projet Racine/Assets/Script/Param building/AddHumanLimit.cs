@@ -7,7 +7,12 @@ public class AddHumanLimit : MonoBehaviour
     [SerializeField] int id;
     [SerializeField] int stock;
 
-    private void Start()
+    void Start()
+    {
+        StartCoroutine(Test());
+    }
+
+    public void Good()
     {
         switch (id)
         {
@@ -21,5 +26,12 @@ public class AddHumanLimit : MonoBehaviour
                 IncrementHuman.instance.EditMaxStoneMan(stock);
                 break;
         }
+    }
+
+    IEnumerator Test()
+    {
+        if (id == 2) { yield return new WaitForSeconds(30); }
+        yield return new WaitForSeconds(60);
+        Good();
     }
 }
