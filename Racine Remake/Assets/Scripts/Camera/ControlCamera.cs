@@ -7,54 +7,40 @@ using UnityEngine.InputSystem;
 public class ControlCamera : MonoBehaviour
 {
     [SerializeField] private Camera _camera;
-    [SerializeField] private Transform _goParentTransform; // Référence à la position du parent de la caméra
     [SerializeField] private float _moveSpeed;
-    [SerializeField] private GameObject _gameObjectParent;
     [SerializeField] private float _maxX;
     [SerializeField] private float _minX;
     [SerializeField] private float _maxZ;
     [SerializeField] private float _minZ;
     [SerializeField] private Bounds _cameraLimits;
+    [SerializeField] private float _zoomMax;
+    [SerializeField] private float _zoomMin;
 
     private bool _isLeftMouseButtonPress;
+    private Vector2 _mouseDelta;
 
-    public Vector2 MouseDelta;
-    public float ZoomMax;
-    public float ZoomMin;
-
-    private void Start()
-    {
-        _goParentTransform = _gameObjectParent.transform;
-        _isLeftMouseButtonPress = false;
-    }
-
-    /// <summary>
-    /// Fonction permettant de zoomer avec la caméra
-    /// </summary>
-    /// <param name="_context"></param>
     public void OnZoomP(InputAction.CallbackContext _context)
     {
-        if (_camera.orthographicSize >= ZoomMin)
+        if (_camera.orthographicSize >= _zoomMin)
         {
             _camera.orthographicSize -= 0.5f;
-            if (_camera.orthographicSize <= ZoomMin)
+            if (_camera.orthographicSize <= _zoomMin)
             {
-                _camera.orthographicSize = ZoomMin;
+                _camera.orthographicSize = _zoomMin;
             }
         }
     }
     public void OnZoomM(InputAction.CallbackContext _context)
     {
-        if (_camera.orthographicSize <= ZoomMax)
+        if (_camera.orthographicSize <= _zoomMax)
         {
             _camera.orthographicSize += 0.5f;
-            if (_camera.orthographicSize >= ZoomMax)
+            if (_camera.orthographicSize >= _zoomMax)
             {
-                _camera.orthographicSize = ZoomMax;
+                _camera.orthographicSize = _zoomMax;
             }
         }
     }
-
     public void OnMove(InputAction.CallbackContext _context)
     {
         if (_context.started)
@@ -75,15 +61,15 @@ public class ControlCamera : MonoBehaviour
         if (!_isLeftMouseButtonPress) return;
         Vector2 mouseMovement = Mouse.current.delta.ReadValue();  // Récupérer les mouvements de la souris
 
-        MouseDelta += _moveSpeed * Time.deltaTime * mouseMovement; // Convertir le mouvement de la souris en Vector3
+        _mouseDelta += _moveSpeed * Time.deltaTime * mouseMovement; // Convertir le mouvement de la souris en Vector3
 
-        Vector3 mouseScreen = new Vector3(-MouseDelta.x, 0, -MouseDelta.y);
+        Vector3 mouseScreen = new Vector3(-_mouseDelta.x, 0, -_mouseDelta.y);
         Vector3 mouseIso = Quaternion.Euler(0, 45, 0) * mouseScreen;
-        Vector3 targetPosition = _goParentTransform.position + mouseIso;
+        Vector3 targetPosition = gameObject.transform.position + mouseIso;
 
-        _goParentTransform.position = _cameraLimits.ClosestPoint(targetPosition);
+        gameObject.transform.position = _cameraLimits.ClosestPoint(targetPosition);
 
-        MouseDelta = Vector2.zero;   // Réinitialiser le mouvement de la souris pour le frame suivant
+        _mouseDelta = Vector2.zero;   // Réinitialiser le mouvement de la souris pour le frame suivant
     }
 
     private void OnDrawGizmos()

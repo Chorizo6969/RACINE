@@ -750,9 +750,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _camera: {fileID: 1795529234}
-  _goParentTransform: {fileID: 0}
   _moveSpeed: 3
-  _gameObjectParent: {fileID: 1795529232}
   _maxX: 20
   _minX: -40
   _maxZ: 20
@@ -760,9 +758,8 @@ MonoBehaviour:
   _cameraLimits:
     m_Center: {x: 0, y: 50, z: 0}
     m_Extent: {x: 45, y: 28, z: 40}
-  MouseDelta: {x: 0, y: 0}
-  ZoomMax: 30
-  ZoomMin: 8
+  _zoomMax: 30
+  _zoomMin: 7
 --- !u!114 &1795529237
 MonoBehaviour:
   m_ObjectHideFlags: 0
