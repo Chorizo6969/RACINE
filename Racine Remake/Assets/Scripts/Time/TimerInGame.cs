@@ -5,25 +5,29 @@ using UnityEngine;
 
 public class TimeInGame : MonoBehaviour
 {
+    #region Variable
     [Header("Light and color")]
     [SerializeField] private List<Gradient> _listGradient = new(); //Nuit, Levée du soleil, aprem, couché de soleil
     [SerializeField] private Light _globalLight;
     [SerializeField][Tooltip("Temps en s que mets la transition de couleur du gardient (par défaut 10s)")] private float _transitionGradientTime = 10;
     [SerializeField] private int _timeSpeed = 2;
+
+    [Header("UI")]
     [SerializeField] TextMeshProUGUI _hourTxt;
+    [SerializeField] private RectTransform _clockImage;
 
     [Header("Timer Settings")]
+    [SerializeField] private int days;
+    public int Days { get { return days; } set { days = value; } }
+
     private int _minutes = 59;
     private float _tempsSecond;
     public int Minutes { get { return _minutes; } set { _minutes = value; OnMinutesChange(value); } }
 
-
     private int _hours = 5;
     public int Hours { get { return _hours; } set { _hours = value; OnHoursChange(value); } }
 
-
-    [SerializeField] private int days;
-    public int Days { get { return days; } set { days = value; } }
+    #endregion
 
     public void FixedUpdate()
     {
@@ -86,17 +90,9 @@ public class TimeInGame : MonoBehaviour
 
     public void SpeedTime()
     {
-        if(_timeSpeed == 2)
-        {
-            _timeSpeed = 8;
-        }
-        else
-        {
-            _timeSpeed = 2;
-        }
+        if(_timeSpeed == 2) { _timeSpeed = 8; }
+        else { _timeSpeed = 2; }
     }
-
-    [SerializeField] private RectTransform _clockImage;
 
     private void UpdateClockRotation()
     {
