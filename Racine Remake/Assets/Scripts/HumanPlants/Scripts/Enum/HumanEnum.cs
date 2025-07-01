@@ -37,4 +37,11 @@ public static class HumanEnum
         Constipé,
         Survivaliste
     }
+
+    public enum HumanRelationResult
+    {
+        Friend,
+        Neutral,
+        Enemy
+    }
 }

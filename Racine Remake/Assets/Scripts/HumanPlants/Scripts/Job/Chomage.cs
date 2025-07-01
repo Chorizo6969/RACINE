@@ -28,7 +28,7 @@ public class Chomage : MonoBehaviour
 
     private async UniTask WanderRoutine()
     {
-        while (true)
+        while (_agent.GetComponent<Job>().IsJobing)
         {
             GetRandomPath();
             _wanderInterval = Random.Range(0, 15);

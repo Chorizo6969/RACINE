@@ -3,6 +3,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Script qui gère la journée dans le jeu (cycle jour/nuit)
+/// </summary>
 public class TimeInGame : MonoBehaviour
 {
     #region Variable
