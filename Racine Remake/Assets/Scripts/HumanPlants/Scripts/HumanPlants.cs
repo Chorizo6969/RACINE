@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.AI;
 
 public class HumanPlants : MonoBehaviour
 {
@@ -16,5 +17,6 @@ public class HumanPlants : MonoBehaviour
     private void TimeToSleep()
     {
         print("Dodo...");
+        //this.gameObject.GetComponent<NavMeshAgent>().SetDestination(_maison.transform.position);
     }
 }
