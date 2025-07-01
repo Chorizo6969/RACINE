@@ -6,15 +6,25 @@ public class Chomage : MonoBehaviour
 {
     private NavMeshAgent _agent;
 
+    [SerializeField] private HumanJobSO _jobSO;
+
     [Header("Wandering Settings")]
     [SerializeField] private float _wanderRadius = 25;
     [SerializeField] private int _wanderInterval;
 
-    private void Start()
-    {
-        _agent = this.gameObject.GetComponent<NavMeshAgent>();
-        WanderRoutine().Forget();
+    public static Chomage Instance;
+
+    private void Awake() { Instance = this; }
+
+    private void Start() { TimeInGame.Instance.OnStartChomeur += StartChomage; }
+
+    public void SetupAgent(GameObject go) 
+    { 
+        _agent = go.GetComponent<NavMeshAgent>();
+        go.GetComponent<Job>().CurrentJob = _jobSO;
     }
+
+    private void StartChomage() { WanderRoutine().Forget(); } //A 11h il commence la journée
 
     private async UniTask WanderRoutine()
     {
@@ -26,19 +36,14 @@ public class Chomage : MonoBehaviour
         }
     }
 
-    private void Goto(Vector3 targetPosition)
-    {
-        _agent.SetDestination(targetPosition);
-    }
-
     private void GetRandomPath()
     {
         Vector3 randomDirection = Random.insideUnitSphere * _wanderRadius;
-        randomDirection += transform.position;
+        randomDirection += _agent.gameObject.transform.position;
 
         if (NavMesh.SamplePosition(randomDirection, out NavMeshHit hit, _wanderRadius, NavMesh.AllAreas))
         {
-            Goto(hit.position);
+            _agent.SetDestination(hit.position);
         }
     }
 }

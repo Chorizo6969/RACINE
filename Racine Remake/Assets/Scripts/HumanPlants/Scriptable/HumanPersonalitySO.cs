@@ -9,7 +9,6 @@ public class HumanPersonalitySO : ScriptableObject
     [SerializeField] private string _description;
     [SerializeField] private string _componentName;
 
-    //Pour le code (lecture seule)
     public HumanEnum.HumanPersonality PersonalityName => _personalityName;
     public string Description => _description;
     public string ComponentName => _componentName;
