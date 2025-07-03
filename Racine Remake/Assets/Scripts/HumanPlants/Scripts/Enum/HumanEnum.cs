@@ -15,6 +15,13 @@ public static class HumanEnum
         Cavalier
     }
 
+    public enum HumanJobType
+    {
+        Récolteur,
+        Défense,
+        Ponctuelle
+    }
+
     public enum HumanPersonality
     {
         Ralentit,
@@ -44,4 +51,5 @@ public static class HumanEnum
         Neutral,
         Enemy
     }
+
 }

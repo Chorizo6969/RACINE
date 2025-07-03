@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Chevalier
   m_EditorClassIdentifier: 
   _jobName: 8
+  _jobType: 1
   _mesh: {fileID: 0}
   _description: "Prot\xE8ge le village des ch\xE8vres."
   _healthModifier: 40

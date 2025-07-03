@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d114e59d4cffece478177abe1d32d26a, type: 3}
   m_Name: "R\xE9colteur Eau"
   m_EditorClassIdentifier: 
-  _jobName: "R\xE9colteur d'eau"
+  _jobName: 4
+  _jobType: 0
   _mesh: {fileID: 0}
   _description: Collecte de l'eau
   _healthModifier: 0

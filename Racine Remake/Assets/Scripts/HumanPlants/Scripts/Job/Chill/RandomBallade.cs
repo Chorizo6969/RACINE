@@ -2,33 +2,25 @@ using Cysharp.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class Chomage : MonoBehaviour
+public class RandomBallade : MonoBehaviour
 {
     private NavMeshAgent _agent;
-
-    [SerializeField] private HumanJobSO _jobSO;
 
     [Header("Wandering Settings")]
     [SerializeField] private float _wanderRadius = 25;
     [SerializeField] private int _wanderInterval;
+    private bool _isWander;
 
-    public static Chomage Instance;
-
-    private void Awake() { Instance = this; }
-
-    private void Start() { TimeInGame.Instance.OnStartChomeur += StartChomage; }
-
-    public void SetupAgent(GameObject go) 
+    public void Start() 
     { 
-        _agent = go.GetComponent<NavMeshAgent>();
-        go.GetComponent<Job>().CurrentJob = _jobSO;
+        _agent = this.gameObject.GetComponent<NavMeshAgent>();
     }
 
     private void StartChomage() { WanderRoutine().Forget(); } //A 11h il commence la journée
 
     private async UniTask WanderRoutine()
     {
-        while (_agent.GetComponent<Job>().IsJobing)
+        while (_isWander)
         {
             GetRandomPath();
             _wanderInterval = Random.Range(0, 15);
@@ -45,5 +37,17 @@ public class Chomage : MonoBehaviour
         {
             _agent.SetDestination(hit.position);
         }
+    }
+
+    public void StopWander() 
+    {
+        _isWander = false;
+        _agent.ResetPath();
+    }
+
+    public void StartWander() 
+    {
+        _isWander = true;
+        StartChomage();
     }
 }

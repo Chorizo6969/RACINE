@@ -550,6 +550,9 @@ GameObject:
   - component: {fileID: 236096446}
   - component: {fileID: 236096445}
   - component: {fileID: 236096444}
+  - component: {fileID: 236096450}
+  - component: {fileID: 236096449}
+  - component: {fileID: 236096451}
   - component: {fileID: 236096448}
   m_Layer: 7
   m_Name: HumanPlants
@@ -589,7 +592,7 @@ Transform:
   m_GameObject: {fileID: 236096439}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 55.74, y: 0, z: 55.94}
+  m_LocalPosition: {x: 56.16, y: 0, z: 69.07}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -608,7 +611,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ffbd2856d35e4449a0d544fca1ff325, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _personality: {fileID: 0}
+  _humanPersonality: {fileID: 0}
   _allPersonality:
   - {fileID: 11400000, guid: bfcb5cc4319214c48a13258edcd3c0f1, type: 2}
 --- !u!114 &236096445
@@ -624,6 +627,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CurrentJob: {fileID: 0}
+  _noJobGestion: {fileID: 236096450}
+  _randomBalladeRef: {fileID: 236096449}
+  _sitAndChill: {fileID: 236096451}
 --- !u!114 &236096446
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -661,6 +667,8 @@ MonoBehaviour:
   HumanPersonality: {fileID: 236096444}
   HumanJob: {fileID: 236096445}
   HumanRelationShips: {fileID: 236096446}
+  Maison: {fileID: 1838005606}
+  _firstJob: {fileID: 11400000, guid: ae8026902d47e724d8b0395b44cb5604, type: 2}
 --- !u!65 &236096448
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -682,6 +690,51 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 1.35, z: 0}
+--- !u!114 &236096449
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 236096439}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ceeade1e3ffb03429158bdb0f82ada9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _wanderRadius: 25
+  _wanderInterval: 0
+--- !u!114 &236096450
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 236096439}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4686f0622da8641488b9897beb5a0a74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TimeAwaitAfterWander: 120
+  TimeAwaitGoHome: 60
+  TimeAwaitSitDown: 60
+  CanChill: 0
+  _randomBalladeRef: {fileID: 236096449}
+  _humanPlantsRef: {fileID: 236096447}
+  _sitAndChillRef: {fileID: 236096451}
+--- !u!114 &236096451
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 236096439}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 905a89e5bb3133148a519001058eb404, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &247667592
 GameObject:
   m_ObjectHideFlags: 0
@@ -1068,53 +1121,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &473572371
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 473572372}
-  - component: {fileID: 473572373}
-  m_Layer: 0
-  m_Name: Chomeur
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &473572372
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 473572371}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 484696966}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &473572373
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 473572371}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8ceeade1e3ffb03429158bdb0f82ada9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _jobSO: {fileID: 11400000, guid: 3b381206e52c2e1469546a9b6bcf2822, type: 2}
-  _wanderRadius: 25
-  _wanderInterval: 0
 --- !u!1 &484696965
 GameObject:
   m_ObjectHideFlags: 0
@@ -1144,7 +1150,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 473572372}
   - {fileID: 413710955}
   - {fileID: 229820329}
   - {fileID: 1771627619}
@@ -1633,8 +1638,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea325311826bff742a6418a00a3ae67f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _friendProba: 0.25
-  _enemyProba: 0.1
+  _friendProba: 1
+  _enemyProba: 0
 --- !u!4 &1098435273
 Transform:
   m_ObjectHideFlags: 0
@@ -1823,6 +1828,9 @@ GameObject:
   - component: {fileID: 1346106012}
   - component: {fileID: 1346106011}
   - component: {fileID: 1346106010}
+  - component: {fileID: 1346106018}
+  - component: {fileID: 1346106017}
+  - component: {fileID: 1346106019}
   - component: {fileID: 1346106016}
   m_Layer: 7
   m_Name: HumanPlants (1)
@@ -1843,7 +1851,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ffbd2856d35e4449a0d544fca1ff325, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _personality: {fileID: 0}
+  _humanPersonality: {fileID: 0}
   _allPersonality:
   - {fileID: 11400000, guid: bfcb5cc4319214c48a13258edcd3c0f1, type: 2}
 --- !u!114 &1346106011
@@ -1859,6 +1867,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CurrentJob: {fileID: 0}
+  _noJobGestion: {fileID: 1346106018}
+  _randomBalladeRef: {fileID: 1346106017}
+  _sitAndChill: {fileID: 1346106019}
 --- !u!114 &1346106012
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1896,6 +1907,8 @@ MonoBehaviour:
   HumanPersonality: {fileID: 1346106010}
   HumanJob: {fileID: 1346106011}
   HumanRelationShips: {fileID: 1346106012}
+  Maison: {fileID: 1780874198}
+  _firstJob: {fileID: 11400000, guid: 3b381206e52c2e1469546a9b6bcf2822, type: 2}
 --- !u!195 &1346106014
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -1927,7 +1940,7 @@ Transform:
   m_GameObject: {fileID: 1346106009}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 82.04, y: 0, z: 65.86}
+  m_LocalPosition: {x: 100.47, y: 0, z: 94.26}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1955,6 +1968,51 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 1.49, z: 0}
+--- !u!114 &1346106017
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1346106009}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ceeade1e3ffb03429158bdb0f82ada9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _wanderRadius: 25
+  _wanderInterval: 0
+--- !u!114 &1346106018
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1346106009}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4686f0622da8641488b9897beb5a0a74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TimeAwaitAfterWander: 120
+  TimeAwaitGoHome: 60
+  TimeAwaitSitDown: 60
+  CanChill: 0
+  _randomBalladeRef: {fileID: 1346106017}
+  _humanPlantsRef: {fileID: 1346106013}
+  _sitAndChillRef: {fileID: 1346106019}
+--- !u!114 &1346106019
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1346106009}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 905a89e5bb3133148a519001058eb404, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1400177759
 GameObject:
   m_ObjectHideFlags: 0
@@ -2881,7 +2939,7 @@ Transform:
   m_GameObject: {fileID: 1780874194}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 100.23, y: 2.34, z: 94.66}
+  m_LocalPosition: {x: 100.23, y: 2.23, z: 94.66}
   m_LocalScale: {x: 5, y: 5, z: 5}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -3150,7 +3208,7 @@ Transform:
   m_GameObject: {fileID: 1838005602}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 56.16, y: 2.34, z: 69.05}
+  m_LocalPosition: {x: 56.16, y: 2.23, z: 69.05}
   m_LocalScale: {x: 5, y: 5, z: 5}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -3182,7 +3240,7 @@ Transform:
   m_GameObject: {fileID: 1868111707}
   serializedVersion: 2
   m_LocalRotation: {x: -4.3297806e-17, y: 0.7071068, z: 0.7071068, w: -4.3297806e-17}
-  m_LocalPosition: {x: -0.06160066, y: -0.0071352376, z: -0.0000024863878}
+  m_LocalPosition: {x: 13.77, y: -0.01, z: 37.45}
   m_LocalScale: {x: 0.99999964, y: 0.99999964, z: 0.99999964}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4085,7 +4143,7 @@ Transform:
   m_GameObject: {fileID: 8323181365191613313}
   serializedVersion: 2
   m_LocalRotation: {x: -4.3297806e-17, y: 0.7071068, z: 0.7071068, w: -4.3297806e-17}
-  m_LocalPosition: {x: -0.06160066, y: -0.0071352376, z: -0.0000024863878}
+  m_LocalPosition: {x: -0.06160066, y: -0.01, z: 7.64}
   m_LocalScale: {x: 0.99999964, y: 0.99999964, z: 0.99999964}
   m_ConstrainProportionsScale: 0
   m_Children: []

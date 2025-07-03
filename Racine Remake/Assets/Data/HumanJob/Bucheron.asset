@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d114e59d4cffece478177abe1d32d26a, type: 3}
   m_Name: Bucheron
   m_EditorClassIdentifier: 
-  _jobName: 7
+  _jobName: 3
+  _jobType: 0
   _mesh: {fileID: 0}
   _description: "Soigne les bless\xE9s et permet de d\xE9nicher les faux malades."
   _healthModifier: 0

@@ -6,7 +6,7 @@ using UnityEngine;
 /// </summary>
 public class Personality : MonoBehaviour
 {
-    [SerializeField] private HumanPersonalitySO _personality;
+    [SerializeField] private HumanPersonalitySO _humanPersonality;
     [SerializeField] private List<HumanPersonalitySO> _allPersonality = new();
 
     void Start() { ChooseAPersonality(); }
@@ -14,7 +14,7 @@ public class Personality : MonoBehaviour
     private void ChooseAPersonality()
     {
         int indexChoose = Random.Range(0, _allPersonality.Count - 1);
-        _personality = _allPersonality[indexChoose];
+        _humanPersonality = _allPersonality[indexChoose];
         //AttributeComportement.AddComportementHuman(_personality.ComponentName, this.gameObject); //Ajouté le bon script / comportement
     }
 

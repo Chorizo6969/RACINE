@@ -20,19 +20,20 @@ public class RelationShips : MonoBehaviour
     [SerializeField] private LayerMask _villagerMask;
 
     private NavMeshAgent _agent;
-    private bool _canTalk = true;
-    private bool _isTalking = false;
+    private bool _canTalk;
+    private bool _isTalking;
 
     private void Start()
     {
         _agent = GetComponent<NavMeshAgent>();
         TimeInGame.Instance.OnStartDiscuss += GoTalk;
+        TimeInGame.Instance.OnStartSleep += EndConversation;
     }
 
     public void GoTalk()
     {
-        if (_isTalking) return;
-
+        _canTalk = true;
+        _isTalking = false;
         Debug.Log("Il faut papoter !");
         WanderRoutine().Forget();
         LookForSomeoneRoutine().Forget();
@@ -89,6 +90,7 @@ public class RelationShips : MonoBehaviour
 
     private void StartConversationWith(RelationShips other)
     {
+        _canTalk = false;
         _isTalking = true;
         other._isTalking = true;
 
@@ -137,9 +139,11 @@ public class RelationShips : MonoBehaviour
     }
 
     private void EndConversation() 
-    { 
+    {
+        _canTalk = false;
         _isTalking = false;
-        //dodo
+        //dodo à lancer plus tôt
+        this.gameObject.GetComponent<HumanPlants>().BackHome().Forget();
     }
 
 #if UNITY_EDITOR

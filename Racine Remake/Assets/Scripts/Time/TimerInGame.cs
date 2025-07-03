@@ -36,7 +36,7 @@ public class TimeInGame : MonoBehaviour
 
     #region Event
     public event Action OnStartWork;
-    public event Action OnStartChomeur;
+    public event Action OnStartChomage;
     public event Action OnStartDiscuss;
     public event Action OnStartSleep;
     #endregion
@@ -82,7 +82,6 @@ public class TimeInGame : MonoBehaviour
         {
             StartCoroutine(LerpLight(_listGradient[0], _transitionGradientTime)); //TO DO : La transition est fixe et pas proportionelle à la vitesse du temps/jeu
             OnStartWork.Invoke();
-            print("Au boulot les humains plantes!");
         }
         else if (value == 8) //Journée
         {
@@ -90,7 +89,7 @@ public class TimeInGame : MonoBehaviour
         }
         else if (value == 11)
         {
-            OnStartChomeur.Invoke();
+            OnStartChomage.Invoke();
         }
         else if (value == 16) //couché du soleil
         {
