@@ -7,7 +7,7 @@ public class SitAndChill : MonoBehaviour
 
     private void Start()
     {
-        _agent = this.gameObject.GetComponent<NavMeshAgent>();
+        _agent = this.gameObject.GetComponentInParent<NavMeshAgent>();
     }
 
     public void SitDownAndChill()

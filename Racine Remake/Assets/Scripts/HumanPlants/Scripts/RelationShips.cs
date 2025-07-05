@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.AI;
 using Cysharp.Threading.Tasks;
 using static HumanEnum;
+using System.Threading.Tasks;
 
 public class RelationShips : MonoBehaviour
 {
@@ -21,19 +22,18 @@ public class RelationShips : MonoBehaviour
 
     private NavMeshAgent _agent;
     private bool _canTalk;
-    private bool _isTalking;
+    [HideInInspector] public bool IsTalking;
 
     private void Start()
     {
         _agent = GetComponent<NavMeshAgent>();
         TimeInGame.Instance.OnStartDiscuss += GoTalk;
-        TimeInGame.Instance.OnStartSleep += EndConversation;
     }
 
     public void GoTalk()
     {
         _canTalk = true;
-        _isTalking = false;
+        IsTalking = false;
         Debug.Log("Il faut papoter !");
         WanderRoutine().Forget();
         LookForSomeoneRoutine().Forget();
@@ -41,7 +41,7 @@ public class RelationShips : MonoBehaviour
 
     private async UniTaskVoid WanderRoutine()
     {
-        while (_canTalk && !_isTalking)
+        while (_canTalk && !IsTalking)
         {
             Vector3 randomDirection = GetBoundsPoint();
             if (NavMesh.SamplePosition(randomDirection, out NavMeshHit hit, 5f, NavMesh.AllAreas))
@@ -54,7 +54,8 @@ public class RelationShips : MonoBehaviour
 
     private async UniTaskVoid LookForSomeoneRoutine()
     {
-        while (_canTalk && !_isTalking)
+        await UniTask.Delay(3000);
+        while (_canTalk && !IsTalking)
         {
             RelationShips target = FindAvailableVillager();
             if (target != null)
@@ -63,8 +64,9 @@ public class RelationShips : MonoBehaviour
                 break;
             }
 
-            await UniTask.Delay(1000); // Check toutes les secondes
+            await UniTask.Yield(); // Check toutes les secondes
         }
+        print("stop");
     }
 
     private Vector3 GetBoundsPoint()
@@ -81,7 +83,7 @@ public class RelationShips : MonoBehaviour
             if (hit.gameObject == this.gameObject) continue;
 
             RelationShips other = hit.GetComponent<RelationShips>();
-            if (other != null && !other._isTalking)
+            if (other != null && !other.IsTalking && other._canTalk)
                 return other;
         }
 
@@ -91,8 +93,8 @@ public class RelationShips : MonoBehaviour
     private void StartConversationWith(RelationShips other)
     {
         _canTalk = false;
-        _isTalking = true;
-        other._isTalking = true;
+        IsTalking = true;
+        other.IsTalking = true;
 
         _agent.ResetPath();
         other._agent.ResetPath();
@@ -116,6 +118,7 @@ public class RelationShips : MonoBehaviour
 
         Invoke(nameof(EndConversation), 20); //Lance EndConv dans 20s
         other.Invoke(nameof(other.EndConversation), 20);
+        _agent.enabled = false;
     }
 
     private async UniTaskVoid LookAtSmoothly(Transform target)
@@ -141,7 +144,7 @@ public class RelationShips : MonoBehaviour
     private void EndConversation() 
     {
         _canTalk = false;
-        _isTalking = false;
+        IsTalking = false;
         //dodo à lancer plus tôt
         this.gameObject.GetComponent<HumanPlants>().BackHome().Forget();
     }

@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d114e59d4cffece478177abe1d32d26a, type: 3}
-  m_Name: "R\xE9colteur Eau"
+  m_Name: Mineur
   m_EditorClassIdentifier: 
-  _jobName: 4
+  _jobName: 5
   _jobType: 0
   _mesh: {fileID: 0}
-  _description: Collecte de l'eau
+  _description: Extrait des minerais dans la mine.
   _healthModifier: 0
   _speedModifier: 0

@@ -1,5 +1,6 @@
 using Cysharp.Threading.Tasks;
 using UnityEngine;
+using UnityEngine.AI;
 using static HumanEnum;
 
 public class Job : MonoBehaviour
@@ -28,17 +29,15 @@ public class Job : MonoBehaviour
         _noJobGestion.CanChill = true;
         if (CurrentJob.JobType == HumanJobType.Récolteur)
         {
-            DisableBalladeSystem(); //Plus besoin car plus de balade
+            DisableBalladeSystem(); //Plus besoin car plus de ballade
         }
         else if (CurrentJob.JobType == HumanJobType.Défense)
         {
             await _humanPlantsRef.BackHome();
-            print(gameObject.name);
             _noJobGestion.ChooseState().Forget();
         }
         else if (CurrentJob.JobName != HumanJobs.Chômeur)
         {
-            print(gameObject.name);
             _noJobGestion.ChooseState().Forget(); //Les autres métiers se balladent en attendant qu'ils se passent un truc
         }
     }
@@ -47,7 +46,6 @@ public class Job : MonoBehaviour
     {
         if(CurrentJob.JobName == HumanJobs.Chômeur)
         {
-            print(gameObject.name);
             _noJobGestion.ChooseState().Forget(); //Il commence la journée
         }
     }
@@ -55,6 +53,8 @@ public class Job : MonoBehaviour
     private void StopWork() 
     {
         _noJobGestion.CanChill = false;
+        DisableBalladeSystem();
+        this.gameObject.GetComponent<NavMeshAgent>().ResetPath();
     }
 
     private void StartSleepRound()

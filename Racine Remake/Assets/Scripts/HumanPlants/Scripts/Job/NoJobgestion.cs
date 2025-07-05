@@ -14,13 +14,17 @@ public class NoJobGestion : MonoBehaviour
     [SerializeField] private HumanPlants _humanPlantsRef;
     [SerializeField] private SitAndChill _sitAndChillRef;
 
+    [Header("State Probabilities")]
+    [Range(0, 1)][SerializeField] private float _wanderProbability = 0.33f;
+    [Range(0, 1)][SerializeField] private float _goHomeProbability = 0.33f;
+    [Range(0, 1)][SerializeField] private float _sitProbability = 0.34f;
+
     public async UniTask ChooseState()
     {
         while (CanChill)
         {
-            int randomChoice = Random.Range(0, 3);
-            print(randomChoice + gameObject.name);
-            switch (randomChoice)
+            int choice = GetWeightedRandomChoice();
+            switch (choice)
             {
                 case 0:
                     _randomBalladeRef.StartWander();
@@ -37,5 +41,14 @@ public class NoJobGestion : MonoBehaviour
                     break;
             }
         }
+    }
+
+    private int GetWeightedRandomChoice()
+    {
+        float total = _wanderProbability + _goHomeProbability + _sitProbability;
+        float random = Random.Range(0, total);
+        if (random < _wanderProbability) return 0;
+        if (random < _wanderProbability + _goHomeProbability) return 1;
+        return 2;
     }
 }

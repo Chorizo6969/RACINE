@@ -13,7 +13,7 @@ public class RandomBallade : MonoBehaviour
 
     public void Start() 
     { 
-        _agent = this.gameObject.GetComponent<NavMeshAgent>();
+        _agent = this.gameObject.GetComponentInParent<NavMeshAgent>();
     }
 
     private void StartChomage() { WanderRoutine().Forget(); } //A 11h il commence la journée
@@ -22,6 +22,7 @@ public class RandomBallade : MonoBehaviour
     {
         while (_isWander)
         {
+            if(!this.gameObject.GetComponent<NoJobGestion>().CanChill) { _isWander = false; }
             GetRandomPath();
             _wanderInterval = Random.Range(0, 15);
             await UniTask.Delay(_wanderInterval * 1000);
@@ -33,7 +34,7 @@ public class RandomBallade : MonoBehaviour
         Vector3 randomDirection = Random.insideUnitSphere * _wanderRadius;
         randomDirection += _agent.gameObject.transform.position;
 
-        if (NavMesh.SamplePosition(randomDirection, out NavMeshHit hit, _wanderRadius, NavMesh.AllAreas))
+        if (NavMesh.SamplePosition(randomDirection, out NavMeshHit hit, _wanderRadius, NavMesh.AllAreas) && this.gameObject.GetComponent<NoJobGestion>().CanChill)
         {
             _agent.SetDestination(hit.position);
         }

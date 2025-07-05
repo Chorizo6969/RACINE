@@ -1,5 +1,4 @@
 using Cysharp.Threading.Tasks;
-using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -15,24 +14,30 @@ public class HumanPlants : MonoBehaviour
     [Header("First Job")]
     [SerializeField] private HumanJobSO _firstJob;
 
-    private void Start()
+    private async void Start()
     {
         TimeInGame.Instance.OnStartSleep += StartSleep;
         HumanJob.CurrentJob = _firstJob;
+        await BackHome();
     }
 
     private async void StartSleep() { print("Dodo..."); await BackHome(); }
 
     public async UniTask BackHome()
     {
-        print("Je retorune à la maison");
+        print("Je retourne à la maison");
+        while(HumanRelationShips.IsTalking)
+        {
+            await UniTask.Yield();
+        }
         //temporaire
         NavMeshAgent agent = this.gameObject.GetComponent<NavMeshAgent>();
+        agent.enabled = true;
         agent.SetDestination(Maison.position);
         while (Vector3.Distance(agent.transform.position, Maison.position) > agent.stoppingDistance + 1.7f)
         {
             await UniTask.Yield();
         }
-        await Task.Delay(3000);
+        await UniTask.Delay(3000);
     }
 }
