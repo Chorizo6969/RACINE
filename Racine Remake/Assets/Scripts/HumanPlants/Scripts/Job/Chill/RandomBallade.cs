@@ -2,6 +2,9 @@ using Cysharp.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.AI;
 
+/// <summary>
+/// Classe qui fait en sorte que l'humain plante se ballade de manière aléatoire dans la map
+/// </summary>
 public class RandomBallade : MonoBehaviour
 {
     private NavMeshAgent _agent;

@@ -1,6 +1,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Script qui ajuste l'UI des humains plantes (Late Update). 
+/// </summary>
 public class HealthBarManager : MonoBehaviour
 {
     [SerializeField] private Camera _mainCamera;

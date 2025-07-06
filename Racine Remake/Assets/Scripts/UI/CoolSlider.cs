@@ -2,6 +2,9 @@ using UnityEngine;
 using DG.Tweening;
 using UnityEngine.UI;
 
+/// <summary>
+/// Script qui Tween les sliders
+/// </summary>
 public class CoolSlider : MonoBehaviour
 {
 

@@ -1,6 +1,9 @@
 using Cysharp.Threading.Tasks;
 using UnityEngine;
 
+/// <summary>
+/// Gestion de la vie d'un humain plante (ApplyDamage, ApllyHealth, Die)
+/// </summary>
 public class HumanHealthStats : MonoBehaviour
 {
     [SerializeField] private float currentHealth;

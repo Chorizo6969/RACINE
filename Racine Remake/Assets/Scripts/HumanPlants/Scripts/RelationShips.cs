@@ -3,6 +3,9 @@ using UnityEngine.AI;
 using Cysharp.Threading.Tasks;
 using static HumanEnum;
 
+/// <summary>
+/// Classe Majeure qui gère les rencontres entre humains plantes
+/// </summary>
 public class RelationShips : MonoBehaviour
 {
     [Header("Relation")]
@@ -10,7 +13,7 @@ public class RelationShips : MonoBehaviour
     [SerializeField] private RelationShips _enemy;
 
     [Header("Zone de discussion")]
-    [SerializeField] private Bounds _talkingLimits;
+    [SerializeField] private Bounds _talkingLimits; //Centre du village ou à lieu les discussions
 
     [Header("Paramètres de déplacement")]
     [SerializeField] private int _walkDelayMax = 8;
@@ -25,11 +28,10 @@ public class RelationShips : MonoBehaviour
 
     private void Start()
     {
-        TimeInGame.Instance.OnStartDiscuss += GoTalk;
-        TimeInGame.Instance.OnStartSleep += VerifTalking;
+        TimeInGame.Instance.OnStartDiscuss += SetupTalkingProces;
     }
 
-    public void GoTalk()
+    public void SetupTalkingProces()
     {
         _canTalk = true;
         IsTalking = false;
@@ -138,7 +140,7 @@ public class RelationShips : MonoBehaviour
         this.gameObject.GetComponent<HumanPlants>().BackHome().Forget();
     }
 
-    private void VerifTalking()
+    public void VerifTalking()
     {
         if (IsTalking) { return; }
         EndConversation();

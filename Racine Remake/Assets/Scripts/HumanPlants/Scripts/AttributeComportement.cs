@@ -1,5 +1,8 @@
 using UnityEngine;
 
+/// <summary>
+/// Script qui ajoute un autre script (comportement)
+/// </summary>
 public static class AttributeComportement
 {
     public static void AddComportementHuman(string ComponentName, GameObject target)

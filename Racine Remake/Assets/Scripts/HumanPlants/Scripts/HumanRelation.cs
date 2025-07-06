@@ -1,6 +1,9 @@
 using UnityEngine;
 using static HumanEnum;
 
+/// <summary>
+/// Script qui gère le résultat d'une intéraction entre 2 humains plantes (Fonction : ResultOfTalking())
+/// </summary>
 public class HumanRelation : MonoBehaviour
 {
     [SerializeField][Range(0, 1)] private float _friendProba = 0.3f;
@@ -9,6 +12,10 @@ public class HumanRelation : MonoBehaviour
 
     private void Awake() { Instance = this; }
 
+    /// <summary>
+    /// Fonction qui retourne le résultat de l'interaction
+    /// </summary>
+    /// <returns> Enum HumanRelationResult (Ami neutral, Enemy) </returns>
     public HumanRelationResult ResultOfTalking()
     {
         float total = _friendProba + _enemyProba;

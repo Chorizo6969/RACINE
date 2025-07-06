@@ -2,6 +2,9 @@ using Cysharp.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.AI;
 
+/// <summary>
+/// Classe qui fait retourner l'humain plante chez lui.
+/// </summary>
 public class BackHouseForChill : MonoBehaviour
 {
     private Transform _maison;

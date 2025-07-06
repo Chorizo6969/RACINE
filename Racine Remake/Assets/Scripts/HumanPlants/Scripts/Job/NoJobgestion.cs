@@ -3,6 +3,9 @@ using System;
 using System.Threading;
 using UnityEngine;
 
+/// <summary>
+/// class qui gère la routine d'un humain plante qui ne travail pas (Ballade, retour à la maison, assis par terre,...)
+/// </summary>
 public class NoJobGestion : MonoBehaviour
 {
     [Header("Waiting after State")]
@@ -23,10 +26,13 @@ public class NoJobGestion : MonoBehaviour
 
     private CancellationTokenSource _chillCTS;
 
+    /// <summary>
+    /// Commence la routine aléatoire d'un humain plante
+    /// </summary>
     public void StartChill()
     {
         CanChill = true;
-        _chillCTS = new CancellationTokenSource();
+        _chillCTS = new CancellationTokenSource(); //Servira à tout arrêter si il y a une urgence
         ChooseState(_chillCTS.Token).Forget();
     }
 
@@ -41,7 +47,7 @@ public class NoJobGestion : MonoBehaviour
                     _randomBalladeRef.StartWander();
                     try
                     {
-                        await UniTask.Delay(TimeAwaitAfterWander * 1000, cancellationToken: token);
+                        await UniTask.Delay(TimeAwaitAfterWander * 1000, cancellationToken: token); //J'attends et je vérifie qu'il n'y a pas d'urgence
                     }
                     catch (OperationCanceledException) { }
                     _randomBalladeRef.StopWander();
@@ -68,6 +74,9 @@ public class NoJobGestion : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Stop la routine d'un humain plante
+    /// </summary>
     public void StopAllChillBehaviors()
     {
         CanChill = false;

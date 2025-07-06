@@ -1,5 +1,8 @@
 using UnityEngine;
 
+/// <summary>
+/// Script qui gère le rendu UI des barres de vies des humains plantes
+/// </summary>
 public class HumanHealthUI : MonoBehaviour
 {
     [Header("SceneReferences")]

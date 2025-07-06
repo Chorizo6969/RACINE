@@ -1,3 +1,6 @@
+/// <summary>
+/// Classe static de tout les enums des humains plantes (Jobs, JobType, Personality, RelationShips)
+/// </summary>
 public static class HumanEnum
 {
     public enum HumanJobs

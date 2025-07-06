@@ -2,6 +2,9 @@ using UnityEngine;
 using UnityEngine.AI;
 using static HumanEnum;
 
+/// <summary>
+/// Classe majeure, Attribue une routine ou non au humain plante (décide de si ils travaillent ou non)
+/// </summary>
 public class Job : MonoBehaviour
 {
     [HideInInspector] public HumanJobSO CurrentJob;

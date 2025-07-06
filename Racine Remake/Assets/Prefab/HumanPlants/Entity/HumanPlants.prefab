@@ -298,6 +298,7 @@ MonoBehaviour:
   _villagerMask:
     serializedVersion: 2
     m_Bits: 128
+  _agent: {fileID: 5386917357174406368}
   IsTalking: 0
 --- !u!114 &5302117096255029104
 MonoBehaviour:
@@ -459,7 +460,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2941c647f3aa5a144b759a6a8e0b92d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Maison: {fileID: 0}
 --- !u!1 &2541193741373297886
 GameObject:
   m_ObjectHideFlags: 0
@@ -686,6 +686,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentHealth: 0
   maxHealth: 100
+  _humanHealthUIRef: {fileID: 2308114406557130377}
 --- !u!1 &3531369478994396724
 GameObject:
   m_ObjectHideFlags: 0

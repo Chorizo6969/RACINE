@@ -2,6 +2,9 @@ using Cysharp.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.AI;
 
+/// <summary>
+/// Classe majeure, gère le retour à la maison pour dormir et liens vers d'autres scripts
+/// </summary>
 public class HumanPlants : MonoBehaviour
 {
     [Header("OtherDomain")]
@@ -25,7 +28,7 @@ public class HumanPlants : MonoBehaviour
         await BackHome();
     }
 
-    private async void StartSleep() { await BackHome(); }
+    private async void StartSleep() { HumanRelationShips.VerifTalking(); await BackHome(); }
 
     public async UniTask BackHome() //temporaire
     {
