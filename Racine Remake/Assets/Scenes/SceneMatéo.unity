@@ -241,7 +241,7 @@ GameObject:
   - component: {fileID: 110475968}
   - component: {fileID: 110475967}
   - component: {fileID: 110475966}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: House 4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1549,6 +1549,10 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1795529234}
+    - target: {fileID: 2367468501463406752, guid: 73ba67bbd31926f4d87dfb8c9b3d9a05, type: 3}
+      propertyPath: m_AdditionalShaderChannelsFlag
+      value: 25
+      objectReference: {fileID: 0}
     - target: {fileID: 3077111820044022454, guid: 73ba67bbd31926f4d87dfb8c9b3d9a05, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -1618,7 +1622,7 @@ GameObject:
   - component: {fileID: 1309948011}
   - component: {fileID: 1309948010}
   - component: {fileID: 1309948009}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: House 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1730,6 +1734,10 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1795529234}
+    - target: {fileID: 2367468501463406752, guid: 73ba67bbd31926f4d87dfb8c9b3d9a05, type: 3}
+      propertyPath: m_AdditionalShaderChannelsFlag
+      value: 25
+      objectReference: {fileID: 0}
     - target: {fileID: 3077111820044022454, guid: 73ba67bbd31926f4d87dfb8c9b3d9a05, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -1901,7 +1909,7 @@ GameObject:
   - component: {fileID: 1478519339}
   - component: {fileID: 1478519338}
   - component: {fileID: 1478519337}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: House 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2614,7 +2622,7 @@ GameObject:
   - component: {fileID: 1780874197}
   - component: {fileID: 1780874196}
   - component: {fileID: 1780874195}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: House 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2887,6 +2895,10 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1795529234}
+    - target: {fileID: 2367468501463406752, guid: 73ba67bbd31926f4d87dfb8c9b3d9a05, type: 3}
+      propertyPath: m_AdditionalShaderChannelsFlag
+      value: 25
+      objectReference: {fileID: 0}
     - target: {fileID: 3077111820044022454, guid: 73ba67bbd31926f4d87dfb8c9b3d9a05, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -2956,7 +2968,7 @@ GameObject:
   - component: {fileID: 1838005605}
   - component: {fileID: 1838005604}
   - component: {fileID: 1838005603}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: House
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3361,6 +3373,10 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1795529234}
+    - target: {fileID: 2367468501463406752, guid: 73ba67bbd31926f4d87dfb8c9b3d9a05, type: 3}
+      propertyPath: m_AdditionalShaderChannelsFlag
+      value: 25
+      objectReference: {fileID: 0}
     - target: {fileID: 3077111820044022454, guid: 73ba67bbd31926f4d87dfb8c9b3d9a05, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -3543,6 +3559,10 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1795529234}
+    - target: {fileID: 2367468501463406752, guid: 73ba67bbd31926f4d87dfb8c9b3d9a05, type: 3}
+      propertyPath: m_AdditionalShaderChannelsFlag
+      value: 25
+      objectReference: {fileID: 0}
     - target: {fileID: 3077111820044022454, guid: 73ba67bbd31926f4d87dfb8c9b3d9a05, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0

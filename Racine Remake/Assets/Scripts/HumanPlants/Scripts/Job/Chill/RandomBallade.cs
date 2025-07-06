@@ -22,7 +22,6 @@ public class RandomBallade : MonoBehaviour
     {
         while (_isWander)
         {
-            if(!this.gameObject.GetComponent<NoJobGestion>().CanChill) { _isWander = false; }
             GetRandomPath();
             _wanderInterval = Random.Range(0, 15);
             await UniTask.Delay(_wanderInterval * 1000);
@@ -34,7 +33,7 @@ public class RandomBallade : MonoBehaviour
         Vector3 randomDirection = Random.insideUnitSphere * _wanderRadius;
         randomDirection += _agent.gameObject.transform.position;
 
-        if (NavMesh.SamplePosition(randomDirection, out NavMeshHit hit, _wanderRadius, NavMesh.AllAreas) && this.gameObject.GetComponent<NoJobGestion>().CanChill)
+        if (NavMesh.SamplePosition(randomDirection, out NavMeshHit hit, _wanderRadius, NavMesh.AllAreas))
         {
             _agent.SetDestination(hit.position);
         }

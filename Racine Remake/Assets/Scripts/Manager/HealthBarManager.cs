@@ -16,13 +16,13 @@ public class HealthBarManager : MonoBehaviour
         Instance = this;
     }
 
-    public void RegisterEntity(RectTransform rect)
+    public void RegisterCanvas(RectTransform rect)
     {
         if (!_rectTransformRef.Contains(rect))
             _rectTransformRef.Add(rect);
     }
 
-    void LateUpdate()
+    private void LateUpdate()
     {
         foreach (RectTransform rect in _rectTransformRef)
         {

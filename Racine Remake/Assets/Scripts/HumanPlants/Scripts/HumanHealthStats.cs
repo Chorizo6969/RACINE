@@ -5,6 +5,7 @@ public class HumanHealthStats : MonoBehaviour
 {
     [SerializeField] private float currentHealth;
     [SerializeField] private float maxHealth;
+    [SerializeField] private HumanHealthUI _humanHealthUIRef;
 
     private void Start()
     {
@@ -17,7 +18,7 @@ public class HumanHealthStats : MonoBehaviour
         currentHealth = startHP;
 
         await ApplyHealth(0);
-        gameObject.GetComponent<HumanHealthUI>().Setup(maxHealth, 0, currentHealth);
+        _humanHealthUIRef.Setup(maxHealth, 0, currentHealth);
     }
 
     public async UniTask ApplyDamage(float damage)

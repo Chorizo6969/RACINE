@@ -8,7 +8,7 @@ public class HumanHealthUI : MonoBehaviour
 
     private void Start()
     {
-        HealthBarManager.Instance.RegisterEntity(_canvas);
+        HealthBarManager.Instance.RegisterCanvas(_canvas);
     }
 
     public void Setup(float MaxHealthValue, float MinHealthValue, float CurrenthealthValue)

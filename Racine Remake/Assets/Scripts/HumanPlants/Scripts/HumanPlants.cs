@@ -9,6 +9,8 @@ public class HumanPlants : MonoBehaviour
     public Job HumanJob;
     public RelationShips HumanRelationShips;
 
+    [Header("Others")]
+    private NavMeshAgent _agent;
     public Transform Maison;
 
     [Header("First Job")]
@@ -17,24 +19,26 @@ public class HumanPlants : MonoBehaviour
     private async void Start()
     {
         TimeInGame.Instance.OnStartSleep += StartSleep;
+
+        _agent = this.gameObject.GetComponent<NavMeshAgent>();
         HumanJob.CurrentJob = _firstJob;
         await BackHome();
     }
 
-    private async void StartSleep() { print("Dodo..."); await BackHome(); }
+    private async void StartSleep() { await BackHome(); }
 
-    public async UniTask BackHome()
+    public async UniTask BackHome() //temporaire
     {
         print("Je retourne à la maison");
         while(HumanRelationShips.IsTalking)
         {
             await UniTask.Yield();
         }
-        //temporaire
-        NavMeshAgent agent = this.gameObject.GetComponent<NavMeshAgent>();
-        agent.enabled = true;
-        agent.SetDestination(Maison.position);
-        while (Vector3.Distance(agent.transform.position, Maison.position) > agent.stoppingDistance + 1.7f)
+
+        _agent.enabled = true;
+        _agent.SetDestination(Maison.position);
+
+        while (Vector3.Distance(_agent.transform.position, Maison.position) > _agent.stoppingDistance + 1.7f)
         {
             await UniTask.Yield();
         }

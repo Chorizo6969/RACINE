@@ -2,7 +2,6 @@ using UnityEngine;
 using UnityEngine.AI;
 using Cysharp.Threading.Tasks;
 using static HumanEnum;
-using System.Threading.Tasks;
 
 public class RelationShips : MonoBehaviour
 {
@@ -20,30 +19,29 @@ public class RelationShips : MonoBehaviour
     [SerializeField] private float _detectionRadius = 5f;
     [SerializeField] private LayerMask _villagerMask;
 
-    private NavMeshAgent _agent;
+    [SerializeField] private NavMeshAgent _agent;
     private bool _canTalk;
     [HideInInspector] public bool IsTalking;
 
     private void Start()
     {
-        _agent = GetComponent<NavMeshAgent>();
         TimeInGame.Instance.OnStartDiscuss += GoTalk;
+        TimeInGame.Instance.OnStartSleep += VerifTalking;
     }
 
     public void GoTalk()
     {
         _canTalk = true;
         IsTalking = false;
-        Debug.Log("Il faut papoter !");
         WanderRoutine().Forget();
         LookForSomeoneRoutine().Forget();
     }
 
-    private async UniTaskVoid WanderRoutine()
+    private async UniTaskVoid WanderRoutine() //On patrouille en quête d'humain
     {
         while (_canTalk && !IsTalking)
         {
-            Vector3 randomDirection = GetBoundsPoint();
+            Vector3 randomDirection = new Vector3(Random.Range(_talkingLimits.min.x, _talkingLimits.max.x), _talkingLimits.center.y, Random.Range(_talkingLimits.min.z, _talkingLimits.max.z));
             if (NavMesh.SamplePosition(randomDirection, out NavMeshHit hit, 5f, NavMesh.AllAreas))
             {
                 _agent.SetDestination(hit.position);
@@ -52,9 +50,9 @@ public class RelationShips : MonoBehaviour
         }
     }
 
-    private async UniTaskVoid LookForSomeoneRoutine()
+    private async UniTaskVoid LookForSomeoneRoutine() //Routine de blabla
     {
-        await UniTask.Delay(3000);
+        await UniTask.Delay(3000); //Pour éviter un spawnkill de discution
         while (_canTalk && !IsTalking)
         {
             RelationShips target = FindAvailableVillager();
@@ -63,19 +61,11 @@ public class RelationShips : MonoBehaviour
                 StartConversationWith(target);
                 break;
             }
-
-            await UniTask.Yield(); // Check toutes les secondes
+            await UniTask.Yield();
         }
-        print("stop");
     }
 
-    private Vector3 GetBoundsPoint()
-    {
-        Vector3 randomPoint = new Vector3(Random.Range(_talkingLimits.min.x, _talkingLimits.max.x), _talkingLimits.center.y , Random.Range(_talkingLimits.min.z, _talkingLimits.max.z));
-        return randomPoint;
-    }
-
-    private RelationShips FindAvailableVillager()
+    private RelationShips FindAvailableVillager() //On cherche à attraper un humain qui passe
     {
         Collider[] hits = Physics.OverlapSphere(transform.position, _detectionRadius, _villagerMask);
         foreach (Collider hit in hits)
@@ -90,7 +80,7 @@ public class RelationShips : MonoBehaviour
         return null;
     }
 
-    private void StartConversationWith(RelationShips other)
+    private void StartConversationWith(RelationShips other) //dialogue entre les 2
     {
         _canTalk = false;
         IsTalking = true;
@@ -104,7 +94,7 @@ public class RelationShips : MonoBehaviour
 
         Debug.Log($"{name} parle avec {other.name}");
 
-        switch (HumanRelation.Instance.ResultOfTalking())
+        switch (HumanRelation.Instance.ResultOfTalking()) //résultat de l'interaction
         {
             case HumanRelationResult.Friend:
                 _friends = other;
@@ -121,7 +111,7 @@ public class RelationShips : MonoBehaviour
         _agent.enabled = false;
     }
 
-    private async UniTaskVoid LookAtSmoothly(Transform target)
+    private async UniTaskVoid LookAtSmoothly(Transform target) //Se tourne vers son pote
     {
         float duration = 0.5f;
         float elapsed = 0f;
@@ -141,12 +131,17 @@ public class RelationShips : MonoBehaviour
         transform.rotation = targetRot;
     }
 
-    private void EndConversation() 
+    private void EndConversation() //dodo à lancer plus tôt
     {
         _canTalk = false;
         IsTalking = false;
-        //dodo à lancer plus tôt
         this.gameObject.GetComponent<HumanPlants>().BackHome().Forget();
+    }
+
+    private void VerifTalking()
+    {
+        if (IsTalking) { return; }
+        EndConversation();
     }
 
 #if UNITY_EDITOR

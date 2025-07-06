@@ -1,4 +1,6 @@
 using Cysharp.Threading.Tasks;
+using System;
+using System.Threading;
 using UnityEngine;
 
 public class NoJobGestion : MonoBehaviour
@@ -11,7 +13,7 @@ public class NoJobGestion : MonoBehaviour
 
     [Header("State reference")]
     [SerializeField] private RandomBallade _randomBalladeRef;
-    [SerializeField] private HumanPlants _humanPlantsRef;
+    [SerializeField] private BackHouseForChill _backHouse;
     [SerializeField] private SitAndChill _sitAndChillRef;
 
     [Header("State Probabilities")]
@@ -19,34 +21,69 @@ public class NoJobGestion : MonoBehaviour
     [Range(0, 1)][SerializeField] private float _goHomeProbability = 0.33f;
     [Range(0, 1)][SerializeField] private float _sitProbability = 0.34f;
 
-    public async UniTask ChooseState()
+    private CancellationTokenSource _chillCTS;
+
+    public void StartChill()
     {
-        while (CanChill)
+        CanChill = true;
+        _chillCTS = new CancellationTokenSource();
+        ChooseState(_chillCTS.Token).Forget();
+    }
+
+    private async UniTask ChooseState(CancellationToken token)
+    {
+        while (CanChill && !token.IsCancellationRequested)
         {
             int choice = GetWeightedRandomChoice();
             switch (choice)
             {
                 case 0:
                     _randomBalladeRef.StartWander();
-                    await UniTask.Delay(TimeAwaitAfterWander * 1000);
+                    try
+                    {
+                        await UniTask.Delay(TimeAwaitAfterWander * 1000, cancellationToken: token);
+                    }
+                    catch (OperationCanceledException) { }
                     _randomBalladeRef.StopWander();
                     break;
+
                 case 1:
-                    await _humanPlantsRef.BackHome();
-                    await UniTask.Delay(TimeAwaitGoHome * 1000);
+                    await _backHouse.BackHome();
+                    try
+                    {
+                        await UniTask.Delay(TimeAwaitGoHome * 1000, cancellationToken: token);
+                    }
+                    catch (OperationCanceledException) { }
                     break;
+
                 case 2:
                     _sitAndChillRef.SitDownAndChill();
-                    await UniTask.Delay(TimeAwaitSitDown * 1000);
+                    try
+                    {
+                        await UniTask.Delay(TimeAwaitSitDown * 1000, cancellationToken: token);
+                    }
+                    catch (OperationCanceledException) { }
                     break;
             }
         }
     }
 
+    public void StopAllChillBehaviors()
+    {
+        CanChill = false;
+
+        _chillCTS?.Cancel();
+        _chillCTS?.Dispose();
+
+        _randomBalladeRef.StopWander();
+        //_sitAndChillRef.StopChilling();
+        //_humanPlantsRef.ForceExitHome();
+    }
+
     private int GetWeightedRandomChoice()
     {
         float total = _wanderProbability + _goHomeProbability + _sitProbability;
-        float random = Random.Range(0, total);
+        float random = UnityEngine.Random.Range(0, total);
         if (random < _wanderProbability) return 0;
         if (random < _wanderProbability + _goHomeProbability) return 1;
         return 2;
