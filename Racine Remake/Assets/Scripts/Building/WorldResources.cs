@@ -1,5 +1,5 @@
 [System.Serializable]
-public struct Resources
+public struct WorldResources
 {
     public int Wood;
     public int Rock;

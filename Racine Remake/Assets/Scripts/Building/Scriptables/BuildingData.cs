@@ -10,7 +10,7 @@ public class BuildingData : ScriptableObject
     public Vector2Int Size { get; set; } // The size of the building in grid units.
 
     [field: SerializeField]
-    public Resources Cost { get; set; } // The cost of the building in resources.
+    public WorldResources Cost { get; set; } // The cost of the building in resources.
 
     [field: SerializeField]
     public BuildingBase Upgrade { get; set; } // The building that this one upgrades to, if any.
