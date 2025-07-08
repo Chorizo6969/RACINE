@@ -14,3 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _personalityName: 5
   _description: "Feint d'\xEAtre malade plus souvent."
+  _effect: 5
+  _calcule: 0
+  _value: 0.15

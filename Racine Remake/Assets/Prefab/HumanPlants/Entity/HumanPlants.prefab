@@ -213,6 +213,7 @@ GameObject:
   - component: {fileID: 7826526000315795055}
   - component: {fileID: 6120262035672812023}
   - component: {fileID: 5451621294031745158}
+  - component: {fileID: 7963199204916886540}
   m_Layer: 7
   m_Name: HumanPlants
   m_TagString: Untagged
@@ -326,9 +327,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ffbd2856d35e4449a0d544fca1ff325, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _humanPersonality: {fileID: 0}
   _allPersonality:
   - {fileID: 11400000, guid: bfcb5cc4319214c48a13258edcd3c0f1, type: 2}
+  - {fileID: 11400000, guid: e1038644605be714fb120de603acf74d, type: 2}
+  - {fileID: 11400000, guid: 78c52276acb1a5a4cb7aa8e31128b878, type: 2}
+  - {fileID: 11400000, guid: c5208bbb8cba0b1438f52e350513725b, type: 2}
+  - {fileID: 11400000, guid: 1e761e2f7890be944bae346b55017aa9, type: 2}
+  - {fileID: 11400000, guid: a7737ab6e1025a443ab4f0e72c19dc01, type: 2}
+  - {fileID: 11400000, guid: 53a933f7e5a9b8545819f4116f023f32, type: 2}
+  - {fileID: 11400000, guid: cc7824096af6c874bac734f8182efab4, type: 2}
+  - {fileID: 11400000, guid: edabd40aa3a81fd488af1f9e607ab90d, type: 2}
+  - {fileID: 11400000, guid: 37e784c0756139442b0d3e71fdb10719, type: 2}
+  - {fileID: 11400000, guid: 9a87e3333a9e2ec4f82ea1675de2eb52, type: 2}
+  - {fileID: 11400000, guid: 353398d928b0fae409709bdfd09a6028, type: 2}
+  - {fileID: 11400000, guid: 7d82409ddc1e8554eb33bd7796100a98, type: 2}
+  - {fileID: 11400000, guid: c01f02cca9298b8429b5685e9059912d, type: 2}
+  - {fileID: 11400000, guid: d266ba082b3400c4a8363d8afb646307, type: 2}
+  - {fileID: 11400000, guid: 29442dd5492f5de4ba716ef1577024ca, type: 2}
+  - {fileID: 11400000, guid: 652a1b87cb34f524f9b1581de9f6fa2f, type: 2}
+  - {fileID: 11400000, guid: 1033d03de1a67f6489e2fc953be57834, type: 2}
+  _stats: {fileID: 7963199204916886540}
 --- !u!65 &6120262035672812023
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -363,6 +381,31 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _jobName: {fileID: 311756702851649033}
+--- !u!114 &7963199204916886540
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2127928414744957362}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c896e398cbdf114d889eeffc55205af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EfficiencyWorking: 0
+  WiningRessourcesRatio: 0
+  SpeedHuman: 0
+  PoopSpeedProba: 0
+  FightingProba: 0
+  SickProba: 0
+  ForgetRessourcesProba: 0
+  TimeBeforeOrder: 0
+  IsScared: 0
+  IsNarcoleptique: 0
+  CleanPoop: 0
+  BuffAudioValue: 0
+  HappinessFlat: 0
 --- !u!1 &2284449935252262779
 GameObject:
   m_ObjectHideFlags: 0

@@ -14,3 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _personalityName: 6
   _description: "Met 10 secondes de plus \xE0 comprendre les ordres."
+  _effect: 7
+  _calcule: 0
+  _value: 10

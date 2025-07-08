@@ -48,6 +48,30 @@ public static class HumanEnum
         Survivaliste
     }
 
+    public enum HumanPersonalityEffect
+    {
+        EfficiencyWorking,
+        WiningRessourcesRatio,
+        ForgetRessourcesProba,
+        SpeedHuman,
+        FightingProba,
+        SickProba,
+        PoopSpeedProba,
+        TimeBeforeOrder,
+        IsScared,
+        IsNarcoleptique,
+        CleanPoop,
+        BuffAudioValue,
+        HappinessFlat
+    }
+
+    public enum HumanPersonalityCalcule
+    {
+        Add,
+        Bool
+    }
+
+
     public enum HumanRelationResult
     {
         Friend,

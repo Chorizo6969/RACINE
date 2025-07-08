@@ -15,3 +15,6 @@ MonoBehaviour:
   _personalityName: 7
   _description: "Fuit automatiquement s'il y a une attaque ennemie, m\xEAme s'il
     est combattant."
+  _effect: 8
+  _calcule: 1
+  _value: 1

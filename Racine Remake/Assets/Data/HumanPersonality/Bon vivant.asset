@@ -14,4 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _personalityName: 15
   _description: Augmente la jauge de bonheur .
-  _componentName: 
+  _effect: 12
+  _calcule: 0
+  _value: 15

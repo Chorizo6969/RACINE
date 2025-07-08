@@ -6,16 +6,19 @@ using UnityEngine;
 /// </summary>
 public class Personality : MonoBehaviour
 {
-    [SerializeField] private HumanPersonalitySO _humanPersonality;
+    private HumanPersonalitySO _humanPersonality;
     [SerializeField] private List<HumanPersonalitySO> _allPersonality = new();
+    public Stats _stats;
 
-    void Start() { ChooseAPersonality(); }
+    private void Start() 
+    {
+        ChooseAPersonality();
+    }
 
     private void ChooseAPersonality()
     {
         int indexChoose = Random.Range(0, _allPersonality.Count - 1);
         _humanPersonality = _allPersonality[indexChoose];
-        //AttributeComportement.AddComportementHuman(_personality.ComponentName, this.gameObject); //Ajouté le bon script / comportement
+        _stats.Setup(_humanPersonality);
     }
-
 }

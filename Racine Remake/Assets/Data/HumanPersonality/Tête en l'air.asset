@@ -14,4 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _personalityName: 2
   _description: Perd parfois les ressources qu'il transporte (25% de chance).
-  _componentName: 
+  _effect: 2
+  _calcule: 0
+  _value: 0.25

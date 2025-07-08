@@ -14,3 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _personalityName: 12
   _description: Travaille 15% plus vite que la moyenne.
+  _effect: 0
+  _calcule: 0
+  _value: 0.15
