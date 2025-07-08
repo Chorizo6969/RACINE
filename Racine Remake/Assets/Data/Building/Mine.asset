@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d98b180398eb52f4fb1dfbf81ec921f8, type: 3}
+  m_Name: Mine
+  m_EditorClassIdentifier: 
+  <Mesh>k__BackingField: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+  <Size>k__BackingField: {x: 2, y: 2}
+  <Cost>k__BackingField:
+    Wood: 6
+    Rock: 2
+    Water: 1
+  <Upgrade>k__BackingField: {fileID: 0}
+  <Name>k__BackingField: Mine
+  <Description>k__BackingField: "L\xE0 o\xF9 les humains plantes pourront r\xE9cup\xE9rer
+    de la pierre."
+  <MaxPopulation>k__BackingField: 5
