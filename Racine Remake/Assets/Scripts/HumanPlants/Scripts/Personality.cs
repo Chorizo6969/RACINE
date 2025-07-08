@@ -1,3 +1,4 @@
+using Cysharp.Threading.Tasks;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
@@ -25,6 +26,7 @@ public class Personality : MonoBehaviour
         _humanPersonality = _allPersonality[indexChoose];
         _stats.Setup(_humanPersonality);
 
+        if(_humanPersonality.PersonalityName == HumanEnum.HumanPersonality.BonVivant) { Happiness.Instance.BuffHappiness(_stats.HappinessFlat).Forget(); }
         OnStatsReady.Invoke();
     }
 }

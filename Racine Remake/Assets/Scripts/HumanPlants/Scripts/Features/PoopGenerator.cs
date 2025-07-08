@@ -70,9 +70,10 @@ public class PoopGenerator : MonoBehaviour
         _poopCTS?.Dispose();
     }
 
-    private void Poop()
+    private async void Poop()
     {
         Instantiate(_poopPrefab, transform.position, Quaternion.identity);
+        await Happiness.Instance.ReduceHappiness(5);
         Debug.Log($"{gameObject.name} a fait caca !");
     }
 }
