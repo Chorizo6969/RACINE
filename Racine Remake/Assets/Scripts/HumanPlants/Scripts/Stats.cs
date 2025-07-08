@@ -10,17 +10,20 @@ public class Stats : MonoBehaviour
     #region Variable
     [Range(-1, 1)] public float EfficiencyWorking; //Vitesse de travail
     [Range(-1, 1)] public float WiningRessourcesRatio; // Ration de ressource
-    [Range(-1, 1)] public float SpeedHuman; //Vitesse des humains 
-    [Range(-1, 1)] public float PoopSpeedProba; // Vitesse de caca
+    [Range(-1, 1)] public float SpeedHuman; //Vitesse des humains
     [Range(0, 1)] public float FightingProba; //Kéké
     [Range(0, 1)] public float SickProba; // Porba malade
     [Range(0, 1)] public float ForgetRessourcesProba; // Proba d'oublié les ressources
+    public float PoopSpeed; // Vitesse de caca
     public float TimeBeforeOrder; //Mou du bulbe
     public bool IsScared; //Fuit les chèvres
     public bool IsNarcoleptique; //Dodo n'importe quand
     public bool CleanPoop; //Rammase les caca
+    public bool FixeCaca; //Fixe un caca
     public float BuffAudioValue; //CriePourRien
     public float HappinessFlat; //Jauge de bonheur
+
+    public bool IsHome = true;
     #endregion
 
     public void Setup(HumanPersonalitySO _personality) //Utilise le principe de reflection (Un enum (HumanPersonalityEffect) possède la même écriture que les variables au dessus.)

@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -8,7 +9,9 @@ public class Personality : MonoBehaviour
 {
     private HumanPersonalitySO _humanPersonality;
     [SerializeField] private List<HumanPersonalitySO> _allPersonality = new();
-    public Stats _stats;
+    [SerializeField] private Stats _stats;
+
+    public event Action OnStatsReady;
 
     private void Start() 
     {
@@ -17,8 +20,11 @@ public class Personality : MonoBehaviour
 
     private void ChooseAPersonality()
     {
-        int indexChoose = Random.Range(0, _allPersonality.Count - 1);
+        int indexChoose = UnityEngine.Random.Range(0, _allPersonality.Count - 1);
+
         _humanPersonality = _allPersonality[indexChoose];
         _stats.Setup(_humanPersonality);
+
+        OnStatsReady.Invoke();
     }
 }

@@ -13,6 +13,7 @@ public class HumanPlants : MonoBehaviour
     public RelationShips HumanRelationShips;
 
     [Header("Others")]
+    [SerializeField] private Stats _stats;
     private NavMeshAgent _agent;
     public Transform Maison;
 
@@ -45,6 +46,7 @@ public class HumanPlants : MonoBehaviour
         {
             await UniTask.Yield();
         }
+        _stats.IsHome = true;
         await UniTask.Delay(3000);
     }
 }

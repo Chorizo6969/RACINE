@@ -56,11 +56,12 @@ public static class HumanEnum
         SpeedHuman,
         FightingProba,
         SickProba,
-        PoopSpeedProba,
+        PoopSpeed,
         TimeBeforeOrder,
         IsScared,
         IsNarcoleptique,
         CleanPoop,
+        FixeCaca,
         BuffAudioValue,
         HappinessFlat
     }

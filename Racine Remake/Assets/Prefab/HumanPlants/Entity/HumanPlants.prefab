@@ -214,6 +214,7 @@ GameObject:
   - component: {fileID: 6120262035672812023}
   - component: {fileID: 5451621294031745158}
   - component: {fileID: 7963199204916886540}
+  - component: {fileID: 1396521311142949002}
   m_Layer: 7
   m_Name: HumanPlants
   m_TagString: Untagged
@@ -275,6 +276,7 @@ MonoBehaviour:
   HumanPersonality: {fileID: 7826526000315795055}
   HumanJob: {fileID: 5302117096255029104}
   HumanRelationShips: {fileID: 1007644649083228443}
+  _stats: {fileID: 7963199204916886540}
   Maison: {fileID: 0}
   _firstJob: {fileID: 11400000, guid: ae8026902d47e724d8b0395b44cb5604, type: 2}
 --- !u!114 &1007644649083228443
@@ -396,16 +398,33 @@ MonoBehaviour:
   EfficiencyWorking: 0
   WiningRessourcesRatio: 0
   SpeedHuman: 0
-  PoopSpeedProba: 0
   FightingProba: 0
   SickProba: 0
   ForgetRessourcesProba: 0
+  PoopSpeed: 5
   TimeBeforeOrder: 0
   IsScared: 0
   IsNarcoleptique: 0
   CleanPoop: 0
+  FixeCaca: 0
   BuffAudioValue: 0
   HappinessFlat: 0
+  IsHome: 0
+--- !u!114 &1396521311142949002
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2127928414744957362}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f937d65700501e54dabf30ad7cb6a76a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _poopPrefab: {fileID: 7305169338555366289, guid: 3114af5dade06e449bc09a187f27a51d, type: 3}
+  _stats: {fileID: 7963199204916886540}
+  _personality: {fileID: 7826526000315795055}
 --- !u!1 &2284449935252262779
 GameObject:
   m_ObjectHideFlags: 0
@@ -469,6 +488,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _wanderRadius: 25
   _wanderInterval: 0
+  _stats: {fileID: 7963199204916886540}
 --- !u!114 &7028175825637513561
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -503,6 +523,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2941c647f3aa5a144b759a6a8e0b92d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _stats: {fileID: 7963199204916886540}
 --- !u!1 &2541193741373297886
 GameObject:
   m_ObjectHideFlags: 0

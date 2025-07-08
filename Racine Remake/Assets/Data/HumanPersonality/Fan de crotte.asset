@@ -15,3 +15,6 @@ MonoBehaviour:
   _personalityName: 10
   _description: "Se bloque devant une crotte et refuse d'avancer tant qu'elle n'est
     pas ramass\xE9e."
+  _effect: 11
+  _calcule: 1
+  _value: 1

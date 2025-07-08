@@ -16,4 +16,4 @@ MonoBehaviour:
   _description: Fait caca plus souvent.
   _effect: 6
   _calcule: 0
-  _value: 1
+  _value: 10

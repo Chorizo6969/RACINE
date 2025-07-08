@@ -9,6 +9,7 @@ public class BackHouseForChill : MonoBehaviour
 {
     private Transform _maison;
     private NavMeshAgent _agent;
+    [SerializeField] private Stats _stats;
 
     public void Start()
     {
@@ -24,5 +25,6 @@ public class BackHouseForChill : MonoBehaviour
         {
             await UniTask.Yield();
         }
+        _stats.IsHome = true;
     }
 }

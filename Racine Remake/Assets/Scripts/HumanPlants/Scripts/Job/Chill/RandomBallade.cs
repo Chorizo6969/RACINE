@@ -12,6 +12,7 @@ public class RandomBallade : MonoBehaviour
     [Header("Wandering Settings")]
     [SerializeField] private float _wanderRadius = 25;
     [SerializeField] private int _wanderInterval;
+    [SerializeField] private Stats _stats;
     private bool _isWander;
 
     public void Start() 
@@ -39,6 +40,7 @@ public class RandomBallade : MonoBehaviour
         if (NavMesh.SamplePosition(randomDirection, out NavMeshHit hit, _wanderRadius, NavMesh.AllAreas))
         {
             _agent.SetDestination(hit.position);
+            _stats.IsHome = false;
         }
     }
 
