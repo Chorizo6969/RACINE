@@ -16,8 +16,9 @@ public class HumanRelation : MonoBehaviour
     /// Fonction qui retourne le résultat de l'interaction
     /// </summary>
     /// <returns> Enum HumanRelationResult (Ami neutral, Enemy) </returns>
-    public HumanRelationResult ResultOfTalking()
+    public HumanRelationResult ResultOfTalking(/*Stats stats*/)
     {
+        //_enemyProba = stats.FightingProba;
         float total = _friendProba + _enemyProba;
         float neutralProba = Mathf.Clamp01(1f - total);
 

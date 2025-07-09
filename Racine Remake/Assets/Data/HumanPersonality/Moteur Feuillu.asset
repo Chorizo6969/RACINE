@@ -16,4 +16,4 @@ MonoBehaviour:
   _description: Marche 50% plus vite.
   _effect: 3
   _calcule: 0
-  _value: 0.5
+  _value: 7

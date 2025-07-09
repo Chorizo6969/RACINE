@@ -12,6 +12,9 @@ public class Job : MonoBehaviour
     [Header("System Chill")]
     [SerializeField] private NoJobGestion _noJobGestion;
 
+    [Header("Stats")]
+    [SerializeField] private Stats _stats;
+
     private HumanPlants _humanPlantsRef;
     private NavMeshAgent _agent;
 
@@ -24,8 +27,23 @@ public class Job : MonoBehaviour
         TimeInGame.Instance.OnStartDiscuss += StopWork;
     }
 
+    private void IsSick() //Tout les matin, setup à faux...
+    {
+        _stats.IsSick = false;
+        _stats.IsFakeSick = false;
+        SickHuman.Instance.SickProba(ref _stats.IsSick, ref _stats.IsFakeSick, _stats.SickProba); //Malade ou pas...
+    }
+
     private async void GoWork() 
     {
+        IsSick();
+
+        if (_stats.IsSick || _stats.IsFakeSick) //Si malade il reste chez lui pour la journée.
+        {
+            await _humanPlantsRef.BackHome();
+            return;
+        }
+
         if (CurrentJob.JobType == HumanJobType.Récolteur)
         {
             //DisableBalladeSystem(); //Plus besoin car plus de ballade

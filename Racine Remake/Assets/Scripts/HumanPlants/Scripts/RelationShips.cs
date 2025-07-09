@@ -11,6 +11,7 @@ public class RelationShips : MonoBehaviour
     [Header("Relation")]
     [SerializeField] private RelationShips _friends;
     [SerializeField] private RelationShips _enemy;
+    [SerializeField] private Stats _stats;
 
     [Header("Zone de discussion")]
     [SerializeField] private Bounds _talkingLimits; //Centre du village ou à lieu les discussions
@@ -33,6 +34,8 @@ public class RelationShips : MonoBehaviour
 
     public void SetupTalkingProces()
     {
+        if(_stats.IsSick || _stats.IsFakeSick) { return; }
+
         _canTalk = true;
         IsTalking = false;
         WanderRoutine().Forget();

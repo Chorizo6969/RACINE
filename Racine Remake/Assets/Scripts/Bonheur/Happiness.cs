@@ -31,6 +31,7 @@ public class Happiness : MonoBehaviour
     public async UniTask BuffHappiness(float delta)
     {
         currentHappiness += delta;
+        _hapinessUIRef.Setup(100, 0, currentHappiness);
         await UniTask.Yield();
     }
 }

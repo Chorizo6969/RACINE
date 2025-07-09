@@ -293,6 +293,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _friends: {fileID: 0}
   _enemy: {fileID: 0}
+  _stats: {fileID: 7963199204916886540}
   _talkingLimits:
     m_Center: {x: 60, y: 0, z: 90}
     m_Extent: {x: 20, y: 5, z: 20}
@@ -317,6 +318,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CurrentJob: {fileID: 0}
   _noJobGestion: {fileID: 7028175825637513561}
+  _stats: {fileID: 7963199204916886540}
 --- !u!114 &7826526000315795055
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -410,6 +412,8 @@ MonoBehaviour:
   BuffAudioValue: 0
   HappinessFlat: 0
   IsHome: 0
+  IsSick: 0
+  IsFakeSick: 0
 --- !u!114 &1396521311142949002
 MonoBehaviour:
   m_ObjectHideFlags: 0

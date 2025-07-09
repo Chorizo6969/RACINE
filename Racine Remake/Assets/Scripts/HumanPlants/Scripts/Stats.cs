@@ -1,3 +1,4 @@
+using Cysharp.Threading.Tasks;
 using System.Reflection;
 using UnityEngine;
 using static HumanEnum;
@@ -10,10 +11,10 @@ public class Stats : MonoBehaviour
     #region Variable
     [Range(-1, 1)] public float EfficiencyWorking; //Vitesse de travail
     [Range(-1, 1)] public float WiningRessourcesRatio; // Ration de ressource
-    [Range(-1, 1)] public float SpeedHuman; //Vitesse des humains
     [Range(0, 1)] public float FightingProba; //Kéké
     [Range(0, 1)] public float SickProba; // Porba malade
     [Range(0, 1)] public float ForgetRessourcesProba; // Proba d'oublié les ressources
+    public float SpeedHuman; //Vitesse des humains
     public float PoopSpeed; // Vitesse de caca
     public float TimeBeforeOrder; //Mou du bulbe
     public bool IsScared; //Fuit les chèvres
@@ -24,9 +25,11 @@ public class Stats : MonoBehaviour
     public float HappinessFlat; //Jauge de bonheur
 
     public bool IsHome = true;
+    public bool IsSick;
+    public bool IsFakeSick;
     #endregion
 
-    public void Setup(HumanPersonalitySO _personality) //Utilise le principe de reflection (Un enum (HumanPersonalityEffect) possède la même écriture que les variables au dessus.)
+    public async UniTask Setup(HumanPersonalitySO _personality) //Utilise le principe de reflection (Un enum (HumanPersonalityEffect) possède la même écriture que les variables au dessus.)
     {
         string fieldName = _personality.Effect.ToString();
         FieldInfo field = typeof(Stats).GetField(fieldName);
@@ -45,6 +48,8 @@ public class Stats : MonoBehaviour
                 field.SetValue(this, true);
         }
         else { field.SetValue(this, _personality.Value); }
+
+        await UniTask.Yield();
              
     }
 

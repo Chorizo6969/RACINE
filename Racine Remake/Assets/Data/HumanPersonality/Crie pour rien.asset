@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _personalityName: 11
   _description: Hurle parfois sans aucune raison.
-  _effect: 8
-  _calcule: 1
-  _value: 1
+  _effect: 12
+  _calcule: 0
+  _value: 0.3
