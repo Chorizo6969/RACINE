@@ -1,7 +1,9 @@
 using Cysharp.Threading.Tasks;
 using System.Threading;
 using UnityEngine;
-
+/// <summary>
+/// Script qui fait faire caca à l'humain plante
+/// </summary>
 public class PoopGenerator : MonoBehaviour
 {
     [Header("Poop Settings")]
