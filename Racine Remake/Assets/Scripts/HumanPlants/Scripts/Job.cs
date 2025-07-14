@@ -9,19 +9,11 @@ public class Job : MonoBehaviour
 {
     [HideInInspector] public HumanJobSO CurrentJob;
 
-    [Header("System Chill")]
-    [SerializeField] private NoJobGestion _noJobGestion;
-
-    [Header("Stats")]
-    [SerializeField] private Stats _stats;
-
     private HumanPlants _humanPlantsRef;
-    private NavMeshAgent _agent;
 
     private void Start()
     {
         _humanPlantsRef = this.gameObject.GetComponent<HumanPlants>();
-        _agent = this.gameObject.GetComponent<NavMeshAgent>();
         TimeInGame.Instance.OnStartWork += GoWork;
         TimeInGame.Instance.OnStartChomage += StartChomageRoutine;
         TimeInGame.Instance.OnStartDiscuss += StopWork;
@@ -29,16 +21,16 @@ public class Job : MonoBehaviour
 
     private void IsSick() //Tout les matin, setup à faux...
     {
-        _stats.IsSick = false;
-        _stats.IsFakeSick = false;
-        SickHuman.Instance.SickProba(ref _stats.IsSick, ref _stats.IsFakeSick, _stats.SickProba); //Malade ou pas...
+        _humanPlantsRef.StatsRef.IsSick = false;
+        _humanPlantsRef.StatsRef.IsFakeSick = false;
+        SickHuman.Instance.SickProba(ref _humanPlantsRef.StatsRef.IsSick, ref _humanPlantsRef.StatsRef.IsFakeSick, _humanPlantsRef.StatsRef.SickProba); //Malade ou pas...
     }
 
     private async void GoWork() 
     {
         IsSick();
 
-        if (_stats.IsSick || _stats.IsFakeSick) //Si malade il reste chez lui pour la journée.
+        if (_humanPlantsRef.StatsRef.IsSick || _humanPlantsRef.StatsRef.IsFakeSick) //Si malade il reste chez lui pour la journée.
         {
             await _humanPlantsRef.BackHome();
             return;
@@ -55,7 +47,7 @@ public class Job : MonoBehaviour
         if (CurrentJob.JobName != HumanJobs.Chômeur && CurrentJob.JobType != HumanJobType.Récolteur)
         {
             //EnableBalladeSystem();
-            _noJobGestion.StartChill(); //Les autres métiers se balladent en attendant qu'ils se passent un truc
+            _humanPlantsRef.HumanNoJobGestion.StartChill(); //Les autres métiers se balladent en attendant qu'ils se passent un truc
         }
     }
 
@@ -64,14 +56,14 @@ public class Job : MonoBehaviour
         if(CurrentJob.JobName == HumanJobs.Chômeur)
         {
             //EnableBalladeSystem();
-            _noJobGestion.StartChill(); //Il commence la journée
+            _humanPlantsRef.HumanNoJobGestion.StartChill(); //Il commence la journée
         }
     }
 
     private void StopWork() 
     {
-        _noJobGestion.StopAllChillBehaviors();
+        _humanPlantsRef.HumanNoJobGestion.StopAllChillBehaviors();
         //DisableBalladeSystem();
-        _agent.ResetPath();
+        _humanPlantsRef.HumanMotorsRef.Agent.ResetPath();
     }
 }

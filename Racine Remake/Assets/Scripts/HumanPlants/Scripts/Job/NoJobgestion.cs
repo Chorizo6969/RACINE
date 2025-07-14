@@ -26,6 +26,13 @@ public class NoJobGestion : MonoBehaviour
 
     private CancellationTokenSource _chillCTS;
 
+    protected HumanPlants _humanPlants; //Pour les classes filles
+
+    private void Start()
+    {
+        _humanPlants = GetComponentInParent<HumanPlants>();
+    }
+
     /// <summary>
     /// Commence la routine aléatoire d'un humain plante
     /// </summary>

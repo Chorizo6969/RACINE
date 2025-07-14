@@ -209,6 +209,7 @@ GameObject:
   - component: {fileID: 5386917357174406368}
   - component: {fileID: 6990150979677328647}
   - component: {fileID: 1007644649083228443}
+  - component: {fileID: 7130303931724618663}
   - component: {fileID: 5302117096255029104}
   - component: {fileID: 7826526000315795055}
   - component: {fileID: 6120262035672812023}
@@ -276,7 +277,9 @@ MonoBehaviour:
   HumanPersonality: {fileID: 7826526000315795055}
   HumanJob: {fileID: 5302117096255029104}
   HumanRelationShips: {fileID: 1007644649083228443}
-  _stats: {fileID: 7963199204916886540}
+  HumanNoJobGestion: {fileID: 7028175825637513561}
+  HumanMotorsRef: {fileID: 7130303931724618663}
+  StatsRef: {fileID: 7963199204916886540}
   Maison: {fileID: 0}
   _firstJob: {fileID: 11400000, guid: ae8026902d47e724d8b0395b44cb5604, type: 2}
 --- !u!114 &1007644649083228443
@@ -291,9 +294,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2fada5eddc56c9241ba7a9cc288bf7d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _humanPlantsRef: {fileID: 0}
   _friends: {fileID: 0}
   _enemy: {fileID: 0}
-  _stats: {fileID: 7963199204916886540}
   _talkingLimits:
     m_Center: {x: 60, y: 0, z: 90}
     m_Extent: {x: 20, y: 5, z: 20}
@@ -302,8 +305,20 @@ MonoBehaviour:
   _villagerMask:
     serializedVersion: 2
     m_Bits: 128
-  _agent: {fileID: 5386917357174406368}
   IsTalking: 0
+--- !u!114 &7130303931724618663
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2127928414744957362}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c723522eccfa6047b350f8ab0d52e6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Agent: {fileID: 5386917357174406368}
 --- !u!114 &5302117096255029104
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -317,8 +332,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CurrentJob: {fileID: 0}
-  _noJobGestion: {fileID: 7028175825637513561}
-  _stats: {fileID: 7963199204916886540}
 --- !u!114 &7826526000315795055
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -347,7 +360,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 7d82409ddc1e8554eb33bd7796100a98, type: 2}
   - {fileID: 11400000, guid: c01f02cca9298b8429b5685e9059912d, type: 2}
   - {fileID: 11400000, guid: d266ba082b3400c4a8363d8afb646307, type: 2}
-  - {fileID: 11400000, guid: 29442dd5492f5de4ba716ef1577024ca, type: 2}
   - {fileID: 11400000, guid: 652a1b87cb34f524f9b1581de9f6fa2f, type: 2}
   - {fileID: 11400000, guid: 1033d03de1a67f6489e2fc953be57834, type: 2}
   _stats: {fileID: 7963199204916886540}
@@ -399,18 +411,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EfficiencyWorking: 0
   WiningRessourcesRatio: 0
-  SpeedHuman: 0
   FightingProba: 0
   SickProba: 0
   ForgetRessourcesProba: 0
+  SpeedHuman: 0
   PoopSpeed: 5
   TimeBeforeOrder: 0
+  BuffAudioValue: 0
+  HappinessFlat: 0
   IsScared: 0
   IsNarcoleptique: 0
   CleanPoop: 0
   FixeCaca: 0
-  BuffAudioValue: 0
-  HappinessFlat: 0
   IsHome: 0
   IsSick: 0
   IsFakeSick: 0
@@ -478,6 +490,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 905a89e5bb3133148a519001058eb404, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  TimeAwaitAfterWander: 120
+  TimeAwaitGoHome: 60
+  TimeAwaitSitDown: 60
+  CanChill: 0
+  _randomBalladeRef: {fileID: 0}
+  _backHouse: {fileID: 0}
+  _sitAndChillRef: {fileID: 0}
+  _wanderProbability: 0.33
+  _goHomeProbability: 0.33
+  _sitProbability: 0.34
+  _humanPlants: {fileID: 0}
 --- !u!114 &4281779490232961508
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -490,9 +513,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ceeade1e3ffb03429158bdb0f82ada9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  TimeAwaitAfterWander: 120
+  TimeAwaitGoHome: 60
+  TimeAwaitSitDown: 60
+  CanChill: 0
+  _randomBalladeRef: {fileID: 0}
+  _backHouse: {fileID: 0}
+  _sitAndChillRef: {fileID: 0}
+  _wanderProbability: 0.33
+  _goHomeProbability: 0.33
+  _sitProbability: 0.34
+  _humanPlants: {fileID: 0}
   _wanderRadius: 25
   _wanderInterval: 0
-  _stats: {fileID: 7963199204916886540}
 --- !u!114 &7028175825637513561
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -515,6 +548,7 @@ MonoBehaviour:
   _wanderProbability: 0.7
   _goHomeProbability: 0.15
   _sitProbability: 0.15
+  _humanPlants: {fileID: 6990150979677328647}
 --- !u!114 &4635415251157938713
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -527,7 +561,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2941c647f3aa5a144b759a6a8e0b92d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _stats: {fileID: 7963199204916886540}
+  TimeAwaitAfterWander: 120
+  TimeAwaitGoHome: 60
+  TimeAwaitSitDown: 60
+  CanChill: 0
+  _randomBalladeRef: {fileID: 0}
+  _backHouse: {fileID: 0}
+  _sitAndChillRef: {fileID: 0}
+  _wanderProbability: 0.33
+  _goHomeProbability: 0.33
+  _sitProbability: 0.34
+  _humanPlants: {fileID: 0}
 --- !u!1 &2541193741373297886
 GameObject:
   m_ObjectHideFlags: 0
@@ -681,7 +725,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_VertexColorAlwaysGammaSpace: 0
-  m_AdditionalShaderChannelsFlag: 0
+  m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0

@@ -5,20 +5,12 @@ using UnityEngine.AI;
 /// <summary>
 /// Classe qui fait en sorte que l'humain plante se ballade de manière aléatoire dans la map
 /// </summary>
-public class RandomBallade : MonoBehaviour
+public class RandomBallade : NoJobGestion
 {
-    private NavMeshAgent _agent;
-
     [Header("Wandering Settings")]
     [SerializeField] private float _wanderRadius = 25;
     [SerializeField] private int _wanderInterval;
-    [SerializeField] private Stats _stats;
     private bool _isWander;
-
-    public void Start() 
-    { 
-        _agent = this.gameObject.GetComponentInParent<NavMeshAgent>();
-    }
 
     private void StartChomage() { WanderRoutine().Forget(); } //A 11h il commence la journée
 
@@ -35,19 +27,19 @@ public class RandomBallade : MonoBehaviour
     private void GetRandomPath()
     {
         Vector3 randomDirection = Random.insideUnitSphere * _wanderRadius;
-        randomDirection += _agent.gameObject.transform.position;
+        randomDirection += _humanPlants.gameObject.transform.position;
 
         if (NavMesh.SamplePosition(randomDirection, out NavMeshHit hit, _wanderRadius, NavMesh.AllAreas))
         {
-            _agent.SetDestination(hit.position);
-            _stats.IsHome = false;
+            _humanPlants.HumanMotorsRef.GoTo(hit.position);
+            _humanPlants.StatsRef.IsHome = false;
         }
     }
 
     public void StopWander() 
     {
         _isWander = false;
-        _agent.ResetPath();
+        _humanPlants.HumanMotorsRef.Agent.ResetPath();
     }
 
     public void StartWander() 

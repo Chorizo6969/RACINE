@@ -9,9 +9,9 @@ using static HumanEnum;
 public class RelationShips : MonoBehaviour
 {
     [Header("Relation")]
+    [SerializeField] private HumanPlants _humanPlantsRef;
     [SerializeField] private RelationShips _friends;
     [SerializeField] private RelationShips _enemy;
-    [SerializeField] private Stats _stats;
 
     [Header("Zone de discussion")]
     [SerializeField] private Bounds _talkingLimits; //Centre du village ou à lieu les discussions
@@ -23,7 +23,6 @@ public class RelationShips : MonoBehaviour
     [SerializeField] private float _detectionRadius = 5f;
     [SerializeField] private LayerMask _villagerMask;
 
-    [SerializeField] private NavMeshAgent _agent;
     private bool _canTalk;
     [HideInInspector] public bool IsTalking;
 
@@ -34,7 +33,7 @@ public class RelationShips : MonoBehaviour
 
     public void SetupTalkingProces()
     {
-        if(_stats.IsSick || _stats.IsFakeSick) { return; }
+        if(_humanPlantsRef.StatsRef.IsSick || _humanPlantsRef.StatsRef.IsFakeSick) { return; }
 
         _canTalk = true;
         IsTalking = false;
@@ -49,7 +48,7 @@ public class RelationShips : MonoBehaviour
             Vector3 randomDirection = new Vector3(Random.Range(_talkingLimits.min.x, _talkingLimits.max.x), _talkingLimits.center.y, Random.Range(_talkingLimits.min.z, _talkingLimits.max.z));
             if (NavMesh.SamplePosition(randomDirection, out NavMeshHit hit, 5f, NavMesh.AllAreas))
             {
-                _agent.SetDestination(hit.position);
+                _humanPlantsRef.HumanMotorsRef.GoTo(hit.position);
             }
             await UniTask.Delay(Random.Range(1, _walkDelayMax) * 1000);
         }
@@ -91,8 +90,8 @@ public class RelationShips : MonoBehaviour
         IsTalking = true;
         other.IsTalking = true;
 
-        _agent.ResetPath();
-        other._agent.ResetPath();
+        _humanPlantsRef.HumanMotorsRef.Agent.ResetPath();
+        other._humanPlantsRef.HumanMotorsRef.Agent.ResetPath();
 
         LookAtSmoothly(other.transform).Forget();
         other.LookAtSmoothly(transform).Forget();
@@ -113,7 +112,7 @@ public class RelationShips : MonoBehaviour
 
         Invoke(nameof(EndConversation), 20); //Lance EndConv dans 20s
         other.Invoke(nameof(other.EndConversation), 20);
-        _agent.enabled = false;
+        //_agent.enabled = false;
     }
 
     private async UniTaskVoid LookAtSmoothly(Transform target) //Se tourne vers son pote
@@ -140,7 +139,7 @@ public class RelationShips : MonoBehaviour
     {
         _canTalk = false;
         IsTalking = false;
-        this.gameObject.GetComponent<HumanPlants>().BackHome().Forget();
+        _humanPlantsRef.BackHome().Forget();
     }
 
     public void VerifTalking()

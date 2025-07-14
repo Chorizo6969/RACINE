@@ -11,10 +11,11 @@ public class HumanPlants : MonoBehaviour
     public Personality HumanPersonality;
     public Job HumanJob;
     public RelationShips HumanRelationShips;
+    public NoJobGestion HumanNoJobGestion;
+    public HumanMotors HumanMotorsRef;
 
     [Header("Others")]
-    [SerializeField] private Stats _stats;
-    private NavMeshAgent _agent;
+    public Stats StatsRef;
     public Transform Maison;
 
     [Header("First Job")]
@@ -24,7 +25,6 @@ public class HumanPlants : MonoBehaviour
     {
         TimeInGame.Instance.OnStartSleep += StartSleep;
 
-        _agent = this.gameObject.GetComponent<NavMeshAgent>();
         HumanJob.CurrentJob = _firstJob;
         await BackHome();
     }
@@ -39,14 +39,13 @@ public class HumanPlants : MonoBehaviour
             await UniTask.Yield();
         }
 
-        _agent.enabled = true;
-        _agent.SetDestination(Maison.position);
-
-        while (Vector3.Distance(_agent.transform.position, Maison.position) > _agent.stoppingDistance + 1.7f)
+        //_agent.enabled = true;
+        HumanMotorsRef.GoTo(Maison.gameObject);
+        while (Vector3.Distance(gameObject.transform.position, Maison.position) > HumanMotorsRef.Agent.stoppingDistance + 1.7f)
         {
             await UniTask.Yield();
         }
-        _stats.IsHome = true;
+        StatsRef.IsHome = true;
         await UniTask.Delay(3000);
     }
 }

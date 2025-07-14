@@ -17,12 +17,13 @@ public class Stats : MonoBehaviour
     public float SpeedHuman; //Vitesse des humains
     public float PoopSpeed; // Vitesse de caca
     public float TimeBeforeOrder; //Mou du bulbe
+    public float BuffAudioValue; //CriePourRien
+    public float HappinessFlat; //Jauge de bonheur
+
     public bool IsScared; //Fuit les chèvres
     public bool IsNarcoleptique; //Dodo n'importe quand
     public bool CleanPoop; //Rammase les caca
     public bool FixeCaca; //Fixe un caca
-    public float BuffAudioValue; //CriePourRien
-    public float HappinessFlat; //Jauge de bonheur
 
     public bool IsHome = true;
     public bool IsSick;
