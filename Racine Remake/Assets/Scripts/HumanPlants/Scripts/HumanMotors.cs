@@ -11,6 +11,11 @@ public class HumanMotors : MonoBehaviour
     public NavMeshAgent Agent;
     private float _agentSpeed;
 
+    private void Start()
+    {
+        _agentSpeed = Agent.speed;
+    }
+
     public void GoTo(GameObject go)
     {
         Agent.SetDestination(go.transform.position);

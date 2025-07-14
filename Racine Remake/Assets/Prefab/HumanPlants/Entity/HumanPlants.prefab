@@ -416,7 +416,7 @@ MonoBehaviour:
   SickProba: 0
   ForgetRessourcesProba: 0
   SpeedHuman: 0
-  PoopSpeed: 5
+  PoopSpeed: 1
   TimeBeforeOrder: 0
   BuffAudioValue: 0
   HappinessFlat: 0
@@ -442,6 +442,8 @@ MonoBehaviour:
   _poopPrefab: {fileID: 7305169338555366289, guid: 3114af5dade06e449bc09a187f27a51d, type: 3}
   _stats: {fileID: 7963199204916886540}
   _personality: {fileID: 7826526000315795055}
+  _poopTimer: 0
+  _currentPoopTimer: 0
 --- !u!114 &9175293451534997716
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -455,7 +457,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _humanPlants: {fileID: 6990150979677328647}
-  _detectionRadius: 5
+  _detectionRadius: 8
   _poopMask:
     serializedVersion: 2
     m_Bits: 512

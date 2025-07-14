@@ -1,10 +1,7 @@
-using UnityEngine;
 using Cysharp.Threading.Tasks;
 using System.Threading;
+using UnityEngine;
 
-/// <summary>
-/// Loop qui permet au humain plante de faire caca en exterieur
-/// </summary>
 public class PoopGenerator : MonoBehaviour
 {
     [Header("Poop Settings")]
@@ -12,14 +9,10 @@ public class PoopGenerator : MonoBehaviour
     [SerializeField] private Stats _stats;
     [SerializeField] private Personality _personality;
 
-    [Header("Need Settings")]
-    private float _maxPoopNeed = 100f;
-    private float _poopNeed = 0f;
-    private float _poopNeedRate = 5f; // gain par seconde
-
-    [Header("Poop Timing")]
-    private int _maxDelay = 300;
-    private int _minDelay = 60;
+    [Header("Poop Timer Settings")]
+    [SerializeField] private float _poopTimer; // Durée initiale avant caca
+    [SerializeField] private float _currentPoopTimer; // Durée initiale avant caca
+    private int _poopSpeed;
 
     private CancellationTokenSource _poopCTS;
 
@@ -32,35 +25,39 @@ public class PoopGenerator : MonoBehaviour
 
     public void SetupValue()
     {
-        _poopNeedRate = _stats.PoopSpeed;
+        _poopSpeed = Mathf.RoundToInt(_stats.PoopSpeed);
+        _poopTimer = Random.Range(100, 250);
+        _currentPoopTimer = _poopTimer;
     }
 
     public void StartPoop()
     {
+        if (_poopSpeed == 0) { return; }
         _poopCTS = new CancellationTokenSource();
-        StartPoopLoop(_poopCTS.Token).Forget();
+        LoopPoopTimer(_poopCTS.Token).Forget();
     }
 
-    private async UniTaskVoid StartPoopLoop(CancellationToken token)
+    private async UniTaskVoid LoopPoopTimer(CancellationToken token)
     {
         while (true)
         {
-            int randomOffset = Random.Range(-50, 0);
-            float delay = Mathf.Lerp(_maxDelay, _minDelay, _poopNeed / _maxPoopNeed) + randomOffset;
-            delay = Mathf.Clamp(delay, _minDelay, _maxDelay); // pour éviter des valeurs négatives
-            print(delay);
-            await UniTask.Delay(System.TimeSpan.FromSeconds(delay), cancellationToken: token);
+            await UniTask.Delay(1000 / _poopSpeed, cancellationToken: token);
 
-            _poopNeed += _poopNeedRate * delay;         // Augmente le besoin avec le temps
-            _poopNeed = Mathf.Clamp(_poopNeed, 0f, _maxPoopNeed);
+            if (_stats.IsHome)
+            {
+                _currentPoopTimer = _poopTimer; // reset s'il est à la maison
+                continue;
+            }
 
-            if (!_stats.IsHome && _poopNeed >= _maxPoopNeed * 0.75f) // commence à 75% du besoin
+            _currentPoopTimer--;
+
+            if (_currentPoopTimer <= 0)
             {
                 Poop();
-                _poopNeed = 0f;
+                _poopTimer = Random.Range(100, 250);
+                _currentPoopTimer = _poopTimer;
+                continue;
             }
-            else if (_stats.IsHome) { _poopNeed = 0; } // Il fait chez lui
-
         }
     }
 
@@ -77,4 +74,3 @@ public class PoopGenerator : MonoBehaviour
         Debug.Log($"{gameObject.name} a fait caca !");
     }
 }
-

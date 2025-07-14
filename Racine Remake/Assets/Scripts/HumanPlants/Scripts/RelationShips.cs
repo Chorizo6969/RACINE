@@ -22,6 +22,7 @@ public class RelationShips : MonoBehaviour
     [Header("Paramètres de détection")]
     [SerializeField] private float _detectionRadius = 5f;
     [SerializeField] private LayerMask _villagerMask;
+    private Collider[] _results = new Collider[10];
 
     private bool _canTalk;
     [HideInInspector] public bool IsTalking;
@@ -71,12 +72,12 @@ public class RelationShips : MonoBehaviour
 
     private RelationShips FindAvailableVillager() //On cherche à attraper un humain qui passe
     {
-        Collider[] hits = Physics.OverlapSphere(transform.position, _detectionRadius, _villagerMask);
-        foreach (Collider hit in hits)
+        int hitCount = Physics.OverlapSphereNonAlloc(transform.position, _detectionRadius, _results, _villagerMask);
+        for (int i = 0; i < hitCount; i++)
         {
-            if (hit.gameObject == this.gameObject) continue;
+            if (_results[i].gameObject == this.gameObject) continue;
 
-            RelationShips other = hit.GetComponent<RelationShips>();
+            RelationShips other = _results[i].GetComponent<RelationShips>();
             if (other != null && !other.IsTalking && other._canTalk)
                 return other;
         }
@@ -102,11 +103,11 @@ public class RelationShips : MonoBehaviour
         {
             case HumanRelationResult.Friend:
                 _friends = other;
-                other._friends = this.gameObject.GetComponent<RelationShips>();
+                other._friends = this;
                 break;
             case HumanRelationResult.Enemy:
                 _enemy = other;
-                other._enemy = this.gameObject.GetComponent<RelationShips>();
+                other._enemy = this;
                 break;
         }
 

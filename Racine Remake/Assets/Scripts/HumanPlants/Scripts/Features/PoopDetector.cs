@@ -2,6 +2,7 @@ using Cysharp.Threading.Tasks;
 using System;
 using System.Threading;
 using UnityEngine;
+using UnityEngine.AI;
 
 /// <summary>
 /// Classe qui va détecter les caca et réagir en conséquence (fixe ou nettoyage)
@@ -14,6 +15,7 @@ public class PoopDetector : MonoBehaviour
 
     private bool _craphophage;
     private bool _fanDeCrotte;
+    private Collider[] _results = new Collider[10];
 
     [Header("Paramètres de détection")]
     [SerializeField] private float _detectionRadius = 5f;
@@ -36,29 +38,27 @@ public class PoopDetector : MonoBehaviour
 
     private async UniTask DetectionLoop(CancellationToken token)
     {
-        while (_craphophage || _fanDeCrotte)
+        while (!token.IsCancellationRequested)
         {
-            try
+            int hitCount = Physics.OverlapSphereNonAlloc(transform.position, _detectionRadius, _results, _poopMask);
+
+            for (int i = 0; i < hitCount; i++)
             {
-                Collider[] hits = Physics.OverlapSphere(transform.position, _detectionRadius, _poopMask);
-                foreach (Collider hit in hits)
+                if (token.IsCancellationRequested) break;
+
+                Collider hit = _results[i];
+
+                if (_craphophage)
                 {
-                    if (_craphophage)
-                    {
-                        await _humanPlants.HumanMotorsRef.PickupUpPoop(hit.gameObject, token);  //start anim clean poop dedans
-                    }
-                    else if (_fanDeCrotte)
-                    {
-                        await UniTask.WaitUntil(() => hit == null || hit.gameObject == null, cancellationToken: token); // il attends que le caca soit ramassé
-                    }
+                    await _humanPlants.HumanMotorsRef.PickupUpPoop(hit.gameObject, token);
                 }
-                await UniTask.Yield();
-            }
-            catch(MissingReferenceException)
-            {
-                Debug.LogWarning("Fait belleck le while était en cours");
+                else if (_fanDeCrotte)
+                {
+                    await LookPoop(hit, token);
+                }
             }
 
+            await UniTask.Delay(500, cancellationToken: token); //petite pause
         }
     }
 
@@ -67,6 +67,50 @@ public class PoopDetector : MonoBehaviour
         _poopCTS?.Cancel();
         _poopCTS?.Dispose();
         _humanPlants.HumanMotorsRef.CanMoveAgent();
+    }
+
+    private async UniTask LookPoop(Collider hit, CancellationToken token)
+    {
+        if (hit == null || hit.gameObject == null) return;
+
+        Vector3 poopPosition = hit.transform.position;
+        float angle = UnityEngine.Random.Range(0f, 360f);
+        Vector3 offset = new Vector3(Mathf.Cos(angle), 0, Mathf.Sin(angle)) * 3;
+        Vector3 targetPosition = poopPosition + offset;
+        targetPosition.y = transform.position.y; 
+
+        if (NavMesh.SamplePosition(targetPosition, out NavMeshHit navHit, 1f, NavMesh.AllAreas)) 
+        {
+            _humanPlants.HumanMotorsRef.GoTo(navHit.position);
+        }
+
+        await UniTask.Delay(2000, cancellationToken: token); //Placement
+        _humanPlants.HumanMotorsRef.StopMoveAgent();
+
+        await LookAtSmoothly(poopPosition, token); // Tourner vers le caca
+
+        await UniTask.WaitUntil(() => hit == null || hit.gameObject == null, cancellationToken: token); //regarde son caca...
+        _humanPlants.HumanMotorsRef.CanMoveAgent();
+    }
+
+    private async UniTask LookAtSmoothly(Vector3 target, CancellationToken token) //Se tourne vers son caca
+    {
+        float duration = 0.5f;
+        float elapsed = 0f;
+
+        Quaternion startRot = transform.rotation;
+        Vector3 direction = (target - transform.position).normalized;
+        direction.y = 0;
+        Quaternion targetRot = Quaternion.LookRotation(direction);
+
+        while (elapsed < duration && !token.IsCancellationRequested)
+        {
+            transform.rotation = Quaternion.Slerp(startRot, targetRot, elapsed / duration);
+            elapsed += Time.deltaTime;
+            await UniTask.Yield();
+        }
+
+        transform.rotation = targetRot;
     }
 
 }
