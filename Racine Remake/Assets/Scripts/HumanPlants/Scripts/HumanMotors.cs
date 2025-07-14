@@ -1,3 +1,5 @@
+using Cysharp.Threading.Tasks;
+using System.Threading;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -28,5 +30,15 @@ public class HumanMotors : MonoBehaviour
     public void CanMoveAgent()
     {
         Agent.speed = _agentSpeed;
+    }
+
+    public async UniTask PickupUpPoop(GameObject go, CancellationToken token)
+    {
+        StopMoveAgent();
+        GoTo(go);
+        //anim rammase caca
+        await UniTask.Delay(3000, cancellationToken: token);
+        Destroy(go);
+        CanMoveAgent();
     }
 }

@@ -15,5 +15,5 @@ MonoBehaviour:
   _personalityName: 9
   _description: "Peut s'endormir \xE0 n'importe quel moment de la journ\xE9e."
   _effect: 9
-  _calcule: 1
+  _mathMethode: 1
   _value: 1

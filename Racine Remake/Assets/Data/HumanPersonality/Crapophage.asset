@@ -15,5 +15,5 @@ MonoBehaviour:
   _personalityName: 13
   _description: "Ramasse les crottes automatiquement quand il passe \xE0 c\xF4t\xE9."
   _effect: 10
-  _calcule: 1
+  _mathMethode: 1
   _value: 1
