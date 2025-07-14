@@ -6,7 +6,7 @@ public class HumanNameTempo : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI _jobName;
 
-    private async UniTask Start()
+    private async void Start()
     {
         await UniTask.Delay(1000);
         _jobName.text = this.gameObject.GetComponent<Job>().CurrentJob.JobName.ToString();

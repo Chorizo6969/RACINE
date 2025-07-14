@@ -8,13 +8,13 @@ public class HumanPersonalitySO : ScriptableObject
     [SerializeField] private HumanPersonality _personalityName;
     [SerializeField] private string _description;
     [SerializeField] private HumanPersonalityEffect _effect;
-    [SerializeField] private HumanPersonalityCalcule _calcule;
+    [SerializeField] private HumanPersonalityMaths _mathMethode;
     [SerializeField] private float _value;
 
     public HumanPersonality PersonalityName => _personalityName;
     public string Description => _description;
     public HumanPersonalityEffect Effect => _effect;
-    public HumanPersonalityCalcule Calcule => _calcule;
+    public HumanPersonalityMaths MathMethode => _mathMethode;
     public float Value => _value;
 
 }

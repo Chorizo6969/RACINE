@@ -66,7 +66,7 @@ public static class HumanEnum
         HappinessFlat
     }
 
-    public enum HumanPersonalityCalcule
+    public enum HumanPersonalityMaths
     {
         Add,
         Bool

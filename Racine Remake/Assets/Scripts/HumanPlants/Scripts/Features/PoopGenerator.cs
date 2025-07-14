@@ -3,7 +3,7 @@ using Cysharp.Threading.Tasks;
 using System.Threading;
 
 /// <summary>
-/// Loop qui permet au humain plante de faire caca en extèrieur
+/// Loop qui permet au humain plante de faire caca en exterieur
 /// </summary>
 public class PoopGenerator : MonoBehaviour
 {

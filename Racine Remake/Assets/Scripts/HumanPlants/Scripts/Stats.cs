@@ -40,7 +40,7 @@ public class Stats : MonoBehaviour
             return;
         }
 
-        if(_personality.Calcule == HumanPersonalityCalcule.Bool)
+        if(_personality.MathMethode == HumanPersonalityMaths.Bool)
         {
             if (_personality.Value == 0)
                 field.SetValue(this, false);
