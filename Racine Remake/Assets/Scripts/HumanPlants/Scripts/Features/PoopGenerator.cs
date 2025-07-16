@@ -4,7 +4,7 @@ using UnityEngine;
 /// <summary>
 /// Script qui fait faire caca à l'humain plante
 /// </summary>
-public class PoopGenerator : MonoBehaviour
+public class PoopGenerator : MonoBehaviour, IPersonalitySetup
 {
     [Header("Poop Settings")]
     [SerializeField] private GameObject _poopPrefab;
@@ -20,8 +20,8 @@ public class PoopGenerator : MonoBehaviour
 
     private void Start()
     {
-        TimeInGame.Instance.OnStartWork += StartPoop;
-        TimeInGame.Instance.OnStartSleep += StopPoop;
+        TimeInGame.Instance.OnStartWork += StartDetection;
+        TimeInGame.Instance.OnStartSleep += StopDetection;
         _personality.OnStatsReady += SetupValue;
     }
 
@@ -32,7 +32,7 @@ public class PoopGenerator : MonoBehaviour
         _currentPoopTimer = _poopTimer;
     }
 
-    public void StartPoop()
+    public void StartDetection()
     {
         if (_poopSpeed == 0) { return; }
         _poopCTS = new CancellationTokenSource();
@@ -63,7 +63,7 @@ public class PoopGenerator : MonoBehaviour
         }
     }
 
-    public void StopPoop()
+    public void StopDetection()
     {
         _poopCTS?.Cancel();
         _poopCTS?.Dispose();

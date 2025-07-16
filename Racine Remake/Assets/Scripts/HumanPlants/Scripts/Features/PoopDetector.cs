@@ -7,7 +7,7 @@ using UnityEngine.AI;
 /// <summary>
 /// Classe qui va détecter les caca et réagir en conséquence (fixe ou nettoyage)
 /// </summary>
-public class PoopDetector : MonoBehaviour
+public class PoopDetector : MonoBehaviour, IPersonalitySetup
 {
     private CancellationTokenSource _poopCTS; //les tokens servent à tout arrêter en cas de pépin
 

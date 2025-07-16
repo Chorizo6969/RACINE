@@ -1636,8 +1636,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea325311826bff742a6418a00a3ae67f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _friendProba: 1
-  _enemyProba: 0
+  _friendProba: 0.2
+  _enemyProba: 0.1
 --- !u!4 &1098435273
 Transform:
   m_ObjectHideFlags: 0
@@ -4440,6 +4440,10 @@ PrefabInstance:
       propertyPath: Maison
       value: 
       objectReference: {fileID: 1838005606}
+    - target: {fileID: 7826526000315795055, guid: 73ba67bbd31926f4d87dfb8c9b3d9a05, type: 3}
+      propertyPath: '_allPersonality.Array.data[17]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 6d0b099c3804876498dd282ba029a70c, type: 2}
     - target: {fileID: 7826526000315795055, guid: 73ba67bbd31926f4d87dfb8c9b3d9a05, type: 3}
       propertyPath: DefaultJobDescriptions._serializedList.Array.size
       value: 18

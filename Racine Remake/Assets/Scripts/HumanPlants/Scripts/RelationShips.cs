@@ -99,7 +99,7 @@ public class RelationShips : MonoBehaviour
 
         Debug.Log($"{name} parle avec {other.name}");
 
-        switch (HumanRelation.Instance.ResultOfTalking()) //résultat de l'interaction
+        switch (HumanRelation.Instance.ResultOfTalking(_humanPlantsRef.StatsRef, other._humanPlantsRef.StatsRef)) //résultat de l'interaction
         {
             case HumanRelationResult.Friend:
                 _friends = other;
@@ -113,7 +113,6 @@ public class RelationShips : MonoBehaviour
 
         Invoke(nameof(EndConversation), 20); //Lance EndConv dans 20s
         other.Invoke(nameof(other.EndConversation), 20);
-        //_agent.enabled = false;
     }
 
     private async UniTaskVoid LookAtSmoothly(Transform target) //Se tourne vers son pote

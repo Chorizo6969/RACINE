@@ -28,6 +28,7 @@ public class Stats : MonoBehaviour
     public bool IsHome = true;
     public bool IsSick;
     public bool IsFakeSick;
+    public bool Asleep;
     #endregion
 
     public async UniTask Setup(HumanPersonalitySO _personality) //Utilise le principe de reflection (Un enum (HumanPersonalityEffect) possède la même écriture que les variables au dessus.)

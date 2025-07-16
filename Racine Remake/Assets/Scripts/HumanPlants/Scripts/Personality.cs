@@ -37,5 +37,6 @@ public class Personality : MonoBehaviour
         if (_humanPersonality.PersonalityName is HumanPersonality.BonVivant) { await Happiness.Instance.BuffHappiness(_stats.HappinessFlat); } //Attribution bonheur
         else if (_humanPersonality.PersonalityName is HumanPersonality.MoteurFeuillu or HumanPersonality.Surpoids) { GetComponent<NavMeshAgent>().speed = _stats.SpeedHuman; } //attribution speed
         else if (_humanPersonality.PersonalityName is HumanPersonality.Crapophage or HumanPersonality.FanDeCrotte) { GetComponent<PoopDetector>().enabled = true; }
+        else if (_humanPersonality.PersonalityName is HumanPersonality.Narcoleptique) { GetComponent<Narcoleptique>().enabled = true; }
     }
 }
