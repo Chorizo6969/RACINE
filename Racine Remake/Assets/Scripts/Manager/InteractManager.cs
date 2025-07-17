@@ -28,7 +28,7 @@ public class InteractManager : MonoBehaviour
                 if (((1 << target.layer) & _poopTargetLayer) != 0) //Vérifie si le layer est actif sur l'objet
                 {
                     await Happiness.Instance.BuffHappiness(5);
-                    Destroy(target);                     // TODO: Replace with pooling
+                    Destroy(target);                     // TODO: faire la poule (le chicken ou quoi)
                 }
 
                 else if (((1 << target.layer) & _humanLayer) != 0)
