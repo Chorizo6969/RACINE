@@ -2882,9 +2882,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf106a7fa1408a84e8c5dfcab32a00a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _targetLayer:
+  _poopTargetLayer:
     serializedVersion: 2
     m_Bits: 512
+  _humanLayer:
+    serializedVersion: 2
+    m_Bits: 128
 --- !u!4 &1725346593
 Transform:
   m_ObjectHideFlags: 0
@@ -4388,10 +4391,6 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1795529234}
-    - target: {fileID: 2367468501463406752, guid: 73ba67bbd31926f4d87dfb8c9b3d9a05, type: 3}
-      propertyPath: m_AdditionalShaderChannelsFlag
-      value: 25
-      objectReference: {fileID: 0}
     - target: {fileID: 3077111820044022454, guid: 73ba67bbd31926f4d87dfb8c9b3d9a05, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0

@@ -12,6 +12,7 @@ public class Narcoleptique : MonoBehaviour, IPersonalitySetup
     [SerializeField] private int _timeBeforeRestartFunction = 5;
     [SerializeField] private float _increasedProbabilityEachIteration = 0.1f;
     [SerializeField] [Range(0,1)] private float _probaFallAsleep = 0f;
+    [SerializeField] private ParticleSystem _sleepParticle;
 
     private void Start()
     {
@@ -31,17 +32,25 @@ public class Narcoleptique : MonoBehaviour, IPersonalitySetup
     {
         while (!token.IsCancellationRequested)
         {
-            if (_probaFallAsleep >= 0.7f) //Si fatigue à + de 70% alors il va peut être dodo
+            if (_humanPlants.StatsRef.IsHome)
             {
-                float randomProba = Random.Range(0f, 1f);
-                if (randomProba <= _probaFallAsleep)
-                {
-                    _humanPlants.StatsRef.Asleep = true;             //dors
-                    _humanPlants.HumanMotorsRef.StopMoveAgent();
-                }
+                await UniTask.WaitUntil(() => !_humanPlants.StatsRef.IsHome, cancellationToken: token);
             }
-            _probaFallAsleep += _increasedProbabilityEachIteration;
-            await UniTask.Delay(_timeBeforeRestartFunction * 1000, cancellationToken: token); //attente avant de relancer la méthode
+            else
+            {
+                if (_probaFallAsleep >= 0.7f && !_humanPlants.StatsRef.Asleep) //Si fatigue à + de 70% alors il va peut être dodo
+                {
+                    float randomProba = Random.Range(0f, 1f);
+                    if (randomProba <= _probaFallAsleep)
+                    {
+                        _humanPlants.StatsRef.Asleep = true;             //dors
+                        _sleepParticle.Play();
+                        _humanPlants.HumanMotorsRef.StopMoveAgent();
+                    }
+                }
+                _probaFallAsleep = Mathf.Clamp01(_probaFallAsleep + _increasedProbabilityEachIteration);
+                await UniTask.Delay(_timeBeforeRestartFunction * 1000, cancellationToken: token); //attente avant de relancer la méthode
+            }
         }
     }
 
@@ -50,5 +59,13 @@ public class Narcoleptique : MonoBehaviour, IPersonalitySetup
         _sleepCTS?.Cancel();
         _sleepCTS?.Dispose();
         _humanPlants.HumanMotorsRef.CanMoveAgent();
+    }
+
+    public void StopSleep()
+    {
+        _humanPlants.StatsRef.Asleep = false;
+        _sleepParticle.Stop();
+        _humanPlants.HumanMotorsRef.CanMoveAgent();
+        _probaFallAsleep = 0f;
     }
 }
