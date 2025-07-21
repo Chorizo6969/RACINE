@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.AI;
 using static HumanEnum;
 
 /// <summary>
@@ -35,18 +34,12 @@ public class Job : MonoBehaviour
             await _humanPlantsRef.BackHome();
             return;
         }
-
-        if (CurrentJob.JobType == HumanJobType.Récolteur)
-        {
-            //DisableBalladeSystem(); //Plus besoin car plus de ballade
-        }
         else if (CurrentJob.JobType == HumanJobType.Défense)
         {
             await _humanPlantsRef.BackHome();
         }
         if (CurrentJob.JobName != HumanJobs.Chômeur && CurrentJob.JobType != HumanJobType.Récolteur)
         {
-            //EnableBalladeSystem();
             _humanPlantsRef.HumanNoJobGestion.StartChill(); //Les autres métiers se balladent en attendant qu'ils se passent un truc
         }
     }
@@ -55,7 +48,6 @@ public class Job : MonoBehaviour
     {
         if(CurrentJob.JobName == HumanJobs.Chômeur)
         {
-            //EnableBalladeSystem();
             _humanPlantsRef.HumanNoJobGestion.StartChill(); //Il commence la journée
         }
     }
@@ -63,7 +55,6 @@ public class Job : MonoBehaviour
     private void StopWork() 
     {
         _humanPlantsRef.HumanNoJobGestion.StopAllChillBehaviors();
-        //DisableBalladeSystem();
         _humanPlantsRef.HumanMotorsRef.Agent.ResetPath();
     }
 }

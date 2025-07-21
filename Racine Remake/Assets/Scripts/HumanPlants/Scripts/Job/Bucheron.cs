@@ -1,9 +1,9 @@
 using UnityEngine;
 
-public class Bucheron : JobAbility
+public class Bucheron : Recolteur
 {
     public override void UseAbility()
     {
-        print("Je dois bosser !");
+        base.UseAbility();
     }
 }
