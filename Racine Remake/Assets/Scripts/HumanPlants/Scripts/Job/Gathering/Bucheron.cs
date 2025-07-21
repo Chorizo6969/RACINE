@@ -15,9 +15,4 @@ public class Bucheron : Recolteur
     {
         base.UseAbility();
     }
-
-    public override void BringBackResources()
-    {
-        base.BringBackResources();
-    }
 }

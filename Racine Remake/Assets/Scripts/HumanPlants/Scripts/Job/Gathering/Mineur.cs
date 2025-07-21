@@ -16,12 +16,7 @@ public class Mineur : Recolteur
         base.UseAbility();
         foreach (HumanPlants human in ActorInJob)
         {
-            human.HumanMotorsRef.GoTo(TargetPoint.position);
+            human.HumanMotorsRef.GoTo(JobTransform.position);
         }
-    }
-
-    public override void BringBackResources()
-    {
-        base.BringBackResources();
     }
 }
