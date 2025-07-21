@@ -6,7 +6,7 @@ using static HumanEnum;
 /// </summary>
 public class Job : MonoBehaviour
 {
-    [HideInInspector] public HumanJobSO CurrentJob;
+    public HumanJobSO CurrentJob; //pour les stats
 
     private HumanPlants _humanPlantsRef;
 
