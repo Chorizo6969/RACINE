@@ -14,8 +14,6 @@ public class BuildingManager : MonoBehaviour
     public GridConstructor GridConstructor { get; private set; }
     public BuildingConstructor BuildingConstructor { get; private set; }
     public GridDragging GridDragging { get; private set; }
-    [field:SerializeField]
-    public LayerMask GridLayer { get; private set; }// Layer mask to filter raycast hits to the grid layer.
 
     #endregion
 

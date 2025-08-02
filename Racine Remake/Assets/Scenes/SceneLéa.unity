@@ -1255,7 +1255,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <GridLayer>k__BackingField:
     serializedVersion: 2
-    m_Bits: 8
+    m_Bits: 1024
 --- !u!114 &345447899
 MonoBehaviour:
   m_ObjectHideFlags: 0

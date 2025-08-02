@@ -2,6 +2,7 @@ using Cysharp.Threading.Tasks;
 using System;
 using System.Collections.Generic;
 using System.Threading;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -57,7 +58,7 @@ public class GridDragging : MonoBehaviour
 
             RaycastHit hit;
 
-            if(Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit, 1 << BuildingManager.Instance.GridLayer))
+            if(Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit))
             {
                 Vector2Int hitPos = new Vector2Int((int)hit.transform.position.x, (int)hit.transform.position.z);
                 BuildingManager.Instance.GridConstructor.GetCurrentCells(hitPos, building.Data.Size, out _buildingCells);
