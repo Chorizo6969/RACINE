@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2aaa37577c352994dae945a6a56ee85c, type: 3}
+  m_Name: LumberjackCabin
+  m_EditorClassIdentifier: 
+  Upgrade: {fileID: 0}
+  BuildingPrefab: {fileID: 3649320495674766293, guid: 9ec1aabba4401f348814148266b65776, type: 3}
+  Cost:
+    Wood: 5
+    Rock: 3
+    Water: 0
+  Size: {x: 1, y: 1}
+  Name: "Cabane de b\xFBcheron"
+  Description: humains plantes bucheronnent
+  MaxPopulation: 3
+  MaxCapacity:
+    Wood: 0
+    Rock: 0
+    Water: 0
