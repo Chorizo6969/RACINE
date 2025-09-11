@@ -16,6 +16,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: LumberjackCabin
       objectReference: {fileID: 0}
+    - target: {fileID: 2656285110509394176, guid: e1fecf830bcdb3a469a4bca6ad6b781e, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 5299737938915640637, guid: e1fecf830bcdb3a469a4bca6ad6b781e, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -56,6 +60,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8572309464863236852, guid: e1fecf830bcdb3a469a4bca6ad6b781e, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -85,7 +93,7 @@ MonoBehaviour:
   _treeDetectionRadius: 7
   _cellLayer:
     serializedVersion: 2
-    m_Bits: 1024
+    m_Bits: 256
 --- !u!1 &6957795968058722337 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8572309464863236852, guid: e1fecf830bcdb3a469a4bca6ad6b781e, type: 3}
