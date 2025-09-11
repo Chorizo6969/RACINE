@@ -6,31 +6,37 @@ public class LumberjackCabin : WorkBase
 {
     [SerializeField] private float _treeDetectionRadius;
     [SerializeField] private LayerMask _cellLayer;
+    private List<ProtoTree> _trees = new();
     private Collider[] _results;
-    [SerializeField] private List<ProtoTree> _trees = new();
 
     private void Start()
     {
-        StartCoroutine(CheckTreeCoroutine());
+        CheckTree();
     }
 
-    private IEnumerator CheckTreeCoroutine()
+    // Appeler cette coroutine quand on ouvre l'ui pour sélectionner quel arbre bucheronner. / ou quand bûcheron termine de couper un arbre et va en chercher un nouveau
+    
+    /// <summary>
+    /// Retourne la liste des arbres qui sont dans le rayon de la cabane de bûcheron.
+    /// </summary>
+    /// <returns></returns>
+    private List<ProtoTree> CheckTree()
     {
         _results = new Collider[500];
-        while (true)
+
+        int hitCount = Physics.OverlapSphereNonAlloc(transform.position, _treeDetectionRadius, _results, _cellLayer);
+        for (int i = 0; i < hitCount; i++)
         {
-            int hitCount = Physics.OverlapSphereNonAlloc(transform.position, _treeDetectionRadius, _results, _cellLayer);
-            for (int i = 0; i < hitCount; i++)
-            {
-                if (!_results[i].TryGetComponent(out Cell cell)) continue;
-                if (!cell.Building) continue;
-                if (!cell.Building.TryGetComponent(out ProtoTree tree)) continue;
-                if (_trees.Contains(tree)) continue;
-               
-                _trees.Add(tree);
-            }
-            yield return new WaitForSeconds(1f);
+            // On vérifie que le collider soit bien une cellule, que la cellule ne soit pas vide, que le bâtiment soit bien un arbre et que l'arbre ne soit pas déjà dans la liste. 
+            if (!_results[i].TryGetComponent(out Cell cell)) continue;
+            if (!cell.Building) continue;
+            if (!cell.Building.TryGetComponent(out ProtoTree tree)) continue;
+            if (_trees.Contains(tree)) continue;
+
+            _trees.Add(tree);
         }
+
+        return _trees;
     }
 
     private void OnDrawGizmosSelected()
