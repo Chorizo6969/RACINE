@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -6,23 +5,29 @@ public class LumberjackCabin : WorkBase
 {
     [SerializeField] private float _treeDetectionRadius;
     [SerializeField] private LayerMask _cellLayer;
+
     private List<ProtoTree> _trees = new();
     private Collider[] _results;
 
-    private void Start()
+    public List<ProtoTree> Trees {  get { return _trees; } }
+
+    private void Update()
     {
-        CheckTree();
+        GetClosestTree();    
     }
 
-    // Appeler cette coroutine quand on ouvre l'ui pour sélectionner quel arbre bucheronner. / ou quand bûcheron termine de couper un arbre et va en chercher un nouveau
-    
+    // Appeler quand on ouvre l'ui pour sélectionner quel arbre bucheronner. / ou quand bûcheron termine de couper un arbre et va en chercher un nouveau
+
     /// <summary>
     /// Retourne la liste des arbres qui sont dans le rayon de la cabane de bûcheron.
     /// </summary>
     /// <returns></returns>
-    private List<ProtoTree> CheckTree()
+    private List<ProtoTree> CheckTreeInCabinRadius()
     {
-        _results = new Collider[500];
+        // formule pour estimer le nombre de cellules dans le rayon (div par l'aire des cells remplacée par * 1.5f comme facteur de sécurité)
+        int estimatedColliderCount = Mathf.CeilToInt((Mathf.PI * _treeDetectionRadius * _treeDetectionRadius) * 1.5f);
+
+        _results = new Collider[estimatedColliderCount];
 
         int hitCount = Physics.OverlapSphereNonAlloc(transform.position, _treeDetectionRadius, _results, _cellLayer);
         for (int i = 0; i < hitCount; i++)
@@ -39,16 +44,29 @@ public class LumberjackCabin : WorkBase
         return _trees;
     }
 
-    private void OnDrawGizmosSelected()
+    /// <summary>
+    /// Retourne l'arbre le plus proche, ou null si aucun n'arbre ne se trouve dans le rayon de détection.
+    /// </summary>
+    /// <returns></returns>
+    public ProtoTree GetClosestTree()
     {
-        Gizmos.color = Color.cyan;
-        Gizmos.DrawWireSphere(this.transform.position, _treeDetectionRadius);
-        Gizmos.color = Color.magenta;
-        foreach (var tree in _trees)
+        List<ProtoTree> nearTrees = CheckTreeInCabinRadius();
+        
+        if (nearTrees.Count == 0) return null;
+
+        // temporary comparative values
+        ProtoTree closestTree = nearTrees[0];
+        float minDistance = Vector3.Distance(this.transform.position, nearTrees[0].transform.position);
+
+        for(int i = 0; i < nearTrees.Count; i++)
         {
-            if (!tree) return;
-            Ray ray = new Ray(tree.transform.position, transform.up * 6);
-            Gizmos.DrawRay(ray);
+            if (Vector3.Distance(this.transform.position, nearTrees[i].transform.position) < minDistance)
+            {
+                minDistance = Vector3.Distance(this.transform.position, nearTrees[i].transform.position);
+                closestTree = nearTrees[i];
+            }
         }
+
+        return closestTree;
     }
 }
