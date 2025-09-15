@@ -1627,7 +1627,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 546565045}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 444293495}
+        m_TargetAssemblyTypeName: DestroyBuilding, Assembly-CSharp
+        m_MethodName: DestroyCurrentBuilding
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   OnHoverEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -3800,9 +3812,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 444293496}
-        m_TargetAssemblyTypeName: BuildingPanelHandler, Assembly-CSharp
-        m_MethodName: MoveBuilding
+      - m_Target: {fileID: 444293494}
+        m_TargetAssemblyTypeName: ModifyBuildingPosition, Assembly-CSharp
+        m_MethodName: ModifyCurrentBuildingPosition
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
