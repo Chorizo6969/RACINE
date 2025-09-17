@@ -11,7 +11,6 @@ public class ModifyBuildingPosition : MonoBehaviour
 
     public void ModifyCurrentBuildingPosition()
     {
-        //if (ResourcesHandler.HasEnoughResources(_buildingPanelHandler.CurrentBuilding.Data.Cost)) // au cas où déplacer a un coût
         _buildingPanelHandler.DetachPanel();
         BuildingManager.Instance.GridConstructor.ActivateGrid(true);
         BuildingManager.Instance.GridDragging.StartDraggingMethod(_buildingPanelHandler.CurrentBuilding);

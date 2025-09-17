@@ -17,5 +17,12 @@ public class DestroyBuilding : MonoBehaviour
     {
         _buildingPanelHandler.DetachPanel();
         Destroy(_buildingPanelHandler.CurrentBuilding.gameObject);
+
+        // gives back half the building cost
+        WorldResources gain = new();
+        gain.Water = (int)Mathf.Ceil((float)_buildingPanelHandler.CurrentBuilding.Data.Cost.Water / 2f);
+        gain.Rock = (int)Mathf.Ceil((float)_buildingPanelHandler.CurrentBuilding.Data.Cost.Rock / 2f);
+        gain.Wood = (int)Mathf.Ceil((float)_buildingPanelHandler.CurrentBuilding.Data.Cost.Wood / 2f);
+        ResourcesHandler.AddResources(gain);
     }
 }
