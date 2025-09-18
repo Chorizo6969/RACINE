@@ -58,7 +58,7 @@ public class GridDragging : MonoBehaviour
 
             RaycastHit hit;
 
-            if(Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit))
+            if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit))
             {
                 Vector2Int hitPos = new Vector2Int((int)hit.transform.position.x, (int)hit.transform.position.z);
                 BuildingManager.Instance.GridConstructor.GetCurrentCells(hitPos, building.Data.Size, out _buildingCells);
@@ -72,19 +72,20 @@ public class GridDragging : MonoBehaviour
 
             if (Input.GetMouseButton(0)) // Places the building.
             {
-                if (BuildingManager.Instance.BuildingConstructor.BuyBuilding(building.Placement.Count == 0, building, _buildingCells)) // If the building can be bought and placed.
-                {
-                    building.ResetCells();
-                    building.Collider.enabled = true;
+                //if (BuildingManager.Instance.BuildingConstructor.BuyBuilding(building.Placement.Count == 0, building, _buildingCells)) // If the building can be bought and placed.
+                //{
+                //    building.ResetCells();
+                //    building.Collider.enabled = true;
 
-                    foreach (Cell cell in _buildingCells)
-                    {
-                        cell.Building = building;
-                        building.Placement.Add(cell);
-                    }
+                //    foreach (Cell cell in _buildingCells)
+                //    {
+                //        cell.Building = building;
+                //        building.Placement.Add(cell);
+                //    }
 
-                    StopDragging(); // Stops the dragging and resets the cells.
-                }
+                //}
+                PlaceBuilding(building);
+                StopDragging(); // Stops the dragging and resets the cells.
             }
 
             else if (Input.GetMouseButton(1)) // Cancels the drag.
@@ -103,4 +104,23 @@ public class GridDragging : MonoBehaviour
             #endregion
         }
     }
+
+    public bool PlaceBuilding(BuildingBase building)
+    {
+        if (BuildingManager.Instance.BuildingConstructor.BuyBuilding(building.Placement.Count == 0, building, _buildingCells)) // If the building can be bought and placed.
+        {
+            building.ResetCells();
+            building.Collider.enabled = true;
+
+            foreach (Cell cell in _buildingCells)
+            {
+                cell.Building = building;
+                building.Placement.Add(cell);
+            }
+
+            return true;
+        }
+
+        return false;
+    } 
 }

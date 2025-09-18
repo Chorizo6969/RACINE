@@ -10,17 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2aaa37577c352994dae945a6a56ee85c, type: 3}
-  m_Name: LumberjackCabin
+  m_Name: LumberjackCabinUpgrade1
   m_EditorClassIdentifier: 
-  Upgrade: {fileID: 11400000, guid: ac96ec9f5f7429a488315ccef0dd2949, type: 2}
-  BuildingPrefab: {fileID: 3649320495674766293, guid: 9ec1aabba4401f348814148266b65776, type: 3}
+  Upgrade: {fileID: 0}
+  BuildingPrefab: {fileID: 3649320495674766293, guid: 5dd5d5ae4b08dfd4a9763a821e0aaec3, type: 3}
   Cost:
     Wood: 5
     Rock: 3
     Water: 0
   Size: {x: 1, y: 1}
-  Name: "Cabane de b\xFBcheron"
-  Description: humains plantes bucheronnent
+  Name: "Cabane de b\xFBcheron++"
+  Description: humains plantes bucheronnent++
   MaxPopulation: 3
   MaxCapacity:
     Wood: 0

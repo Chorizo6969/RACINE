@@ -31,7 +31,7 @@ public class BuildingConstructor : MonoBehaviour
             return true;
         }
 
-        if (ResourcesHandler.HasEnoughResources(building.Data.Cost) && cells.Count > 0 && cells.TrueForAll(value => value.Building == null)) // Buys the building for the first time.
+        if (/*ResourcesHandler.HasEnoughResources(building.Data.Cost) && */cells.Count > 0 && cells.TrueForAll(value => value.Building == null)) // Buys the building for the first time.
         {
             ResourcesHandler.RemoveResources(building.Data.Cost);
             building.Init();

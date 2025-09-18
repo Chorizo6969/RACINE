@@ -1171,6 +1171,7 @@ GameObject:
   - component: {fileID: 444293497}
   - component: {fileID: 444293496}
   - component: {fileID: 444293495}
+  - component: {fileID: 444293498}
   - component: {fileID: 444293494}
   - component: {fileID: 444293493}
   - component: {fileID: 444293492}
@@ -1273,6 +1274,18 @@ Transform:
   - {fileID: 1010079835}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &444293498
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 444293491}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6fa47608a3b8c44a9055a3d449c8189, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &462784848
 GameObject:
   m_ObjectHideFlags: 0
@@ -3438,10 +3451,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 444293498}
+        m_TargetAssemblyTypeName: UpgradeBuilding, Assembly-CSharp
+        m_MethodName: UpgradeCurrrentBuilding
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
