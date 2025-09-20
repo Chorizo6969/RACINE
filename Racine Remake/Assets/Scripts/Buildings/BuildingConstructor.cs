@@ -25,13 +25,16 @@ public class BuildingConstructor : MonoBehaviour
 
     public bool BuyBuilding(bool creation, BuildingBase building, List<Cell> cells)
     {
+        print($"[BuildingConstructor | BuyBuilding] first check ? {!creation && cells.Count > 0 && cells.TrueForAll(value => value.Building == null)}");
+        print($"[BuildingConstructor | BuyBuilding] sec cond : {cells.Count > 0}");
         if (!creation && cells.Count > 0 && cells.TrueForAll(value => value.Building == null)) // Places the building without having to repay for it if it already has been placed.
         {
             building.Init();
             return true;
         }
 
-        if (/*ResourcesHandler.HasEnoughResources(building.Data.Cost) && */cells.Count > 0 && cells.TrueForAll(value => value.Building == null)) // Buys the building for the first time.
+        print($"[BuildingConstructor | BuyBuilding] sec check ? {ResourcesHandler.HasEnoughResources(building.Data.Cost) && cells.Count > 0 && cells.TrueForAll(value => value.Building == null)}");
+        if (ResourcesHandler.HasEnoughResources(building.Data.Cost) && cells.Count > 0 && cells.TrueForAll(value => value.Building == null)) // Buys the building for the first time.
         {
             ResourcesHandler.RemoveResources(building.Data.Cost);
             building.Init();
@@ -41,6 +44,10 @@ public class BuildingConstructor : MonoBehaviour
             return true; // transaction can be made.
         }
 
-        else return false; // you can't buy the building : cancellation.
+        else
+        {
+            print($"[BuildingConstructor | BuyBuilding] FALSE");
+            return false;
+        } // you can't buy the building : cancellation.
     }
 }

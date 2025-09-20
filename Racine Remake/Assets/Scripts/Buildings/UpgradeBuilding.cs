@@ -21,15 +21,33 @@ public class UpgradeBuilding : MonoBehaviour
 
         Vector3 pos = _buildingPanelHandler.CurrentBuilding.transform.position;
 
-        GameObject obj = Instantiate(_buildingPanelHandler.CurrentBuilding.Data.Upgrade.BuildingPrefab, pos, Quaternion.identity);
-        obj.TryGetComponent(out BuildingBase building);
+        // On crée l'upgrade du bâtiment
+        BuildingData data = _buildingPanelHandler.CurrentBuilding.Data.Upgrade;
+
+        GameObject obj = Instantiate(data.BuildingPrefab, pos, Quaternion.identity);
+        obj.name = data.Name;
+
+        BuildingBase building;
+        obj.TryGetComponent(out building);
+
+        building.Data = data;
+
+        // temporaire ça hein
+        Vector2Int newPos = new Vector2Int((int)(building.transform.position.x + 0.5f), (int)building.transform.position.z);
+
+        BuildingManager.Instance.GridConstructor.Grid.TryGetValue(newPos, out Cell cell);
+        building.Placement.Add(cell);
+
         BuildingManager.Instance.GridDragging.PlaceBuilding(building);
         //BuildingManager.Instance.GridDragging.StopDragging();
 
         Destroy(_buildingPanelHandler.CurrentBuilding.gameObject);
         _buildingPanelHandler.CurrentBuilding = building;
-        
-        //building.Init();
+        building.Init();
+
+        //if (BuildingManager.Instance.BuildingConstructor.BuyBuilding(building.Placement.Count == 0, building, _buildingCells)) // If the building can be bought and placed.
+        // condition pas passée pour l'upgrade, dans GridDragging ligne 110
+
         // APRES CA, BuildingPanelHandler marche pu
     }
 }

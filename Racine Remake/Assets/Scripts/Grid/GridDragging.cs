@@ -122,5 +122,5 @@ public class GridDragging : MonoBehaviour
         }
 
         return false;
-    } 
+    }
 }
