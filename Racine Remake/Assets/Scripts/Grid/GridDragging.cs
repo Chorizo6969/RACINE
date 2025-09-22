@@ -105,16 +105,28 @@ public class GridDragging : MonoBehaviour
         }
     }
 
-    public bool PlaceBuilding(BuildingBase building)
+    public bool PlaceBuilding(BuildingBase building, bool isUpgrade = false)
     {
+        // TEMPORAIRE (nécessaire pour la 3e condition)
+        if (isUpgrade) _buildingCells.ForEach(value => value.Building = null);
+
         if (BuildingManager.Instance.BuildingConstructor.BuyBuilding(building.Placement.Count == 0, building, _buildingCells)) // If the building can be bought and placed.
         {
             building.ResetCells();
             building.Collider.enabled = true;
 
+            // NE PAS UTILISER QUAND ON CREE LE BATIMENT, QUE QUAND ON LUPGRADE
+            if (isUpgrade)
+            {
+                Vector2Int truc = new((int)building.transform.position.x, (int)building.transform.position.z);
+                BuildingManager.Instance.GridConstructor.GetCurrentCells(truc, building.Data.Size, out _buildingCells);
+                print($"[GridDragging] new _buildingCells.Count : {_buildingCells.Count}");
+            }
+
             foreach (Cell cell in _buildingCells)
             {
                 cell.Building = building;
+                print("[GridDragging] cell : " + cell.transform.position + " cellBuilding ? : " + cell.Building);
                 building.Placement.Add(cell);
             }
 
@@ -122,5 +134,11 @@ public class GridDragging : MonoBehaviour
         }
 
         return false;
+    }
+
+    public void ChangerBuildingCellsTemporairement(BuildingBase building)
+    {
+        print($"[GridDragging] _buildingCells former count : {_buildingCells.Count}, new : {building.Placement.Count}");
+        _buildingCells = building.Placement;
     }
 }

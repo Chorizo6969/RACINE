@@ -18,9 +18,9 @@ MonoBehaviour:
     Wood: 5
     Rock: 3
     Water: 0
-  Size: {x: 1, y: 1}
-  Name: "Cabane de b\xFBcheron++"
-  Description: humains plantes bucheronnent++
+  Size: {x: 2, y: 2}
+  Name: "Cabane de b\xFBcheron+"
+  Description: humains plantes bucheronnent+
   MaxPopulation: 3
   MaxCapacity:
     Wood: 0

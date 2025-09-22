@@ -41,7 +41,7 @@ public class BuildingDetector : MonoBehaviour
 
         if (BuildingManager.Instance.GridConstructor.Grid.TryGetValue(newPos, out Cell cell))
         {
-            print("[BuildingDetector] cellBuilding ? : " + cell.Building); // LE PROBLEME EST LA
+            //print("[BuildingDetector] cell : " + cell.transform.position + " cellBuilding ? : " + cell.Building); // LE PROBLEME EST LA
             OnBuildingDetected?.Invoke(cell.Building);
         }
         else OnDetectionCancelled?.Invoke();

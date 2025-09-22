@@ -25,15 +25,13 @@ public class BuildingConstructor : MonoBehaviour
 
     public bool BuyBuilding(bool creation, BuildingBase building, List<Cell> cells)
     {
-        print($"[BuildingConstructor | BuyBuilding] first check ? {!creation && cells.Count > 0 && cells.TrueForAll(value => value.Building == null)}");
-        print($"[BuildingConstructor | BuyBuilding] sec cond : {cells.Count > 0}");
+        print($"[BuildingConstructor | BuyBuilding] 1 : {!creation} 2 : {cells.Count > 0} 3 : {cells.TrueForAll(value => value.Building == null)}");
         if (!creation && cells.Count > 0 && cells.TrueForAll(value => value.Building == null)) // Places the building without having to repay for it if it already has been placed.
         {
             building.Init();
             return true;
         }
 
-        print($"[BuildingConstructor | BuyBuilding] sec check ? {ResourcesHandler.HasEnoughResources(building.Data.Cost) && cells.Count > 0 && cells.TrueForAll(value => value.Building == null)}");
         if (ResourcesHandler.HasEnoughResources(building.Data.Cost) && cells.Count > 0 && cells.TrueForAll(value => value.Building == null)) // Buys the building for the first time.
         {
             ResourcesHandler.RemoveResources(building.Data.Cost);

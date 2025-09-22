@@ -35,12 +35,16 @@ public class UpgradeBuilding : MonoBehaviour
         // temporaire ça hein
         Vector2Int newPos = new Vector2Int((int)(building.transform.position.x + 0.5f), (int)building.transform.position.z);
 
-        BuildingManager.Instance.GridConstructor.Grid.TryGetValue(newPos, out Cell cell);
-        building.Placement.Add(cell);
+        // tentative de 
+        //BuildingManager.Instance.GridConstructor.Grid.TryGetValue(newPos, out Cell cell);
+        //building.Placement.Add(cell);
 
-        BuildingManager.Instance.GridDragging.PlaceBuilding(building);
-        //BuildingManager.Instance.GridDragging.StopDragging();
+        building.Placement = _buildingPanelHandler.CurrentBuilding.Placement;
+        BuildingManager.Instance.GridDragging.ChangerBuildingCellsTemporairement(_buildingPanelHandler.CurrentBuilding);
+        BuildingManager.Instance.GridDragging.PlaceBuilding(building, true);
+        building.Placement = _buildingPanelHandler.CurrentBuilding.Placement;
 
+        _buildingPanelHandler.DetachPanel();
         Destroy(_buildingPanelHandler.CurrentBuilding.gameObject);
         _buildingPanelHandler.CurrentBuilding = building;
         building.Init();

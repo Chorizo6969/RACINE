@@ -454,7 +454,7 @@ PrefabInstance:
       objectReference: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
     - target: {fileID: 2656285110509394176, guid: e1fecf830bcdb3a469a4bca6ad6b781e, type: 3}
       propertyPath: m_Name
-      value: LumberjackCabin 2
+      value: MediumLumberjackCabin
       objectReference: {fileID: 0}
     - target: {fileID: 2656285110509394176, guid: e1fecf830bcdb3a469a4bca6ad6b781e, type: 3}
       propertyPath: m_Layer
@@ -503,6 +503,18 @@ PrefabInstance:
     - target: {fileID: 8572309464863236852, guid: e1fecf830bcdb3a469a4bca6ad6b781e, type: 3}
       propertyPath: m_Layer
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8837126336521735685, guid: e1fecf830bcdb3a469a4bca6ad6b781e, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8837126336521735685, guid: e1fecf830bcdb3a469a4bca6ad6b781e, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8837126336521735685, guid: e1fecf830bcdb3a469a4bca6ad6b781e, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
