@@ -24,6 +24,8 @@ public class BuildingPanelHandler : MonoBehaviour
 
     private void GetBuildingInfos(BuildingBase building)
     {
+        print(building.name);
+
         CurrentBuilding = building;
         UpdateBuildingInfos();
 

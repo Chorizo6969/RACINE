@@ -2,7 +2,6 @@ using Cysharp.Threading.Tasks;
 using System;
 using System.Collections.Generic;
 using System.Threading;
-using UnityEditor;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -27,38 +26,60 @@ public class GridDragging : MonoBehaviour
     {
         _source = new();
         building.Collider.enabled = false;
-        _task = DragBuilding(_source.Token, building);
+        _task = DragBuilding(_source, building, false, Vector2Int.zero);
         OnDragStart.Invoke();
     }
 
-    public void StopDragging()
+    public void StopDragging(CancellationTokenSource source)
     {
         _buildingCells.ForEach(cell => cell.ResetCell()); // Paints the cells as occupied.
         _buildingCells.Clear();
 
-        _source?.Cancel();
-        _task.Forget();
-
+        source?.Cancel();
         OnDragStop?.Invoke();
-
-        return;
+        if (_task.AsTask() != null) _task.Forget();
     }
 
     #endregion
 
-    private async UniTask DragBuilding(CancellationToken token, BuildingBase building)
+    public async UniTask DragBuilding(CancellationTokenSource source, BuildingBase building, bool upgrade, Vector2Int previous)
     {
         await UniTask.Yield();
 
-        while (!token.IsCancellationRequested)
+        while (!source.IsCancellationRequested)
         {
             await UniTask.WaitUntil(() => !EventSystem.current.IsPointerOverGameObject());
+
+            if (upgrade)
+            {
+
+                BuildingManager.Instance.GridConstructor.GetCurrentCells(previous, building.Data.Size, out _buildingCells);
+                building.transform.position = GridPositionHandler.CellToBuilding(_buildingCells[0]);
+
+                if (BuildingManager.Instance.BuildingConstructor.BuyBuilding(building.Placement.Count == 0, building, _buildingCells)) // If the building can be bought and placed.
+                {
+                    building.ResetCells();
+                    building.Collider.enabled = true;
+
+                    foreach (Cell cell in _buildingCells)
+                    {
+                        cell.Building = building;
+                        building.Placement.Add(cell);
+                    }
+
+                    _buildingCells.ForEach(cell => cell.ResetCell()); // Paints the cells as occupied.
+                    _buildingCells.Clear();
+                    OnDrag?.Invoke(_buildingCells, building);
+
+                    return; // Stops the dragging and resets the cells.
+                }
+            }
 
             #region Raycast Check
 
             RaycastHit hit;
 
-            if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit))
+            if(Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit))
             {
                 Vector2Int hitPos = new Vector2Int((int)hit.transform.position.x, (int)hit.transform.position.z);
                 BuildingManager.Instance.GridConstructor.GetCurrentCells(hitPos, building.Data.Size, out _buildingCells);
@@ -72,20 +93,19 @@ public class GridDragging : MonoBehaviour
 
             if (Input.GetMouseButton(0)) // Places the building.
             {
-                //if (BuildingManager.Instance.BuildingConstructor.BuyBuilding(building.Placement.Count == 0, building, _buildingCells)) // If the building can be bought and placed.
-                //{
-                //    building.ResetCells();
-                //    building.Collider.enabled = true;
+                if (BuildingManager.Instance.BuildingConstructor.BuyBuilding(building.Placement.Count == 0, building, _buildingCells)) // If the building can be bought and placed.
+                {
+                    building.ResetCells();
+                    building.Collider.enabled = true;
 
-                //    foreach (Cell cell in _buildingCells)
-                //    {
-                //        cell.Building = building;
-                //        building.Placement.Add(cell);
-                //    }
+                    foreach (Cell cell in _buildingCells)
+                    {
+                        cell.Building = building;
+                        building.Placement.Add(cell);
+                    }
 
-                //}
-                PlaceBuilding(building);
-                StopDragging(); // Stops the dragging and resets the cells.
+                    StopDragging(source); // Stops the dragging and resets the cells.
+                }
             }
 
             else if (Input.GetMouseButton(1)) // Cancels the drag.
@@ -98,47 +118,10 @@ public class GridDragging : MonoBehaviour
                     building.Collider.enabled = true;
                 }
 
-                StopDragging(); // Stops the dragging and resets the cells.
+                StopDragging(source); // Stops the dragging and resets the cells.
             }
 
             #endregion
         }
-    }
-
-    public bool PlaceBuilding(BuildingBase building, bool isUpgrade = false)
-    {
-        // TEMPORAIRE (nécessaire pour la 3e condition)
-        if (isUpgrade) _buildingCells.ForEach(value => value.Building = null);
-
-        if (BuildingManager.Instance.BuildingConstructor.BuyBuilding(building.Placement.Count == 0, building, _buildingCells)) // If the building can be bought and placed.
-        {
-            building.ResetCells();
-            building.Collider.enabled = true;
-
-            // NE PAS UTILISER QUAND ON CREE LE BATIMENT, QUE QUAND ON LUPGRADE
-            if (isUpgrade)
-            {
-                Vector2Int truc = new((int)building.transform.position.x, (int)building.transform.position.z);
-                BuildingManager.Instance.GridConstructor.GetCurrentCells(truc, building.Data.Size, out _buildingCells);
-                print($"[GridDragging] new _buildingCells.Count : {_buildingCells.Count}");
-            }
-
-            foreach (Cell cell in _buildingCells)
-            {
-                cell.Building = building;
-                print("[GridDragging] cell : " + cell.transform.position + " cellBuilding ? : " + cell.Building);
-                building.Placement.Add(cell);
-            }
-
-            return true;
-        }
-
-        return false;
-    }
-
-    public void ChangerBuildingCellsTemporairement(BuildingBase building)
-    {
-        print($"[GridDragging] _buildingCells former count : {_buildingCells.Count}, new : {building.Placement.Count}");
-        _buildingCells = building.Placement;
     }
 }

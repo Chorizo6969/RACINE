@@ -31,6 +31,7 @@ public class BuildingDetector : MonoBehaviour
 
             RaycastHit hit;
             if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit) && hit.collider.CompareTag("Building")) DetectBuilding(hit.transform.parent);
+
             else OnDetectionCancelled?.Invoke();
         }
     }
@@ -39,12 +40,7 @@ public class BuildingDetector : MonoBehaviour
     {
         Vector2Int newPos = new Vector2Int((int)(transform.position.x + 0.5f), (int)transform.position.z);
 
-        if (BuildingManager.Instance.GridConstructor.Grid.TryGetValue(newPos, out Cell cell))
-        {
-            if(cell.Building) print("[BuildingDetector] cell : " + cell.transform.position + " cellBuilding ? : " + cell.Building); // LE PROBLEME EST LA
-            else print("[BuildingDetector] cell : " + cell.transform.position + " cellBuilding ? : nothing");
-            OnBuildingDetected?.Invoke(cell.Building);
-        }
+        if (BuildingManager.Instance.GridConstructor.Grid.TryGetValue(newPos, out Cell cell)) OnBuildingDetected?.Invoke(cell.Building);
         else OnDetectionCancelled?.Invoke();
     }
 }
