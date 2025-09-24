@@ -42,12 +42,13 @@ public class UpgradeBuilding : MonoBehaviour
         building.Placement = _buildingPanelHandler.CurrentBuilding.Placement;
         BuildingManager.Instance.GridDragging.ChangerBuildingCellsTemporairement(_buildingPanelHandler.CurrentBuilding);
         BuildingManager.Instance.GridDragging.PlaceBuilding(building, true);
+        print($"[UpgradeBuilding] new building Placement : {building.Placement.Count}, panel building placement : {_buildingPanelHandler.CurrentBuilding.Placement.Count}");
         building.Placement = _buildingPanelHandler.CurrentBuilding.Placement;
 
         _buildingPanelHandler.DetachPanel();
         Destroy(_buildingPanelHandler.CurrentBuilding.gameObject);
-        _buildingPanelHandler.CurrentBuilding = building;
-        building.Init();
+        //_buildingPanelHandler.CurrentBuilding = building;
+        //building.Init();
 
         //if (BuildingManager.Instance.BuildingConstructor.BuyBuilding(building.Placement.Count == 0, building, _buildingCells)) // If the building can be bought and placed.
         // condition pas passée pour l'upgrade, dans GridDragging ligne 110
