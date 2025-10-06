@@ -15,6 +15,6 @@ MonoBehaviour:
   _jobName: 0
   _jobType: 2
   _mesh: {fileID: 0}
-  _description: "Glande et ne fait rien de ses journ\xE9es"
+  _description: Ne fait rien du tout.
   _healthModifier: 0
   _speedModifier: 0

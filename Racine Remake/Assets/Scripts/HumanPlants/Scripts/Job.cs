@@ -42,6 +42,10 @@ public class Job : MonoBehaviour
         {
             _humanPlantsRef.HumanNoJobGestion.StartChill(); //Les autres métiers se balladent en attendant qu'ils se passent un truc
         }
+        else if (CurrentJob.JobType == HumanJobType.Récolteur)
+        {
+            //Lancer comportement du métier
+        }
     }
 
     private void StartChomageRoutine()

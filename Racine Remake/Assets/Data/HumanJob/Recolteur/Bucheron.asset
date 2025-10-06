@@ -15,6 +15,6 @@ MonoBehaviour:
   _jobName: 3
   _jobType: 0
   _mesh: {fileID: 0}
-  _description: "Soigne les bless\xE9s et permet de d\xE9nicher les faux malades."
+  _description: Coupe du bois pour la construction.
   _healthModifier: 0
   _speedModifier: 0

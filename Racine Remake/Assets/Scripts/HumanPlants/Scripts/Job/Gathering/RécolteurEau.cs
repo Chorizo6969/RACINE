@@ -19,7 +19,7 @@ public class RécolteurEau : Recolteur
         base.UseAbility();
         foreach(HumanPlants human in ActorInJob)
         {
-            human.HumanMotorsRef.GoTo(JobTransform.position);
+            //human.HumanMotorsRef.GoTo(JobTransform.position);
             //StartAnimation ou script de balade random dans l'eau
         }
     }
